@@ -1,4 +1,5 @@
 User-agent: *
-Allow: /
+Disallow: /
 
-# Sitemap will be added after the final custom domain is connected.
+# Staging only. Replace with production robots.txt after ErrorHarbor.com,
+# canonical URLs and sitemap are finalized.

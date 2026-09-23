@@ -46,3 +46,13 @@ h1,h2,h3{letter-spacing:-.04em}.hero h1{font-size:clamp(46px,7vw,78px);line-heig
 @media(max-width:920px){.hero-grid,.promise,.article-grid,.footer-grid{grid-template-columns:1fr}.hero-visual{min-height:285px}.sidebar{position:static}.library-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:650px){.shell{width:min(calc(100% - 22px),var(--max))}.hero{padding-top:42px}.hero h1{font-size:48px}.hero-visual{min-height:250px}.nav-links a:not(:first-child){display:none}.search-box{flex-wrap:wrap}.search-box button{width:100%}.popular-grid,.library-grid,.footer-grid{grid-template-columns:1fr}.article{padding:21px;border-radius:22px}.affiliate-card{grid-template-columns:1fr}.section-heading{display:block}.section-heading p{margin-top:10px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* P0 production polish — staging */
+.ad-placeholder{display:none!important}
+.community{display:none!important}
+.popular-soon{display:flex;justify-content:space-between;gap:14px;padding:13px 3px;border-bottom:1px solid #edf2f8;font-weight:750;color:#7b8ba0}
+.popular-soon span:last-child{font-size:11px;font-weight:850;letter-spacing:.03em;text-transform:uppercase;color:#96a4b5}
+.library-card.is-coming,.hub-item.is-coming{cursor:default}
+.library-card.is-coming:hover{transform:none;box-shadow:none;border-color:var(--line)}
+.library-card.is-coming h3 small{font-size:10px;letter-spacing:.03em;text-transform:uppercase;color:#8797aa;margin-left:5px}
+.hub-item.is-coming{opacity:.72}
