@@ -53,7 +53,7 @@ if(toc.length&&sections.length&&"IntersectionObserver"in window){
 // Giscus is fully wired except for the category ID, which GitHub creates only after Discussions is enabled.
 document.querySelectorAll(".giscus-shell").forEach(shell=>{
   const categoryId=shell.dataset.giscusCategoryId||"",status=shell.querySelector("[data-giscus-status]");
-  if(!categoryId)return;
+  if(!categoryId){return;}
   if(status)status.remove();
   const s=document.createElement("script");
   s.src="https://giscus.app/client.js";s.async=true;s.crossOrigin="anonymous";

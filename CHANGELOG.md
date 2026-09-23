@@ -12,3 +12,11 @@
 - added legal and editorial trust pages
 - added favicon, manifest and GitHub Pages static config
 - added master SOP and third-party setup documentation
+
+
+## 2026-09-23 — Giscus comments activated
+
+- connected article community sections to GitHub Discussions via Giscus
+- mapped discussions by pathname
+- configured Announcements category
+- enabled reactions and lazy-loaded comments

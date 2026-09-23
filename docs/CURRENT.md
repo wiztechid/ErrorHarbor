@@ -38,3 +38,16 @@
 ## Next product milestone
 
 **P0: connect domain and publish the first validated HPK cluster.**
+
+
+## Giscus comments activated — 2026-09-23
+
+- GitHub Discussions enabled for `wiztechid/ErrorHarbor`
+- Giscus repository ID: `R_kgDOUmgggA`
+- Giscus category: `Announcements`
+- Giscus category ID: `DIC_kwDOUmgggM4DGNES`
+- Mapping: pathname
+- Reactions enabled
+- Comment input positioned above comments
+- Lazy loading enabled
+- English/light theme
