@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>ErrorHarbor — Find the cause. Fix the error.</title>
+  <meta name="description" content="Reader-first technical troubleshooting for exact errors, error codes, failed commands and software problems.">
+  <meta property="og:title" content="ErrorHarbor — Find the cause. Fix the error.">
+  <meta property="og:description" content="Paste an error message, code, or symptom and follow a clear troubleshooting path.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-root="">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="shell nav">
+    <a class="brand" href="./" aria-label="ErrorHarbor home"><span class="brand-mark">E</span><span>ErrorHarbor</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="errors/">Error Library</a>
+      <a href="editorial-methodology/">Methodology</a>
+      <a href="about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div>
+        <div class="eyebrow"><span class="status-dot"></span> Exact errors. Safer fixes. Clear verification.</div>
+        <h1>Find the cause.<br>Fix the error.</h1>
+        <p class="hero-copy">Paste an error message, code, or symptom. ErrorHarbor shows the safest likely fix first, then a diagnostic path if the problem remains.</p>
+        <form class="search-box" data-site-search role="search">
+          <label class="sr-only" for="home-search">Search technical errors</label>
+          <input id="home-search" name="q" placeholder="Paste an error message, code, or symptom…" autocomplete="off">
+          <button type="submit">Find the fix</button>
+        </form>
+        <div class="example-row">
+          <span>Try:</span>
+          <button type="button" data-example="npm command not found">npm command not found</button>
+          <button type="button" data-example="Operating System Not Found VMware">VMware OS not found</button>
+          <button type="button" data-example="invalid column name sql">invalid column name</button>
+        </div>
+        <div class="search-results" data-search-results aria-live="polite"></div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="orb orb-a"></div><div class="orb orb-b"></div><div class="orb orb-c"></div>
+        <div class="match-card">
+          <div class="match-icon">🎯</div>
+          <div><b>Operating System Not Found</b><small>VMware Workstation · Windows 11</small></div>
+          <div class="match-status">✓ Exact match · Start with the boot disk</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="popular">
+    <div class="shell">
+      <div class="section-heading">
+        <div><span class="kicker">Popular right now</span><h2>Common exact errors</h2></div>
+        <p>Useful pages first—not a feed of generic tech news.</p>
+      </div>
+      <div class="popular-grid">
+        <a href="errors/dev/node-npm/npm-command-not-found/"><span>npm command not found</span><span>→</span></a>
+        <a href="errors/virtualization/vmware/operating-system-not-found/"><span>Operating System Not Found in VMware</span><span>→</span></a>
+        <a href="errors/dev/sql-database/invalid-column-name-sql/"><span>invalid column name SQL</span><span>→</span></a>
+        <a href="errors/dev/"><span>SignTool.exe not found</span><span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <div><span class="kicker">Error Library</span><h2>Browse by what broke.</h2></div>
+        <p>Every hub is organized around real products, subsystems and error intent.</p>
+      </div>
+      <div class="library-grid">
+        <a class="library-card" href="errors/windows-network/"><span class="library-icon bg-blue">🪟</span><h3>Windows & Network</h3><p>Remote Desktop, services, drivers, certificates and connectivity.</p></a>
+        <a class="library-card" href="errors/dev/"><span class="library-icon bg-lav">⌘</span><h3>Developer Errors</h3><p>Node, NPM, C/C++, Gradle, SDK and command-line failures.</p></a>
+        <a class="library-card" href="errors/virtualization/"><span class="library-icon bg-mint">◈</span><h3>VMware & Hyper-V</h3><p>Boot, storage, services, networking and virtualization errors.</p></a>
+        <a class="library-card" href="errors/dev/sql-database/invalid-column-name-sql/"><span class="library-icon bg-yellow">▦</span><h3>SQL & Database</h3><p>MySQL, SQL Server, DB2 and database error paths.</p></a>
+        <a class="library-card" href="errors/"><span class="library-icon bg-peach">◌</span><h3>Software</h3><p>Business apps, utilities and version-specific failures.</p></a>
+        <a class="library-card" href="errors/windows-network/"><span class="library-icon bg-blue">⌁</span><h3>Security & Certificates</h3><p>Signing, certificate and safe troubleshooting guidance.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell promise">
+      <div><span class="kicker">ErrorHarbor standard</span><h2>Useful first. Beautiful second.</h2><p>Quick fixes appear before monetization. Every technical fix explains how to verify success and what to do if it fails.</p></div>
+      <div class="promise-list">
+        <div><b>1</b><span><strong>Confirm the exact problem</strong><small>Fingerprint the error before giving advice.</small></span></div>
+        <div><b>2</b><span><strong>Give value before ads</strong><small>Quick Fix appears first.</small></span></div>
+        <div><b>3</b><span><strong>Verify each fix</strong><small>Readers know what success looks like.</small></span></div>
+        <div><b>4</b><span><strong>Learn from outcomes</strong><small>Feedback improves future troubleshooting.</small></span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div><a class="brand" href="./"><span class="brand-mark">E</span><span>ErrorHarbor</span></a><p>Reader-first technical troubleshooting for exact errors, codes and symptoms.</p></div>
+    <div><h4>Library</h4><a href="errors/dev/">Developer Errors</a><a href="errors/windows-network/">Windows & Network</a><a href="errors/virtualization/">Virtualization</a></div>
+    <div><h4>About</h4><a href="editorial-methodology/">Editorial Methodology</a><a href="about/">About</a><a href="contact/">Contact</a><a href="corrections/">Corrections</a></div>
+    <div><h4>Legal</h4><a href="privacy/">Privacy</a><a href="terms/">Terms</a><a href="disclaimer/">Disclaimer</a><a href="affiliate-disclosure/">Affiliate Disclosure</a></div>
+  </div>
+  <div class="shell footer-bottom">© 2026 ErrorHarbor · Find the cause. Fix the error.</div>
+</footer>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>
