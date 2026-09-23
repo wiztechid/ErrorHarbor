@@ -1,0 +1,75 @@
+[
+  {
+    "title": "Operating System Not Found in VMware",
+    "url": "errors/virtualization/vmware/operating-system-not-found/",
+    "product": "VMware",
+    "type": "Virtualization error",
+    "keywords": [
+      "operating system not found vmware",
+      "vmware os not found",
+      "vmware boot error",
+      "no bootable operating system"
+    ]
+  },
+  {
+    "title": "npm command not found",
+    "url": "errors/dev/node-npm/npm-command-not-found/",
+    "product": "Node.js / npm",
+    "type": "Developer error",
+    "keywords": [
+      "npm command not found",
+      "npm not recognized",
+      "npm not found",
+      "node npm path"
+    ]
+  },
+  {
+    "title": "Invalid column name in SQL Server",
+    "url": "errors/dev/sql-database/invalid-column-name-sql/",
+    "product": "SQL Server",
+    "type": "Database error",
+    "keywords": [
+      "invalid column name sql",
+      "sql server invalid column name",
+      "invalid column"
+    ]
+  },
+  {
+    "title": "Developer Errors",
+    "url": "errors/dev/",
+    "product": "Developer tools",
+    "type": "Error hub",
+    "keywords": [
+      "developer errors",
+      "node errors",
+      "npm errors",
+      "c++ errors",
+      "gradle errors",
+      "signtool"
+    ]
+  },
+  {
+    "title": "Windows & Network Errors",
+    "url": "errors/windows-network/",
+    "product": "Windows",
+    "type": "Error hub",
+    "keywords": [
+      "windows error",
+      "network error",
+      "remote desktop error",
+      "certificate error",
+      "service error"
+    ]
+  },
+  {
+    "title": "Virtualization Errors",
+    "url": "errors/virtualization/",
+    "product": "VMware / Hyper-V",
+    "type": "Error hub",
+    "keywords": [
+      "vmware errors",
+      "hyper-v errors",
+      "virtualization error"
+    ]
+  }
+]
