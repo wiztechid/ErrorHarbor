@@ -50,18 +50,63 @@ if(toc.length&&sections.length&&"IntersectionObserver"in window){
   sections.forEach(s=>o.observe(s));
 }
 
-// Giscus is fully wired except for the category ID, which GitHub creates only after Discussions is enabled.
+// Giscus community discussion: load only when the reader nears the section.
 document.querySelectorAll(".giscus-shell").forEach(shell=>{
-  const categoryId=shell.dataset.giscusCategoryId||"",status=shell.querySelector("[data-giscus-status]");
-  if(!categoryId){return;}
-  if(status)status.remove();
-  const s=document.createElement("script");
-  s.src="https://giscus.app/client.js";s.async=true;s.crossOrigin="anonymous";
-  s.dataset.repo=shell.dataset.giscusRepo;
-  s.dataset.repoId=shell.dataset.giscusRepoId;
-  s.dataset.category=shell.dataset.giscusCategory;
-  s.dataset.categoryId=categoryId;
-  s.dataset.mapping="pathname";s.dataset.strict="0";s.dataset.reactionsEnabled="1";s.dataset.emitMetadata="0";s.dataset.inputPosition="top";s.dataset.theme="light";s.dataset.lang="en";s.dataset.loading="lazy";
-  shell.appendChild(s);
+  const categoryId=shell.dataset.giscusCategoryId||"";
+  const status=shell.querySelector("[data-giscus-status]");
+  const fallback=shell.querySelector("[data-giscus-fallback]");
+  if(!categoryId){if(status)status.textContent="Community discussion is not configured yet.";return;}
+
+  let started=false;
+  function loadGiscus(){
+    if(started)return;started=true;
+    if(status)status.textContent="Loading community discussion…";
+
+    const mount=shell.querySelector(".giscus")||shell;
+    const observer=new MutationObserver(()=>{
+      const frame=shell.querySelector("iframe.giscus-frame");
+      if(frame){
+        if(status)status.hidden=true;
+        if(fallback)fallback.hidden=true;
+        observer.disconnect();
+      }
+    });
+    observer.observe(shell,{childList:true,subtree:true});
+
+    const s=document.createElement("script");
+    s.src="https://giscus.app/client.js";
+    s.async=true;
+    s.crossOrigin="anonymous";
+    s.dataset.repo=shell.dataset.giscusRepo;
+    s.dataset.repoId=shell.dataset.giscusRepoId;
+    s.dataset.category=shell.dataset.giscusCategory;
+    s.dataset.categoryId=categoryId;
+    s.dataset.mapping="pathname";
+    s.dataset.strict="0";
+    s.dataset.reactionsEnabled="1";
+    s.dataset.emitMetadata="0";
+    s.dataset.inputPosition="top";
+    s.dataset.theme="noborder_light";
+    s.dataset.lang="en";
+    s.dataset.loading="lazy";
+    mount.appendChild(s);
+
+    setTimeout(()=>{
+      if(!shell.querySelector("iframe.giscus-frame")){
+        if(status)status.hidden=true;
+        if(fallback)fallback.hidden=false;
+        observer.disconnect();
+      }
+    },10000);
+  }
+
+  if("IntersectionObserver"in window){
+    const io=new IntersectionObserver(entries=>{
+      if(entries.some(entry=>entry.isIntersecting)){loadGiscus();io.disconnect();}
+    },{rootMargin:"600px 0px"});
+    io.observe(shell);
+  }else{
+    loadGiscus();
+  }
 });
 })();

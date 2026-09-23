@@ -96,3 +96,21 @@ h1,h2,h3{letter-spacing:-.04em}.hero h1{font-size:clamp(46px,7vw,78px);line-heig
   .related-grid{grid-template-columns:1fr}
   .reviewed{width:100%;margin-top:2px}
 }
+
+/* Giscus visual integration — v2.1 */
+.community{margin-top:36px;padding-top:30px}
+.community h2{margin-bottom:6px}
+.community-provider-note{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:11px 0 13px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.community-provider-note span{font-size:12px;font-weight:850;color:#53657e}
+.community-provider-note small{font-size:12px;color:#7a899d;text-align:right}
+.giscus-shell{margin-top:16px;padding:0;min-height:120px}
+.giscus,.giscus-frame{width:100%!important}
+.giscus-frame{display:block;min-height:180px;border:0!important;background:transparent!important}
+.giscus-status,.giscus-fallback{font-size:13px!important;color:var(--muted)!important;margin:12px 0 0!important;padding:10px 0}
+.giscus-fallback a{color:var(--blue);font-weight:800}
+.credential-warning{margin-bottom:14px}
+@media(max-width:650px){
+  .community-provider-note{display:grid;gap:3px}
+  .community-provider-note small{text-align:left}
+  .community{margin-top:30px;padding-top:24px}
+}

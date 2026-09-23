@@ -51,3 +51,15 @@
 - Comment input positioned above comments
 - Lazy loading enabled
 - English/light theme
+
+
+## Giscus visual integration QC — 2026-09-23
+
+- verified latest Giscus-enabled GitHub Pages deployment completed successfully
+- changed Giscus theme to `noborder_light` to blend with ErrorHarbor article surfaces
+- added reader-facing GitHub Discussions sign-in note
+- deferred the third-party Giscus script until the reader approaches the community section
+- retained Giscus iframe lazy loading
+- added loading and failure fallback states
+- added direct GitHub Discussions fallback link
+- kept article CSS outside the Giscus iframe; iframe internals are controlled via the Giscus theme

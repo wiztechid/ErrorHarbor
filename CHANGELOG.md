@@ -20,3 +20,11 @@
 - mapped discussions by pathname
 - configured Announcements category
 - enabled reactions and lazy-loaded comments
+
+
+## 2026-09-23 — Giscus visual integration
+
+- styled community section to match ErrorHarbor
+- switched Giscus to noborder light theme
+- added near-viewport script loading and iframe fallback
+- added GitHub sign-in disclosure for commenters
