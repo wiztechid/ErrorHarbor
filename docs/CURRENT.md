@@ -63,3 +63,13 @@
 - added loading and failure fallback states
 - added direct GitHub Discussions fallback link
 - kept article CSS outside the Giscus iframe; iframe internals are controlled via the Giscus theme
+
+
+## Final Regression QC v2.1 — 2026-09-23
+
+Regression cleanup:
+- removed unpublished Coming Soon items from live Developer and Virtualization hubs
+- removed Windows & Network hub from the public Error Library until a real guide exists
+- removed the empty Windows hub from client-side search results
+- switched staging robots policy to allow crawling so page-level noindex can be honored
+- confirmed three launch articles retain sticky search, per-fix feedback, related troubleshooting and Giscus configuration

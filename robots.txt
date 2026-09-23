@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
 
-# Staging only. Replace with production robots.txt after ErrorHarbor.com,
-# canonical URLs and sitemap are finalized.
+# Staging: HTML pages carry noindex until ErrorHarbor.com, canonicals and sitemap are ready.

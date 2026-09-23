@@ -49,19 +49,6 @@
     ]
   },
   {
-    "title": "Windows & Network Errors",
-    "url": "errors/windows-network/",
-    "product": "Windows",
-    "type": "Error hub",
-    "keywords": [
-      "windows error",
-      "network error",
-      "remote desktop error",
-      "certificate error",
-      "service error"
-    ]
-  },
-  {
     "title": "Virtualization Errors",
     "url": "errors/virtualization/",
     "product": "VMware / Hyper-V",

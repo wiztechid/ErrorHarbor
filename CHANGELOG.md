@@ -28,3 +28,10 @@
 - switched Giscus to noborder light theme
 - added near-viewport script loading and iframe fallback
 - added GitHub sign-in disclosure for commenters
+
+
+## 2026-09-23 — Final Regression QC v2.1
+
+- removed residual Coming Soon items from exposed hubs
+- hid empty Windows hub from navigation/search until content exists
+- corrected staging crawler policy for noindex handling
