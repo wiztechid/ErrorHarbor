@@ -134,14 +134,16 @@
       "signtool exe not found",
       "signtool not found",
       "where is signtool exe",
-      "windows sdk signtool"
+      "signtool exe location",
+      "windows sdk signtool path",
+      "windows kits signtool exe"
     ],
     "kind": "article",
     "published": "2026-09-25",
     "publish_order": 7,
     "cluster": "windows-sdk",
     "hub": "errors/dev/",
-    "summary": "Locate the Windows SDK copy before editing PATH or downloading tools."
+    "summary": "Find the versioned Windows SDK SignTool path first, then use the full path or Developer shell; install the SDK only if the executable is absent."
   },
   {
     "title": "Plugin with id 'com.android.application' not found",
