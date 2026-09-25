@@ -70,6 +70,24 @@
     "hub": "errors/"
   },
   {
+    "title": "VMware & Hyper-V Errors: Virtualization Troubleshooting",
+    "url": "errors/virtualization/",
+    "product": "VMware / Hyper-V",
+    "type": "Error hub",
+    "keywords": [
+      "virtualization errors",
+      "vmware errors",
+      "hyper-v errors",
+      "vmware troubleshooting",
+      "hyper-v troubleshooting",
+      "virtual machine errors"
+    ],
+    "kind": "hub",
+    "cluster": "virtualization",
+    "hub": "errors/",
+    "summary": "Route VMware and Hyper-V problems by symptom, then collect the exact error and evidence before changing virtualization or security settings."
+  },
+  {
     "title": "Visual C++ Debug Assertion Failed",
     "url": "errors/dev/cpp/debug-assertion-failed/",
     "product": "Visual C++ / CRT",
