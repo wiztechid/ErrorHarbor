@@ -89,3 +89,22 @@ The desired graph is not “more URLs”.
 It is:
 
 `search query → exact page → correct diagnostic path → verified outcome → useful next page if unresolved`
+
+
+## Corpus parity gate
+
+SEO Architecture v2 applies to the full live corpus, not only newly published pages.
+
+The automated publish gate now checks every indexable article for:
+- concise answer/lede and exact-error fingerprint;
+- choose-your-path decision support;
+- Quick Check/Fix and explicit verification;
+- diagnostic flow plus a distinct next step;
+- What not to do safety guidance;
+- unresolved-case evidence checklist;
+- authoritative references;
+- related internal links and inbound discovery surfaces;
+- canonical, Open Graph, Article + Breadcrumb structured data;
+- unique title and meta description.
+
+A legacy page that fails this contract must be upgraded before it is treated as SEO-v2 compliant.
