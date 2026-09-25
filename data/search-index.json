@@ -70,22 +70,23 @@
     "hub": "errors/"
   },
   {
-    "title": "Debug Assertion Failed in C++",
+    "title": "Visual C++ Debug Assertion Failed",
     "url": "errors/dev/cpp/debug-assertion-failed/",
     "product": "Visual C++ / CRT",
     "type": "Developer error",
     "keywords": [
+      "visual c++ debug assertion failed",
       "debug assertion failed c++",
-      "debug assertion failed",
-      "visual c++ assertion failed",
-      "crt assertion failed"
+      "microsoft visual c++ debug assertion failed",
+      "crt assertion failed",
+      "debug assertion failed expression file line"
     ],
     "kind": "article",
     "published": "2026-09-25",
     "publish_order": 4,
     "cluster": "cpp",
     "hub": "errors/dev/",
-    "summary": "Capture the assertion expression, file and line before changing runtimes."
+    "summary": "Capture the assertion expression, file and line first; then debug the failing program state or isolate the affected third-party application."
   },
   {
     "title": "MySQL LOAD DATA File Not Found (Errcode: 2)",
