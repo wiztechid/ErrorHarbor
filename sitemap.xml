@@ -22,4 +22,6 @@
   <url><loc>https://errorharbor.com/errors/virtualization/vmware/unrecoverable-error-vcpu-0/</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://errorharbor.com/errors/windows-network/remote-desktop/connection-broker-failed-to-redirect-user/</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://errorharbor.com/errors/windows-network/certificates/windows-does-not-have-enough-information-to-verify-this-certificate/</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://errorharbor.com/errors/windows-network/certificates/iis-certificate-valid-in-mmc-but-cannot-verify/</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://errorharbor.com/errors/virtualization/hyper-v/hypervisor-still-detected-after-disabling-hyper-v/</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
