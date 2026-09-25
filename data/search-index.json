@@ -1,6 +1,6 @@
 [
   {
-    "title": "Operating System Not Found in VMware",
+    "title": "VMware Operating System Not Found",
     "url": "errors/virtualization/vmware/operating-system-not-found/",
     "product": "VMware",
     "type": "Virtualization error",
@@ -15,7 +15,7 @@
     "publish_order": 1,
     "cluster": "virtualization",
     "hub": "errors/virtualization/",
-    "summary": "Check the virtual disk and boot path before changing advanced VM settings."
+    "summary": "Check the virtual disk, boot order, installation media, and BIOS/UEFI firmware match before changing advanced VM settings."
   },
   {
     "title": "npm command not found",
