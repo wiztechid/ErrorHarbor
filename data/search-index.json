@@ -228,8 +228,10 @@
     "type": "Virtualization error",
     "keywords": [
       "a hypervisor has been detected",
+      "a hypervisor has been detected features required for hyper-v will not be displayed",
       "hyper-v hypervisor detected",
-      "features required for hyper-v will not be displayed",
+      "systeminfo hypervisor detected",
+      "msinfo32 hypervisor detected",
       "vmware hyper-v conflict"
     ],
     "kind": "article",
@@ -237,7 +239,7 @@
     "publish_order": 12,
     "cluster": "virtualization",
     "hub": "errors/virtualization/",
-    "summary": "Decide whether the Windows hypervisor is expected before disabling security or virtualization features."
+    "summary": "Understand why Windows reports an active hypervisor, when the message is expected, and when a confirmed virtualization conflict justifies changing Hyper-V-related features."
   },
   {
     "title": "TeamViewer Protocol Negotiation Failed",
