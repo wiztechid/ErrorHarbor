@@ -1,25 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="ErrorHarbor">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="ErrorHarbor EH terminal logo">
 <defs>
- <linearGradient id="bg" x1="13" y1="8" x2="116" y2="121" gradientUnits="userSpaceOnUse"><stop stop-color="#2b9af2"/><stop offset=".32" stop-color="#1260e2"/><stop offset=".68" stop-color="#1737c5"/><stop offset="1" stop-color="#6842f1"/></linearGradient>
- <linearGradient id="hh" x1="75" y1="33" x2="103" y2="96" gradientUnits="userSpaceOnUse"><stop stop-color="#32baff"/><stop offset="1" stop-color="#188ce9"/></linearGradient>
- <linearGradient id="badge" x1="10" y1="82" x2="65" y2="121" gradientUnits="userSpaceOnUse"><stop stop-color="#2c72ef"/><stop offset="1" stop-color="#1538c9"/></linearGradient>
- <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.25" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <linearGradient id="bg" x1="34" y1="18" x2="470" y2="493" gradientUnits="userSpaceOnUse"><stop stop-color="#18b9fb"/><stop offset=".27" stop-color="#0759ed"/><stop offset=".61" stop-color="#112ec9"/><stop offset=".86" stop-color="#2421ce"/><stop offset="1" stop-color="#d91cff"/></linearGradient>
+ <linearGradient id="h" x1="287" y1="120" x2="383" y2="363" gradientUnits="userSpaceOnUse"><stop stop-color="#24c7ff"/><stop offset="1" stop-color="#09a7ee"/></linearGradient>
+ <linearGradient id="badge" x1="44" y1="355" x2="290" y2="485" gradientUnits="userSpaceOnUse"><stop stop-color="#1d79f6"/><stop offset=".52" stop-color="#0b36d4"/><stop offset="1" stop-color="#1722ba"/></linearGradient>
+ <filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 </defs>
-<rect x="4" y="4" width="120" height="120" rx="26" fill="url(#bg)"/>
-<!-- broad reference diagonal / deep upper-right field -->
-<path d="M78 4H124V52L91 82H58L78 4Z" fill="#09299f" opacity=".96"/>
-<!-- lower-right violet depth -->
-<path d="M58 82H91L124 52V124H47Z" fill="#2636c9" opacity=".42"/>
-<!-- E: large and dominant -->
-<path d="M24 30H70V45H41V57H66V70H41V84H70V99H24V30Z" fill="#fff" filter="url(#soft)"/>
-<!-- H: broad cyan, with strong stems -->
-<path d="M68 30H84V57H101V30H117V99H101V72H84V99H68V30Z" fill="url(#hh)" filter="url(#soft)"/>
-<!-- diagonal overlays upper-left of H like master -->
-<path d="M78 4H105L68 58V43Z" fill="#1037ba" opacity=".96"/>
-<!-- raised terminal badge integrated into bottom-left -->
-<path d="M4 105C12 91 22 77 34 75C45 73 54 82 64 88L54 124H22C12 119 7 113 4 105Z" fill="url(#badge)"/>
-<g fill="none" stroke="#fff" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#soft)">
- <path d="M18 91L32 104L18 117"/>
- <path d="M43 117H62"/>
+<rect x="20" y="20" width="472" height="472" rx="105" fill="url(#bg)"/>
+<!-- large deep diagonal plane, matching approved master -->
+<path d="M414 20H492V240L397 337H258L414 20Z" fill="#06116f" opacity=".96"/>
+<path d="M20 344L175 205L260 278L154 492H20Z" fill="#1154e6" opacity=".62"/>
+<path d="M258 337H397L492 240V492H153Z" fill="#2320c5" opacity=".30"/>
+<!-- dominant white E -->
+<path d="M99 119H264V171H154V219H244V269H154V324H264V377H99V119Z" fill="#fff" filter="url(#glow)"/>
+<!-- cyan H -->
+<path d="M261 121H319V219H377V121H435V377H377V272H319V377H261V121Z" fill="url(#h)" filter="url(#glow)"/>
+<!-- master diagonal crossing E/H -->
+<path d="M414 20H454L261 279V220Z" fill="#0823a4" opacity=".96"/>
+<!-- integrated raised terminal badge -->
+<path d="M20 432C58 370 97 326 142 322C188 318 220 354 276 379L236 492H105C61 483 33 461 20 432Z" fill="url(#badge)"/>
+<g fill="none" stroke="#fff" stroke-width="31" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
+ <path d="M102 367L153 414L102 462"/>
+ <path d="M192 463H257"/>
 </g>
 </svg>
