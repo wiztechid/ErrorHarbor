@@ -312,3 +312,12 @@ img.brand-mark{object-fit:contain!important;background:none!important}
   .article #sources,.article #related,.article #discussion{padding:17px;margin-top:28px;border-radius:17px}
   .toc-card{margin-top:8px;padding:16px}
 }
+
+
+/* Mobile article navigation placement — keep On this page near the article opening */
+@media(max-width:920px){
+  .article-grid{display:flex;flex-direction:column}
+  .article-grid>.article{order:2}
+  .article-grid>.toc{order:1;width:100%;position:static}
+  .article-grid>.toc .toc-card{margin:0 0 16px}
+}
