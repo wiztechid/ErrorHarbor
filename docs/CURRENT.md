@@ -148,3 +148,14 @@ New production rule:
 - repository publish validator checks canonical, indexability, sitemap, hub link, latest homepage link, related links and inbound-link coverage
 - thin hubs remain subject to noindex/Soft-404 protection until materially useful
 - GSC is now the feedback loop for title/snippet refinement, cluster scaling and cannibalization control
+
+
+## Corpus-wide SEO Architecture v2 QC — 2026-09-25
+
+- audited all live registry entries: 13 indexable troubleshooting articles + 1 indexable Developer Errors hub
+- upgraded the 8 pre-Batch-2 articles to the same reader-first trust standard already applied to Batch #2
+- added choose-your-path blocks, post-fix verification, What not to do, and escalation evidence capture where missing
+- added authoritative references to the original VMware, npm and SQL Server launch guides
+- refreshed reviewed/dateModified signals after substantive review
+- tightened the publish validator to enforce v2 article anatomy, OG/schema completeness, title/meta uniqueness, and explicit verification
+- retained noindex protection on thin Virtualization and Windows & Network hubs while their article pages remain indexable
