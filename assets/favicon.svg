@@ -1,1 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="ErrorHarbor"><defs><linearGradient id="bg" x1="13" y1="8" x2="111" y2="121" gradientUnits="userSpaceOnUse"><stop stop-color="#1976f3"/><stop offset=".48" stop-color="#234bd7"/><stop offset="1" stop-color="#6b39f1"/></linearGradient><linearGradient id="h" x1="69" y1="28" x2="105" y2="91" gradientUnits="userSpaceOnUse"><stop stop-color="#25b8ff"/><stop offset="1" stop-color="#1689ee"/></linearGradient><filter id="s" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="1" stdDeviation="1.4" flood-color="#001e68" flood-opacity=".22"/></filter></defs><rect x="5" y="5" width="118" height="118" rx="29" fill="url(#bg)"/><path d="M84 5h39v43L91 80H60L84 5Z" fill="#082d9f" opacity=".82"/><path d="M5 84 38 58l27 19-24 46H5Z" fill="#3159e8" opacity=".5"/><g filter="url(#s)"><path d="M27 29h42v14H43v14h23v13H43v15h27v14H27V29Z" fill="#fff"/><path d="M68 29h15v27h18V29h15v70h-15V71H83v28H68V29Z" fill="url(#h)"/></g><g fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" filter="url(#s)"><path d="M22 94l12 10-12 10"/><path d="M43 114h18"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="ErrorHarbor EH terminal monogram">
+<defs>
+ <linearGradient id="bg" x1="13" y1="10" x2="112" y2="120" gradientUnits="userSpaceOnUse"><stop stop-color="#1681f5"/><stop offset=".43" stop-color="#164bd7"/><stop offset=".76" stop-color="#2434c7"/><stop offset="1" stop-color="#7240f2"/></linearGradient>
+ <linearGradient id="h" x1="68" y1="34" x2="105" y2="96" gradientUnits="userSpaceOnUse"><stop stop-color="#32b9ff"/><stop offset="1" stop-color="#1787ef"/></linearGradient>
+ <linearGradient id="lower" x1="12" y1="75" x2="94" y2="126" gradientUnits="userSpaceOnUse"><stop stop-color="#3169ef"/><stop offset="1" stop-color="#3426c4"/></linearGradient>
+ <filter id="glow" x="-25%" y="-25%" width="150%" height="150%"><feGaussianBlur stdDeviation="1.7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect x="5" y="5" width="118" height="118" rx="30" fill="url(#bg)"/>
+<!-- upper-right deep diagonal plane -->
+<path d="M83 5H123V48L91 80H62L83 5Z" fill="#082d9d" opacity=".92"/>
+<!-- lower-left layered plane -->
+<path d="M5 86L37 61L67 80L44 123H5Z" fill="url(#lower)" opacity=".72"/>
+<!-- subtle lower violet plane -->
+<path d="M43 123L67 80L94 97L123 72V123Z" fill="#4630d8" opacity=".28"/>
+<!-- E: tall, broad, reference-like -->
+<path d="M27 30H70V44H43V57H66V70H43V85H70V99H27V30Z" fill="#fff" filter="url(#glow)"/>
+<!-- H overlaps E -->
+<path d="M68 31H83V57H101V31H116V99H101V72H83V99H68V31Z" fill="url(#h)" filter="url(#glow)"/>
+<!-- terminal prompt intentionally large and anchored bottom-left -->
+<g fill="none" stroke="#fff" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
+ <path d="M20 94L33 105L20 116"/>
+ <path d="M44 116H62"/>
+</g>
+</svg>
