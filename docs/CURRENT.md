@@ -97,3 +97,12 @@ Published five source-grounded developer troubleshooting guides:
 - Plugin with id 'com.android.application' not found
 
 All five use the v2.1 article pattern: exact-error fingerprint, safe first check, verification, per-fix feedback, official references, related guides and Giscus community.
+
+
+## Soft-404 guard — virtualization hub — 2026-09-25
+
+- Google live test classified the thin `/errors/virtualization/` category page as Soft 404
+- kept the hub available for navigation but changed it to `noindex,follow`
+- removed the thin hub from sitemap and client-side search
+- kept the real VMware troubleshooting article indexable and in sitemap
+- re-enable hub indexing after the cluster has multiple substantive live guides

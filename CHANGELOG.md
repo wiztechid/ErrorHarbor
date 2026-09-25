@@ -53,3 +53,10 @@
 - expanded Developer Errors hub from 2 to 7 live guides
 - added all new guides to client-side search and sitemap
 - strengthened contextual internal links between command, database and build-error guides
+
+
+## 2026-09-25 — Soft-404 guard for thin virtualization hub
+
+- noindexed the one-article virtualization category page
+- removed it from sitemap and search results
+- preserved followable navigation and the indexable VMware article

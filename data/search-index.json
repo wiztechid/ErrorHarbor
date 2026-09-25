@@ -49,17 +49,6 @@
     ]
   },
   {
-    "title": "Virtualization Errors",
-    "url": "errors/virtualization/",
-    "product": "VMware / Hyper-V",
-    "type": "Error hub",
-    "keywords": [
-      "vmware errors",
-      "hyper-v errors",
-      "virtualization error"
-    ]
-  },
-  {
     "title": "Debug Assertion Failed in C++",
     "url": "errors/dev/cpp/debug-assertion-failed/",
     "product": "Visual C++ / CRT",
