@@ -333,5 +333,43 @@
     "cluster": "windows-network",
     "hub": "errors/windows-network/",
     "summary": "Diagnose the certificate chain, intermediate CA, trusted root, certificate-store scope and revocation path before changing Windows trust."
+  },
+  {
+    "title": "Certificate Valid in MMC but IIS Cannot Verify It",
+    "url": "errors/windows-network/certificates/iis-certificate-valid-in-mmc-but-cannot-verify/",
+    "product": "Windows Server / IIS / PKI",
+    "type": "IIS certificate verification error",
+    "keywords": [
+      "certificate valid in mmc but iis cannot verify",
+      "iis windows does not have enough information to verify this certificate",
+      "iis certificate chain not trusted",
+      "iis certificate valid in mmc",
+      "iis intermediate certificate chain"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 17,
+    "cluster": "windows-network",
+    "hub": "errors/windows-network/",
+    "summary": "Compare Local Computer certificate context, IIS HTTPS binding and the intermediate chain when MMC appears healthy but IIS still cannot verify the certificate."
+  },
+  {
+    "title": "Hypervisor Still Detected After Disabling Hyper-V",
+    "url": "errors/virtualization/hyper-v/hypervisor-still-detected-after-disabling-hyper-v/",
+    "product": "Windows Hyper-V / VBS",
+    "type": "Virtualization state error",
+    "keywords": [
+      "hypervisor still detected after disabling hyper-v",
+      "hypervisor detected after disabling hyper v",
+      "systeminfo hypervisor detected hyper-v disabled",
+      "vbs hypervisor still running",
+      "disable hyper-v but hypervisor detected"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 18,
+    "cluster": "virtualization",
+    "hub": "errors/virtualization/",
+    "summary": "Check VBS, security and optional virtualization dependencies before changing boot configuration when Windows still detects a hypervisor after Hyper-V is disabled."
   }
 ]
