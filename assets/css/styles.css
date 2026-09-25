@@ -185,3 +185,32 @@ h1,h2,h3{letter-spacing:-.04em}.hero h1{font-size:clamp(46px,7vw,78px);line-heig
   .hero .search-box button{box-shadow:0 6px 16px rgba(23,107,255,.18)}
   .library-grid-pillars .library-card h3{font-size:21px}
 }
+
+/* Homepage hierarchy contrast v2 — visibly separate content cards from topic pillars */
+.popular{background:#fbfdff}
+.popular .kicker,.popular .section-heading p{color:#78889b}
+.popular-grid a{color:#40546d}
+.popular-grid a>span:last-child{color:#8da0b5}
+
+.latest-guides{background:linear-gradient(180deg,#f7faff 0%,#fbfdff 100%)}
+.latest-card{background:#fff;border-color:#dfe8f2}
+.latest-card h3{color:#1d2d47}
+
+.library-grid-pillars{gap:18px}
+.library-grid-pillars .library-card{min-height:170px;padding:23px 24px;border-width:2px;box-shadow:0 9px 24px rgba(40,76,120,.06)}
+.library-grid-pillars .library-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px}
+.library-grid-pillars .library-card:first-child{background:linear-gradient(135deg,#eeeaff 0%,#f8f6ff 48%,#fff 100%);border-color:#cfc6f7}
+.library-grid-pillars .library-card:first-child::before{background:#7467d9}
+.library-grid-pillars .library-card:nth-child(2){background:linear-gradient(135deg,#e4f9f1 0%,#f2fcf8 48%,#fff 100%);border-color:#b9e3d1}
+.library-grid-pillars .library-card:nth-child(2)::before{background:#269a72}
+.library-grid-pillars .library-card:first-child .library-icon{background:#dcd5ff;color:#5548b8}
+.library-grid-pillars .library-card:nth-child(2) .library-icon{background:#ccefe0;color:#197653}
+.library-grid-pillars .library-card h3{color:#1b2b45;font-weight:900}
+.library-grid-pillars .library-card:first-child:hover{background:linear-gradient(135deg,#e9e4ff,#f7f5ff 52%,#fff);border-color:#b8abef}
+.library-grid-pillars .library-card:nth-child(2):hover{background:linear-gradient(135deg,#dcf6ec,#effbf6 52%,#fff);border-color:#94d4ba}
+
+@media(max-width:650px){
+ .library-grid-pillars{gap:13px}
+ .library-grid-pillars .library-card{min-height:0;padding:20px 20px 20px 22px}
+ .library-grid-pillars .library-card::before{width:4px}
+}
