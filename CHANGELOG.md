@@ -90,3 +90,12 @@
 - formalized hub + sibling + backlink internal-link rules
 - added repository SEO publish validator and GitHub Actions link guard
 - documented Search Console-driven SERP iteration and thin-hub indexability gates
+
+
+## 2026-09-25 — Corpus-wide SEO Architecture v2 QC
+
+- audited the full live article corpus against SEO Architecture v2
+- upgraded eight legacy/Batch #1 pages to reader-first v2 parity
+- added official-source trust layers to VMware, npm and SQL Server launch guides
+- refreshed substantive review dates
+- expanded SEO Link Guard to validate reader-path, safety, escalation, sources, OG/schema and metadata uniqueness
