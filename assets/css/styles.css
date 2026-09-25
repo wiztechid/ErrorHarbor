@@ -221,3 +221,8 @@ h1,h2,h3{letter-spacing:-.04em}.hero h1{font-size:clamp(46px,7vw,78px);line-heig
 .brand-mark::before{content:"";width:17px;height:17px;border:4px solid #fff;border-right-color:transparent;border-radius:50%;transform:rotate(-10deg);filter:drop-shadow(0 1px 1px rgba(0,35,95,.08))}
 .brand-mark::after{content:"";position:absolute;width:8px;height:4px;background:#fff;border-radius:4px;right:8px;top:17px;transform:rotate(-18deg);transform-origin:right center}
 .site-footer .brand-mark{width:36px;height:36px}
+
+/* EH monogram — final brand mark */
+.brand-mark{font-size:0;background:linear-gradient(145deg,#1267ff 0%,#4059e8 58%,#6b48df 100%);border-radius:11px}
+.brand-mark::before{content:"EH";width:auto;height:auto;border:0;border-radius:0;transform:none;filter:none;font-size:13px;line-height:1;font-weight:950;letter-spacing:-.12em;color:#fff}
+.brand-mark::after{content:">_";position:absolute;width:auto;height:auto;background:none;border-radius:0;right:4px;bottom:3px;top:auto;transform:none;font:800 7px/1 ui-monospace,SFMono-Regular,Consolas,monospace;color:#70dcff;letter-spacing:-.08em}
