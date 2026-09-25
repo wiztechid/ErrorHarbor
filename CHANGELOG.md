@@ -99,3 +99,10 @@
 - added official-source trust layers to VMware, npm and SQL Server launch guides
 - refreshed substantive review dates
 - expanded SEO Link Guard to validate reader-path, safety, escalation, sources, OG/schema and metadata uniqueness
+
+
+## 2026-09-25 — P0 MySQL intent rescope
+
+- rescoped `mysql-failed-to-open-file-error-2` from broad MySQL Errcode 2 coverage to LOAD DATA / LOAD XML file-not-found troubleshooting
+- retained the production URL/canonical while narrowing title, H1, snippet copy, environment scope and search-registry aliases
+- reduced future cannibalization risk for unrelated MySQL Errcode 2 contexts
