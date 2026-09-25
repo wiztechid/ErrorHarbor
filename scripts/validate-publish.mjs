@@ -27,6 +27,28 @@ for(const item of articles){
   if(!sitemap.includes(`<loc>${absolute}</loc>`)) fail.push(`${item.url}: missing from sitemap`);
   if(!html.includes('id="related"')) fail.push(`${item.url}: missing Related Troubleshooting section`);
 
+  // SEO Architecture v2 content contract
+  const requiredSignals = [
+    ['class="lede"', 'missing concise answer/lede'],
+    ['class="fingerprint"', 'missing exact-error fingerprint'],
+    ['class="reader-path"', 'missing choose-your-path decision block'],
+    ['id="quick-fix"', 'missing Quick Check/Fix'],
+    ['id="diagnose"', 'missing diagnostic flow'],
+    ['id="fix2"', 'missing distinct second troubleshooting step'],
+    ['class="avoid-box"', 'missing What not to do safety block'],
+    ['id="still"', 'missing unresolved-error branch'],
+    ['class="evidence-box"', 'missing escalation evidence checklist'],
+    ['id="sources"', 'missing authoritative references'],
+    ['class="giscus-shell"', 'missing community layer']
+  ];
+  for (const [needle,label] of requiredSignals) if(!html.includes(needle)) fail.push(`${item.url}: ${label}`);
+
+  const verifySignals=(html.match(/<b>Verify:<\\/b>/g)||[]).length+(html.match(/class="verify-step"/g)||[]).length;
+  if(verifySignals<2) fail.push(`${item.url}: needs explicit verification beyond the first check/fix`);
+  if((html.match(/<h1>/g)||[]).length!==1) fail.push(`${item.url}: must contain exactly one H1`);
+  if(!html.includes('property="og:url"')||!html.includes('property="og:title"')||!html.includes('property="og:description"')) fail.push(`${item.url}: incomplete Open Graph metadata`);
+  if(!html.includes('"@type":"Article"')||!html.includes('BreadcrumbList')) fail.push(`${item.url}: incomplete Article/Breadcrumb structured data`);
+
   const related=(html.match(/<section id="related"[\s\S]*?<\/section>/)||[""])[0];
   const internal=(related.match(/href=["']\/(?!\/)[^"']+["']/g)||[]).length +
                  (related.match(/href=["']\.\.\/[^"']+["']/g)||[]).length;
@@ -39,6 +61,15 @@ for(const item of articles){
     const slug=item.url.split("/").filter(Boolean).at(-1);
     if(!hub.includes(slug)) fail.push(`${item.url}: parent hub does not link to article`);
   }
+}
+
+const seenTitles=new Map(), seenDescriptions=new Map();
+for(const item of articles){
+  const html=read(path.join(item.url,"index.html"));
+  const title=(html.match(/<title>([\\s\\S]*?)<\\/title>/i)||[])[1]?.trim();
+  const desc=(html.match(/<meta name=["']description["'] content=["']([^"']*)["']/i)||[])[1]?.trim();
+  if(title){ if(seenTitles.has(title)) fail.push(`${item.url}: duplicate title with ${seenTitles.get(title)}`); else seenTitles.set(title,item.url); }
+  if(desc){ if(seenDescriptions.has(desc)) fail.push(`${item.url}: duplicate meta description with ${seenDescriptions.get(desc)}`); else seenDescriptions.set(desc,item.url); }
 }
 
 for(const item of latest){
