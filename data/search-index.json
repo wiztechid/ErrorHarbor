@@ -164,25 +164,27 @@
     "summary": "Fix plugin repositories and Android Gradle Plugin resolution at the project level."
   },
   {
-    "title": "JavaScript ReferenceError: x is not defined",
+    "title": "JavaScript “is not defined”",
     "url": "errors/dev/javascript/referenceerror-is-not-defined/",
     "product": "JavaScript",
     "type": "Developer error",
     "keywords": [
       "javascript is not defined",
       "referenceerror is not defined",
+      "variable is not defined javascript",
       "function is not defined javascript",
-      "variable is not defined"
+      "javascript scope referenceerror",
+      "javascript import is not defined"
     ],
     "kind": "article",
     "published": "2026-09-25",
     "publish_order": 9,
     "cluster": "javascript",
     "hub": "errors/dev/",
-    "summary": "Trace the first unresolved identifier through declaration, scope, import and script order."
+    "summary": "Resolve the missing identifier through spelling, declaration and scope first, then imports or script load order."
   },
   {
-    "title": "JavaScript TypeError: x is not a function",
+    "title": "JavaScript “is not a function”",
     "url": "errors/dev/javascript/typeerror-not-a-function/",
     "product": "JavaScript",
     "type": "Developer error",
@@ -190,14 +192,16 @@
       "javascript is not a function",
       "typeerror is not a function",
       "x is not a function",
-      "method is not a function javascript"
+      "method is not a function javascript",
+      "javascript value is not callable",
+      "javascript import is not a function"
     ],
     "kind": "article",
     "published": "2026-09-25",
     "publish_order": 10,
     "cluster": "javascript",
     "hub": "errors/dev/",
-    "summary": "Inspect the runtime value, receiver type and module export shape before changing the call."
+    "summary": "Inspect the call target's runtime type, receiver/object shape and import/export shape to find why the resolved value is not callable."
   },
   {
     "title": "Android SDK Location Not Found",
