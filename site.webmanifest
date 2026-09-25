@@ -1,7 +1,8 @@
 {
   "name": "ErrorHarbor",
   "short_name": "ErrorHarbor",
-  "start_url": "./",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#f8fbff",
   "theme_color": "#176bff",

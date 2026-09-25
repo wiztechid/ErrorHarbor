@@ -43,17 +43,15 @@ The temporary project URL should be similar to:
 
 `https://wiztechid.github.io/ErrorHarbor/`
 
-## Custom domain
+## Production domain
 
-Do **not** add final canonical URLs, sitemap hostnames or a `CNAME` file until the custom domain is connected and verified. After the domain is ready:
+ErrorHarbor is served at:
 
-1. add `CNAME`
-2. update canonical/OG URLs
-3. create production `sitemap.xml`
-4. update `robots.txt` with the sitemap URL
-5. verify HTTPS
-6. connect Google Search Console
-7. only then submit sitemap/indexing
+`https://errorharbor.com/`
+
+GitHub Pages is configured with the apex custom domain and HTTPS enforcement. Production canonical URLs, Open Graph URLs, schema, `robots.txt`, and `sitemap.xml` use the apex domain.
+
+The legacy GitHub Pages project URL is not the canonical version.
 
 ## Third-party services
 

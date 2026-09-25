@@ -35,3 +35,13 @@
 - removed residual Coming Soon items from exposed hubs
 - hid empty Windows hub from navigation/search until content exists
 - corrected staging crawler policy for noindex handling
+
+
+## 2026-09-25 — Production SEO cutover
+
+- moved canonical host to https://errorharbor.com/
+- removed staging noindex from indexable pages
+- added canonical and Open Graph URL metadata
+- normalized structured data and article breadcrumbs
+- added production sitemap.xml and robots.txt
+- updated manifest scope/start URL for the apex domain
