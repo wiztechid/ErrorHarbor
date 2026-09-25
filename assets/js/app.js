@@ -2,7 +2,7 @@
 const root=document.body.dataset.root||"";
 
 // Canonical site chrome: keep brand/footer parity across every legacy and current page.
-document.querySelectorAll(".brand-mark").forEach(mark=>{if(mark.tagName==="IMG"){mark.src="/assets/favicon.svg";mark.alt="";mark.width=40;mark.height=40;}});
+document.querySelectorAll(".brand-mark").forEach(mark=>{if(mark.tagName!=="IMG"){const img=document.createElement("img");img.className="brand-mark";img.src="/assets/favicon.svg";img.alt="";img.width=40;img.height=40;mark.replaceWith(img);}else{mark.src="/assets/favicon.svg";mark.alt="";mark.width=40;mark.height=40;}});
 document.querySelectorAll(".site-footer .footer-grid>div:first-child>p").forEach(p=>p.textContent="Exact-error troubleshooting. Safer fixes. Clear verification.");
 const toast=document.createElement("div");toast.className="toast";toast.setAttribute("role","status");toast.setAttribute("aria-live","polite");document.body.appendChild(toast);
 let tt;function say(msg){toast.textContent=msg;toast.classList.add("show");clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove("show"),1800)}
