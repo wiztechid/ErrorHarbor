@@ -53,11 +53,11 @@ const articleGrid=document.querySelector(".article-grid");
 const articleEl=articleGrid?.querySelector(":scope > article.article");
 const tocEl=articleGrid?.querySelector(":scope > aside.toc");
 if(articleGrid&&articleEl&&tocEl){
-  const articleMeta=articleEl.querySelector(":scope > .meta");
+  const articleMeta=articleEl.querySelector(".meta");
   const mobileToc=window.matchMedia("(max-width: 1100px)");
   const placeToc=()=>{
     if(mobileToc.matches&&articleMeta){
-      if(articleMeta.nextElementSibling!==tocEl)articleMeta.insertAdjacentElement("afterend",tocEl);
+      if(articleMeta.nextElementSibling!==tocEl)articleMeta.parentNode.insertBefore(tocEl,articleMeta.nextSibling);
     }else if(articleEl.nextElementSibling!==tocEl){
       articleGrid.insertBefore(tocEl,articleEl.nextSibling);
     }
