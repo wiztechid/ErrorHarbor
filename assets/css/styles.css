@@ -144,3 +144,8 @@ h1,h2,h3{letter-spacing:-.04em}.hero h1{font-size:clamp(46px,7vw,78px);line-heig
 .latest-card p{margin:0;color:var(--muted);font-size:14px}
 .latest-cta{margin-top:2px;color:var(--blue);font-size:13px;font-weight:850}
 @media(max-width:650px){.latest-grid{grid-template-columns:1fr}}
+
+/* Homepage IA — mature indexable pillars only */
+.library-grid-pillars{grid-template-columns:repeat(2,minmax(0,1fr))}
+.library-grid-pillars .library-card{min-height:160px}
+@media(max-width:650px){.library-grid-pillars{grid-template-columns:1fr}.library-grid-pillars .library-card{min-height:0}}
