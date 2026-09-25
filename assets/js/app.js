@@ -48,13 +48,20 @@ document.querySelectorAll("[data-feedback]").forEach(btn=>btn.addEventListener("
   }
 }));
 
-// Responsive article navigation: physically move the TOC before the article on tablet/mobile.
+// Responsive article navigation: place the TOC inside the article, directly after metadata.
 const articleGrid=document.querySelector(".article-grid");
 const articleEl=articleGrid?.querySelector(":scope > article.article");
 const tocEl=articleGrid?.querySelector(":scope > aside.toc");
 if(articleGrid&&articleEl&&tocEl){
+  const articleMeta=articleEl.querySelector(":scope > .meta");
   const mobileToc=window.matchMedia("(max-width: 1100px)");
-  const placeToc=()=>{if(mobileToc.matches){if(articleGrid.firstElementChild!==tocEl)articleGrid.insertBefore(tocEl,articleEl)}else if(articleEl.nextElementSibling!==tocEl){articleGrid.insertBefore(tocEl,articleEl.nextSibling)}};
+  const placeToc=()=>{
+    if(mobileToc.matches&&articleMeta){
+      if(articleMeta.nextElementSibling!==tocEl)articleMeta.insertAdjacentElement("afterend",tocEl);
+    }else if(articleEl.nextElementSibling!==tocEl){
+      articleGrid.insertBefore(tocEl,articleEl.nextSibling);
+    }
+  };
   placeToc();
   if(mobileToc.addEventListener)mobileToc.addEventListener("change",placeToc);else mobileToc.addListener(placeToc);
 }
