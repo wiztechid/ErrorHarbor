@@ -88,22 +88,23 @@
     "summary": "Capture the assertion expression, file and line before changing runtimes."
   },
   {
-    "title": "MySQL Failed to Open File Error 2",
+    "title": "MySQL LOAD DATA File Not Found (Errcode: 2)",
     "url": "errors/dev/sql-database/mysql-failed-to-open-file-error-2/",
     "product": "MySQL",
     "type": "Database error",
     "keywords": [
-      "mysql failed to open file error 2",
-      "mysql error 2 file not found",
-      "mysql infile error 2",
-      "secure_file_priv error 2"
+      "mysql load data file not found errcode 2",
+      "mysql load data infile error 2",
+      "mysql load data local infile file not found",
+      "mysql load xml errcode 2",
+      "secure_file_priv load data"
     ],
     "kind": "article",
     "published": "2026-09-25",
     "publish_order": 5,
     "cluster": "database",
     "hub": "errors/dev/",
-    "summary": "Separate server-side and client-side file paths before changing permissions."
+    "summary": "Fix Errcode 2 specifically for LOAD DATA/LOAD XML by separating server-side INFILE paths from client-side LOCAL INFILE paths."
   },
   {
     "title": "Hadoop Command Not Found",
