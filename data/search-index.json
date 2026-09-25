@@ -392,5 +392,25 @@
     "cluster": "windows-network",
     "hub": "errors/windows-network/",
     "summary": "Diagnose error 1355 through AD DNS, domain-controller discovery, SRV records and required connectivity before changing domain membership."
+  },
+  {
+    "title": "Message Not Sent: Service Not Activated on Network",
+    "url": "errors/windows-network/mobile/service-not-activated-on-network/",
+    "product": "Android / Mobile carrier",
+    "type": "Mobile messaging / MMS error",
+    "keywords": [
+      "service not activated on network",
+      "message not sent service not activated on network",
+      "mms service not activated on network",
+      "google messages service not activated",
+      "mms not sending android",
+      "android apn mms"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 20,
+    "cluster": "windows-network",
+    "hub": "errors/windows-network/",
+    "summary": "Separate SMS, MMS and RCS failures, then verify mobile data, carrier-default APN and line provisioning before resetting the phone."
   }
 ]
