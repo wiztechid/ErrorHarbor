@@ -371,5 +371,26 @@
     "cluster": "virtualization",
     "hub": "errors/virtualization/",
     "summary": "Check VBS, security and optional virtualization dependencies before changing boot configuration when Windows still detects a hypervisor after Hyper-V is disabled."
+  },
+  {
+    "title": "The Specified Domain Does Not Exist or Cannot Be Contacted",
+    "url": "errors/windows-network/active-directory/the-specified-domain-does-not-exist-or-cannot-be-contacted/",
+    "product": "Windows / Active Directory",
+    "type": "Active Directory / DNS error",
+    "keywords": [
+      "the specified domain does not exist or cannot be contacted",
+      "the specified domain either does not exist or could not be contacted",
+      "error 1355",
+      "error_no_such_domain",
+      "0x54b domain join",
+      "nltest error_no_such_domain",
+      "domain controller cannot be contacted"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 19,
+    "cluster": "windows-network",
+    "hub": "errors/windows-network/",
+    "summary": "Diagnose error 1355 through AD DNS, domain-controller discovery, SRV records and required connectivity before changing domain membership."
   }
 ]
