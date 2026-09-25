@@ -258,5 +258,24 @@
     "cluster": "windows-network",
     "hub": "errors/windows-network/",
     "summary": "Check service status, endpoint versions and the outbound network path before reinstalling."
+  },
+  {
+    "title": "VMware Workstation Unrecoverable Error (vcpu-0)",
+    "url": "errors/virtualization/vmware/unrecoverable-error-vcpu-0/",
+    "product": "VMware Workstation",
+    "type": "Virtualization error",
+    "keywords": [
+      "vmware workstation unrecoverable error vcpu 0",
+      "vmware unrecoverable error vcpu-0",
+      "vmware vcpu 0 error",
+      "vmware vcpu 0 exception",
+      "vmware workstation vcpu 0 crash"
+    ],
+    "kind": "article",
+    "published": "2026-09-25",
+    "publish_order": 14,
+    "cluster": "virtualization",
+    "hub": "errors/virtualization/",
+    "summary": "Capture the exact exception and vmware.log first, then separate VM/storage, CPU virtualization, and Hyper-V/VBS causes."
   }
 ]
