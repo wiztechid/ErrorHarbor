@@ -122,3 +122,17 @@ Cluster handling:
 - Virtualization hub now has two live guides but remains `noindex,follow` after the earlier Soft-404 signal
 - Windows & Network hub now has one live guide and remains `noindex,follow` until the cluster is deeper
 - all five article URLs are indexable, internally linked, searchable and included in sitemap
+
+
+## Reader-first QC Batch #2 — 2026-09-25
+
+Trust and completeness pass:
+- added choose-your-path decision blocks above deeper troubleshooting
+- added explicit verification after Fix #2 and Fix #3
+- added “What not to do” safety guidance
+- added escalation evidence checklists
+- added/clarified current official references for MDN, Android, Microsoft/Broadcom and TeamViewer
+- fixed the JavaScript ReferenceError sample so literal script tags render as code rather than being parsed by the browser
+- added Android OS-specific SDK path guidance and CI/ANDROID_HOME distinction
+- clarified that “A hypervisor has been detected” is often informational and that current VMware Workstation may use WHP
+- added TeamViewer status-first troubleshooting and stronger firewall/IP safety guidance

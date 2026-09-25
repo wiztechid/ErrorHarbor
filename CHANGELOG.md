@@ -70,3 +70,12 @@
 - activated the Windows & Network hub with a real TeamViewer guide while keeping the thin hub noindex
 - added all five article URLs to search and sitemap
 - strengthened contextual links between Android and virtualization guides
+
+
+## 2026-09-25 — Reader-first trust QC for Batch #2
+
+- expanded all five Batch #2 guides with decision paths, per-fix verification, safety boundaries and escalation evidence
+- fixed unsafe/unescaped JavaScript script-tag example rendering
+- added Android SDK environment/path guidance
+- updated Hyper-V/VMware nuance for modern WHP coexistence
+- added TeamViewer service-status and outbound-security guidance
