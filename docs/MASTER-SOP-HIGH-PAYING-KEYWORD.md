@@ -1,11 +1,45 @@
 # MASTER SOP — HIGH PAYING KEYWORD
 ## ErrorHarbor SEO, Reader-First UX, Internal-Link Graph & Monetization Framework
 
-**Version:** 2.0  
+**Version:** 2.1  
 **Status:** ACTIVE  
-**Effective:** 2026-09-25
+**Effective:** 2026-09-26
 
 > **North Star:** ErrorHarbor should be the fastest, clearest and most trustworthy place to diagnose a technical error. Every new page must improve both the reader's troubleshooting path and the site's topical-link graph.
+
+---
+
+## 0. Opportunity Discovery — Multi-Source, Not Dataset-Locked
+
+The 14,130-keyword HPK audit is a **seed dataset**, not the site's content ceiling.
+
+Every research batch may discover candidates from:
+- the internal HPK dataset and future keyword exports;
+- Google live SERPs, autocomplete / related searches / People Also Ask where visible;
+- Google Search Console queries once ErrorHarbor has impressions;
+- recent vendor release notes, support documents, changelogs, known-issue pages and deprecations;
+- Microsoft Learn/Q&A, GitHub issues/releases, Stack Overflow and product communities when they expose recurring exact-error language;
+- newly introduced error codes/messages after software, SDK, OS, driver, cloud or virtualization updates;
+- sibling/error variants found while researching an existing guide;
+- ErrorHarbor on-site search and community/Giscus language once enough real data exists.
+
+### Discovery rules
+1. Prefer **real error language** users actually see: exact message, event ID, exception, failed command, installer text or reproducible symptom.
+2. Do not require a candidate to exist in the legacy HPK dataset.
+3. A missing keyword-tool volume is **unknown demand, not zero demand**. It can qualify when fresh evidence shows recurring search/problem intent.
+4. Keyword-tool CPC/volume/KD are directional evidence, never ground truth.
+5. A high-CPC keyword does not qualify when the SERP is already comprehensively satisfied.
+6. A lower-volume exact error can qualify when commercial context, weak SERP, topical fit and cluster value are strong.
+7. Prefer opportunities that strengthen an existing ErrorHarbor cluster; open a new cluster only when there is enough supporting opportunity to justify it.
+8. Record the discovery source and date so stale opportunities can be revalidated.
+
+### Freshness gate
+For normal scaling, perform a **freshness scan of the last 12 months** before drafting:
+- look for recent occurrences, product/version changes, current support threads, release notes or newly published competing guides;
+- determine whether the error still applies to current environments;
+- note if a newer vendor fix or product change alters the recommended path.
+
+**Freshness ≤12 months is an evidence requirement, not a hard exclusion rule.** Evergreen errors may still be published when current documentation confirms they remain applicable and the live SERP still has a meaningful gap. Never fabricate recency merely to satisfy this gate.
 
 ---
 
@@ -25,16 +59,41 @@
 - Prefer exact errors, codes, failed commands and reproducible symptoms.
 - Do not publish a new URL when an existing canonical page can satisfy the same intent.
 
-### Mandatory SERP reconnaissance before drafting
+### Mandatory opportunity gate before drafting
 For every P1/P2 article:
-1. Search the exact error and 2–5 close variants.
-2. Inspect the dominant SERP intent: troubleshooting page, vendor doc, forum, video, Q&A, etc.
-3. Identify what the current SERP leaves unanswered: environment split, verification, safer order, newer version behavior, incomplete diagnosis, or weak trust.
-4. Identify the likely snippet answer in the first 100–150 words.
-5. Check cannibalization against every existing ErrorHarbor URL.
-6. Record the target cluster and parent hub before writing.
 
-No article is approved because a keyword tool looks attractive alone.
+1. **Candidate discovery** — collect the exact error from one or more discovery sources; do not rely on the HPK dataset alone.
+2. **Freshness ≤12-month scan** — look for recent cases, releases, support threads, documentation or competitors and determine whether current versions still exhibit the problem.
+3. **Live SERP weakness** — search the exact error and 2–5 close variants. Inspect the actual top results, not only KD.
+4. **Intent-gap map** — identify what the current SERP leaves unanswered: environment split, verification, safer order, newer behavior, incomplete diagnosis, weak trust, missing commands, or poor escalation evidence.
+5. **Cannibalization check** — compare the candidate against every existing ErrorHarbor URL and planned canonical target. If the intent substantially overlaps, improve the existing page instead of creating another URL.
+6. **Demand/commercial evidence** — record volume/CPC/KD when available, plus other demand signals such as recurring recent threads, GSC impressions, autocomplete, vendor issue frequency or community repetition.
+7. **Cluster decision** — declare the target cluster, parent hub, likely sibling links and whether the hub is indexable.
+8. **Snippet plan** — identify the direct answer that should appear in the first 100–150 words.
+9. **Go / Hold / Merge / Skip** — record the publication decision before drafting.
+
+No article is approved because a keyword tool looks attractive alone. No article is rejected merely because one keyword database has no volume.
+
+---
+
+### Live SERP Weakness rubric
+
+Treat SERP weakness as a documented observation, not a vague score.
+
+Positive weakness signals include:
+- old forum/Q&A pages ranking for a still-current error;
+- results answering only one environment or root cause;
+- no page that combines diagnosis → fix → verification;
+- outdated commands/UI/version assumptions;
+- thin vendor/community answers without decision support;
+- mixed intent where the exact error is not directly satisfied;
+- current cases appearing despite old ranking pages.
+
+Strength signals that can trigger HOLD/SKIP:
+- current first-party documentation directly resolves the exact intent;
+- multiple recent specialist guides comprehensively cover the same diagnostic path;
+- SERP is dominated by highly relevant, current pages with little unresolved intent;
+- the candidate is merely a wording variant of an existing ErrorHarbor canonical page.
 
 ---
 
@@ -231,6 +290,27 @@ Where appropriate:
 
 ---
 
+## 8A. Research & Evidence Standard
+
+Before writing technical fixes:
+- prefer first-party/current documentation for commands, configuration behavior and supported procedures;
+- use recent Q&A/community evidence to discover real wording and edge cases, but do not present a forum claim as official behavior;
+- distinguish **documented behavior**, **community-reported case**, and **ErrorHarbor diagnostic inference**;
+- when version-sensitive, record the product/OS/version context;
+- never claim ErrorHarbor personally reproduced a fix unless it was actually tested;
+- do not copy competitors' article structure or wording; synthesize an original diagnostic journey around the user's next decision.
+
+The article must add at least one meaningful value layer over the current SERP, such as:
+- safer diagnostic order;
+- decision tree by symptom/environment;
+- explicit verification states;
+- current-version clarification;
+- rollback/safety guidance;
+- evidence checklist for escalation;
+- consolidation of fragmented first-party evidence.
+
+---
+
 ## 9. Search Index Registry
 
 `data/search-index.json` is both the on-site search source and the publication registry.
@@ -245,6 +325,70 @@ Each article entry must include:
 - title / URL / product / type / keyword aliases
 
 New content is incomplete until this registry is updated.
+
+The registry update must occur in the same atomic release as the article, not as a later cleanup.
+
+---
+
+## 9A. Atomic Publication Sequence
+
+Every new indexable article follows this order:
+
+`DISCOVER → FRESHNESS → LIVE SERP → CANNIBALIZATION → MOS → RESEARCH → DRAFT → AQS → GRAPH → VALIDATE → DEPLOY → LIVE QC → GSC LOOP`
+
+### Pre-write
+- discovery source/date recorded;
+- freshness/current applicability checked;
+- live SERP gap documented;
+- cannibalization resolved;
+- parent hub + siblings selected;
+- authoritative evidence collected.
+
+### Draft
+- exact-intent H1/title/meta;
+- direct answer near top;
+- fingerprint + environment;
+- choose-your-path where appropriate;
+- Quick Check/Fix;
+- diagnosis from safe/reversible to invasive;
+- explicit Verify states;
+- safety/rollback;
+- unresolved branch + evidence capture;
+- authoritative sources;
+- useful related links;
+- community layer.
+
+### Atomic graph release
+Update together:
+1. article HTML;
+2. `data/search-index.json`;
+3. parent hub;
+4. homepage latest-8;
+5. at least one sibling backlink when semantically valid;
+6. article related links;
+7. `sitemap.xml`;
+8. canonical/OG/schema;
+9. CURRENT/CHANGELOG where maintained;
+10. validator expectations.
+
+### Release gate
+- SEO Link Guard **PASS**;
+- GitHub Pages deployment **PASS**;
+- only then call the article production/live.
+
+### Live QC
+Verify the public URL for:
+- HTTP/rendering;
+- canonical + robots/indexability;
+- title/meta/H1;
+- Article/Breadcrumb schema parity;
+- hub/home/sibling links;
+- mobile readability and command overflow;
+- broken links/assets;
+- no accidental ad/CMP activation;
+- no Soft-404/thin-content signal obvious from the rendered page.
+
+A source commit alone is **not** a completed publication.
 
 ---
 
@@ -263,6 +407,8 @@ It must verify:
 - no current article becomes orphaned.
 
 A failed gate means **do not call the batch production-ready**.
+
+The validator is an enforcement layer, not a substitute for editorial judgment. Passing mechanical checks does not prove SERP opportunity, factual accuracy, usefulness or AdSense quality.
 
 ---
 
@@ -366,6 +512,25 @@ Protected zones:
 
 ---
 
+## 15A. Scaling Rule
+
+Do not scale by keyword count alone.
+
+Use a portfolio of:
+- proven HPK opportunities;
+- fresh exact errors from the last 12 months;
+- GSC query expansion;
+- newly emerging product/version errors;
+- supporting child pages that deepen winning hubs;
+- updates/merges where an existing canonical page already owns the intent.
+
+Before opening a new URL, ask:
+**“Is a new page the best answer for this intent, or should the existing canonical guide be expanded?”**
+
+Batch publishing is allowed only when every page independently passes opportunity, quality and graph gates. No mass templating.
+
+---
+
 ## 16. Non-Negotiables
 
 1. Reader success before page length.
@@ -380,3 +545,7 @@ Protected zones:
 10. No mass-published templated troubleshooting.
 11. No ads obstructing the first useful action.
 12. Scale only clusters that combine search traction, reader success and monetization quality.
+13. The 14,130 HPK dataset is a seed source, never the sole discovery universe.
+14. Freshness/current applicability must be checked before drafting.
+15. Live SERP evidence overrides stale KD assumptions.
+16. Source commit ≠ live publication; validator + deployment + live QC complete the release.
