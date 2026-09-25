@@ -412,5 +412,26 @@
     "cluster": "windows-network",
     "hub": "errors/windows-network/",
     "summary": "Separate SMS, MMS and RCS failures, then verify mobile data, carrier-default APN and line provisioning before resetting the phone."
+  },
+  {
+    "title": "HP Printer Error 49: Fix 49.XXXX Service Errors",
+    "url": "errors/hardware/printers/hp/error-49/",
+    "product": "HP LaserJet / PageWide",
+    "type": "Printer firmware / service error",
+    "keywords": [
+      "hp printer error 49",
+      "hp error 49",
+      "hp 49 service error",
+      "49.xxxx hp printer",
+      "49.4c02 hp printer",
+      "49.wx.yz",
+      "hp laserjet error 49"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 21,
+    "cluster": "hardware",
+    "hub": "errors/hardware/",
+    "summary": "Separate intermittent and persistent HP Error 49 failures, boot isolated, then test connections, files, drivers and firmware before service."
   }
 ]
