@@ -261,3 +261,54 @@ img.brand-mark{object-fit:contain!important;background:none!important}
   .site-footer{padding-top:34px}
   .site-footer .footer-bottom{margin-top:24px}
 }
+
+
+/* Article support-zone contrast — visual separation only, no editorial content changes */
+.article #sources,
+.article #related,
+.article #discussion{
+  margin-top:34px;
+  padding:22px;
+  border-radius:20px;
+  border:1px solid var(--line);
+}
+.article #sources{
+  background:linear-gradient(135deg,#f1fbf6 0%,#f8fffb 100%);
+  border-color:#d4ecdf;
+}
+.article #related{
+  background:linear-gradient(135deg,#f6f4ff 0%,#fbfaff 100%);
+  border-color:#dfd9fa;
+}
+.article #discussion{
+  background:linear-gradient(135deg,#fff6f6 0%,#fffafa 100%);
+  border-color:#f1dada;
+  padding-top:22px;
+}
+.article #sources>h2,.article #related>h2,.article #discussion>h2{margin-top:0}
+.article #sources .related-grid a{background:rgba(255,255,255,.88);border-color:#dcebe3}
+.article #related .related-grid a{background:rgba(255,255,255,.88);border-color:#e2def4}
+.article #discussion .credential-warning{background:#fff9e9}
+.toc-card{
+  padding:17px;
+  border:1px solid #d5e4f3;
+  border-radius:18px;
+  background:linear-gradient(145deg,#eef6ff,#f8fbff);
+  box-shadow:0 8px 24px rgba(35,72,110,.06);
+}
+.toc-card>b{display:block;margin-bottom:8px;color:#173454}
+.toc-card>a{display:block;padding:7px 8px;border-radius:9px;color:#60728a;font-size:13px}
+.toc-card>a:hover{background:#fff;color:var(--blue)}
+.site-footer{
+  background:linear-gradient(135deg,#10213b 0%,#132a48 58%,#101c33 100%);
+  border-top:0;color:#fff;
+}
+.site-footer .brand{color:#fff}
+.site-footer .footer-grid p,.site-footer .footer-grid>div>a:not(.brand),.site-footer .footer-bottom{color:#b9c7d9}
+.site-footer .footer-grid h4{color:#fff}
+.site-footer .footer-grid a:hover{color:#fff}
+.site-footer .footer-bottom{border-top-color:rgba(255,255,255,.13)}
+@media(max-width:650px){
+  .article #sources,.article #related,.article #discussion{padding:17px;margin-top:28px;border-radius:17px}
+  .toc-card{margin-top:8px;padding:16px}
+}
