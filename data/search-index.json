@@ -295,5 +295,43 @@
     "cluster": "virtualization",
     "hub": "errors/virtualization/",
     "summary": "Capture the exact exception and vmware.log first, then separate VM/storage, CPU virtualization, and Hyper-V/VBS causes."
+  },
+  {
+    "title": "RDS Connection Broker Failed to Redirect User (Event 1306)",
+    "url": "errors/windows-network/remote-desktop/connection-broker-failed-to-redirect-user/",
+    "product": "Windows Server / Remote Desktop Services",
+    "type": "Remote Desktop Services error",
+    "keywords": [
+      "remote desktop connection broker client failed to redirect the user",
+      "rds connection broker failed to redirect user",
+      "event 1306 remote desktop connection broker",
+      "remote desktop event id 1306",
+      "rds event 1306"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 15,
+    "cluster": "windows-network",
+    "hub": "errors/windows-network/",
+    "summary": "Correlate Event 1306 with the preceding broker events, RD Web RDP metadata, DNS and Session Host reachability before changing the RDS deployment."
+  },
+  {
+    "title": "Windows Does Not Have Enough Information to Verify This Certificate",
+    "url": "errors/windows-network/certificates/windows-does-not-have-enough-information-to-verify-this-certificate/",
+    "product": "Windows / PKI",
+    "type": "Certificate verification error",
+    "keywords": [
+      "windows does not have enough information to verify this certificate",
+      "not enough information to verify this certificate",
+      "windows certificate chain cannot verify",
+      "certificate chain intermediate trusted root windows",
+      "certutil verify certificate chain"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 16,
+    "cluster": "windows-network",
+    "hub": "errors/windows-network/",
+    "summary": "Diagnose the certificate chain, intermediate CA, trusted root, certificate-store scope and revocation path before changing Windows trust."
   }
 ]
