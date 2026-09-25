@@ -251,3 +251,13 @@ img.brand-mark::before,img.brand-mark::after{content:none!important}
 .brand-mark::before,.brand-mark::after{content:none!important;display:none!important}
 img.brand-mark{object-fit:contain!important;background:none!important}
 .site-footer .brand-mark{width:38px!important;height:38px!important;flex-basis:38px!important}
+
+/* Footer parity: retain all three canonical columns on tablet; stack only on phones. */
+@media (min-width:651px) and (max-width:920px){
+  .site-footer .footer-grid{grid-template-columns:minmax(0,1.45fr) minmax(150px,.8fr) minmax(150px,.8fr)!important;gap:24px!important;align-items:start}
+}
+@media (max-width:650px){
+  .site-footer .footer-grid{grid-template-columns:1fr!important;gap:26px!important}
+  .site-footer{padding-top:34px}
+  .site-footer .footer-bottom{margin-top:24px}
+}
