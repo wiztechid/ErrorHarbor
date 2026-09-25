@@ -26,6 +26,15 @@ Homepage
 
 Each article links back through BreadcrumbList + parent hub and sideways through Related Troubleshooting.
 
+## Opportunity discovery
+
+SEO Architecture v2 is not tied to one keyword export. New URLs may originate from the HPK audit, live SERPs, GSC, recent vendor/support material, release notes, GitHub/issues, technical communities, on-site search and recurring error variants.
+
+Before a URL is created, require:
+`fresh/current applicability → live SERP gap → cannibalization check → parent cluster decision`.
+
+A wording variant that shares the same search intent should reinforce the existing canonical page rather than create a competing URL.
+
 ## New-article atomic release
 
 A content release must update together:
@@ -40,6 +49,8 @@ A content release must update together:
 8. canonical / OG / Article + Breadcrumb schema;
 9. CURRENT + CHANGELOG;
 10. publish-link validator.
+
+The release is complete only after SEO Link Guard passes, Pages deployment succeeds, and the public URL passes live QC.
 
 ## Latest Guides
 
