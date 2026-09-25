@@ -60,3 +60,18 @@ See `docs/THIRD-PARTY-SETUP.md`.
 ## Design principle
 
 > SEO earns the click. Reader success earns trust. Real search and revenue data decide what gets scaled.
+
+
+## SEO publication guard
+
+New articles must be integrated into the full crawl graph in the same release: homepage Latest Guides, parent hub, related links, search registry and sitemap.
+
+Run locally:
+
+`node scripts/validate-publish.mjs`
+
+The `SEO Link Guard` GitHub Action runs the same validation on pushes and pull requests to `main`.
+
+See:
+- `docs/MASTER-SOP-HIGH-PAYING-KEYWORD.md`
+- `docs/SEO-ARCHITECTURE-v2.md`

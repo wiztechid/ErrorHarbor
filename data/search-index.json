@@ -9,7 +9,13 @@
       "vmware os not found",
       "vmware boot error",
       "no bootable operating system"
-    ]
+    ],
+    "kind": "article",
+    "published": "2026-09-23",
+    "publish_order": 1,
+    "cluster": "virtualization",
+    "hub": "errors/virtualization/",
+    "summary": "Check the virtual disk and boot path before changing advanced VM settings."
   },
   {
     "title": "npm command not found",
@@ -21,7 +27,13 @@
       "npm not recognized",
       "npm not found",
       "node npm path"
-    ]
+    ],
+    "kind": "article",
+    "published": "2026-09-23",
+    "publish_order": 2,
+    "cluster": "developer-command",
+    "hub": "errors/dev/",
+    "summary": "Confirm npm exists, then isolate installation, shell-session and PATH causes."
   },
   {
     "title": "Invalid column name in SQL Server",
@@ -32,7 +44,13 @@
       "invalid column name sql",
       "sql server invalid column name",
       "invalid column"
-    ]
+    ],
+    "kind": "article",
+    "published": "2026-09-23",
+    "publish_order": 3,
+    "cluster": "database",
+    "hub": "errors/dev/",
+    "summary": "Verify the real schema, query scope and object before rewriting SQL."
   },
   {
     "title": "Developer Errors",
@@ -46,7 +64,10 @@
       "c++ errors",
       "gradle errors",
       "signtool"
-    ]
+    ],
+    "kind": "hub",
+    "cluster": "developer",
+    "hub": "errors/"
   },
   {
     "title": "Debug Assertion Failed in C++",
@@ -58,7 +79,13 @@
       "debug assertion failed",
       "visual c++ assertion failed",
       "crt assertion failed"
-    ]
+    ],
+    "kind": "article",
+    "published": "2026-09-25",
+    "publish_order": 4,
+    "cluster": "cpp",
+    "hub": "errors/dev/",
+    "summary": "Capture the assertion expression, file and line before changing runtimes."
   },
   {
     "title": "MySQL Failed to Open File Error 2",
@@ -70,7 +97,13 @@
       "mysql error 2 file not found",
       "mysql infile error 2",
       "secure_file_priv error 2"
-    ]
+    ],
+    "kind": "article",
+    "published": "2026-09-25",
+    "publish_order": 5,
+    "cluster": "database",
+    "hub": "errors/dev/",
+    "summary": "Separate server-side and client-side file paths before changing permissions."
   },
   {
     "title": "Hadoop Command Not Found",
@@ -82,7 +115,13 @@
       "hadoop not found",
       "hadoop path",
       "hadoop_home"
-    ]
+    ],
+    "kind": "article",
+    "published": "2026-09-25",
+    "publish_order": 6,
+    "cluster": "developer-command",
+    "hub": "errors/dev/",
+    "summary": "Verify Hadoop from its own bin directory before editing HADOOP_HOME or PATH."
   },
   {
     "title": "SignTool.exe Not Found",
@@ -94,7 +133,13 @@
       "signtool not found",
       "where is signtool exe",
       "windows sdk signtool"
-    ]
+    ],
+    "kind": "article",
+    "published": "2026-09-25",
+    "publish_order": 7,
+    "cluster": "windows-sdk",
+    "hub": "errors/dev/",
+    "summary": "Locate the Windows SDK copy before editing PATH or downloading tools."
   },
   {
     "title": "Plugin with id 'com.android.application' not found",
@@ -106,7 +151,13 @@
       "com.android.application not found",
       "android gradle plugin not found",
       "gradle pluginManagement google"
-    ]
+    ],
+    "kind": "article",
+    "published": "2026-09-25",
+    "publish_order": 8,
+    "cluster": "android-gradle",
+    "hub": "errors/dev/",
+    "summary": "Fix plugin repositories and Android Gradle Plugin resolution at the project level."
   },
   {
     "title": "JavaScript ReferenceError: x is not defined",
@@ -118,7 +169,13 @@
       "referenceerror is not defined",
       "function is not defined javascript",
       "variable is not defined"
-    ]
+    ],
+    "kind": "article",
+    "published": "2026-09-25",
+    "publish_order": 9,
+    "cluster": "javascript",
+    "hub": "errors/dev/",
+    "summary": "Trace the first unresolved identifier through declaration, scope, import and script order."
   },
   {
     "title": "JavaScript TypeError: x is not a function",
@@ -130,7 +187,13 @@
       "typeerror is not a function",
       "x is not a function",
       "method is not a function javascript"
-    ]
+    ],
+    "kind": "article",
+    "published": "2026-09-25",
+    "publish_order": 10,
+    "cluster": "javascript",
+    "hub": "errors/dev/",
+    "summary": "Inspect the runtime value, receiver type and module export shape before changing the call."
   },
   {
     "title": "Android SDK Location Not Found",
@@ -142,7 +205,13 @@
       "android sdk location not found",
       "sdk.dir local.properties",
       "android gradle sdk path"
-    ]
+    ],
+    "kind": "article",
+    "published": "2026-09-25",
+    "publish_order": 11,
+    "cluster": "android-gradle",
+    "hub": "errors/dev/",
+    "summary": "Confirm the installed SDK and machine-local sdk.dir before debugging Gradle dependencies."
   },
   {
     "title": "A Hypervisor Has Been Detected",
@@ -154,7 +223,13 @@
       "hyper-v hypervisor detected",
       "features required for hyper-v will not be displayed",
       "vmware hyper-v conflict"
-    ]
+    ],
+    "kind": "article",
+    "published": "2026-09-25",
+    "publish_order": 12,
+    "cluster": "virtualization",
+    "hub": "errors/virtualization/",
+    "summary": "Decide whether the Windows hypervisor is expected before disabling security or virtualization features."
   },
   {
     "title": "TeamViewer Protocol Negotiation Failed",
@@ -166,6 +241,12 @@
       "protocol negotiation failed teamviewer",
       "teamviewer negotiation failed",
       "teamviewer connection failed"
-    ]
+    ],
+    "kind": "article",
+    "published": "2026-09-25",
+    "publish_order": 13,
+    "cluster": "windows-network",
+    "hub": "errors/windows-network/",
+    "summary": "Check service status, endpoint versions and the outbound network path before reinstalling."
   }
 ]

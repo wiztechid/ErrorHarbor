@@ -79,3 +79,14 @@
 - added Android SDK environment/path guidance
 - updated Hyper-V/VMware nuance for modern WHP coexistence
 - added TeamViewer service-status and outbound-security guidance
+
+
+## 2026-09-25 — SEO Architecture v2 + mandatory publication graph
+
+- upgraded Master SOP from v1.3 to v2.0
+- added mandatory homepage Latest Guides linkage for every new article
+- added structured publication metadata to the search registry
+- added homepage ItemList structured data for latest guides
+- formalized hub + sibling + backlink internal-link rules
+- added repository SEO publish validator and GitHub Actions link guard
+- documented Search Console-driven SERP iteration and thin-hub indexability gates

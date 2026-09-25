@@ -14,7 +14,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://errorharbor.com/#website","url":"https://errorharbor.com/","name":"ErrorHarbor","description":"Reader-first technical troubleshooting for exact errors, error codes, failed commands and software problems."}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://errorharbor.com/#website","url":"https://errorharbor.com/","name":"ErrorHarbor","description":"Reader-first technical troubleshooting for exact errors, error codes, failed commands and software problems."},{"@type":"ItemList","@id":"https://errorharbor.com/#latest-guides","name":"Latest ErrorHarbor troubleshooting guides","itemListElement":[{"@type":"ListItem","position":1,"name":"TeamViewer Protocol Negotiation Failed","url":"https://errorharbor.com/errors/windows-network/teamviewer/protocol-negotiation-failed/"},{"@type":"ListItem","position":2,"name":"A Hypervisor Has Been Detected","url":"https://errorharbor.com/errors/virtualization/hyper-v/hypervisor-detected/"},{"@type":"ListItem","position":3,"name":"Android SDK Location Not Found","url":"https://errorharbor.com/errors/dev/android-gradle/sdk-location-not-found/"},{"@type":"ListItem","position":4,"name":"JavaScript TypeError: x is not a function","url":"https://errorharbor.com/errors/dev/javascript/typeerror-not-a-function/"},{"@type":"ListItem","position":5,"name":"JavaScript ReferenceError: x is not defined","url":"https://errorharbor.com/errors/dev/javascript/referenceerror-is-not-defined/"},{"@type":"ListItem","position":6,"name":"Plugin with id 'com.android.application' not found","url":"https://errorharbor.com/errors/dev/android-gradle/plugin-com-android-application-not-found/"},{"@type":"ListItem","position":7,"name":"SignTool.exe Not Found","url":"https://errorharbor.com/errors/dev/windows-sdk/signtool-exe-not-found/"},{"@type":"ListItem","position":8,"name":"Hadoop Command Not Found","url":"https://errorharbor.com/errors/dev/hadoop/hadoop-command-not-found/"}]}]}</script>
 </head>
 <body data-root="">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -70,6 +70,25 @@
         <a href="errors/dev/node-npm/npm-command-not-found/"><span>npm command not found</span><span>→</span></a>
         <a href="errors/virtualization/vmware/operating-system-not-found/"><span>Operating System Not Found in VMware</span><span>→</span></a>
         <a href="errors/dev/sql-database/invalid-column-name-sql/"><span>invalid column name SQL</span><span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section latest-guides" id="latest-guides">
+    <div class="shell">
+      <div class="section-heading">
+        <div><span class="kicker">New troubleshooting guides</span><h2>Recently added to ErrorHarbor.</h2></div>
+        <p>New guides are linked here first, then reinforced through their topic hub and related troubleshooting pages.</p>
+      </div>
+      <div class="latest-grid">
+        <a class="latest-card" href="errors/windows-network/teamviewer/protocol-negotiation-failed/"><div class="latest-card-top"><span>TeamViewer</span><span class="new-badge">New</span></div><h3>TeamViewer Protocol Negotiation Failed</h3><p>Check service status, endpoint versions and the outbound network path before reinstalling.</p><span class="latest-cta">Open guide →</span></a>
+        <a class="latest-card" href="errors/virtualization/hyper-v/hypervisor-detected/"><div class="latest-card-top"><span>Windows Hyper-V</span><span class="new-badge">New</span></div><h3>A Hypervisor Has Been Detected</h3><p>Decide whether the Windows hypervisor is expected before disabling security or virtualization features.</p><span class="latest-cta">Open guide →</span></a>
+        <a class="latest-card" href="errors/dev/android-gradle/sdk-location-not-found/"><div class="latest-card-top"><span>Android Studio / Gradle</span><span class="new-badge">New</span></div><h3>Android SDK Location Not Found</h3><p>Confirm the installed SDK and machine-local sdk.dir before debugging Gradle dependencies.</p><span class="latest-cta">Open guide →</span></a>
+        <a class="latest-card" href="errors/dev/javascript/typeerror-not-a-function/"><div class="latest-card-top"><span>JavaScript</span><span class="new-badge">New</span></div><h3>JavaScript TypeError: x is not a function</h3><p>Inspect the runtime value, receiver type and module export shape before changing the call.</p><span class="latest-cta">Open guide →</span></a>
+        <a class="latest-card" href="errors/dev/javascript/referenceerror-is-not-defined/"><div class="latest-card-top"><span>JavaScript</span><span class="new-badge">New</span></div><h3>JavaScript ReferenceError: x is not defined</h3><p>Trace the first unresolved identifier through declaration, scope, import and script order.</p><span class="latest-cta">Open guide →</span></a>
+        <a class="latest-card" href="errors/dev/android-gradle/plugin-com-android-application-not-found/"><div class="latest-card-top"><span>Android Gradle Plugin</span><span class="new-badge">New</span></div><h3>Plugin with id 'com.android.application' not found</h3><p>Fix plugin repositories and Android Gradle Plugin resolution at the project level.</p><span class="latest-cta">Open guide →</span></a>
+        <a class="latest-card" href="errors/dev/windows-sdk/signtool-exe-not-found/"><div class="latest-card-top"><span>Windows SDK</span><span class="new-badge">New</span></div><h3>SignTool.exe Not Found</h3><p>Locate the Windows SDK copy before editing PATH or downloading tools.</p><span class="latest-cta">Open guide →</span></a>
+        <a class="latest-card" href="errors/dev/hadoop/hadoop-command-not-found/"><div class="latest-card-top"><span>Apache Hadoop</span><span class="new-badge">New</span></div><h3>Hadoop Command Not Found</h3><p>Verify Hadoop from its own bin directory before editing HADOOP_HOME or PATH.</p><span class="latest-cta">Open guide →</span></a>
       </div>
     </div>
   </section>

@@ -22,7 +22,6 @@
 
 ## Intentionally pending
 
-- Google Search Console verification + sitemap submission
 - AdSense publisher script + ads.txt
 - Google CMP configuration
 - Cloudflare Worker + D1 feedback endpoint
@@ -34,7 +33,7 @@
 
 ## Next product milestone
 
-**P0: submit/inspect the production sitemap in Search Console and monitor the first validated HPK expansion cluster.**
+**P0: monitor indexing/query signals for batches #1–#2 while enforcing the SEO Architecture v2 publication graph.**
 
 
 ## Giscus comments activated — 2026-09-23
@@ -136,3 +135,16 @@ Trust and completeness pass:
 - added Android OS-specific SDK path guidance and CI/ANDROID_HOME distinction
 - clarified that “A hypervisor has been detected” is often informational and that current VMware Workstation may use WHP
 - added TeamViewer status-first troubleshooting and stronger firewall/IP safety guidance
+
+
+## SEO Architecture v2 / Publish Graph — 2026-09-25
+
+New production rule:
+- every new article enters Homepage Latest Guides, its parent hub, sitemap and search registry in the same release
+- homepage Latest Guides retains the newest 8 article URLs
+- new articles must include related links and receive a relevant backlink from an existing sibling when available
+- search registry now stores publish date/order, cluster, hub and summary metadata
+- homepage now exposes an ItemList for the latest guides
+- repository publish validator checks canonical, indexability, sitemap, hub link, latest homepage link, related links and inbound-link coverage
+- thin hubs remain subject to noindex/Soft-404 protection until materially useful
+- GSC is now the feedback loop for title/snippet refinement, cluster scaling and cannibalization control
