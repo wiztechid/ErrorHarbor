@@ -149,3 +149,39 @@ h1,h2,h3{letter-spacing:-.04em}.hero h1{font-size:clamp(46px,7vw,78px);line-heig
 .library-grid-pillars{grid-template-columns:repeat(2,minmax(0,1fr))}
 .library-grid-pillars .library-card{min-height:160px}
 @media(max-width:650px){.library-grid-pillars{grid-template-columns:1fr}.library-grid-pillars .library-card{min-height:0}}
+
+/* Homepage contrast hierarchy — 2026-09-25
+   Search = primary action; green = status; pillars = navigation; latest = neutral content. */
+.hero .search-box{border-color:#c9dcf4;box-shadow:0 18px 48px rgba(23,107,255,.16)}
+.hero .search-box button{background:linear-gradient(135deg,#176bff,#5268ff);box-shadow:0 8px 20px rgba(23,107,255,.22)}
+.hero .search-box button:hover{filter:brightness(.96);transform:translateY(-1px)}
+.hero .search-box button:active{transform:none}
+
+.popular{background:rgba(255,255,255,.66)}
+.popular .section-heading{margin-bottom:8px}
+.popular .section-heading h2{font-size:27px}
+.popular-grid a{color:#334a67;font-size:14px}
+.popular-grid a:hover{color:var(--blue)}
+
+.latest-guides{background:linear-gradient(180deg,rgba(247,250,254,.86),rgba(255,255,255,.28))}
+.latest-card{background:rgba(255,255,255,.96);box-shadow:0 3px 12px rgba(35,72,110,.035)}
+.latest-card:hover{border-color:#b8d0e9;box-shadow:0 11px 28px rgba(35,72,110,.09)}
+.new-badge{background:#eaf7ef;color:#24784e}
+
+.library-grid-pillars .library-card{position:relative;overflow:hidden;border-width:1px}
+.library-grid-pillars .library-card:first-child{background:linear-gradient(145deg,#f7f5ff,#fff 72%);border-color:#ddd8fb}
+.library-grid-pillars .library-card:nth-child(2){background:linear-gradient(145deg,#effcf8,#fff 72%);border-color:#ccebdd}
+.library-grid-pillars .library-card:first-child:hover{border-color:#c8bef4;box-shadow:0 13px 32px rgba(91,78,170,.10)}
+.library-grid-pillars .library-card:nth-child(2):hover{border-color:#aedaC8;box-shadow:0 13px 32px rgba(39,122,92,.09)}
+.library-grid-pillars .library-card h3{font-size:22px}
+.library-grid-pillars .library-card p{max-width:510px}
+.library-grid-pillars .library-card:first-child .library-icon{background:#e9e5ff}
+.library-grid-pillars .library-card:nth-child(2) .library-icon{background:#dcf7eb}
+
+.promise{box-shadow:0 8px 26px rgba(70,85,120,.045)}
+
+@media(max-width:650px){
+  .popular .section-heading h2{font-size:25px}
+  .hero .search-box button{box-shadow:0 6px 16px rgba(23,107,255,.18)}
+  .library-grid-pillars .library-card h3{font-size:21px}
+}
