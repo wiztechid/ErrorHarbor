@@ -321,3 +321,12 @@ img.brand-mark{object-fit:contain!important;background:none!important}
   .article-grid>.toc{order:1;width:100%;position:static}
   .article-grid>.toc .toc-card{margin:0 0 16px}
 }
+
+
+/* Mobile TOC hard fix — article-grid itself is the .shell element */
+@media(max-width:920px){
+  .article-grid.shell{display:flex!important;flex-direction:column!important}
+  .article-grid.shell>article.article{order:2!important;width:100%}
+  .article-grid.shell>aside.toc{order:1!important;width:100%;position:static!important;top:auto!important}
+  .article-grid.shell>aside.toc>.toc-card{margin:0 0 16px!important}
+}
