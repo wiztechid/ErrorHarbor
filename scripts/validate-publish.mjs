@@ -43,7 +43,7 @@ for(const item of articles){
   ];
   for (const [needle,label] of requiredSignals) if(!html.includes(needle)) fail.push(`${item.url}: ${label}`);
 
-  const verifySignals=(html.match(/<b>Verify:<\\/b>/g)||[]).length+(html.match(/class="verify-step"/g)||[]).length;
+  const verifySignals=(html.match(/<b>Verify:<\/b>/g)||[]).length+(html.match(/class="verify-step"/g)||[]).length;
   if(verifySignals<2) fail.push(`${item.url}: needs explicit verification beyond the first check/fix`);
   if((html.match(/<h1>/g)||[]).length!==1) fail.push(`${item.url}: must contain exactly one H1`);
   if(!html.includes('property="og:url"')||!html.includes('property="og:title"')||!html.includes('property="og:description"')) fail.push(`${item.url}: incomplete Open Graph metadata`);
