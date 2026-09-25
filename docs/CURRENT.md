@@ -30,7 +30,7 @@
 - real affiliate IDs/links
 - production analytics
 - real solved-rate display
-- monitor first HPK expansion batch in Search Console
+- monitor HPK expansion batches #1–#2 in Search Console
 
 ## Next product milestone
 
@@ -106,3 +106,19 @@ All five use the v2.1 article pattern: exact-error fingerprint, safe first check
 - removed the thin hub from sitemap and client-side search
 - kept the real VMware troubleshooting article indexable and in sitemap
 - re-enable hub indexing after the cluster has multiple substantive live guides
+
+
+## HPK expansion batch #2 — 2026-09-25
+
+Published five additional exact-error guides:
+- JavaScript ReferenceError: x is not defined
+- JavaScript TypeError: x is not a function
+- Android SDK Location Not Found
+- A Hypervisor Has Been Detected
+- TeamViewer Protocol Negotiation Failed
+
+Cluster handling:
+- Developer hub deepened with three new live guides
+- Virtualization hub now has two live guides but remains `noindex,follow` after the earlier Soft-404 signal
+- Windows & Network hub now has one live guide and remains `noindex,follow` until the cluster is deeper
+- all five article URLs are indexable, internally linked, searchable and included in sitemap

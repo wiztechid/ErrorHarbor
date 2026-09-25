@@ -107,5 +107,65 @@
       "android gradle plugin not found",
       "gradle pluginManagement google"
     ]
+  },
+  {
+    "title": "JavaScript ReferenceError: x is not defined",
+    "url": "errors/dev/javascript/referenceerror-is-not-defined/",
+    "product": "JavaScript",
+    "type": "Developer error",
+    "keywords": [
+      "javascript is not defined",
+      "referenceerror is not defined",
+      "function is not defined javascript",
+      "variable is not defined"
+    ]
+  },
+  {
+    "title": "JavaScript TypeError: x is not a function",
+    "url": "errors/dev/javascript/typeerror-not-a-function/",
+    "product": "JavaScript",
+    "type": "Developer error",
+    "keywords": [
+      "javascript is not a function",
+      "typeerror is not a function",
+      "x is not a function",
+      "method is not a function javascript"
+    ]
+  },
+  {
+    "title": "Android SDK Location Not Found",
+    "url": "errors/dev/android-gradle/sdk-location-not-found/",
+    "product": "Android Studio / Gradle",
+    "type": "Build error",
+    "keywords": [
+      "sdk location not found",
+      "android sdk location not found",
+      "sdk.dir local.properties",
+      "android gradle sdk path"
+    ]
+  },
+  {
+    "title": "A Hypervisor Has Been Detected",
+    "url": "errors/virtualization/hyper-v/hypervisor-detected/",
+    "product": "Windows Hyper-V",
+    "type": "Virtualization error",
+    "keywords": [
+      "a hypervisor has been detected",
+      "hyper-v hypervisor detected",
+      "features required for hyper-v will not be displayed",
+      "vmware hyper-v conflict"
+    ]
+  },
+  {
+    "title": "TeamViewer Protocol Negotiation Failed",
+    "url": "errors/windows-network/teamviewer/protocol-negotiation-failed/",
+    "product": "TeamViewer",
+    "type": "Remote access error",
+    "keywords": [
+      "teamviewer protocol negotiation failed",
+      "protocol negotiation failed teamviewer",
+      "teamviewer negotiation failed",
+      "teamviewer connection failed"
+    ]
   }
 ]

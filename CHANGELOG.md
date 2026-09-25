@@ -60,3 +60,13 @@
 - noindexed the one-article virtualization category page
 - removed it from sitemap and search results
 - preserved followable navigation and the indexable VMware article
+
+
+## 2026-09-25 — HPK content scaling batch #2
+
+- published five exact-error guides across JavaScript, Android, Hyper-V and TeamViewer
+- expanded Developer Errors with three additional guides
+- added Hyper-V content while retaining the virtualization hub noindex soft-404 guard
+- activated the Windows & Network hub with a real TeamViewer guide while keeping the thin hub noindex
+- added all five article URLs to search and sitemap
+- strengthened contextual links between Android and virtualization guides
