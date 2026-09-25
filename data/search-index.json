@@ -58,5 +58,65 @@
       "hyper-v errors",
       "virtualization error"
     ]
+  },
+  {
+    "title": "Debug Assertion Failed in C++",
+    "url": "errors/dev/cpp/debug-assertion-failed/",
+    "product": "Visual C++ / CRT",
+    "type": "Developer error",
+    "keywords": [
+      "debug assertion failed c++",
+      "debug assertion failed",
+      "visual c++ assertion failed",
+      "crt assertion failed"
+    ]
+  },
+  {
+    "title": "MySQL Failed to Open File Error 2",
+    "url": "errors/dev/sql-database/mysql-failed-to-open-file-error-2/",
+    "product": "MySQL",
+    "type": "Database error",
+    "keywords": [
+      "mysql failed to open file error 2",
+      "mysql error 2 file not found",
+      "mysql infile error 2",
+      "secure_file_priv error 2"
+    ]
+  },
+  {
+    "title": "Hadoop Command Not Found",
+    "url": "errors/dev/hadoop/hadoop-command-not-found/",
+    "product": "Apache Hadoop",
+    "type": "Developer error",
+    "keywords": [
+      "hadoop command not found",
+      "hadoop not found",
+      "hadoop path",
+      "hadoop_home"
+    ]
+  },
+  {
+    "title": "SignTool.exe Not Found",
+    "url": "errors/dev/windows-sdk/signtool-exe-not-found/",
+    "product": "Windows SDK",
+    "type": "Developer error",
+    "keywords": [
+      "signtool exe not found",
+      "signtool not found",
+      "where is signtool exe",
+      "windows sdk signtool"
+    ]
+  },
+  {
+    "title": "Plugin with id 'com.android.application' not found",
+    "url": "errors/dev/android-gradle/plugin-com-android-application-not-found/",
+    "product": "Android Gradle Plugin",
+    "type": "Build error",
+    "keywords": [
+      "plugin with id com android application not found",
+      "com.android.application not found",
+      "android gradle plugin not found",
+      "gradle pluginManagement google"
+    ]
   }
 ]

@@ -45,3 +45,11 @@
 - normalized structured data and article breadcrumbs
 - added production sitemap.xml and robots.txt
 - updated manifest scope/start URL for the apex domain
+
+
+## 2026-09-25 — HPK content scaling batch #1
+
+- published five new developer-error guides grounded in Microsoft, MySQL, Apache Hadoop, Android and Gradle documentation
+- expanded Developer Errors hub from 2 to 7 live guides
+- added all new guides to client-side search and sitemap
+- strengthened contextual internal links between command, database and build-error guides

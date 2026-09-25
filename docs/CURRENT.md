@@ -30,11 +30,11 @@
 - real affiliate IDs/links
 - production analytics
 - real solved-rate display
-- first validated HPK expansion batch
+- monitor first HPK expansion batch in Search Console
 
 ## Next product milestone
 
-**P0: verify Search Console, submit sitemap, then publish the first validated HPK cluster.**
+**P0: submit/inspect the production sitemap in Search Console and monitor the first validated HPK expansion cluster.**
 
 
 ## Giscus comments activated — 2026-09-23
@@ -85,3 +85,15 @@ Regression cleanup:
 - created production `sitemap.xml`
 - updated `robots.txt` to allow crawling and advertise the sitemap
 - kept empty Windows hub and legal/utility pages noindex where appropriate
+
+
+## HPK expansion batch #1 — 2026-09-25
+
+Published five source-grounded developer troubleshooting guides:
+- Debug Assertion Failed in C++
+- MySQL Failed to Open File Error 2
+- Hadoop Command Not Found
+- SignTool.exe Not Found
+- Plugin with id 'com.android.application' not found
+
+All five use the v2.1 article pattern: exact-error fingerprint, safe first check, verification, per-fix feedback, official references, related guides and Giscus community.
