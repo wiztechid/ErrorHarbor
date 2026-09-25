@@ -159,3 +159,12 @@ New production rule:
 - refreshed reviewed/dateModified signals after substantive review
 - tightened the publish validator to enforce v2 article anatomy, OG/schema completeness, title/meta uniqueness, and explicit verification
 - retained noindex protection on thin Virtualization and Windows & Network hubs while their article pages remain indexable
+
+
+## P0 MySQL intent rescope — 2026-09-25
+
+- narrowed the existing MySQL Errcode 2 guide to the LOAD DATA / LOAD XML file-not-found intent
+- retained the existing URL and canonical to avoid unnecessary URL churn
+- aligned title, H1, lede, fingerprint, Applies to metadata and search-registry keywords with the narrower intent
+- preserved INFILE vs LOCAL INFILE and secure_file_priv diagnostics because they directly serve this import-file intent
+- reserved broader MySQL Errcode 2 / can't-open-file contexts for separate intent review rather than letting this page cannibalize them
