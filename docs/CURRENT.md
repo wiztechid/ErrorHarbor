@@ -208,3 +208,16 @@ New production rule:
 - hardened Mixed Mode guidance: Windows Authentication preferred when possible, auth-mode changes require service restart, and switching modes does not auto-enable sa
 - strengthened sa/sysadmin guardrails and least-privilege verification
 - expanded official references for direct ERRORLOG access, Error 4064, and authentication-mode security
+
+
+## Article #40 — SQL Server Error 4064 default-database companion — 2026-09-26
+
+- published `SQL Server Error 4064: Cannot Open User Default Database`
+- moat: escape through an available database, diagnose why the intended default cannot open, repair the cause, then decide whether DEFAULT_DATABASE should change
+- separated rename/drop, database-state, restricted-access, database-user/access, and genuinely-obsolete-default branches
+- treats master as a temporary escape route rather than an automatic permanent default
+- preserves the 18456 boundary: if another database also cannot connect, return to server-side Reason/State diagnosis
+- added SQL Server vs Azure SQL Database platform boundary and least-privilege guardrails
+- database cluster grows from 5 to 6 unique articles
+- updated Developer hub, homepage latest-8 + ItemList, search registry, sitemap and two-way 18456 ↔ 4064 links
+- removed residual duplicate #39 sitemap/hub publication entries discovered during release QC

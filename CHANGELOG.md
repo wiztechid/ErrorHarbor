@@ -140,3 +140,11 @@
 - separated database-related 18456 state evidence from client-facing Error 4064 intent
 - hardened Mixed Mode, sa, restart, sysadmin and least-privilege guidance
 - expanded Microsoft references for ERRORLOG, 4064 and authentication-mode security
+
+
+## 2026-09-26 — Article #40: SQL Server Error 4064
+
+- published reader-first 4064 guide around escape → diagnose → repair → decide
+- added database-state/access branching and DEFAULT_DATABASE guardrails
+- linked 18456 and 4064 bidirectionally with explicit intent boundaries
+- updated publication graph and removed residual duplicate #39 hub/sitemap entries
