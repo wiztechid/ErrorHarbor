@@ -67,7 +67,7 @@ const seenTitles=new Map(), seenDescriptions=new Map();
 for(const item of articles){
   const html=read(path.join(item.url,"index.html"));
   const title=(html.match(/<title>([\s\S]*?)<\/title>/i)||[])[1]?.trim();
-  const desc=(html.match(/<meta name=["']description["'] content=["']([^"']*)["']/i)||[])[1]?.trim();
+  const desc=(html.match(/<meta name="description" content="([^"]*)"/i)||[])[1]?.trim();
   if(title){ if(seenTitles.has(title)) fail.push(`${item.url}: duplicate title with ${seenTitles.get(title)}`); else seenTitles.set(title,item.url); }
   if(desc){ if(seenDescriptions.has(desc)) fail.push(`${item.url}: duplicate meta description with ${seenDescriptions.get(desc)}`); else seenDescriptions.set(desc,item.url); }
 }
