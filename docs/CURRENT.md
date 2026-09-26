@@ -270,3 +270,13 @@ New production rule:
 - anti-cannibalization: LNK1104 is file-open failure; LNK2019 is symbol-resolution failure
 - C++ cluster grows 2 → 3
 - publication graph: registry, Developer hub, sitemap, homepage latest-8/ItemList and reciprocal LNK1104 sibling link
+
+
+## Article #46 — Windows 0x800701B1 — 2026-09-26
+
+- published 0x800701B1: A Device Which Does Not Exist Was Specified
+- moat: failed operation → exact physical/virtual device → still present/healthy? → connection vs internal storage vs operation-specific vs layered storage → protect data → supported repair → repeat same operation
+- safety guardrail: unstable/important storage is data-sensitive; do not begin with formatting, initialization, repartitioning or repeated write-heavy repair
+- branches: USB cable/port/enclosure/power; internal SATA/NVMe; device-stays-present operation failure; VHD/VHDX/Storage Spaces/BitLocker; driver/controller after evidence
+- hardware cluster grows 2 → 3 and expands beyond printers into Windows storage
+- publication graph: registry, Hardware hub, sitemap and homepage latest-8/ItemList
