@@ -230,3 +230,13 @@ New production rule:
 - clarified ALTER LOGIN as an authorized-admin/DBA operation; do not elevate the affected application login to sysadmin/securityadmin
 - separated login DEFAULT_DATABASE from explicit Initial Catalog/Database targets; explicit application targets take precedence and must be repaired independently
 - sharpened platform boundary: Azure SQL Database does not support SQL Server DEFAULT_DATABASE login routing; Azure SQL Managed Instance remains closer to the instance/login model
+
+
+## Article #42 — checkDebugAarMetadata / AAR compatibility gate — 2026-09-26
+
+- published checkDebugAarMetadata Failed: Read the AAR Requirement First
+- moat: task wrapper → first AAR metadata requirement → dependency owner → align relevant boundary → rerun same variant
+- branches: minCompileSdk, minAgpVersion, minCompileSdkExtension, dependency-upgrade compatibility, Flutter/React Native/multi-module effective config, wrapper-only extraction
+- compileSdk is explicitly separated from minSdk and targetSdk; no copy-pasted universal SDK number
+- Android/Gradle cluster grows 3 → 4 from SERP opportunity, with intent boundary back to AAPT2 #41
+- publication graph: registry, Developer hub, sitemap, homepage latest-8/ItemList, and backlinks from all three Android siblings
