@@ -491,8 +491,8 @@
     "kind": "article",
     "published": "2026-09-26",
     "publish_order": 24,
-    "cluster": "developer-command",
-    "hub": "errors/dev/",
+    "cluster": "ssh-sftp",
+    "hub": "errors/dev/ssh-sftp/",
     "summary": "Find where the SFTP session dies, then separate SSH authentication, subsystem, chroot/access and later-session failures before changing sshd_config."
   },
   {
@@ -510,8 +510,8 @@
     "kind": "article",
     "published": "2026-09-26",
     "publish_order": 25,
-    "cluster": "developer-command",
-    "hub": "errors/dev/",
+    "cluster": "ssh-sftp",
+    "hub": "errors/dev/ssh-sftp/",
     "summary": "Find the exact ChrootDirectory path component OpenSSH rejects, preserve the root-owned security boundary, and put writable data inside the jail."
   },
   {
@@ -529,8 +529,8 @@
     "kind": "article",
     "published": "2026-09-26",
     "publish_order": 26,
-    "cluster": "developer-command",
-    "hub": "errors/dev/",
+    "cluster": "ssh-sftp",
+    "hub": "errors/dev/ssh-sftp/",
     "summary": "Identify whether SFTP or modern SCP requested the failing subsystem, then verify the effective OpenSSH Subsystem configuration before changing sshd."
   },
   {
@@ -549,8 +549,8 @@
     "kind": "article",
     "published": "2026-09-26",
     "publish_order": 27,
-    "cluster": "developer-command",
-    "hub": "errors/dev/",
+    "cluster": "ssh-sftp",
+    "hub": "errors/dev/ssh-sftp/",
     "summary": "Prove which identities SSH is offering, force the intended key safely, and investigate MaxAuthTries only after client-side key selection is ruled out."
   },
   {
@@ -568,8 +568,8 @@
     "kind": "article",
     "published": "2026-09-26",
     "publish_order": 28,
-    "cluster": "developer-command",
-    "hub": "errors/dev/",
+    "cluster": "ssh-sftp",
+    "hub": "errors/dev/ssh-sftp/",
     "summary": "Prove the SSH pre-auth failure stage, then separate unauthenticated-connection pressure, source blocking, sshd state and the network path before changing credentials."
   }
 ]
