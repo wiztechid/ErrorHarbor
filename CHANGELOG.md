@@ -132,3 +132,11 @@
 - separated credential, database, authentication-mode, Windows access, and Kerberos/ANONYMOUS LOGON branches
 - added security-sensitive guardrails and escalation evidence
 - updated Developer hub, homepage latest-8 + ItemList, search registry, sitemap, and SQL Server sibling backlink
+
+
+## 2026-09-26 — Deep Reader-First QC #39
+
+- added direct ERRORLOG and DBA-handoff paths for readers locked out of SQL Server
+- separated database-related 18456 state evidence from client-facing Error 4064 intent
+- hardened Mixed Mode, sa, restart, sysadmin and least-privilege guidance
+- expanded Microsoft references for ERRORLOG, 4064 and authentication-mode security
