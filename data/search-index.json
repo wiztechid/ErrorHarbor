@@ -898,5 +898,18 @@
     "cluster": "ssh-sftp",
     "hub": "errors/dev/ssh-sftp/",
     "summary": "Verify target and user, then prove whether the intended key is available, offered, accepted or rejected before changing client identities or server authorization."
+  },
+  {
+    "title": "ERR_OSSL_EVP_UNSUPPORTED / error:0308010C — Find the Crypto Consumer",
+    "url": "errors/dev/node-npm/err-ossl-evp-unsupported/",
+    "product": "Node.js / OpenSSL",
+    "type": "Runtime crypto compatibility error",
+    "keywords": ["err_ossl_evp_unsupported", "error 0308010c digital envelope routines unsupported", "openssl legacy provider node", "node openssl unsupported"],
+    "kind": "article",
+    "published": "2026-09-27",
+    "publish_order": 48,
+    "cluster": "developer-command",
+    "hub": "errors/dev/",
+    "summary": "Trace the Node/OpenSSL boundary to the dependency, build tool or application that requests unsupported crypto, use legacy provider only as a diagnostic bridge, then verify after removing it."
   }
 ]
