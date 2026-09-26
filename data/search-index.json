@@ -669,5 +669,24 @@
     "cluster": "windows-sdk",
     "hub": "errors/dev/",
     "summary": "Separate timestamp endpoint/protocol failures from proxy, firewall, TLS, /td SHA256, provider outage, and CI-runner network differences."
+  },
+  {
+    "title": "SignTool 0x800B0109 — Root Certificate Not Trusted",
+    "url": "errors/dev/windows-sdk/signtool-untrusted-root-0x800b0109/",
+    "product": "Windows SDK / SignTool",
+    "type": "Certificate trust-chain error",
+    "keywords": [
+      "signtool 0x800b0109",
+      "a certificate chain processed but terminated in a root certificate which is not trusted by the trust provider",
+      "signtool root certificate not trusted",
+      "signtool /pa /kp",
+      "0x800b0109 msix"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 34,
+    "cluster": "windows-sdk",
+    "hub": "errors/dev/",
+    "summary": "Identify artifact, verification policy, and trust context before changing certificate stores; covers /pa vs /kp, self-signed certs, MSIX, intermediates, machine trust, and CAPI2."
   }
 ]
