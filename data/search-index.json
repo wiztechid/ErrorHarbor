@@ -859,5 +859,18 @@
     "cluster": "javascript",
     "hub": "errors/dev/",
     "summary": "Trace the property chain to the exact undefined receiver, determine why it is missing, repair source/timing/lookup/shape or guard only when absence is valid, then reproduce and test."
+  },
+  {
+    "title": "LNK2019 Unresolved External Symbol — Find the Missing Definition",
+    "url": "errors/dev/cpp/lnk2019-unresolved-external-symbol/",
+    "product": "MSVC / Visual C++",
+    "type": "Linker unresolved external symbol",
+    "keywords": ["lnk2019", "unresolved external symbol", "visual studio linker error", "cpp unresolved external"],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 45,
+    "cluster": "cpp",
+    "hub": "errors/dev/",
+    "summary": "Read the unresolved symbol and caller, locate the intended definition, then prove it was compiled, linked, name-compatible and built for the active configuration."
   }
 ]
