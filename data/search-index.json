@@ -552,5 +552,24 @@
     "cluster": "developer-command",
     "hub": "errors/dev/",
     "summary": "Prove which identities SSH is offering, force the intended key safely, and investigate MaxAuthTries only after client-side key selection is ruled out."
+  },
+  {
+    "title": "kex_exchange_identification: Connection Closed by Remote Host",
+    "url": "errors/dev/ssh/kex-exchange-identification-connection-closed/",
+    "product": "OpenSSH / SSH",
+    "type": "SSH pre-auth connection error",
+    "keywords": [
+      "kex_exchange_identification connection closed by remote host",
+      "ssh kex exchange identification",
+      "connection closed by remote host ssh",
+      "maxstartups ssh",
+      "github kex_exchange_identification"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 28,
+    "cluster": "developer-command",
+    "hub": "errors/dev/",
+    "summary": "Prove the SSH pre-auth failure stage, then separate unauthenticated-connection pressure, source blocking, sshd state and the network path before changing credentials."
   }
 ]
