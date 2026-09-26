@@ -532,5 +532,25 @@
     "cluster": "developer-command",
     "hub": "errors/dev/",
     "summary": "Identify whether SFTP or modern SCP requested the failing subsystem, then verify the effective OpenSSH Subsystem configuration before changing sshd."
+  },
+  {
+    "title": "Too Many Authentication Failures: Fix SSH Key Selection First",
+    "url": "errors/dev/ssh/too-many-authentication-failures/",
+    "product": "OpenSSH / SSH",
+    "type": "SSH authentication error",
+    "keywords": [
+      "too many authentication failures",
+      "ssh too many authentication failures",
+      "maxauthtries",
+      "identitiesonly",
+      "ssh agent too many keys",
+      "ssh too many keys"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 27,
+    "cluster": "developer-command",
+    "hub": "errors/dev/",
+    "summary": "Prove which identities SSH is offering, force the intended key safely, and investigate MaxAuthTries only after client-side key selection is ruled out."
   }
 ]
