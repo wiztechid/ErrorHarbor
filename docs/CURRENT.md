@@ -221,3 +221,12 @@ New production rule:
 - database cluster grows from 5 to 6 unique articles
 - updated Developer hub, homepage latest-8 + ItemList, search registry, sitemap and two-way 18456 ↔ 4064 links
 - removed residual duplicate #39 sitemap/hub publication entries discovered during release QC
+
+
+## Deep Reader-First QC #40 — 2026-09-26
+
+- hardened RECOVERY_PENDING/SUSPECT as recovery/incident branches; no generic EMERGENCY, REPAIR_ALLOW_DATA_LOSS, detach/attach or file-deletion shortcut
+- strengthened SINGLE_USER guidance against racing/killing background sessions or forcing MULTI_USER during maintenance
+- clarified ALTER LOGIN as an authorized-admin/DBA operation; do not elevate the affected application login to sysadmin/securityadmin
+- separated login DEFAULT_DATABASE from explicit Initial Catalog/Database targets; explicit application targets take precedence and must be repaired independently
+- sharpened platform boundary: Azure SQL Database does not support SQL Server DEFAULT_DATABASE login routing; Azure SQL Managed Instance remains closer to the instance/login model
