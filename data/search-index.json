@@ -433,5 +433,25 @@
     "cluster": "hardware",
     "hub": "errors/hardware/",
     "summary": "Separate intermittent and persistent HP Error 49 failures, boot isolated, then test connections, files, drivers and firmware before service."
+  },
+  {
+    "title": "Remote Desktop Device Redirector Bus in Windows 11",
+    "url": "errors/windows-network/remote-desktop/remote-desktop-device-redirector-bus/",
+    "product": "Windows 11 / Remote Desktop",
+    "type": "Remote Desktop device redirection",
+    "keywords": [
+      "remote desktop device redirector bus",
+      "remote desktop device redirector bus windows 11",
+      "rdpbus",
+      "root rdpbus",
+      "should i disable remote desktop device redirector bus",
+      "remote desktop device redirection"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 22,
+    "cluster": "windows-network",
+    "hub": "errors/windows-network/",
+    "summary": "Understand what RDPBUS does, when to leave it enabled, and how to diagnose Device Manager warnings or RDP resource-redirection failures safely."
   }
 ]
