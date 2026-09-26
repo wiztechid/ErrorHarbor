@@ -303,3 +303,13 @@ New production rule:
 - anti-cannibalization: npm ERESOLVE = dependency graph resolution; #48 = runtime/build-time crypto compatibility after Node can run
 - developer-command cluster grows 3 → 4
 - publication graph: registry, developer hub, sitemap, homepage latest-8/ItemList, ERESOLVE backlink and npm-command-not-found backlink
+
+
+## Article #49 — Android Manifest merger failed — 2026-09-27
+
+- moat: wrapper → first concrete conflict → element/attribute → source manifests → priority → intended value → narrow remediation → merged-manifest verification → exact variant rebuild
+- guardrail: never add tools:replace until both source values and intended final value are known
+- branches: attribute conflict; library-owned conflict; whole-node conflict; variant/flavor-specific conflict; wrong build-stage boundary
+- anti-cannibalization: AAPT2 = resource compile/link; checkDebugAarMetadata = dependency metadata/platform requirements; #49 = manifest composition/conflict semantics
+- Android/Gradle cluster grows 4 → 5
+- publication graph: registry, developer hub, sitemap, homepage latest-8/ItemList, AAPT2 backlink and checkDebugAarMetadata backlink
