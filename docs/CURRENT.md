@@ -292,3 +292,14 @@ New production rule:
 - anti-cannibalization: Too Many Authentication Failures covers attempt exhaustion; #47 covers no public-key identity being accepted
 - SSH/SFTP cluster grows 5 → 6
 - publication graph: registry, SSH/SFTP hub, sitemap, homepage latest-8/ItemList and sibling backlink
+
+
+## Article #48 — Node ERR_OSSL_EVP_UNSUPPORTED — 2026-09-27
+
+- published ERR_OSSL_EVP_UNSUPPORTED / error:0308010C — Find the Crypto Consumer
+- moat: runtime/OpenSSL boundary → exact crypto consumer → dependency/build-tool/application owner → supported remediation → legacy-provider diagnostic bridge → remove bridge → exact verification
+- guardrail: never turn --openssl-legacy-provider into the permanent fix before identifying what actually requires legacy crypto behavior
+- branches: runtime/environment changed; build-tool/dependency owns crypto call; application owns crypto; legacy provider changes result; different OpenSSL/TLS problem
+- anti-cannibalization: npm ERESOLVE = dependency graph resolution; #48 = runtime/build-time crypto compatibility after Node can run
+- developer-command cluster grows 3 → 4
+- publication graph: registry, developer hub, sitemap, homepage latest-8/ItemList, ERESOLVE backlink and npm-command-not-found backlink
