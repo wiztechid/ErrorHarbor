@@ -707,5 +707,25 @@
     "cluster": "windows-sdk",
     "hub": "errors/dev/",
     "summary": "Add the correct /fd file digest, distinguish it from RFC 3161 /td, and inspect MSBuild/Cake/CI generated commands when wrappers omit the option."
+  },
+  {
+    "title": "SQL Server: Certificate Chain Was Issued by an Authority That Is Not Trusted",
+    "url": "errors/dev/sql-database/sql-server-certificate-chain-not-trusted/",
+    "product": "SQL Server",
+    "type": "TLS certificate trust error",
+    "keywords": [
+      "the certificate chain was issued by an authority that is not trusted sql server",
+      "sql server certificate chain not trusted",
+      "odbc driver 18 certificate chain not trusted",
+      "msoledbsql19 certificate chain not trusted",
+      "ssms 20 trust server certificate",
+      "sqlclient trustservercertificate"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 36,
+    "cluster": "database",
+    "hub": "errors/dev/",
+    "summary": "Diagnose SQL Server TLS certificate-chain errors by client, encryption mode, and trust context before choosing trust repair or a temporary validation bypass."
   }
 ]
