@@ -148,3 +148,11 @@
 - added database-state/access branching and DEFAULT_DATABASE guardrails
 - linked 18456 and 4064 bidirectionally with explicit intent boundaries
 - updated publication graph and removed residual duplicate #39 hub/sitemap entries
+
+
+## 2026-09-26 — Deep Reader-First QC #40
+
+- hardened unsafe recovery-state and SINGLE_USER edge cases
+- clarified ALTER LOGIN privilege boundary and DBA handoff
+- separated DEFAULT_DATABASE from explicit Initial Catalog/Database routing
+- clarified SQL Server / Managed Instance vs Azure SQL Database behavior
