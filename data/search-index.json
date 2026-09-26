@@ -807,5 +807,18 @@
     "cluster": "database",
     "hub": "errors/dev/",
     "summary": "Escape through an available database, diagnose why the default cannot open, repair the cause, then decide whether DEFAULT_DATABASE should change."
+  },
+  {
+    "title": "Android Resource Linking Failed (AAPT2): Find the First Real Error",
+    "url": "errors/dev/android-gradle/android-resource-linking-failed-aapt2/",
+    "product": "Android / AAPT2",
+    "type": "Resource linking / build failure",
+    "keywords": ["android resource linking failed", "aapt2 resource linking failed", "resource not found android", "android attr not found"],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 41,
+    "cluster": "android-gradle",
+    "hub": "errors/dev/",
+    "summary": "Find the first concrete AAPT2 error, classify it, fix that branch, then rebuild and verify."
   }
 ]
