@@ -260,3 +260,13 @@ New production rule:
 - six reader paths: required source data, timing/init, lookup/index, object-shape mismatch, legitimate absence, intermittent input
 - JavaScript cluster grows 2 → 3 based on cross-cluster SERP opportunity
 - publication graph: registry, Developer hub, sitemap, homepage latest-8/ItemList and reciprocal sibling links
+
+
+## Article #45 — MSVC LNK2019 Unresolved External Symbol — 2026-09-26
+
+- published LNK2019 Unresolved External Symbol — Find the Missing Definition
+- moat: unresolved symbol + referenced-in caller → intended definition owner → compiled? → linked? → emitted name matches? → active architecture/configuration matches? → verify
+- branches: own source missing from build; object/library not linked; declaration/definition mismatch; C/C++ or DLL linkage; Debug/Release and x86/x64 mismatch; evidence with /VERBOSE, DUMPBIN and UNDNAME
+- anti-cannibalization: LNK1104 is file-open failure; LNK2019 is symbol-resolution failure
+- C++ cluster grows 2 → 3
+- publication graph: registry, Developer hub, sitemap, homepage latest-8/ItemList and reciprocal LNK1104 sibling link
