@@ -727,5 +727,23 @@
     "cluster": "database",
     "hub": "errors/dev/",
     "summary": "Diagnose SQL Server TLS certificate-chain errors by client, encryption mode, and trust context before choosing trust repair or a temporary validation bypass."
+  },
+  {
+    "title": "MySQL Public Key Retrieval Is Not Allowed",
+    "url": "errors/dev/sql-database/mysql-public-key-retrieval-not-allowed/",
+    "product": "MySQL Connector/J",
+    "type": "Authentication configuration error",
+    "keywords": [
+      "mysql public key retrieval is not allowed",
+      "mysql connector j public key retrieval",
+      "caching sha2 password jdbc",
+      "mysql jdbc sslmode"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 37,
+    "cluster": "database",
+    "hub": "errors/dev/",
+    "summary": "Diagnose Connector/J public-key retrieval errors by choosing the intended secure transport and authentication path."
   }
 ]
