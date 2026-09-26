@@ -688,5 +688,24 @@
     "cluster": "windows-sdk",
     "hub": "errors/dev/",
     "summary": "Identify artifact, verification policy, and trust context before changing certificate stores; covers /pa vs /kp, self-signed certs, MSIX, intermediates, machine trust, and CAPI2."
+  },
+  {
+    "title": "SignTool Error: No File Digest Algorithm Specified",
+    "url": "errors/dev/windows-sdk/signtool-no-file-digest-algorithm-specified/",
+    "product": "Windows SDK / SignTool",
+    "type": "Digest configuration error",
+    "keywords": [
+      "signtool no file digest algorithm specified",
+      "please specify the digest algorithm with the /fd flag",
+      "signtool /fd sha256",
+      "signtool fd vs td",
+      "signtool digest algorithm msbuild cake"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 35,
+    "cluster": "windows-sdk",
+    "hub": "errors/dev/",
+    "summary": "Add the correct /fd file digest, distinguish it from RFC 3161 /td, and inspect MSBuild/Cake/CI generated commands when wrappers omit the option."
   }
 ]
