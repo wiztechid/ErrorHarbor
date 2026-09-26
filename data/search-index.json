@@ -571,5 +571,24 @@
     "cluster": "ssh-sftp",
     "hub": "errors/dev/ssh-sftp/",
     "summary": "Prove the SSH pre-auth failure stage, then separate unauthenticated-connection pressure, source blocking, sshd state and the network path before changing credentials."
+  },
+  {
+    "title": "VMware Nested Virtualization Not Supported: Module 'HV' Power On Failed",
+    "url": "errors/virtualization/vmware/nested-virtualization-not-supported-module-hv-power-on-failed/",
+    "product": "VMware Workstation / Windows",
+    "type": "Nested virtualization power-on error",
+    "keywords": [
+      "vmware workstation does not support nested virtualization on this host",
+      "module hv power on failed",
+      "virtualized intel vt-x ept is not supported on this platform",
+      "virtualized amd-v rvi is not supported on this platform",
+      "vmware nested virtualization windows 11"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 29,
+    "cluster": "virtualization",
+    "hub": "errors/virtualization/",
+    "summary": "Determine whether the guest actually needs nested virtualization, then verify host virtualization and Windows hypervisor/VBS state before changing security features."
   }
 ]
