@@ -156,3 +156,10 @@
 - clarified ALTER LOGIN privilege boundary and DBA handoff
 - separated DEFAULT_DATABASE from explicit Initial Catalog/Database routing
 - clarified SQL Server / Managed Instance vs Azure SQL Database behavior
+
+
+## 2026-09-26 — Article #42: checkDebugAarMetadata Failed
+
+- published dependency-requirement-first AAR metadata troubleshooting guide
+- added compileSdk, AGP, SDK-extension, dependency-upgrade and multi-module branches
+- updated registry, Developer hub, sitemap, homepage and Android sibling backlinks
