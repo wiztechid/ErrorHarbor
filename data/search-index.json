@@ -630,5 +630,25 @@
     "cluster": "windows-sdk",
     "hub": "errors/dev/",
     "summary": "Prove whether SignTool.exe exists, then fix Developer-shell, exact-path, PATH or CI runner resolution without confusing command discovery with certificate signing."
+  },
+  {
+    "title": "SignTool Error: No Certificates Were Found That Met All the Given Criteria",
+    "url": "errors/dev/windows-sdk/signtool-no-certificates-found/",
+    "product": "Windows SDK / SignTool",
+    "type": "Certificate selection error",
+    "keywords": [
+      "signtool no certificates were found that met all the given criteria",
+      "no certificates were found that met all the given criteria",
+      "signtool no certificates found",
+      "signtool private key filter 0",
+      "signtool eku filter 0",
+      "signtool certificate store"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 32,
+    "cluster": "windows-sdk",
+    "hub": "errors/dev/",
+    "summary": "Run SignTool /debug and fix the first certificate-selection filter that reaches zero: EKU, expiry, private key, store, selector, PFX, or execution identity."
   }
 ]
