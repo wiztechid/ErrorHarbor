@@ -240,3 +240,13 @@ New production rule:
 - compileSdk is explicitly separated from minSdk and targetSdk; no copy-pasted universal SDK number
 - Android/Gradle cluster grows 3 → 4 from SERP opportunity, with intent boundary back to AAPT2 #41
 - publication graph: registry, Developer hub, sitemap, homepage latest-8/ItemList, and backlinks from all three Android siblings
+
+
+## Article #43 — npm ERESOLVE dependency tree — 2026-09-26
+
+- published npm ERESOLVE: Unable to Resolve Dependency Tree
+- moat: resolver verdict → first conflicting pair → peer requirement → compatible relationship → normal install → inspect tree → build/test
+- guardrail: bypass flags are not the default fix; durable verification uses normal install, npm ls, and affected build/tests
+- branches: root peer mismatch, upgrade changed peer range, transitive owner, manifest/lockfile mismatch, bypass behavior, buried conflict block
+- developer-command cluster grows 2 → 3 based on cross-cluster SERP opportunity
+- publication graph includes registry, Developer hub, sitemap, homepage latest-8/ItemList; article links to npm command-not-found and JavaScript guide
