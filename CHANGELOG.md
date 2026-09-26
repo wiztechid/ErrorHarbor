@@ -124,3 +124,11 @@
 - built the article around filename-first diagnosis rather than a generic fix list
 - added branches for locked EXE/PDB outputs, Microsoft and third-party libraries, project dependencies, quoted paths and file-access issues
 - updated Developer hub, homepage latest-8 + ItemList, search registry, sitemap and C++ sibling backlink
+
+
+## 2026-09-26 — Article #39: SQL Server Error 18456 authentication anchor
+
+- published Error 18456 Login Failed for User around server-side Reason/State diagnosis
+- separated credential, database, authentication-mode, Windows access, and Kerberos/ANONYMOUS LOGON branches
+- added security-sensitive guardrails and escalation evidence
+- updated Developer hub, homepage latest-8 + ItemList, search registry, sitemap, and SQL Server sibling backlink
