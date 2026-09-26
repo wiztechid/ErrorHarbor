@@ -787,5 +787,25 @@
     "cluster": "database",
     "hub": "errors/dev/",
     "summary": "Find the server-side Reason and State first, then fix the matching credential, database, authentication-mode, Windows-access, or Kerberos branch."
+  },
+  {
+    "title": "SQL Server Error 4064: Cannot Open User Default Database",
+    "url": "errors/dev/sql-database/sql-server-error-4064-default-database/",
+    "product": "SQL Server",
+    "type": "Default database / login database access",
+    "keywords": [
+      "sql server error 4064",
+      "cannot open user default database",
+      "cannot open user default database login failed",
+      "mssqlserver 4064",
+      "sql server default database login failed",
+      "alter login default_database"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 40,
+    "cluster": "database",
+    "hub": "errors/dev/",
+    "summary": "Escape through an available database, diagnose why the default cannot open, repair the cause, then decide whether DEFAULT_DATABASE should change."
   }
 ]
