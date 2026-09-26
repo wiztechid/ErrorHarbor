@@ -280,3 +280,15 @@ New production rule:
 - branches: USB cable/port/enclosure/power; internal SATA/NVMe; device-stays-present operation failure; VHD/VHDX/Storage Spaces/BitLocker; driver/controller after evidence
 - hardware cluster grows 2 → 3 and expands beyond printers into Windows storage
 - publication graph: registry, Hardware hub, sitemap and homepage latest-8/ItemList
+
+
+## Article #47 — SSH Permission Denied (publickey) — 2026-09-26
+
+- published SSH Permission Denied (publickey) — Find Which Key Was Rejected
+- moat: target → user → available key → offered key → accepted/rejected → authorization → exact verification
+- primary guardrail: do not generate a new SSH key until verbose output proves the client lacks or cannot offer the intended key
+- branches: target/user mismatch; key unavailable; key exists but is not offered; correct key offered but rejected; authentication succeeds and later operation fails
+- safety: never share private keys; no chmod 777/StrictModes weakening; preserve working admin access during server-side changes
+- anti-cannibalization: Too Many Authentication Failures covers attempt exhaustion; #47 covers no public-key identity being accepted
+- SSH/SFTP cluster grows 5 → 6
+- publication graph: registry, SSH/SFTP hub, sitemap, homepage latest-8/ItemList and sibling backlink
