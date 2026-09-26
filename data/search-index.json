@@ -766,5 +766,26 @@
     "cluster": "cpp",
     "hub": "errors/dev/",
     "summary": "Identify the filename first, then branch to output-file locks, Microsoft or third-party libraries, project dependencies, path quoting, or file-access problems."
+  },
+  {
+    "title": "SQL Server Error 18456: Login Failed for User — Read the State First",
+    "url": "errors/dev/sql-database/sql-server-error-18456-login-failed/",
+    "product": "SQL Server",
+    "type": "Authentication / login failure",
+    "keywords": [
+      "sql server error 18456",
+      "login failed for user sql server",
+      "mssqlserver 18456",
+      "sql server 18456 state 8",
+      "sql server 18456 state 38",
+      "sql server 18456 state 58",
+      "nt authority anonymous logon sql server"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 39,
+    "cluster": "database",
+    "hub": "errors/dev/",
+    "summary": "Find the server-side Reason and State first, then fix the matching credential, database, authentication-mode, Windows-access, or Kerberos branch."
   }
 ]
