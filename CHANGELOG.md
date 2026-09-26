@@ -106,3 +106,13 @@
 - rescoped `mysql-failed-to-open-file-error-2` from broad MySQL Errcode 2 coverage to LOAD DATA / LOAD XML file-not-found troubleshooting
 - retained the production URL/canonical while narrowing title, H1, snippet copy, environment scope and search-registry aliases
 - reduced future cannibalization risk for unrelated MySQL Errcode 2 contexts
+
+
+## 2026-09-26 — Windows SDK / SignTool cluster expansion — 2026-09-26
+
+- published deep supporting guide: `'signtool' Is Not Recognized`
+- separated command-resolution/PATH intent from the anchor `SignTool.exe Not Found` installation/discovery intent
+- added shell vs exact-path vs session-PATH vs CI/CD decision flow with explicit verification
+- reinforced two-way internal linking between the SignTool anchor and supporting guide
+- added the new URL to Developer hub, homepage latest-8, search registry and sitemap
+- grounded the guide in current Microsoft SignTool, Developer shell and MSIX CI/CD documentation
