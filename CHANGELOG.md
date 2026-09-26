@@ -163,3 +163,11 @@
 - published dependency-requirement-first AAR metadata troubleshooting guide
 - added compileSdk, AGP, SDK-extension, dependency-upgrade and multi-module branches
 - updated registry, Developer hub, sitemap, homepage and Android sibling backlinks
+
+
+## 2026-09-26 — Article #44: JavaScript undefined receiver
+
+- published reader-first Cannot Read Properties of Undefined guide
+- added source/timing/lookup/shape/intentional-absence diagnostic branches
+- optional chaining is explicitly treated as a behavior decision rather than root-cause diagnosis
+- updated registry, Developer hub, sitemap, homepage and reciprocal JavaScript sibling links
