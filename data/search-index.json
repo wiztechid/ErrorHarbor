@@ -885,5 +885,18 @@
     "cluster": "hardware",
     "hub": "errors/hardware/",
     "summary": "Identify the exact device Windows lost, determine whether it stays present, protect important data, then separate connection, storage and layered-device causes before repair."
+  },
+  {
+    "title": "SSH Permission Denied (publickey) — Find Which Key Was Rejected",
+    "url": "errors/dev/ssh/permission-denied-publickey/",
+    "product": "OpenSSH / SSH",
+    "type": "Public key authentication error",
+    "keywords": ["permission denied publickey", "ssh permission denied publickey", "git permission denied publickey", "ssh key rejected"],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 47,
+    "cluster": "ssh-sftp",
+    "hub": "errors/dev/ssh-sftp/",
+    "summary": "Verify target and user, then prove whether the intended key is available, offered, accepted or rejected before changing client identities or server authorization."
   }
 ]
