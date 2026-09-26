@@ -250,3 +250,13 @@ New production rule:
 - branches: root peer mismatch, upgrade changed peer range, transitive owner, manifest/lockfile mismatch, bypass behavior, buried conflict block
 - developer-command cluster grows 2 → 3 based on cross-cluster SERP opportunity
 - publication graph includes registry, Developer hub, sitemap, homepage latest-8/ItemList; article links to npm command-not-found and JavaScript guide
+
+
+## Article #44 — JavaScript Cannot Read Properties of Undefined — 2026-09-26
+
+- published TypeError: Cannot Read Properties of Undefined — Find the Undefined Receiver
+- moat: property chain → exact undefined receiver → why missing → valid absence vs bug → repair source/timing/lookup/shape OR guard intentionally → reproduce → test
+- guardrail: optional chaining is a behavior choice, not root-cause diagnosis
+- six reader paths: required source data, timing/init, lookup/index, object-shape mismatch, legitimate absence, intermittent input
+- JavaScript cluster grows 2 → 3 based on cross-cluster SERP opportunity
+- publication graph: registry, Developer hub, sitemap, homepage latest-8/ItemList and reciprocal sibling links
