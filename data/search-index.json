@@ -846,5 +846,18 @@
     "cluster": "developer-command",
     "hub": "errors/dev/",
     "summary": "Identify the first conflicting package pair and peer requirement, align compatible versions, inspect the resolved tree, then build and test."
+  },
+  {
+    "title": "TypeError: Cannot Read Properties of Undefined — Find the Undefined Receiver",
+    "url": "errors/dev/javascript/cannot-read-properties-of-undefined/",
+    "product": "JavaScript",
+    "type": "Undefined property access / runtime TypeError",
+    "keywords": ["cannot read properties of undefined", "typeerror reading undefined", "javascript undefined property", "optional chaining undefined"],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 44,
+    "cluster": "javascript",
+    "hub": "errors/dev/",
+    "summary": "Trace the property chain to the exact undefined receiver, determine why it is missing, repair source/timing/lookup/shape or guard only when absence is valid, then reproduce and test."
   }
 ]
