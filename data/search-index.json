@@ -833,5 +833,18 @@
     "cluster": "android-gradle",
     "hub": "errors/dev/",
     "summary": "Read the first AAR metadata requirement, identify the dependency that owns it, align the relevant build boundary, then rerun the same variant."
+  },
+  {
+    "title": "npm ERESOLVE: Unable to Resolve Dependency Tree",
+    "url": "errors/dev/node-npm/eresolve-unable-to-resolve-dependency-tree/",
+    "product": "Node.js / npm",
+    "type": "Dependency resolution failure",
+    "keywords": ["npm eresolve", "unable to resolve dependency tree", "npm peer dependency conflict"],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 43,
+    "cluster": "developer-command",
+    "hub": "errors/dev/",
+    "summary": "Identify the first conflicting package pair and peer requirement, align compatible versions, inspect the resolved tree, then build and test."
   }
 ]
