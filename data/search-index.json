@@ -494,5 +494,24 @@
     "cluster": "developer-command",
     "hub": "errors/dev/",
     "summary": "Find where the SFTP session dies, then separate SSH authentication, subsystem, chroot/access and later-session failures before changing sshd_config."
+  },
+  {
+    "title": "Fatal: Bad Ownership or Modes for Chroot Directory",
+    "url": "errors/dev/sftp/bad-ownership-or-modes-for-chroot-directory/",
+    "product": "OpenSSH / SFTP",
+    "type": "SFTP chroot error",
+    "keywords": [
+      "bad ownership or modes for chroot directory",
+      "bad ownership or modes for chroot directory component",
+      "fatal bad ownership chroot directory",
+      "sftp chroot permissions",
+      "openssh chrootdirectory permissions"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 25,
+    "cluster": "developer-command",
+    "hub": "errors/dev/",
+    "summary": "Find the exact ChrootDirectory path component OpenSSH rejects, preserve the root-owned security boundary, and put writable data inside the jail."
   }
 ]
