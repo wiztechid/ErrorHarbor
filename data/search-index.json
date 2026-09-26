@@ -453,5 +453,26 @@
     "cluster": "windows-network",
     "hub": "errors/windows-network/",
     "summary": "Understand what RDPBUS does, when to leave it enabled, and how to diagnose Device Manager warnings or RDP resource-redirection failures safely."
+  },
+  {
+    "title": "NDIS Virtual Network Adapter Enumerator: Code 22 & 52",
+    "url": "errors/windows-network/ndis/ndis-virtual-network-adapter-enumerator/",
+    "product": "Windows 11 / NDIS",
+    "type": "System device / driver status",
+    "keywords": [
+      "ndis virtual network adapter enumerator",
+      "ndis virtual network adapter enumerator windows 11",
+      "ndis virtual network adapter enumerator code 22",
+      "ndis virtual network adapter enumerator code 52",
+      "ndisvirtualbus",
+      "root ndisvirtualbus",
+      "should i disable ndis virtual network adapter enumerator"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 23,
+    "cluster": "windows-network",
+    "hub": "errors/windows-network/",
+    "summary": "Separate NDIS Virtual Network Adapter Enumerator Code 22 from Code 52, then verify the correct enable or driver-signature path without weakening Windows security."
   }
 ]
