@@ -178,3 +178,14 @@ New production rule:
 - reinforced two-way internal linking between the SignTool anchor and supporting guide
 - added the new URL to Developer hub, homepage latest-8, search registry and sitemap
 - grounded the guide in current Microsoft SignTool, Developer shell and MSIX CI/CD documentation
+
+
+## Article #38 — C++ / MSVC linker anchor — 2026-09-26
+
+- published `LINK : fatal error LNK1104: cannot open file`
+- moat: identify the filename first; file type determines the troubleshooting branch
+- routes EXE/PDB locks, Microsoft libraries, third-party libraries, project-built outputs, path quoting, and temp/permission/disk cases separately
+- added explicit verification after each branch plus unsafe-advice guardrails
+- declared Developer Errors as parent hub while the C++ cluster grows from 1 to 2 articles
+- reinforced the existing Visual C++ Debug Assertion guide with a backlink
+- updated homepage latest-8, ItemList schema, search registry and sitemap in the same release

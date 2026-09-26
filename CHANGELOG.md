@@ -116,3 +116,11 @@
 - reinforced two-way internal linking between the SignTool anchor and supporting guide
 - added the new URL to Developer hub, homepage latest-8, search registry and sitemap
 - grounded the guide in current Microsoft SignTool, Developer shell and MSIX CI/CD documentation
+
+
+## 2026-09-26 — Article #38: LNK1104 C++ linker anchor
+
+- published LNK1104 cannot-open-file as the second C++ guide
+- built the article around filename-first diagnosis rather than a generic fix list
+- added branches for locked EXE/PDB outputs, Microsoft and third-party libraries, project dependencies, quoted paths and file-access issues
+- updated Developer hub, homepage latest-8 + ItemList, search registry, sitemap and C++ sibling backlink

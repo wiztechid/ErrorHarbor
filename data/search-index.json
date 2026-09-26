@@ -745,5 +745,26 @@
     "cluster": "database",
     "hub": "errors/dev/",
     "summary": "Diagnose Connector/J public-key retrieval errors by choosing the intended secure transport and authentication path."
+  },
+  {
+    "title": "LNK1104: Cannot Open File — Identify the File First",
+    "url": "errors/dev/cpp/lnk1104-cannot-open-file/",
+    "product": "Visual C++ / MSVC Linker",
+    "type": "Linker file access error",
+    "keywords": [
+      "lnk1104 cannot open file",
+      "fatal error lnk1104",
+      "link fatal error lnk1104 cannot open file",
+      "lnk1104 exe",
+      "lnk1104 lib",
+      "lnk1104 c program obj",
+      "visual studio linker cannot open file"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 38,
+    "cluster": "cpp",
+    "hub": "errors/dev/",
+    "summary": "Identify the filename first, then branch to output-file locks, Microsoft or third-party libraries, project dependencies, path quoting, or file-access problems."
   }
 ]
