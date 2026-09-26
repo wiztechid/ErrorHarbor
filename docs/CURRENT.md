@@ -199,3 +199,12 @@ New production rule:
 - added security guardrails, explicit verification, and escalation evidence
 - database cluster grows from 4 to 5 articles
 - updated Developer hub, homepage latest-8 + ItemList, search registry, sitemap, and SQL Server sibling backlink
+
+
+## Deep Reader-First QC #39 — 2026-09-26
+
+- added a no-login diagnostic path: authorized direct ERRORLOG file access on Windows/Linux plus DBA handoff, so SSMS is not a circular prerequisite
+- clarified 18456 states 38/46/126 versus client-facing Error 4064; 4064 remains its own primary intent when shown to the reader
+- hardened Mixed Mode guidance: Windows Authentication preferred when possible, auth-mode changes require service restart, and switching modes does not auto-enable sa
+- strengthened sa/sysadmin guardrails and least-privilege verification
+- expanded official references for direct ERRORLOG access, Error 4064, and authentication-mode security
