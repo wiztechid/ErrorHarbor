@@ -590,5 +590,25 @@
     "cluster": "virtualization",
     "hub": "errors/virtualization/",
     "summary": "Determine whether the guest actually needs nested virtualization, then verify host virtualization and Windows hypervisor/VBS state before changing security features."
+  },
+  {
+    "title": "HP Printer 79 Service Error: Isolate Network, Print Job or Firmware",
+    "url": "errors/hardware/printers/hp/error-79-service-error/",
+    "product": "HP LaserJet / PageWide",
+    "type": "Printer firmware / service error",
+    "keywords": [
+      "hp printer 79 service error",
+      "79 service error hp printer",
+      "hp error 79 turn off then on",
+      "hp laserjet error 79",
+      "79 service error firmware",
+      "hp printer error 79"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 30,
+    "cluster": "hardware",
+    "hub": "errors/hardware/",
+    "summary": "Boot the HP printer isolated, then separate network, queued-job, file/driver and firmware causes before resets or service."
   }
 ]
