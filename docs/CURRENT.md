@@ -168,3 +168,13 @@ New production rule:
 - aligned title, H1, lede, fingerprint, Applies to metadata and search-registry keywords with the narrower intent
 - preserved INFILE vs LOCAL INFILE and secure_file_priv diagnostics because they directly serve this import-file intent
 - reserved broader MySQL Errcode 2 / can't-open-file contexts for separate intent review rather than letting this page cannibalize them
+
+
+## Windows SDK / SignTool cluster expansion — 2026-09-26
+
+- published deep supporting guide: `'signtool' Is Not Recognized`
+- separated command-resolution/PATH intent from the anchor `SignTool.exe Not Found` installation/discovery intent
+- added shell vs exact-path vs session-PATH vs CI/CD decision flow with explicit verification
+- reinforced two-way internal linking between the SignTool anchor and supporting guide
+- added the new URL to Developer hub, homepage latest-8, search registry and sitemap
+- grounded the guide in current Microsoft SignTool, Developer shell and MSIX CI/CD documentation
