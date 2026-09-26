@@ -872,5 +872,18 @@
     "cluster": "cpp",
     "hub": "errors/dev/",
     "summary": "Read the unresolved symbol and caller, locate the intended definition, then prove it was compiled, linked, name-compatible and built for the active configuration."
+  },
+  {
+    "title": "0x800701B1: A Device Which Does Not Exist Was Specified",
+    "url": "errors/hardware/storage/0x800701b1-device-does-not-exist/",
+    "product": "Windows / Storage",
+    "type": "Storage device I/O / presence error",
+    "keywords": ["0x800701b1", "a device which does not exist was specified", "windows device does not exist", "0x800701b1 external drive"],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 46,
+    "cluster": "hardware",
+    "hub": "errors/hardware/",
+    "summary": "Identify the exact device Windows lost, determine whether it stays present, protect important data, then separate connection, storage and layered-device causes before repair."
   }
 ]
