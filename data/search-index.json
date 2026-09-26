@@ -610,5 +610,25 @@
     "cluster": "hardware",
     "hub": "errors/hardware/",
     "summary": "Boot the HP printer isolated, then separate network, queued-job, file/driver and firmware causes before resets or service."
+  },
+  {
+    "title": "‘signtool’ Is Not Recognized",
+    "url": "errors/dev/windows-sdk/signtool-not-recognized/",
+    "product": "Windows SDK / SignTool",
+    "type": "Command resolution / PATH error",
+    "keywords": [
+      "signtool is not recognized as an internal or external command",
+      "signtool not recognized",
+      "signtool command not found windows",
+      "signtool path windows sdk",
+      "signtool developer command prompt",
+      "signtool ci cd not recognized"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 31,
+    "cluster": "windows-sdk",
+    "hub": "errors/dev/",
+    "summary": "Prove whether SignTool.exe exists, then fix Developer-shell, exact-path, PATH or CI runner resolution without confusing command discovery with certificate signing."
   }
 ]
