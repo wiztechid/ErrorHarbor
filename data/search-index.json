@@ -911,5 +911,18 @@
     "cluster": "developer-command",
     "hub": "errors/dev/",
     "summary": "Trace the Node/OpenSSL boundary to the dependency, build tool or application that requests unsupported crypto, use legacy provider only as a diagnostic bridge, then verify after removing it."
+  },
+  {
+    "title": "Android Manifest Merger Failed — Find the First Real Conflict",
+    "url": "errors/dev/android-gradle/manifest-merger-failed/",
+    "product": "Android / Gradle",
+    "type": "Manifest composition / merge conflict",
+    "keywords": ["manifest merger failed", "android manifest merger failed", "tools replace android manifest", "manifest merger conflict"],
+    "kind": "article",
+    "published": "2026-09-27",
+    "publish_order": 49,
+    "cluster": "android-gradle",
+    "hub": "errors/dev/",
+    "summary": "Read the first concrete manifest conflict, trace both source manifests and priority, choose the intended final value, apply the narrowest remediation, then verify the merged manifest for the exact variant."
   }
 ]
