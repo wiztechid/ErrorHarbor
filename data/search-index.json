@@ -474,5 +474,25 @@
     "cluster": "windows-network",
     "hub": "errors/windows-network/",
     "summary": "Separate NDIS Virtual Network Adapter Enumerator Code 22 from Code 52, then verify the correct enable or driver-signature path without weakening Windows security."
+  },
+  {
+    "title": "Received Unexpected End-of-File from SFTP Server",
+    "url": "errors/dev/sftp/received-unexpected-end-of-file-from-sftp-server/",
+    "product": "OpenSSH / SFTP",
+    "type": "SFTP server error",
+    "keywords": [
+      "received unexpected end-of-file from sftp server",
+      "unexpected end of file sftp",
+      "filezilla unexpected end of file sftp server",
+      "winscp unexpected end of file sftp",
+      "sftp subsystem internal-sftp",
+      "sftp eof sshd_config"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 24,
+    "cluster": "developer-command",
+    "hub": "errors/dev/",
+    "summary": "Find where the SFTP session dies, then separate SSH authentication, subsystem, chroot/access and later-session failures before changing sshd_config."
   }
 ]
