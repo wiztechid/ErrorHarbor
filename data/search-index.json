@@ -650,5 +650,24 @@
     "cluster": "windows-sdk",
     "hub": "errors/dev/",
     "summary": "Run SignTool /debug and fix the first certificate-selection filter that reaches zero: EKU, expiry, private key, store, selector, PFX, or execution identity."
+  },
+  {
+    "title": "SignTool Error: The Specified Timestamp Server Either Could Not Be Reached or Returned an Invalid Response",
+    "url": "errors/dev/windows-sdk/signtool-timestamp-server-unreachable/",
+    "product": "Windows SDK / SignTool",
+    "type": "Timestamp server error",
+    "keywords": [
+      "the specified timestamp server either could not be reached or returned an invalid response",
+      "signtool timestamp server could not be reached",
+      "signtool timestamp invalid response",
+      "signtool /tr timestamp error",
+      "signtool rfc 3161 error"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 33,
+    "cluster": "windows-sdk",
+    "hub": "errors/dev/",
+    "summary": "Separate timestamp endpoint/protocol failures from proxy, firewall, TLS, /td SHA256, provider outage, and CI-runner network differences."
   }
 ]
