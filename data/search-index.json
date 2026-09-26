@@ -513,5 +513,24 @@
     "cluster": "developer-command",
     "hub": "errors/dev/",
     "summary": "Find the exact ChrootDirectory path component OpenSSH rejects, preserve the root-owned security boundary, and put writable data inside the jail."
+  },
+  {
+    "title": "Subsystem Request Failed on Channel 0",
+    "url": "errors/dev/sftp/subsystem-request-failed-on-channel-0/",
+    "product": "OpenSSH / SFTP / SCP",
+    "type": "SSH subsystem error",
+    "keywords": [
+      "subsystem request failed on channel 0",
+      "sftp subsystem request failed on channel 0",
+      "scp subsystem request failed on channel 0",
+      "openssh subsystem sftp failed",
+      "scp sftp subsystem"
+    ],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 26,
+    "cluster": "developer-command",
+    "hub": "errors/dev/",
+    "summary": "Identify whether SFTP or modern SCP requested the failing subsystem, then verify the effective OpenSSH Subsystem configuration before changing sshd."
   }
 ]
