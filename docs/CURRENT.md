@@ -189,3 +189,13 @@ New production rule:
 - declared Developer Errors as parent hub while the C++ cluster grows from 1 to 2 articles
 - reinforced the existing Visual C++ Debug Assertion guide with a backlink
 - updated homepage latest-8, ItemList schema, search registry and sitemap in the same release
+
+
+## Article #39 — SQL Server authentication anchor — 2026-09-26
+
+- published `SQL Server Error 18456: Login Failed for User`
+- moat: correlate the failed attempt with the server-side Reason and State before changing authentication settings
+- routes credential states, requested/default database states, auth-mode mismatch, Windows server-access states, and ANONYMOUS LOGON/(null) Kerberos/SPN/delegation separately
+- added security guardrails, explicit verification, and escalation evidence
+- database cluster grows from 4 to 5 articles
+- updated Developer hub, homepage latest-8 + ItemList, search registry, sitemap, and SQL Server sibling backlink
