@@ -820,5 +820,18 @@
     "cluster": "android-gradle",
     "hub": "errors/dev/",
     "summary": "Find the first concrete AAPT2 error, classify it, fix that branch, then rebuild and verify."
+  },
+  {
+    "title": "checkDebugAarMetadata Failed — Read the AAR Requirement First",
+    "url": "errors/dev/android-gradle/checkdebugaarmetadata-failed/",
+    "product": "Android / Gradle / AAR",
+    "type": "AAR metadata compatibility failure",
+    "keywords": ["checkdebugaarmetadata failed", "execution failed for task checkdebugaarmetadata", "aar metadata compileSdk", "minCompileSdk dependency", "minAgpVersion"],
+    "kind": "article",
+    "published": "2026-09-26",
+    "publish_order": 42,
+    "cluster": "android-gradle",
+    "hub": "errors/dev/",
+    "summary": "Read the first AAR metadata requirement, identify the dependency that owns it, align the relevant build boundary, then rerun the same variant."
   }
 ]
