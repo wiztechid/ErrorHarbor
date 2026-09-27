@@ -341,3 +341,28 @@ img.brand-mark{object-fit:contain!important;background:none!important}
   .article>aside.sidebar .guide-details{gap:12px!important}
   .article>aside.sidebar .guide-details>span{max-width:120px}
 }
+
+
+/* Desktop guide-details placement v7 — guide below metadata, TOC remains sticky */
+@media(min-width:1101px){
+  article.article>.side-block:has(.guide-details){
+    width:100%;
+    margin:10px 0 24px;
+    padding:12px 16px;
+    border-radius:14px;
+    box-shadow:none;
+  }
+  article.article>.side-block:has(.guide-details)>b{display:block;margin-bottom:9px}
+  article.article>.side-block:has(.guide-details) .guide-details{
+    display:flex;
+    flex-flow:row wrap;
+    align-items:flex-start;
+    gap:12px 30px;
+  }
+  article.article>.side-block:has(.guide-details) .guide-details>span{
+    flex:0 1 auto;
+    min-width:125px;
+    max-width:210px;
+  }
+  .article-grid>aside.sidebar>.side-block:has(.guide-details){display:none!important}
+}
