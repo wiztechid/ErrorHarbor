@@ -57,15 +57,15 @@ Production rules:
 - keep anchor, side rail, vignette and other automatic formats off initially; enable only after deliberate UX/regression review
 - protect mobile/tablet layouts from ad reflow and accidental-click proximity
 
-## 5. Google CMP
+## 5. Google consent message
 
-For Google advertising to users in the EEA, UK and Switzerland, configure a Google-certified CMP integrated with the applicable IAB TCF requirements. Prefer the consent tooling available through AdSense Privacy & messaging when it satisfies the production setup.
+For Google advertising to relevant users in the EEA, UK and Switzerland, configure the consent message through Google AdSense Privacy & messaging. Use the user-choice options available for the applicable region and advertising configuration before dependent advertising/storage technologies activate. ErrorHarbor does not need a separately installed third-party CMP for the planned setup unless a later production requirement changes that decision.
 
 Do not hard-code a fake consent banner. Required consent choices must be presented before advertising/storage technologies that depend on those choices are activated.
 
 Activation sequence:
 
-`AdSense review/approval → Privacy & messaging/CMP configuration → verify regional consent behavior → production AdSense tag → production placement v1 → mobile/tablet/desktop regression QC`
+`AdSense review/approval → Privacy & messaging user-choice configuration → verify regional consent behavior → production AdSense tag → production placement v1 → mobile/tablet/desktop regression QC`
 
 ## 6. Search Console
 
