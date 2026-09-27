@@ -1,9 +1,9 @@
 # MASTER SOP — HIGH PAYING KEYWORD
 ## ErrorHarbor SEO, Reader-First UX, Internal-Link Graph & Monetization Framework
 
-**Version:** 2.1  
+**Version:** 2.2  
 **Status:** ACTIVE  
-**Effective:** 2026-09-26
+**Effective:** 2026-09-27
 
 > **North Star:** ErrorHarbor should be the fastest, clearest and most trustworthy place to diagnose a technical error. Every new page must improve both the reader's troubleshooting path and the site's topical-link graph.
 
@@ -174,7 +174,7 @@ For security, system, networking and virtualization changes:
 ### A. Homepage freshness link
 Every new article must be linked from the homepage **New troubleshooting guides** section.
 
-- Homepage keeps the latest **8** article URLs.
+- Homepage keeps the latest **6** article URLs.
 - A page normally remains there until displaced by newer articles.
 - “New” is a freshness/navigation label, not a ranking claim.
 - Older pages remain discoverable through hubs, related links, search and sitemap.
@@ -217,7 +217,7 @@ Every indexable article must be discoverable through:
 Homepage has three distinct crawl surfaces:
 
 1. **Featured exact-error guides** — durable flagship pages.
-2. **New troubleshooting guides** — latest 8 publication URLs.
+2. **New troubleshooting guides** — latest 6 publication URLs.
 3. **Error Library** — cluster/hub discovery.
 
 The homepage Latest section must be updated in the same commit as new articles.
@@ -363,7 +363,7 @@ Update together:
 1. article HTML;
 2. `data/search-index.json`;
 3. parent hub;
-4. homepage latest-8;
+4. homepage latest-6;
 5. at least one sibling backlink when semantically valid;
 6. article related links;
 7. `sitemap.xml`;
@@ -403,7 +403,7 @@ It must verify:
 - sitemap contains the URL;
 - declared hub exists and links to the article;
 - related section has useful internal links;
-- latest 8 articles are linked from homepage;
+- latest 6 articles are linked from homepage;
 - no current article becomes orphaned.
 
 A failed gate means **do not call the batch production-ready**.
@@ -549,3 +549,74 @@ Batch publishing is allowed only when every page independently passes opportunit
 14. Freshness/current applicability must be checked before drafting.
 15. Live SERP evidence overrides stale KD assumptions.
 16. Source commit ≠ live publication; validator + deployment + live QC complete the release.
+
+
+---
+
+## 18. Deep AdSense Readiness Gate — v1
+
+AdSense readiness is a **corpus-level quality gate**, not a request to add ads early.
+
+### Gate A — Publisher identity & trust
+Require:
+- substantive About, Editorial Methodology, Contact, Privacy, Terms, Disclaimer, Affiliate Disclosure and Corrections mechanisms;
+- no fabricated authorship, testing, success rates or community consensus;
+- transparent AI-assisted editorial workflow: AI output is not authoritative evidence and technical claims must be grounded in primary/credible evidence;
+- monetization must not determine troubleshooting recommendations.
+
+### Gate B — Content value / scaled-content guard
+Every article must have a **problem-specific diagnostic moat**. A shared visual/editorial framework is acceptable; cloned reasoning is not.
+
+Hard rules:
+- do not publish merely to increase URL count;
+- do not create a new page when an existing canonical page satisfies the intent;
+- do not force a fixed number of fixes, FAQs or headings;
+- diagnosis, evidence, remediation and verification must fit the actual error;
+- compare against the existing corpus for intent overlap/cannibalization;
+- no filler, fake metrics, placeholder/unfinished content or mass keyword substitution;
+- if the unique diagnostic moat cannot be stated, HOLD/MERGE/SKIP.
+
+### Gate C — Crawl graph / technical integrity
+Maintain:
+`Homepage → Error Library → pillar/hub → article → related article`.
+
+All four Error Library pillars must be present in the internal-search registry:
+- Developer Errors;
+- Windows & Network;
+- Virtualization;
+- Hardware & Printer Errors.
+
+The publish gate must reject malformed sitemap envelope or literal escaped-newline artifacts. Every indexable article remains canonical, in sitemap, linked by its hub and supported by additional inbound discovery.
+
+### Gate D — Ad placement / accidental-click safety
+Before production monetization, reserved ad placeholders remain hidden.
+
+Never place production ads:
+- before the first useful answer/check;
+- inside or immediately against code/copy controls;
+- beside Yes/No feedback actions;
+- inside warnings, verification or diagnostic controls;
+- inside search/navigation/TOC/Guide Details;
+- inside community/comment input.
+
+Production ad placement is a separate controlled release. Do **not** simply unhide staged placeholders. Begin conservatively with clearly separated in-page inventory; evaluate anchor, side rail, vignette and other automatic formats only after UX/regression testing.
+
+### Gate E — Privacy / consent / implementation
+Canonical AdSense publisher ID: `pub-4750547049813961`.
+
+`ads.txt` must retain:
+`google.com, pub-4750547049813961, DIRECT, f08c47fec0942fa0`
+
+Privacy disclosure must cover Google AdSense, cookies/storage, web beacons, IP/identifiers, advertising choices and relevant regional consent. For EEA, UK and Switzerland, use a Google-certified CMP integrated with the applicable IAB TCF requirements when Google advertising is activated.
+
+Do not hard-code a fake consent banner. Do not leak production `adsbygoogle` / `pagead2.googlesyndication.com` tags into templates before the intentional consent/ad activation release.
+
+### Deep AdSense QC sequence
+1. Publisher Identity & Trust
+2. Content Value & Low-Value / Scaled-Content Risk
+3. Crawl Graph, Navigation & Dead-End Risk
+4. Ad Placement, UX & Accidental-Click Risk
+5. Privacy, Consent, CMP & Implementation Readiness
+6. Final Submission Readiness / Full AdSense Gate
+
+A PASS is a readiness judgment, **not a guarantee of Google approval**.
