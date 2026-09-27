@@ -30,6 +30,20 @@ for (const url of requiredSearchHubs) {
 const css=read("assets/css/styles.css");
 if(!/\.ad-placeholder\s*\{[^}]*display\s*:\s*none\s*!important/i.test(css)) fail.push("ads: reserved .ad-placeholder inventory must remain hidden before production monetization");
 
+// AdSense implementation-readiness contract.
+const privacy=read("privacy/index.html");
+const adsTxt=read("ads.txt");
+const publisherId="pub-4750547049813961";
+if(!adsTxt.includes(`google.com, ${publisherId}, DIRECT, f08c47fec0942fa0`)) fail.push("ads.txt: canonical Google AdSense publisher record missing or mismatched");
+for(const signal of ["Google AdSense","cookies","web beacons","IP addresses","Google-certified consent management platform","European Economic Area","United Kingdom","Switzerland","Google Ads Settings"]){
+  if(!privacy.includes(signal)) fail.push(`privacy: missing AdSense disclosure signal: ${signal}`);
+}
+// Until production consent/ad configuration is intentionally activated, publisher ad tags must not leak into site templates.
+for(const p of ["index.html","assets/js/app.js"]){
+  const source=read(p);
+  if(source.includes("pagead2.googlesyndication.com")||source.includes("adsbygoogle")) fail.push(`${p}: production AdSense tag detected before consent/ad activation gate is enabled`);
+}
+
 const articles=registry.filter(x=>x.kind==="article");
 const latest=[...articles].sort((a,b)=>(b.publish_order||0)-(a.publish_order||0)).slice(0,6);
 
