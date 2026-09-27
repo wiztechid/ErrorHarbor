@@ -469,3 +469,15 @@ img.brand-mark{object-fit:contain!important;background:none!important}
   .latest-more{justify-content:flex-end!important;margin-top:16px!important}
   .latest-more .button{width:auto!important;max-width:100%;min-height:44px;padding:10px 15px!important}
 }
+
+
+/* Homepage mobile section rhythm v4 — remove dead space before promise */
+@media(max-width:650px){
+  .library-grid-pillars{margin-bottom:0!important}
+  .library-grid-pillars + *{margin-top:0!important}
+  .library-grid-pillars .library-card:last-child{margin-bottom:0!important}
+  .library-grid-pillars.closest{margin-bottom:0!important}
+  main>section:has(.library-grid-pillars){padding-bottom:18px!important}
+  main>section:has(.promise){padding-top:0!important}
+  main>section:has(.promise) .promise{margin-top:0!important}
+}
