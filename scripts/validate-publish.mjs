@@ -10,7 +10,7 @@ const sitemap=read("sitemap.xml");
 const home=read("index.html");
 
 // Sitemap must remain parseable XML; literal escaped newlines have previously leaked into production.
-if(sitemap.includes("\\\\n")) fail.push("sitemap.xml: contains literal \\\\n artifact; use real newlines");
+if(sitemap.includes("\\n")) fail.push("sitemap.xml: contains literal \\n artifact; use real newlines");
 if(!sitemap.includes('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')||!sitemap.trim().endsWith("</urlset>")) fail.push("sitemap.xml: malformed urlset envelope");
 
 const requiredSearchHubs = [
