@@ -392,3 +392,12 @@ img.brand-mark{object-fit:contain!important;background:none!important}
     transform:none!important;
   }
 }
+
+
+/* Homepage latest-guides continuation */
+.latest-more{display:flex;justify-content:center;margin-top:24px}
+.latest-more .button{display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+@media(max-width:650px){
+  .latest-more{margin-top:18px}
+  .latest-more .button{width:100%;min-height:48px}
+}
