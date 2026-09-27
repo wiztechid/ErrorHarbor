@@ -18,7 +18,7 @@ google.com, pub-4750547049813961, DIRECT, f08c47fec0942fa0
 | #2 | Content Value / Low-Value / Scaled Content | PASS | 50 distinct exact-error intents; diagnostic-moat rule; visible ad scaffolding hidden |
 | #3 | Crawl Graph / Navigation / Dead Ends | PASS | sitemap repaired/guarded; four pillar hubs searchable; crawl graph protected |
 | #4 | Ad Placement / UX / Accidental Clicks | PRE-MONETIZATION PASS | staged slots hidden; interactive zones protected; production placement is a separate release |
-| #5 | Privacy / Consent / CMP / Implementation | PASS | privacy/CMP wording hardened; ads.txt/publisher ID guarded; production tags blocked before intentional activation |
+| #5 | Privacy / Consent Message / Implementation | PASS | privacy/consent-message wording hardened; ads.txt/publisher ID guarded; production tags blocked before intentional activation |
 | #6 | Final Submission Readiness | PENDING | full repository + live submission gate |
 
 ## Content / scaled-content guard
@@ -32,13 +32,13 @@ A shared visual/editorial framework is allowed; cloned reasoning is not. Every n
 - never unhide staged placeholders as the production implementation;
 - no production ad before first useful answer/check or adjacent to Copy, Yes/No feedback, search, TOC/Guide Details, warnings, verification or community input.
 
-## Consent / CMP contract
+## Consent-message contract
 
-For relevant EEA/UK/Switzerland traffic when Google advertising is activated, use a Google-certified CMP integrated with applicable IAB TCF requirements. Present required choices before advertising/storage technologies dependent on those choices activate.
+For relevant EEA/UK/Switzerland traffic when Google advertising is activated, configure the consent message through Google AdSense Privacy & messaging and present the user choices available for the applicable region/configuration before dependent advertising/storage technologies activate. Do not add a separate third-party CMP unless the production setup later requires one.
 
 ## Production activation
 
-`AdSense approval → Privacy & messaging / certified CMP → verify regional consent → production AdSense tag → production placement v1 → responsive regression QC → conservative optimization`
+`AdSense approval → Privacy & messaging / user-choice consent message → verify regional consent → production AdSense tag → production placement v1 → responsive regression QC → conservative optimization`
 
 Start with clearly separated responsive in-page inventory. Keep anchor, side rail, vignette and other automatic formats off until separately reviewed.
 
