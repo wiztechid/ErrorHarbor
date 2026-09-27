@@ -516,3 +516,7 @@ img.brand-mark{object-fit:contain!important;background:none!important}
     margin-top:0!important;
   }
 }
+
+
+/* AdSense pre-approval: reserved inventory must not appear as visitor-facing content. */
+.ad-placeholder{display:none!important}
