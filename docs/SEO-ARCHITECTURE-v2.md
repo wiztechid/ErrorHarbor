@@ -8,7 +8,7 @@
 ```text
 Homepage
 ├── Featured guides
-├── Latest 8 guides
+├── Latest 6 guides
 └── Error Library
     ├── Developer Errors
     │   ├── JavaScript
@@ -19,9 +19,12 @@ Homepage
     │   └── SQL / Database
     ├── Windows & Network
     │   └── TeamViewer / network errors
-    └── Virtualization
-        ├── VMware
-        └── Hyper-V
+    ├── Virtualization
+    │   ├── VMware
+    │   └── Hyper-V
+    └── Hardware & Printer Errors
+        ├── Printers
+        └── Windows storage / devices
 ```
 
 Each article links back through BreadcrumbList + parent hub and sideways through Related Troubleshooting.
@@ -54,7 +57,7 @@ The release is complete only after SEO Link Guard passes, Pages deployment succe
 
 ## Latest Guides
 
-Homepage shows the latest 8 article entries by `publish_order`.
+Homepage shows the latest 6 article entries by `publish_order`.
 
 Purpose:
 - immediate reader discovery;
@@ -119,3 +122,14 @@ The automated publish gate now checks every indexable article for:
 - unique title and meta description.
 
 A legacy page that fails this contract must be upgraded before it is treated as SEO-v2 compliant.
+
+
+## AdSense crawl/readiness overlay — 2026-09-27
+
+The crawl graph also serves monetization quality review. Ads must never become the navigation system or obscure the path to publisher content.
+
+- all four Error Library pillars are searchable hubs;
+- sitemap XML integrity is mechanically guarded;
+- reserved ad inventory stays hidden before production activation;
+- production ads must preserve first-useful-answer priority and interactive-control separation;
+- AdSense readiness does not weaken the article-level diagnostic moat or corpus cannibalization rules.
