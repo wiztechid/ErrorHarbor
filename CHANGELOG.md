@@ -171,3 +171,21 @@
 - added source/timing/lookup/shape/intentional-absence diagnostic branches
 - optional chaining is explicitly treated as a behavior decision rather than root-cause diagnosis
 - updated registry, Developer hub, sitemap, homepage and reciprocal JavaScript sibling links
+
+
+## 2026-09-27 — Deep AdSense readiness #1–#5 + governance sync
+
+- completed corpus-level AdSense readiness gates #1–#5: Publisher Trust, Content Value/Scaled-Content Risk, Crawl Graph, Ad Placement/Accidental-Click Risk, and Privacy/CMP/Implementation
+- documented transparent AI-assisted editorial workflow without treating AI output as authoritative evidence
+- strengthened Privacy Policy advertising choices and Google-certified CMP / consent language
+- created canonical root `ads.txt` for publisher `pub-4750547049813961`
+- hid visitor-facing reserved AdSense placeholders before production monetization
+- repaired literal escaped-newline artifacts in `sitemap.xml` and added sitemap-integrity regression checks
+- added Windows & Network and Hardware & Printer pillar hubs to internal search; publication gate now requires all four Error Library pillars
+- added AdSense validator guards for hidden pre-approval inventory, publisher/ads.txt parity, privacy disclosure signals and accidental pre-activation production tags
+- standardized homepage freshness architecture at latest 6 guides rather than a long archive
+- upgraded Master SOP to v2.2 with corpus-level scaled-content/diagnostic-moat and AdSense readiness gates
+- aligned SEO Architecture and Third-Party Setup with current production rules
+- updated `docs/CURRENT.md` and added `docs/ADSENSE-READINESS.md` as operational sources of truth
+- production AdSense code remains intentionally inactive pending final submission gate and consent configuration
+- next gate: Deep AdSense Final QC #6 — Final Submission Readiness / Full AdSense Gate
