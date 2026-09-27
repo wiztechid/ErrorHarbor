@@ -355,3 +355,12 @@ Initial placement posture is conservative: clearly separated in-page inventory f
 - Submission sequence: add/confirm `errorharbor.com` in AdSense → verify site using the available AdSense verification workflow and the existing canonical publisher record where applicable → request review.
 - Approval does not automatically authorize careless ad rollout. After approval, follow the guarded activation order already defined below: consent message → regional consent verification → production tag → conservative placement v1 → responsive regression QC.
 - Preserve the current ad-safety posture during review: hidden staged placeholders; no ads next to Copy, feedback controls, search, TOC/Guide Details, warnings, verification or community input; anchor/side rail/vignette remain off pending separate review.
+
+
+## Universal Website Governance baseline — 2026-09-27
+
+- Added `docs/WEBSITE-GOVERNANCE-SOP.md` v1.0 as the reusable governance baseline derived from ErrorHarbor's mature production controls.
+- Scope is site-agnostic: opportunity → evidence → intent/cannibalization → reader-first content → SEO/internal graph → atomic publish → validator/deploy/live QC → data loop → update/merge/retire.
+- Added universal mass-scale/AI guard, trust/editorial integrity, monetization, AdSense readiness, affiliate, analytics, security, CURRENT/CHANGELOG, severity, freeze and corpus-QC contracts.
+- ErrorHarbor-specific publisher IDs, taxonomy, HPK scoring and troubleshooting anatomy remain governed by ErrorHarbor's local SOPs and are not universal defaults.
+- Future websites may adopt this file as the parent governance layer and add stricter site-specific overrides without silently weakening the baseline.
