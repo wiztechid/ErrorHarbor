@@ -41,20 +41,31 @@ Keep the credential warning visible above comments.
 
 ## 4. Google AdSense
 
-Do not paste publisher scripts until the site/domain is ready for review.
+Current pre-approval state:
+
+- publisher ID: `pub-4750547049813961`
+- root `ads.txt` is present with the canonical Google DIRECT record
+- production AdSense tags are intentionally not active
+- staged `.ad-placeholder` inventory is hidden and must not be treated as production placement
 
 Production rules:
 
-- no ad before the first Quick Fix
-- no ad inside code, warning or verification blocks
-- protected areas: H1, error fingerprint, Quick Fix, commands, verification, Yes/No feedback, search and comment input
-- start with responsive in-page + side rail/anchor where appropriate
-- test vignette conservatively
-- add `ads.txt` only after the real publisher ID is known
+- no ad before the first useful answer/check
+- no ad inside or immediately adjacent to code/copy controls, warnings, verification, Yes/No feedback, search, TOC/Guide Details or comment input
+- do not simply unhide legacy placeholders after approval
+- begin with conservative, clearly separated responsive in-page inventory
+- keep anchor, side rail, vignette and other automatic formats off initially; enable only after deliberate UX/regression review
+- protect mobile/tablet layouts from ad reflow and accidental-click proximity
 
 ## 5. Google CMP
 
-When AdSense is enabled, configure the required consent experience for relevant regions. Do not hard-code a fake consent solution in the template.
+For Google advertising to users in the EEA, UK and Switzerland, configure a Google-certified CMP integrated with the applicable IAB TCF requirements. Prefer the consent tooling available through AdSense Privacy & messaging when it satisfies the production setup.
+
+Do not hard-code a fake consent banner. Required consent choices must be presented before advertising/storage technologies that depend on those choices are activated.
+
+Activation sequence:
+
+`AdSense review/approval → Privacy & messaging/CMP configuration → verify regional consent behavior → production AdSense tag → production placement v1 → mobile/tablet/desktop regression QC`
 
 ## 6. Search Console
 
