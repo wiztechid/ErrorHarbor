@@ -1,7 +1,7 @@
 # CURRENT — ErrorHarbor
 
-**Status:** Production domain live; SEO cutover complete  
-**Version:** Theme v2.1 · Production  
+**Status:** Production live · 50-article corpus · Deep AdSense QC #1–#5 complete  
+**Version:** Theme v2.1 · Master SOP v2.2 · Production  
 **Repository:** `wiztechid/ErrorHarbor`
 
 ## Implemented
@@ -141,7 +141,7 @@ Trust and completeness pass:
 
 New production rule:
 - every new article enters Homepage Latest Guides, its parent hub, sitemap and search registry in the same release
-- homepage Latest Guides retains the newest 8 article URLs
+- homepage Latest Guides retains the newest 6 article URLs
 - new articles must include related links and receive a relevant backlink from an existing sibling when available
 - search registry now stores publish date/order, cluster, hub and summary metadata
 - homepage now exposes an ItemList for the latest guides
@@ -176,7 +176,7 @@ New production rule:
 - separated command-resolution/PATH intent from the anchor `SignTool.exe Not Found` installation/discovery intent
 - added shell vs exact-path vs session-PATH vs CI/CD decision flow with explicit verification
 - reinforced two-way internal linking between the SignTool anchor and supporting guide
-- added the new URL to Developer hub, homepage latest-8, search registry and sitemap
+- added the new URL to Developer hub, homepage latest-6, search registry and sitemap
 - grounded the guide in current Microsoft SignTool, Developer shell and MSIX CI/CD documentation
 
 
@@ -188,7 +188,7 @@ New production rule:
 - added explicit verification after each branch plus unsafe-advice guardrails
 - declared Developer Errors as parent hub while the C++ cluster grows from 1 to 2 articles
 - reinforced the existing Visual C++ Debug Assertion guide with a backlink
-- updated homepage latest-8, ItemList schema, search registry and sitemap in the same release
+- updated homepage latest-6, ItemList schema, search registry and sitemap in the same release
 
 
 ## Article #39 — SQL Server authentication anchor — 2026-09-26
@@ -198,7 +198,7 @@ New production rule:
 - routes credential states, requested/default database states, auth-mode mismatch, Windows server-access states, and ANONYMOUS LOGON/(null) Kerberos/SPN/delegation separately
 - added security guardrails, explicit verification, and escalation evidence
 - database cluster grows from 4 to 5 articles
-- updated Developer hub, homepage latest-8 + ItemList, search registry, sitemap, and SQL Server sibling backlink
+- updated Developer hub, homepage latest-6 + ItemList, search registry, sitemap, and SQL Server sibling backlink
 
 
 ## Deep Reader-First QC #39 — 2026-09-26
@@ -219,7 +219,7 @@ New production rule:
 - preserves the 18456 boundary: if another database also cannot connect, return to server-side Reason/State diagnosis
 - added SQL Server vs Azure SQL Database platform boundary and least-privilege guardrails
 - database cluster grows from 5 to 6 unique articles
-- updated Developer hub, homepage latest-8 + ItemList, search registry, sitemap and two-way 18456 ↔ 4064 links
+- updated Developer hub, homepage latest-6 + ItemList, search registry, sitemap and two-way 18456 ↔ 4064 links
 - removed residual duplicate #39 sitemap/hub publication entries discovered during release QC
 
 
@@ -239,7 +239,7 @@ New production rule:
 - branches: minCompileSdk, minAgpVersion, minCompileSdkExtension, dependency-upgrade compatibility, Flutter/React Native/multi-module effective config, wrapper-only extraction
 - compileSdk is explicitly separated from minSdk and targetSdk; no copy-pasted universal SDK number
 - Android/Gradle cluster grows 3 → 4 from SERP opportunity, with intent boundary back to AAPT2 #41
-- publication graph: registry, Developer hub, sitemap, homepage latest-8/ItemList, and backlinks from all three Android siblings
+- publication graph: registry, Developer hub, sitemap, homepage latest-6/ItemList, and backlinks from all three Android siblings
 
 
 ## Article #43 — npm ERESOLVE dependency tree — 2026-09-26
@@ -249,7 +249,7 @@ New production rule:
 - guardrail: bypass flags are not the default fix; durable verification uses normal install, npm ls, and affected build/tests
 - branches: root peer mismatch, upgrade changed peer range, transitive owner, manifest/lockfile mismatch, bypass behavior, buried conflict block
 - developer-command cluster grows 2 → 3 based on cross-cluster SERP opportunity
-- publication graph includes registry, Developer hub, sitemap, homepage latest-8/ItemList; article links to npm command-not-found and JavaScript guide
+- publication graph includes registry, Developer hub, sitemap, homepage latest-6/ItemList; article links to npm command-not-found and JavaScript guide
 
 
 ## Article #44 — JavaScript Cannot Read Properties of Undefined — 2026-09-26
@@ -259,7 +259,7 @@ New production rule:
 - guardrail: optional chaining is a behavior choice, not root-cause diagnosis
 - six reader paths: required source data, timing/init, lookup/index, object-shape mismatch, legitimate absence, intermittent input
 - JavaScript cluster grows 2 → 3 based on cross-cluster SERP opportunity
-- publication graph: registry, Developer hub, sitemap, homepage latest-8/ItemList and reciprocal sibling links
+- publication graph: registry, Developer hub, sitemap, homepage latest-6/ItemList and reciprocal sibling links
 
 
 ## Article #45 — MSVC LNK2019 Unresolved External Symbol — 2026-09-26
@@ -269,7 +269,7 @@ New production rule:
 - branches: own source missing from build; object/library not linked; declaration/definition mismatch; C/C++ or DLL linkage; Debug/Release and x86/x64 mismatch; evidence with /VERBOSE, DUMPBIN and UNDNAME
 - anti-cannibalization: LNK1104 is file-open failure; LNK2019 is symbol-resolution failure
 - C++ cluster grows 2 → 3
-- publication graph: registry, Developer hub, sitemap, homepage latest-8/ItemList and reciprocal LNK1104 sibling link
+- publication graph: registry, Developer hub, sitemap, homepage latest-6/ItemList and reciprocal LNK1104 sibling link
 
 
 ## Article #46 — Windows 0x800701B1 — 2026-09-26
@@ -279,7 +279,7 @@ New production rule:
 - safety guardrail: unstable/important storage is data-sensitive; do not begin with formatting, initialization, repartitioning or repeated write-heavy repair
 - branches: USB cable/port/enclosure/power; internal SATA/NVMe; device-stays-present operation failure; VHD/VHDX/Storage Spaces/BitLocker; driver/controller after evidence
 - hardware cluster grows 2 → 3 and expands beyond printers into Windows storage
-- publication graph: registry, Hardware hub, sitemap and homepage latest-8/ItemList
+- publication graph: registry, Hardware hub, sitemap and homepage latest-6/ItemList
 
 
 ## Article #47 — SSH Permission Denied (publickey) — 2026-09-26
@@ -291,7 +291,7 @@ New production rule:
 - safety: never share private keys; no chmod 777/StrictModes weakening; preserve working admin access during server-side changes
 - anti-cannibalization: Too Many Authentication Failures covers attempt exhaustion; #47 covers no public-key identity being accepted
 - SSH/SFTP cluster grows 5 → 6
-- publication graph: registry, SSH/SFTP hub, sitemap, homepage latest-8/ItemList and sibling backlink
+- publication graph: registry, SSH/SFTP hub, sitemap, homepage latest-6/ItemList and sibling backlink
 
 
 ## Article #48 — Node ERR_OSSL_EVP_UNSUPPORTED — 2026-09-27
@@ -302,7 +302,7 @@ New production rule:
 - branches: runtime/environment changed; build-tool/dependency owns crypto call; application owns crypto; legacy provider changes result; different OpenSSL/TLS problem
 - anti-cannibalization: npm ERESOLVE = dependency graph resolution; #48 = runtime/build-time crypto compatibility after Node can run
 - developer-command cluster grows 3 → 4
-- publication graph: registry, developer hub, sitemap, homepage latest-8/ItemList, ERESOLVE backlink and npm-command-not-found backlink
+- publication graph: registry, developer hub, sitemap, homepage latest-6/ItemList, ERESOLVE backlink and npm-command-not-found backlink
 
 
 ## Article #49 — Android Manifest merger failed — 2026-09-27
@@ -312,4 +312,33 @@ New production rule:
 - branches: attribute conflict; library-owned conflict; whole-node conflict; variant/flavor-specific conflict; wrong build-stage boundary
 - anti-cannibalization: AAPT2 = resource compile/link; checkDebugAarMetadata = dependency metadata/platform requirements; #49 = manifest composition/conflict semantics
 - Android/Gradle cluster grows 4 → 5
-- publication graph: registry, developer hub, sitemap, homepage latest-8/ItemList, AAPT2 backlink and checkDebugAarMetadata backlink
+- publication graph: registry, developer hub, sitemap, homepage latest-6/ItemList, AAPT2 backlink and checkDebugAarMetadata backlink
+
+
+## Current production snapshot — 2026-09-27
+
+- 50 indexable exact-error troubleshooting articles; Deep QC Final completed through #50.
+- Homepage freshness feed intentionally limited to latest 6 guides.
+- Four searchable Error Library pillars: Developer, Windows & Network, Virtualization, Hardware & Printer.
+- Deep article workflow remains mandatory: SERP opportunity → unique diagnosis/moat → article → Deep Reader-First QC → Deep QC Final.
+- A new URL is HOLD/MERGE/SKIP when a distinct diagnostic moat cannot be established.
+- sitemap literal escaped-newline artifact repaired and mechanically guarded.
+- internal-search pillar parity repaired and mechanically guarded.
+
+### Deep AdSense Final QC
+
+1. Publisher Identity & Trust — PASS.
+2. Content Value / Low-Value / Scaled-Content Risk — PASS.
+3. Crawl Graph / Navigation / Dead-End Risk — PASS.
+4. Ad Placement / UX / Accidental-Click Risk — pre-monetization PASS.
+5. Privacy / Consent / CMP / Implementation Readiness — PASS.
+6. Final Submission Readiness / Full AdSense Gate — NEXT.
+
+AdSense publisher ID: `pub-4750547049813961`.
+
+Root `ads.txt` is present with the canonical Google DIRECT record. Production AdSense tags remain intentionally inactive and reserved `.ad-placeholder` inventory remains hidden.
+
+Post-approval activation order:
+`approval → Privacy & messaging / certified CMP → verify regional consent → production AdSense tag → production placement v1 → mobile/tablet/desktop regression QC`.
+
+Initial placement posture is conservative: clearly separated in-page inventory first; no ads adjacent to Copy, feedback, search, TOC/Guide Details, warnings, verification or community input. Anchor, side rail and vignette remain off until separately reviewed.
