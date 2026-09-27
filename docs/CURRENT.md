@@ -23,7 +23,7 @@
 ## Intentionally pending
 
 - AdSense publisher script + ads.txt
-- Google CMP configuration
+- Google AdSense Privacy & messaging consent configuration
 - Cloudflare Worker + D1 feedback endpoint
 - Turnstile
 - real affiliate IDs/links
@@ -331,7 +331,7 @@ New production rule:
 2. Content Value / Low-Value / Scaled-Content Risk — PASS.
 3. Crawl Graph / Navigation / Dead-End Risk — PASS.
 4. Ad Placement / UX / Accidental-Click Risk — pre-monetization PASS.
-5. Privacy / Consent / CMP / Implementation Readiness — PASS.
+5. Privacy / Consent Message / Implementation Readiness — PASS.
 6. Final Submission Readiness / Full AdSense Gate — NEXT.
 
 AdSense publisher ID: `pub-4750547049813961`.
@@ -339,6 +339,6 @@ AdSense publisher ID: `pub-4750547049813961`.
 Root `ads.txt` is present with the canonical Google DIRECT record. Production AdSense tags remain intentionally inactive and reserved `.ad-placeholder` inventory remains hidden.
 
 Post-approval activation order:
-`approval → Privacy & messaging / certified CMP → verify regional consent → production AdSense tag → production placement v1 → mobile/tablet/desktop regression QC`.
+`approval → Privacy & messaging / user-choice consent message → verify regional consent → production AdSense tag → production placement v1 → mobile/tablet/desktop regression QC`.
 
 Initial placement posture is conservative: clearly separated in-page inventory first; no ads adjacent to Copy, feedback, search, TOC/Guide Details, warnings, verification or community input. Anchor, side rail and vignette remain off until separately reviewed.
