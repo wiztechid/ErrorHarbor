@@ -25,6 +25,11 @@ for (const url of requiredSearchHubs) {
   else if (!hub.title || !hub.summary || !Array.isArray(hub.keywords) || hub.keywords.length < 2) fail.push(`${url}: internal-search hub metadata incomplete`);
 }
 
+// AdSense UX guard: reserved inventory stays hidden until production ad code is intentionally enabled.
+// Never treat feedback/navigation-adjacent placeholders as approved production placements.
+const css=read("assets/css/styles.css");
+if(!/\.ad-placeholder\s*\{[^}]*display\s*:\s*none\s*!important/i.test(css)) fail.push("ads: reserved .ad-placeholder inventory must remain hidden before production monetization");
+
 const articles=registry.filter(x=>x.kind==="article");
 const latest=[...articles].sort((a,b)=>(b.publish_order||0)-(a.publish_order||0)).slice(0,6);
 
