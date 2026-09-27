@@ -433,3 +433,39 @@ img.brand-mark{object-fit:contain!important;background:none!important}
   .library-help-grid{grid-template-columns:1fr;gap:20px}
   .library-help-grid h2{font-size:26px}
 }
+
+
+/* Homepage latest CTA v2 — clear continuation action */
+.latest-more{
+  display:flex!important;
+  justify-content:flex-end!important;
+  align-items:center;
+  margin-top:22px!important;
+}
+.latest-more .button{
+  display:inline-flex!important;
+  align-items:center;
+  justify-content:center;
+  width:auto!important;
+  min-height:46px;
+  padding:11px 18px!important;
+  border:1px solid #176bff!important;
+  border-radius:13px!important;
+  background:linear-gradient(135deg,#176bff,#5268ff)!important;
+  color:#fff!important;
+  font-size:14px;
+  font-weight:850;
+  text-decoration:none!important;
+  box-shadow:0 8px 20px rgba(23,107,255,.18);
+  transition:transform .16s ease,box-shadow .16s ease,filter .16s ease;
+}
+.latest-more .button:hover{
+  color:#fff!important;
+  transform:translateY(-1px);
+  box-shadow:0 11px 24px rgba(23,107,255,.23);
+  filter:brightness(.98);
+}
+@media(max-width:650px){
+  .latest-more{justify-content:flex-end!important;margin-top:16px!important}
+  .latest-more .button{width:auto!important;max-width:100%;min-height:44px;padding:10px 15px!important}
+}
