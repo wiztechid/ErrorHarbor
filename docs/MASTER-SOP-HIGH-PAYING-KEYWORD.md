@@ -607,7 +607,7 @@ Canonical AdSense publisher ID: `pub-4750547049813961`.
 `ads.txt` must retain:
 `google.com, pub-4750547049813961, DIRECT, f08c47fec0942fa0`
 
-Privacy disclosure must cover Google AdSense, cookies/storage, web beacons, IP/identifiers, advertising choices and relevant regional consent. For EEA, UK and Switzerland, use a Google-certified CMP integrated with the applicable IAB TCF requirements when Google advertising is activated.
+Privacy disclosure must cover Google AdSense, cookies/storage, web beacons, IP/identifiers, advertising choices and relevant regional consent. For EEA, UK and Switzerland, use the consent message configured through Google AdSense Privacy & messaging and present the user choices available for the applicable region/configuration before dependent advertising technologies activate. Do not add a separate third-party CMP unless the production setup later requires one.
 
 Do not hard-code a fake consent banner. Do not leak production `adsbygoogle` / `pagead2.googlesyndication.com` tags into templates before the intentional consent/ad activation release.
 
