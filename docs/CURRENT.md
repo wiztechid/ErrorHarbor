@@ -1,6 +1,6 @@
 # CURRENT — ErrorHarbor
 
-**Status:** Production live · 50-article corpus · Deep AdSense QC #1–#5 complete  
+**Status:** Production live · 50-article corpus · Deep AdSense QC #1–#5 PASS · #6 submission gate next  
 **Version:** Theme v2.1 · Master SOP v2.2 · Production  
 **Repository:** `wiztechid/ErrorHarbor`
 
@@ -22,8 +22,9 @@
 
 ## Intentionally pending
 
-- AdSense publisher script + ads.txt
-- Google AdSense Privacy & messaging consent configuration
+- Production AdSense publisher/ad script (intentionally inactive until activation stage)
+- Google AdSense site submission / review (#6)
+- Google AdSense Privacy & messaging user-choice consent configuration (activation stage)
 - Cloudflare Worker + D1 feedback endpoint
 - Turnstile
 - real affiliate IDs/links
@@ -33,7 +34,7 @@
 
 ## Next product milestone
 
-**P0: monitor indexing/query signals for batches #1–#2 while enforcing the SEO Architecture v2 publication graph.**
+**P0: complete Deep AdSense Final QC #6 and submit `errorharbor.com` for AdSense review; continue monitoring indexing/query signals without weakening the SEO Architecture v2 publication graph.**
 
 
 ## Giscus comments activated — 2026-09-23
@@ -342,3 +343,15 @@ Post-approval activation order:
 `approval → Privacy & messaging / user-choice consent message → verify regional consent → production AdSense tag → production placement v1 → mobile/tablet/desktop regression QC`.
 
 Initial placement posture is conservative: clearly separated in-page inventory first; no ads adjacent to Copy, feedback, search, TOC/Guide Details, warnings, verification or community input. Anchor, side rail and vignette remain off until separately reviewed.
+
+
+## AdSense submission handoff — 2026-09-27
+
+- Deep AdSense Final QC #1–#5: PASS; #6 is the active submission gate.
+- Root `ads.txt` is already live in the repository with publisher ID `pub-4750547049813961`; it is **implemented**, not pending.
+- Do not replace the canonical `ads.txt` record unless the AdSense account itself supplies a different verified publisher record.
+- Production AdSense advertising script remains intentionally inactive during the pre-approval/submission state.
+- Consent architecture decision: use Google Privacy & messaging / Google CMP with user choice; do not add a separate third-party CMP unless a later production requirement justifies it.
+- Submission sequence: add/confirm `errorharbor.com` in AdSense → verify site using the available AdSense verification workflow and the existing canonical publisher record where applicable → request review.
+- Approval does not automatically authorize careless ad rollout. After approval, follow the guarded activation order already defined below: consent message → regional consent verification → production tag → conservative placement v1 → responsive regression QC.
+- Preserve the current ad-safety posture during review: hidden staged placeholders; no ads next to Copy, feedback controls, search, TOC/Guide Details, warnings, verification or community input; anchor/side rail/vignette remain off pending separate review.
