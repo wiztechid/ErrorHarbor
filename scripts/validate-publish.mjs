@@ -35,7 +35,7 @@ const privacy=read("privacy/index.html");
 const adsTxt=read("ads.txt");
 const publisherId="pub-4750547049813961";
 if(!adsTxt.includes(`google.com, ${publisherId}, DIRECT, f08c47fec0942fa0`)) fail.push("ads.txt: canonical Google AdSense publisher record missing or mismatched");
-for(const signal of ["Google AdSense","cookies","web beacons","IP addresses","Google-certified consent management platform","European Economic Area","United Kingdom","Switzerland","Google Ads Settings"]){
+for(const signal of ["Google AdSense","cookies","web beacons","IP addresses","Google AdSense Privacy &amp; messaging","European Economic Area","United Kingdom","Switzerland","Google Ads Settings"]){
   if(!privacy.includes(signal)) fail.push(`privacy: missing AdSense disclosure signal: ${signal}`);
 }
 // Until production consent/ad configuration is intentionally activated, publisher ad tags must not leak into site templates.
