@@ -51,7 +51,7 @@ document.querySelectorAll("[data-feedback]").forEach(btn=>btn.addEventListener("
 // Responsive article navigation: place the TOC inside the article, directly after metadata.
 const articleGrid=document.querySelector(".article-grid");
 const articleEl=articleGrid?.querySelector(":scope > article.article");
-const tocEl=articleGrid?.querySelector(":scope > aside.toc");
+const tocEl=articleGrid?.querySelector(":scope > aside.sidebar");
 if(articleGrid&&articleEl&&tocEl){
   const articleMeta=articleEl.querySelector(".meta");
   const mobileToc=window.matchMedia("(max-width: 1100px)");
