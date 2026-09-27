@@ -48,22 +48,29 @@ document.querySelectorAll("[data-feedback]").forEach(btn=>btn.addEventListener("
   }
 }));
 
-// Responsive article navigation: place the TOC inside the article, directly after metadata.
+// Article support navigation: guide details always follows metadata; TOC joins it on mobile/tablet.
 const articleGrid=document.querySelector(".article-grid");
 const articleEl=articleGrid?.querySelector(":scope > article.article");
-const tocEl=articleGrid?.querySelector(":scope > aside.sidebar");
-if(articleGrid&&articleEl&&tocEl){
+const sidebarEl=articleGrid?.querySelector(":scope > aside.sidebar")||articleEl?.querySelector(":scope > aside.sidebar");
+if(articleGrid&&articleEl&&sidebarEl){
   const articleMeta=articleEl.querySelector(".meta");
-  const mobileToc=window.matchMedia("(max-width: 1100px)");
-  const placeToc=()=>{
-    if(mobileToc.matches&&articleMeta){
-      if(articleMeta.nextElementSibling!==tocEl)articleMeta.parentNode.insertBefore(tocEl,articleMeta.nextSibling);
-    }else if(articleEl.nextElementSibling!==tocEl){
-      articleGrid.insertBefore(tocEl,articleEl.nextSibling);
+  const guideBlock=sidebarEl.querySelector(".side-block:has(.guide-details)");
+  const tocBlock=sidebarEl.querySelector(".side-block:has(.toc)");
+  const responsive=window.matchMedia("(max-width: 1100px)");
+  const placeSupport=()=>{
+    if(!articleMeta)return;
+    if(guideBlock&&articleMeta.nextElementSibling!==guideBlock)articleMeta.parentNode.insertBefore(guideBlock,articleMeta.nextSibling);
+    if(responsive.matches){
+      if(sidebarEl.parentNode!==articleEl)articleEl.insertBefore(sidebarEl,guideBlock?.nextSibling||articleMeta.nextSibling);
+      if(tocBlock&&sidebarEl.firstElementChild!==tocBlock)sidebarEl.insertBefore(tocBlock,sidebarEl.firstElementChild);
+      if(guideBlock&&guideBlock.parentNode!==sidebarEl)sidebarEl.appendChild(guideBlock);
+    }else{
+      if(guideBlock&&guideBlock.parentNode!==articleEl)articleEl.insertBefore(guideBlock,articleMeta.nextSibling);
+      if(sidebarEl.parentNode!==articleGrid)articleGrid.insertBefore(sidebarEl,articleEl.nextSibling);
     }
   };
-  placeToc();
-  if(mobileToc.addEventListener)mobileToc.addEventListener("change",placeToc);else mobileToc.addListener(placeToc);
+  placeSupport();
+  if(responsive.addEventListener)responsive.addEventListener("change",placeSupport);else responsive.addListener(placeSupport);
 }
 
 const toc=[...document.querySelectorAll(".toc a")];
