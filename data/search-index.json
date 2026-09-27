@@ -988,5 +988,40 @@
     "cluster": "dotnet",
     "hub": "errors/dev/",
     "summary": "Prove the intended target framework and SDK selected by the failing build, then trace global.json, installed SDK architecture, IDE/CI context and environment overrides before installing, downgrading or retargeting."
+  },
+  {
+    "title": "Windows & Network Errors",
+    "url": "errors/windows-network/",
+    "product": "Windows / Network",
+    "type": "Error hub",
+    "keywords": [
+      "windows errors",
+      "network errors",
+      "windows network troubleshooting",
+      "certificate errors",
+      "remote desktop errors",
+      "active directory errors"
+    ],
+    "kind": "hub",
+    "cluster": "windows-network",
+    "hub": "errors/",
+    "summary": "Route Windows and network problems by exact symptom, service and failure layer before changing system-wide settings."
+  },
+  {
+    "title": "Hardware & Printer Errors",
+    "url": "errors/hardware/",
+    "product": "Hardware / Printers",
+    "type": "Error hub",
+    "keywords": [
+      "hardware errors",
+      "printer errors",
+      "hp printer errors",
+      "storage errors",
+      "hardware troubleshooting"
+    ],
+    "kind": "hub",
+    "cluster": "hardware",
+    "hub": "errors/",
+    "summary": "Route printer, storage and hardware failures by exact device, error code and failure pattern before resets, firmware changes or parts replacement."
   }
 ]
