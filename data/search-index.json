@@ -813,7 +813,12 @@
     "url": "errors/dev/android-gradle/android-resource-linking-failed-aapt2/",
     "product": "Android / AAPT2",
     "type": "Resource linking / build failure",
-    "keywords": ["android resource linking failed", "aapt2 resource linking failed", "resource not found android", "android attr not found"],
+    "keywords": [
+      "android resource linking failed",
+      "aapt2 resource linking failed",
+      "resource not found android",
+      "android attr not found"
+    ],
     "kind": "article",
     "published": "2026-09-26",
     "publish_order": 41,
@@ -826,7 +831,13 @@
     "url": "errors/dev/android-gradle/checkdebugaarmetadata-failed/",
     "product": "Android / Gradle / AAR",
     "type": "AAR metadata compatibility failure",
-    "keywords": ["checkdebugaarmetadata failed", "execution failed for task checkdebugaarmetadata", "aar metadata compileSdk", "minCompileSdk dependency", "minAgpVersion"],
+    "keywords": [
+      "checkdebugaarmetadata failed",
+      "execution failed for task checkdebugaarmetadata",
+      "aar metadata compileSdk",
+      "minCompileSdk dependency",
+      "minAgpVersion"
+    ],
     "kind": "article",
     "published": "2026-09-26",
     "publish_order": 42,
@@ -839,7 +850,11 @@
     "url": "errors/dev/node-npm/eresolve-unable-to-resolve-dependency-tree/",
     "product": "Node.js / npm",
     "type": "Dependency resolution failure",
-    "keywords": ["npm eresolve", "unable to resolve dependency tree", "npm peer dependency conflict"],
+    "keywords": [
+      "npm eresolve",
+      "unable to resolve dependency tree",
+      "npm peer dependency conflict"
+    ],
     "kind": "article",
     "published": "2026-09-26",
     "publish_order": 43,
@@ -852,7 +867,12 @@
     "url": "errors/dev/javascript/cannot-read-properties-of-undefined/",
     "product": "JavaScript",
     "type": "Undefined property access / runtime TypeError",
-    "keywords": ["cannot read properties of undefined", "typeerror reading undefined", "javascript undefined property", "optional chaining undefined"],
+    "keywords": [
+      "cannot read properties of undefined",
+      "typeerror reading undefined",
+      "javascript undefined property",
+      "optional chaining undefined"
+    ],
     "kind": "article",
     "published": "2026-09-26",
     "publish_order": 44,
@@ -865,7 +885,12 @@
     "url": "errors/dev/cpp/lnk2019-unresolved-external-symbol/",
     "product": "MSVC / Visual C++",
     "type": "Linker unresolved external symbol",
-    "keywords": ["lnk2019", "unresolved external symbol", "visual studio linker error", "cpp unresolved external"],
+    "keywords": [
+      "lnk2019",
+      "unresolved external symbol",
+      "visual studio linker error",
+      "cpp unresolved external"
+    ],
     "kind": "article",
     "published": "2026-09-26",
     "publish_order": 45,
@@ -878,7 +903,12 @@
     "url": "errors/hardware/storage/0x800701b1-device-does-not-exist/",
     "product": "Windows / Storage",
     "type": "Storage device I/O / presence error",
-    "keywords": ["0x800701b1", "a device which does not exist was specified", "windows device does not exist", "0x800701b1 external drive"],
+    "keywords": [
+      "0x800701b1",
+      "a device which does not exist was specified",
+      "windows device does not exist",
+      "0x800701b1 external drive"
+    ],
     "kind": "article",
     "published": "2026-09-26",
     "publish_order": 46,
@@ -891,7 +921,12 @@
     "url": "errors/dev/ssh/permission-denied-publickey/",
     "product": "OpenSSH / SSH",
     "type": "Public key authentication error",
-    "keywords": ["permission denied publickey", "ssh permission denied publickey", "git permission denied publickey", "ssh key rejected"],
+    "keywords": [
+      "permission denied publickey",
+      "ssh permission denied publickey",
+      "git permission denied publickey",
+      "ssh key rejected"
+    ],
     "kind": "article",
     "published": "2026-09-26",
     "publish_order": 47,
@@ -904,7 +939,12 @@
     "url": "errors/dev/node-npm/err-ossl-evp-unsupported/",
     "product": "Node.js / OpenSSL",
     "type": "Runtime crypto compatibility error",
-    "keywords": ["err_ossl_evp_unsupported", "error 0308010c digital envelope routines unsupported", "openssl legacy provider node", "node openssl unsupported"],
+    "keywords": [
+      "err_ossl_evp_unsupported",
+      "error 0308010c digital envelope routines unsupported",
+      "openssl legacy provider node",
+      "node openssl unsupported"
+    ],
     "kind": "article",
     "published": "2026-09-27",
     "publish_order": 48,
@@ -917,12 +957,36 @@
     "url": "errors/dev/android-gradle/manifest-merger-failed/",
     "product": "Android / Gradle",
     "type": "Manifest composition / merge conflict",
-    "keywords": ["manifest merger failed", "android manifest merger failed", "tools replace android manifest", "manifest merger conflict"],
+    "keywords": [
+      "manifest merger failed",
+      "android manifest merger failed",
+      "tools replace android manifest",
+      "manifest merger conflict"
+    ],
     "kind": "article",
     "published": "2026-09-27",
     "publish_order": 49,
     "cluster": "android-gradle",
     "hub": "errors/dev/",
     "summary": "Read the first concrete manifest conflict, trace both source manifests and priority, choose the intended final value, apply the narrowest remediation, then verify the merged manifest for the exact variant."
+  },
+  {
+    "title": "NETSDK1045 — Current .NET SDK Does Not Support Targeting",
+    "url": "errors/dev/dotnet/netsdk1045-current-sdk-does-not-support-targeting/",
+    "product": ".NET SDK / MSBuild",
+    "type": "SDK selection / target framework mismatch",
+    "keywords": [
+      "netsdk1045",
+      "current .net sdk does not support targeting",
+      "dotnet sdk target framework",
+      "global.json sdk version",
+      "msbuildsdkpath"
+    ],
+    "kind": "article",
+    "published": "2026-09-27",
+    "publish_order": 50,
+    "cluster": "dotnet",
+    "hub": "errors/dev/",
+    "summary": "Prove the intended target framework and SDK selected by the failing build, then trace global.json, installed SDK architecture, IDE/CI context and environment overrides before installing, downgrading or retargeting."
   }
 ]
