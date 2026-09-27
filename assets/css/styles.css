@@ -314,212 +314,30 @@ img.brand-mark{object-fit:contain!important;background:none!important}
 }
 
 
-/* Mobile article navigation placement — keep On this page near the article opening */
-@media(max-width:920px){
-  .article-grid{display:flex;flex-direction:column}
-  .article-grid>.article{order:2}
-  .article-grid>.toc{order:1;width:100%;position:static}
-  .article-grid>.toc .toc-card{margin:0 0 16px}
-}
-
-
-/* Mobile TOC hard fix — article-grid itself is the .shell element */
-@media(max-width:920px){
-  .article-grid.shell{display:flex!important;flex-direction:column!important}
-  .article-grid.shell>article.article{order:2!important;width:100%}
-  .article-grid.shell>aside.toc{order:1!important;width:100%;position:static!important;top:auto!important}
-  .article-grid.shell>aside.toc>.toc-card{margin:0 0 16px!important}
-}
-
-
-/* Responsive TOC v3 — tablet browsers can expose ~960 CSS px even in mobile/tablet layout */
-@media(max-width:1100px){
-  .article-grid.shell{display:flex!important;flex-direction:column!important}
-  .article-grid.shell>aside.toc{order:-1!important;width:100%!important;position:static!important;top:auto!important;margin:0!important}
-  .article-grid.shell>aside.toc>.toc-card{margin:0 0 18px!important}
-  .article-grid.shell>article.article{order:0!important;width:100%!important}
-}
-
-
-/* Responsive in-article TOC — compact horizontal navigation below publish metadata */
+/* Responsive article navigation v6 — single source of truth */
 @media(max-width:1100px){
   .article-grid.shell{display:block!important}
   .article-grid.shell>article.article{width:100%!important}
-  .article>aside.toc{
-    display:block!important;
-    width:100%!important;
-    position:static!important;
-    margin:8px 0 22px!important;
-  }
-  .article>aside.toc>.toc-card{
-    display:flex!important;
-    align-items:center;
-    gap:8px;
-    width:100%;
-    margin:0!important;
-    padding:10px 12px!important;
-    border-radius:14px!important;
-    overflow-x:auto;
-    overscroll-behavior-inline:contain;
-    scrollbar-width:thin;
-    background:linear-gradient(90deg,#eef6ff,#f7f9ff)!important;
-    box-shadow:none!important;
-    white-space:nowrap;
-  }
-  .article>aside.toc>.toc-card>b{
-    flex:0 0 auto;
-    margin:0 4px 0 0!important;
-    padding-right:10px;
-    border-right:1px solid #cfdeed;
-    font-size:12px;
-  }
-  .article>aside.toc>.toc-card>a{
-    flex:0 0 auto;
-    display:inline-flex!important;
-    align-items:center;
-    min-height:34px;
-    padding:7px 10px!important;
-    border-radius:9px!important;
-    font-size:12px!important;
-    background:rgba(255,255,255,.68);
-    border:1px solid rgba(207,222,237,.75);
-  }
-  .article>aside.toc>.toc-card>a.active{
-    background:#fff!important;
-    border-color:#b9d2ec;
-    color:var(--blue)!important;
-    font-weight:850;
-  }
-}
-@media(max-width:650px){
-  .article>aside.toc{margin:6px 0 18px!important}
-  .article>aside.toc>.toc-card{padding:8px 9px!important}
-}
-
-
-/* Responsive article support navigation v4 — On this page + Guide details directly below metadata */
-@media(max-width:1100px){
   .article>aside.sidebar{
-    display:grid!important;
-    grid-template-columns:minmax(0,1.35fr) minmax(220px,.65fr);
-    gap:10px!important;
-    width:100%!important;
-    position:static!important;
-    top:auto!important;
-    margin:8px 0 22px!important;
+    display:flex!important;flex-flow:row nowrap!important;align-items:stretch!important;
+    gap:10px!important;width:100%!important;position:static!important;top:auto!important;
+    overflow-x:auto!important;overscroll-behavior-inline:contain;scrollbar-width:thin;
+    padding:0 0 5px!important;margin:8px 0 20px!important
   }
-  .article>aside.sidebar>.side-block{
-    min-width:0;
-    padding:14px!important;
-    border-radius:15px!important;
-    box-shadow:none!important;
-  }
-  .article>aside.sidebar>.side-block:has(.toc){
-    background:linear-gradient(145deg,#eef6ff,#f8fbff);
-    border-color:#d5e4f3;
-  }
-  .article>aside.sidebar .toc{
-    display:flex!important;
-    gap:6px!important;
-    overflow-x:auto;
-    overscroll-behavior-inline:contain;
-    scrollbar-width:thin;
-    padding-bottom:2px;
-  }
-  .article>aside.sidebar .toc a{
-    flex:0 0 auto;
-    white-space:nowrap;
-    min-height:34px;
-    display:inline-flex!important;
-    align-items:center;
-    padding:7px 9px!important;
-    border:1px solid #d8e5f2;
-    background:rgba(255,255,255,.72);
-    font-size:12px!important;
-  }
-  .article>aside.sidebar .guide-details{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:8px 12px;
-  }
+  .article>aside.sidebar>.side-block{flex:0 0 auto!important;min-width:0;margin:0!important;padding:12px!important;border-radius:14px!important;box-shadow:none!important}
+  .article>aside.sidebar>.side-block:has(.toc){flex:1 1 auto!important;min-width:min(620px,72vw)!important;background:linear-gradient(145deg,#eef6ff,#f8fbff);border-color:#d5e4f3}
+  .article>aside.sidebar>.side-block:has(.guide-details){width:max-content!important;min-width:300px!important;max-width:430px!important}
   .article>aside.sidebar>.ad-placeholder{display:none!important}
+  .article>aside.sidebar .toc{display:flex!important;gap:6px!important;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:thin;scroll-behavior:smooth;scroll-snap-type:x proximity;padding-bottom:2px}
+  .article>aside.sidebar .toc a{flex:0 0 auto;display:inline-flex!important;align-items:center;white-space:nowrap;min-height:34px;padding:7px 9px!important;border:1px solid #d8e5f2;background:rgba(255,255,255,.72);font-size:12px!important;scroll-snap-align:center;transition:background .16s ease,border-color .16s ease,color .16s ease,box-shadow .16s ease}
+  .article>aside.sidebar .toc a.active{color:#176bff!important;background:#fff!important;border-color:#8dbcf0!important;box-shadow:0 0 0 2px rgba(23,107,255,.09)!important;font-weight:850!important}
+  .article>aside.sidebar .guide-details{display:flex!important;flex-flow:row nowrap!important;align-items:flex-start!important;gap:14px!important}
+  .article>aside.sidebar .guide-details>span{width:max-content!important;max-width:130px;min-width:0!important}
 }
 @media(max-width:650px){
-  .article>aside.sidebar{
-    grid-template-columns:1fr;
-    margin:6px 0 18px!important;
-  }
-  .article>aside.sidebar>.side-block{padding:13px!important}
-  .article>aside.sidebar .guide-details{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
-}
-
-
-/* Responsive article nav v5 — compact horizontal auto-fit cards */
-@media(max-width:1100px){
-  .article>aside.sidebar{
-    display:flex!important;
-    flex-flow:row nowrap!important;
-    align-items:stretch!important;
-    gap:10px!important;
-    overflow-x:auto!important;
-    overscroll-behavior-inline:contain;
-    scrollbar-width:thin;
-    padding:0 0 5px!important;
-    margin:8px 0 20px!important;
-  }
-  .article>aside.sidebar>.side-block{flex:0 0 auto!important;margin:0!important}
-  .article>aside.sidebar>.side-block:has(.toc){
-    flex:1 1 auto!important;
-    min-width:min(620px,72vw)!important;
-    max-width:none!important;
-  }
-  .article>aside.sidebar>.side-block:has(.guide-details){
-    width:max-content!important;
-    min-width:300px!important;
-    max-width:430px!important;
-  }
-  .article>aside.sidebar .guide-details{
-    display:flex!important;
-    flex-flow:row nowrap!important;
-    align-items:flex-start!important;
-    gap:14px!important;
-  }
-  .article>aside.sidebar .guide-details>span{
-    width:max-content!important;
-    max-width:130px;
-    min-width:0!important;
-  }
-  .article>aside.sidebar .toc{
-    scroll-behavior:smooth;
-    scroll-snap-type:x proximity;
-  }
-  .article>aside.sidebar .toc a{
-    scroll-snap-align:center;
-    transition:background .16s ease,border-color .16s ease,color .16s ease,box-shadow .16s ease;
-  }
-  .article>aside.sidebar .toc a.active{
-    color:#176bff!important;
-    background:#fff!important;
-    border-color:#8dbcf0!important;
-    box-shadow:0 0 0 2px rgba(23,107,255,.09)!important;
-    font-weight:850!important;
-  }
-}
-@media(max-width:650px){
-  .article>aside.sidebar{
-    display:flex!important;
-    flex-flow:row nowrap!important;
-    gap:8px!important;
-    overflow-x:auto!important;
-  }
-  .article>aside.sidebar>.side-block:has(.toc){
-    min-width:min(560px,88vw)!important;
-  }
-  .article>aside.sidebar>.side-block:has(.guide-details){
-    min-width:max-content!important;
-    max-width:none!important;
-  }
+  .article>aside.sidebar{gap:8px!important;margin:6px 0 18px!important}
+  .article>aside.sidebar>.side-block:has(.toc){min-width:min(560px,88vw)!important}
+  .article>aside.sidebar>.side-block:has(.guide-details){min-width:max-content!important;max-width:none!important}
   .article>aside.sidebar .guide-details{gap:12px!important}
   .article>aside.sidebar .guide-details>span{max-width:120px}
 }
