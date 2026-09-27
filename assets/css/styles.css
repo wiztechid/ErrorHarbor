@@ -497,3 +497,22 @@ img.brand-mark{object-fit:contain!important;background:none!important}
   .homepage-promise{padding-top:0!important;margin-top:0!important}
   .homepage-promise>.shell.promise{margin-top:0!important}
 }
+
+
+/* Homepage tablet landscape rhythm v7 — touch tablets only */
+@media (min-width:651px) and (max-width:1366px) and (pointer:coarse){
+  .homepage-library{
+    padding-bottom:12px!important;
+    margin-bottom:0!important;
+  }
+  .homepage-library .library-grid-pillars{
+    margin-bottom:0!important;
+  }
+  .homepage-promise{
+    padding-top:0!important;
+    margin-top:0!important;
+  }
+  .homepage-promise>.shell.promise{
+    margin-top:0!important;
+  }
+}
