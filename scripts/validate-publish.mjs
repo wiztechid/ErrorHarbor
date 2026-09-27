@@ -13,6 +13,18 @@ const home=read("index.html");
 if(sitemap.includes("\\\\n")) fail.push("sitemap.xml: contains literal \\\\n artifact; use real newlines");
 if(!sitemap.includes('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')||!sitemap.trim().endsWith("</urlset>")) fail.push("sitemap.xml: malformed urlset envelope");
 
+const requiredSearchHubs = [
+  "errors/dev/",
+  "errors/windows-network/",
+  "errors/virtualization/",
+  "errors/hardware/"
+];
+for (const url of requiredSearchHubs) {
+  const hub = registry.find(x => x.kind === "hub" && x.url === url);
+  if (!hub) fail.push(`${url}: pillar missing from internal search registry`);
+  else if (!hub.title || !hub.summary || !Array.isArray(hub.keywords) || hub.keywords.length < 2) fail.push(`${url}: internal-search hub metadata incomplete`);
+}
+
 const articles=registry.filter(x=>x.kind==="article");
 const latest=[...articles].sort((a,b)=>(b.publish_order||0)-(a.publish_order||0)).slice(0,6);
 
