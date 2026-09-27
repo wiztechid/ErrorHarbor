@@ -198,3 +198,12 @@
 - updated the live Privacy Policy, Master SOP, CURRENT, AdSense readiness ledger and Third-Party Setup
 - updated the publication validator to guard the new Privacy & messaging disclosure
 - production advertising remains inactive until the selected Google consent and advertising configuration is intentionally enabled
+
+
+## 2026-09-27 — Website Governance SOP v1.0
+
+- created `docs/WEBSITE-GOVERNANCE-SOP.md` as a reusable cross-site governance baseline derived from ErrorHarbor
+- generalized reader-first, evidence, canonical-intent, anti-scaled-content, SEO graph, atomic publication, validator, deployment/live-QC and lifecycle rules
+- generalized corpus-level monetization/AdSense, consent, affiliate, analytics, AI-assisted publishing and operational-safety controls
+- formalized CURRENT/CHANGELOG discipline, P0–P3 severity, release states and FROZEN behavior
+- preserved ErrorHarbor-specific publisher IDs, taxonomy, HPK weights and troubleshooting requirements in local ErrorHarbor documentation rather than exporting them as universal defaults
