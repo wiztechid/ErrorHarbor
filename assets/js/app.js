@@ -66,10 +66,41 @@ if(articleGrid&&articleEl&&tocEl){
   if(mobileToc.addEventListener)mobileToc.addEventListener("change",placeToc);else mobileToc.addListener(placeToc);
 }
 
-const toc=[...document.querySelectorAll(".toc a")],sections=[...document.querySelectorAll(".article section[id]")];
-if(toc.length&&sections.length&&"IntersectionObserver"in window){
-  const o=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting)toc.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+en.target.id))}),{rootMargin:"-25% 0px -62% 0px"});
-  sections.forEach(s=>o.observe(s));
+const toc=[...document.querySelectorAll(".toc a")];
+const tocTargets=toc.map(a=>({a,id:decodeURIComponent(a.getAttribute("href")||"").replace(/^#/,""),section:null}))
+  .filter(x=>x.id);
+tocTargets.forEach(x=>x.section=document.getElementById(x.id));
+const validTocTargets=tocTargets.filter(x=>x.section);
+if(validTocTargets.length){
+  let activeId="";
+  const setActive=(id,ensureVisible=true)=>{
+    if(!id||id===activeId)return;
+    activeId=id;
+    validTocTargets.forEach(x=>x.a.classList.toggle("active",x.id===id));
+    const current=validTocTargets.find(x=>x.id===id)?.a;
+    if(ensureVisible&&current){
+      const nav=current.closest(".toc");
+      if(nav){
+        const left=current.offsetLeft-(nav.clientWidth-current.offsetWidth)/2;
+        nav.scrollTo({left:Math.max(0,left),behavior:"smooth"});
+      }
+    }
+  };
+  const syncToc=()=>{
+    const marker=Math.max(120,Math.min(window.innerHeight*.28,240));
+    let current=validTocTargets[0];
+    for(const item of validTocTargets){
+      if(item.section.getBoundingClientRect().top<=marker)current=item;
+      else break;
+    }
+    setActive(current.id,true);
+  };
+  validTocTargets.forEach(x=>x.a.addEventListener("click",()=>setActive(x.id,true)));
+  let ticking=false;
+  const requestSync=()=>{if(!ticking){ticking=true;requestAnimationFrame(()=>{syncToc();ticking=false})}};
+  addEventListener("scroll",requestSync,{passive:true});
+  addEventListener("resize",requestSync,{passive:true});
+  syncToc();
 }
 
 // Giscus community discussion: load only when the reader nears the section.
