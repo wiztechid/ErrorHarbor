@@ -189,3 +189,12 @@
 - updated `docs/CURRENT.md` and added `docs/ADSENSE-READINESS.md` as operational sources of truth
 - production AdSense code remains intentionally inactive pending final submission gate and consent configuration
 - next gate: Deep AdSense Final QC #6 — Final Submission Readiness / Full AdSense Gate
+
+
+## 2026-09-27 — AdSense consent-path clarification
+
+- standardized the planned consent path on Google AdSense Privacy & messaging with the user-choice options available for the applicable region/configuration
+- removed wording that implied ErrorHarbor planned to install or operate a separate third-party certified CMP
+- updated the live Privacy Policy, Master SOP, CURRENT, AdSense readiness ledger and Third-Party Setup
+- updated the publication validator to guard the new Privacy & messaging disclosure
+- production advertising remains inactive until the selected Google consent and advertising configuration is intentionally enabled
