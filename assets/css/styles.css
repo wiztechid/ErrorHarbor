@@ -401,3 +401,35 @@ img.brand-mark{object-fit:contain!important;background:none!important}
   .latest-more{margin-top:18px}
   .latest-more .button{width:100%;min-height:48px}
 }
+
+
+/* Error Library directory v2 — reader-first browse/search hierarchy */
+.library-hero{padding-bottom:34px}
+.library-hero .breadcrumb{margin-bottom:18px}
+.library-directory{padding-top:38px}
+.library-directory-grid .library-card{display:flex;flex-direction:column;align-items:flex-start}
+.library-directory-grid .library-link{margin-top:auto;padding-top:14px;color:var(--blue);font-size:13px;font-weight:850}
+.library-cluster-strip{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:18px;padding:14px 16px;border:1px solid var(--line);border-radius:16px;background:#fbfdff}
+.library-cluster-strip>span{font-size:13px;font-weight:850;color:#52667e;margin-right:2px}
+.library-cluster-strip a{display:inline-flex;padding:7px 10px;border:1px solid #dbe6f1;border-radius:999px;background:#fff;color:#405875;font-size:12px;font-weight:800}
+.library-cluster-strip a:hover{border-color:#aac9e9;color:var(--blue)}
+.library-help{background:linear-gradient(180deg,#f8fbff,#fff)}
+.library-help-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,.9fr);gap:38px;align-items:start}
+.library-help-grid h2{margin:6px 0 10px;font-size:30px}
+.library-help-grid p{color:var(--muted);line-height:1.75}
+.library-steps{display:grid;gap:10px}
+.library-steps>div{display:flex;gap:12px;padding:14px;border:1px solid var(--line);border-radius:15px;background:#fff}
+.library-steps b{display:grid;place-items:center;flex:0 0 28px;width:28px;height:28px;border-radius:50%;background:#edf4ff;color:var(--blue)}
+.library-steps span{display:grid;gap:2px}.library-steps small{color:var(--muted);line-height:1.45}
+.library-no-match{padding-top:36px}
+@media(max-width:650px){
+  .library-hero{padding-bottom:24px}
+  .library-directory{padding-top:28px}
+  .library-directory .section-heading{display:block}
+  .library-directory .section-heading p{margin-top:7px}
+  .library-directory-grid .library-card{padding:18px 18px 19px}
+  .library-cluster-strip{align-items:flex-start;padding:13px}
+  .library-cluster-strip>span{width:100%}
+  .library-help-grid{grid-template-columns:1fr;gap:20px}
+  .library-help-grid h2{font-size:26px}
+}
