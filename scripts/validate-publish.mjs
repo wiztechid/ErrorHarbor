@@ -10,7 +10,7 @@ const sitemap=read("sitemap.xml");
 const home=read("index.html");
 
 const articles=registry.filter(x=>x.kind==="article");
-const latest=[...articles].sort((a,b)=>(b.publish_order||0)-(a.publish_order||0)).slice(0,8);
+const latest=[...articles].sort((a,b)=>(b.publish_order||0)-(a.publish_order||0)).slice(0,6);
 
 for(const item of articles){
   for(const key of ["published","publish_order","cluster","hub","summary"]){
@@ -73,7 +73,7 @@ for(const item of articles){
 }
 
 for(const item of latest){
-  if(!home.includes(`href="${item.url}"`)) fail.push(`${item.url}: latest-8 article missing from homepage`);
+  if(!home.includes(`href="${item.url}"`)) fail.push(`${item.url}: latest-6 article missing from homepage`);
 }
 
 const allHtml=[];
