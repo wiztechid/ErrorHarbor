@@ -49,3 +49,18 @@ As of 2026-10-02, the pre-submission repository is frozen for non-essential chan
 ## Approval caveat
 
 Readiness controls reduce policy, quality and implementation risk; they do not guarantee Google AdSense approval.
+
+## Google content & UX guidance cross-check — 2026-10-02
+
+Reviewed against Google AdSense guidance on content and user experience (AdSense Help article 10015918).
+
+Durable interpretation for ErrorHarbor:
+- Keep **Submission Freeze** while the site is in AdSense `Getting ready`: no cosmetic redesign, artificial date changes, bulk publishing, or monetization experiments.
+- Shared article structure is acceptable only when each guide retains a genuinely distinct troubleshooting intent and **diagnostic moat**; repeated templates must not become repeated reasoning with only error names swapped.
+- HPK/SERP opportunity may identify topics, but is never sufficient publication justification. New pages must pass unique-intent, evidence, diagnostic-value, and cannibalization review.
+- Navigation must remain clear, readable, functional, and accurate: Home → Error Library → Hub → Article → Related Troubleshooting, with working search/internal links.
+- Avoid doorway/thin pages and long repeated content segments that add little unique value.
+- Google's recommendation to update a site regularly is treated as a post-review quality practice, not a reason to churn content during an active site review.
+- After the AdSense review decision, exit Submission Freeze only through normal publication governance; resume natural publishing based on real reader/problem value rather than volume targets.
+
+Reference: Google AdSense Help — `https://support.google.com/adsense/answer/10015918?hl=en&ref_topic=12129816`.
