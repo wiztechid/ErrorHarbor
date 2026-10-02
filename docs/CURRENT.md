@@ -1,6 +1,6 @@
 # CURRENT — ErrorHarbor
 
-**Status:** Production live · 50-article corpus · Deep AdSense QC #1–#5 PASS · #6 submission gate next  
+**Status:** Production live · 50-article corpus · Deep AdSense QC #1–#6 PASS · ADSENSE READY · submission-state FREEZE  
 **Version:** Theme v2.1 · Master SOP v2.2 · Production  
 **Repository:** `wiztechid/ErrorHarbor`
 
@@ -23,7 +23,7 @@
 ## Intentionally pending
 
 - Production AdSense publisher/ad script (intentionally inactive until activation stage)
-- Google AdSense site submission / review (#6)
+- Google AdSense site review / decision
 - Google AdSense Privacy & messaging user-choice consent configuration (activation stage)
 - Cloudflare Worker + D1 feedback endpoint
 - Turnstile
@@ -34,7 +34,7 @@
 
 ## Next product milestone
 
-**P0: complete Deep AdSense Final QC #6 and submit `errorharbor.com` for AdSense review; continue monitoring indexing/query signals without weakening the SEO Architecture v2 publication graph.**
+**P0: keep the AdSense submission-state freeze while review is pending; monitor indexing/query signals and act only on P0 correctness/security/legal issues or explicit Google review feedback.**
 
 
 ## Giscus comments activated — 2026-09-23
