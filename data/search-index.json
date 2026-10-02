@@ -67,7 +67,8 @@
     ],
     "kind": "hub",
     "cluster": "developer",
-    "hub": "errors/"
+    "hub": "errors/",
+    "summary": "Troubleshooting guides for developer errors across Node/npm, JavaScript, Android/Gradle, C/C++, .NET, Windows SDK, SQL, SSH/SFTP and command-line tooling."
   },
   {
     "title": "VMware & Hyper-V Errors: Virtualization Troubleshooting",
