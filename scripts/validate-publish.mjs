@@ -57,9 +57,23 @@ for(const item of articles){
   const html=read(file);
   const absolute="https://errorharbor.com/"+item.url;
 
+  // Public-content hygiene: block internal assistant/tool artifacts from shipping.
+  const toolArtifactPatterns = [
+    ["cite", "raw assistant citation marker"],
+    ["filecite", "raw file citation marker"],
+    ["sandbox:/mnt/data/", "sandbox path artifact"]
+  ];
+  for (const [needle,label] of toolArtifactPatterns) {
+    if (html.includes(needle)) fail.push(`${item.url}: ${label}`);
+  }
+  if (/turn\d+(?:search|view|fetch|open)\d+/i.test(html)) fail.push(`${item.url}: internal tool reference leaked into public content`);
+
   if(!html.includes(`rel="canonical" href="${absolute}"`)) fail.push(`${item.url}: canonical mismatch`);
   if(/<meta\s+name=["']robots["'][^>]*noindex/i.test(html)) fail.push(`${item.url}: article is noindex`);
   if(!sitemap.includes(`<loc>${absolute}</loc>`)) fail.push(`${item.url}: missing from sitemap`);
+  const dateModified=(html.match(/"dateModified"\s*:\s*"([^"]+)"/)||[])[1];
+  if(dateModified && !sitemap.includes(`<loc>${absolute}</loc><lastmod>${dateModified}</lastmod>`)) fail.push(`${item.url}: sitemap lastmod must match Article dateModified`);
+
   if(!html.includes('id="related"')) fail.push(`${item.url}: missing Related Troubleshooting section`);
 
   // SEO Architecture v2 content contract
