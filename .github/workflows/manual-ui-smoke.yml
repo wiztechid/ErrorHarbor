@@ -1,0 +1,41 @@
+name: Manual UI Smoke Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: Production or preview base URL
+        required: false
+        default: https://errorharbor.com
+
+permissions:
+  contents: read
+
+concurrency:
+  group: manual-ui-smoke-errorharbor
+  cancel-in-progress: true
+
+jobs:
+  smoke:
+    name: Chromium UI smoke
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      BASE_URL: ${{ inputs.base_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Playwright only
+        run: npm install --no-save --no-package-lock playwright@1.55.0
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run manual UI smoke
+        run: node .github/scripts/manual-ui-smoke.mjs
