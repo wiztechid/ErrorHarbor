@@ -1024,5 +1024,24 @@
     "cluster": "hardware",
     "hub": "errors/",
     "summary": "Route printer, storage and hardware failures by exact device, error code and failure pattern before resets, firmware changes or parts replacement."
+  },
+  {
+    "title": "npm EACCES Permission Denied",
+    "url": "errors/dev/node-npm/eacces-permission-denied/",
+    "product": "Node.js / npm",
+    "type": "Permissions error",
+    "keywords": [
+      "npm eacces permission denied",
+      "eacces npm install",
+      "npm permission denied",
+      "npm global install permission",
+      "npm eacces mkdir"
+    ],
+    "kind": "article",
+    "published": "2026-10-11",
+    "publish_order": 51,
+    "cluster": "developer-command",
+    "hub": "errors/dev/",
+    "summary": "Read the denied path first, then separate global-prefix, project, cache and CI/container ownership causes before changing permissions."
   }
 ]
