@@ -7,6 +7,14 @@ on:
         description: Production or preview base URL
         required: false
         default: https://errorharbor.com
+      article_path:
+        description: Article path to smoke-test
+        required: false
+        default: errors/dev/node-npm/eacces-permission-denied/
+      search_query:
+        description: Search query expected to resolve to that article
+        required: false
+        default: npm EACCES Permission Denied
 
 permissions:
   contents: read
@@ -22,6 +30,8 @@ jobs:
     timeout-minutes: 12
     env:
       BASE_URL: ${{ inputs.base_url }}
+      ARTICLE_PATH: ${{ inputs.article_path }}
+      SEARCH_QUERY: ${{ inputs.search_query }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
