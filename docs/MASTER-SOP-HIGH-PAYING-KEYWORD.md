@@ -1,9 +1,9 @@
 # MASTER SOP — HIGH PAYING KEYWORD
 ## ErrorHarbor SEO, Reader-First UX, Internal-Link Graph & Monetization Framework
 
-**Version:** 2.2  
+**Version:** 2.3  
 **Status:** ACTIVE  
-**Effective:** 2026-09-27
+**Effective:** 2026-10-12
 
 > **North Star:** ErrorHarbor should be the fastest, clearest and most trustworthy place to diagnose a technical error. Every new page must improve both the reader's troubleshooting path and the site's topical-link graph.
 
@@ -389,6 +389,20 @@ Verify the public URL for:
 - no Soft-404/thin-content signal obvious from the rendered page.
 
 A source commit alone is **not** a completed publication.
+
+### GitHub Mode Hemat / browser-regression policy
+
+ErrorHarbor uses a tiered validation model:
+
+1. **SEO Link Guard** remains the lightweight automatic mechanical gate.
+2. Source/repository audit + live URL checks are the default post-change verification.
+3. Connected-browser spot-checks are used only when an interaction or visual state needs a real browser.
+4. The Manual UI Smoke Test workflow is a **manual-only** Playwright/Chromium smoke test (workflow_dispatch only; no push/PR/schedule trigger).
+5. Run the manual smoke test only after substantive navigation/JS/CSS changes, before a sensitive AdSense resubmission/release, or when a suspected UI regression cannot be established cheaply.
+6. When invoked, pass the **current article path and search query** being validated; do not treat one historical article as permanent coverage.
+7. Agentic browser automation is fallback-only for ambiguous multi-step behavior that deterministic checks cannot reproduce.
+
+Keep explicit timeout + concurrency cancellation on browser workflows. Do not add routine live crawls, mass browser tests, or duplicated heavy triggers merely for reassurance.
 
 ---
 

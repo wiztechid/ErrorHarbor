@@ -1,9 +1,9 @@
 # WEBSITE GOVERNANCE SOP
 ## Universal Content, SEO, UX, Trust, Publication & Monetization Governance
 
-**Version:** 1.0  
+**Version:** 1.1  
 **Status:** ACTIVE BASELINE  
-**Effective:** 2026-09-27  
+**Effective:** 2026-10-12  
 **Reference implementation:** ErrorHarbor  
 **Scope:** Reusable across content websites, tools, editorial libraries, niche sites and future GitHub-hosted properties.
 
@@ -433,6 +433,20 @@ Minimum live checks:
 - obvious thin/Soft-404 behavior.
 
 A release that fails live QC is not complete.
+
+### Resource-efficient validation hierarchy
+
+Use the cheapest reliable layer first and escalate only when the lower layer cannot prove the behavior:
+
+1. **Repository/source audit** for deterministic structure, links, canonical, robots, sitemap, schema and obvious inactive controls.
+2. **Live URL/fetch verification** for HTTP, rendered metadata, redirects, destination availability and post-deploy parity.
+3. **Connected browser spot-check** for a small number of interactive/visual behaviors that require a real browser.
+4. **Manual Playwright/Chromium smoke test** only after substantive UI/navigation/JavaScript changes, before a sensitive release/resubmission, or when a regression cannot be proven from source/live fetch.
+5. **Agentic browser exploration** only as a fallback for ambiguous multi-step UI behavior that deterministic checks cannot reproduce.
+
+Browser regression workflows should be **manual/on-demand by default**, with explicit timeout and concurrency cancellation. Do not attach expensive browser suites to every push/PR unless the site has evidence that the cost is justified.
+
+A manual UI smoke test must target the **changed/new page or feature**, not only a hard-coded historical example. A green browser smoke test complements mechanical CI; it does not replace content/evidence review.
 
 ---
 

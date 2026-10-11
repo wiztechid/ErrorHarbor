@@ -1,7 +1,7 @@
 # CURRENT — ErrorHarbor
 
-**Status:** Production live · 50-article corpus · Deep AdSense QC #1–#6 PASS · ADSENSE READY · submission-state FREEZE  
-**Version:** Theme v2.1 · Master SOP v2.2 · Production  
+**Status:** Production live · 51-article corpus · controlled-growth AdSense recovery · lightweight CI baseline active  
+**Version:** Theme v2.1 · Master SOP v2.3 · Production  
 **Repository:** `wiztechid/ErrorHarbor`
 
 ## Implemented
@@ -36,6 +36,17 @@
 
 **P0: keep the AdSense submission-state freeze while review is pending; monitor indexing/query signals and act only on P0 correctness/security/legal issues or explicit Google review feedback.**
 
+
+## Controlled-growth + UI regression baseline — 2026-10-12
+
+- Current search registry: **51 articles + 4 hubs**.
+- Latest controlled-growth article: **npm EACCES Permission Denied**, published 2026-10-11 with actual publication date.
+- Navigation hardening completed: negative-feedback continuation now skips hidden placeholders; copy control has a real clipboard fallback.
+- **SEO Link Guard** remains the lightweight automatic gate.
+- **Manual UI Smoke Test** is available as workflow_dispatch only with reusable base_url, article_path, and search_query inputs.
+- Manual browser smoke is not part of routine every-push CI. Use it only for substantive interactive changes, pre-resubmission validation, or unresolved regression evidence.
+- Default audit order: source/repo → live URL → connected browser spot-check if needed → manual Playwright → agentic browser fallback.
+- No mass rewrite, backdate/date churn, sitewide affiliate activation, or automatic heavy crawler/browser validation is authorized by this baseline.
 
 ## Giscus comments activated — 2026-09-23
 

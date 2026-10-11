@@ -207,3 +207,16 @@
 - generalized corpus-level monetization/AdSense, consent, affiliate, analytics, AI-assisted publishing and operational-safety controls
 - formalized CURRENT/CHANGELOG discipline, P0–P3 severity, release states and FROZEN behavior
 - preserved ErrorHarbor-specific publisher IDs, taxonomy, HPK weights and troubleshooting requirements in local ErrorHarbor documentation rather than exporting them as universal defaults
+
+## 2026-10-12 — Controlled-growth + manual UI regression baseline
+
+- current production corpus is 51 troubleshooting articles plus 4 search/hub entries
+- published the controlled-growth npm EACCES Permission Denied guide with actual publication date and full crawl-graph integration
+- hardened feedback continuation so negative feedback advances to the next real troubleshooting section rather than a hidden monetization placeholder
+- added clipboard fallback for command-copy controls
+- added reusable Manual UI Smoke Test based on Playwright/Chromium
+- browser smoke remains workflow_dispatch only with no push, pull-request or schedule trigger
+- parameterized article path/search query so each new or changed article can be targeted without editing the test
+- formalized resource-efficient QC hierarchy: source/repo → live URL → connected browser → manual Playwright → agentic browser fallback
+- upgraded Website Governance SOP to v1.1 and ErrorHarbor Master SOP to v2.3
+
