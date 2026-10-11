@@ -8,9 +8,17 @@ const toast=document.createElement("div");toast.className="toast";toast.setAttri
 let tt;function say(msg){toast.textContent=msg;toast.classList.add("show");clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove("show"),1800)}
 
 document.querySelectorAll("[data-copy]").forEach(btn=>btn.addEventListener("click",async()=>{
-  const original=btn.textContent;
-  try{await navigator.clipboard.writeText(btn.dataset.copy);btn.textContent="✓ Copied";btn.classList.add("copied");say("Copied to clipboard")}
-  catch(e){say("Copy ready")}
+  const original=btn.textContent, value=btn.dataset.copy||"";
+  let copied=false;
+  try{await navigator.clipboard.writeText(value);copied=true}catch(e){
+    const ta=document.createElement("textarea");
+    ta.value=value;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";
+    document.body.appendChild(ta);ta.select();
+    try{copied=document.execCommand("copy")}catch(_){}
+    ta.remove();
+  }
+  if(copied){btn.textContent="✓ Copied";btn.classList.add("copied");say("Copied to clipboard")}
+  else{say("Copy failed — select the command manually")}
   setTimeout(()=>{btn.textContent=original;btn.classList.remove("copied")},1600);
 }));
 
@@ -42,9 +50,10 @@ document.querySelectorAll("[data-feedback]").forEach(btn=>btn.addEventListener("
   if(note)note.textContent=val==="yes"?"Thanks — this fix was marked successful on this device.":"Thanks — continue to the next troubleshooting step.";
   if(detail)detail.classList.add("active");
   if(val==="no"){
-    const section=block.closest("section")||block;
-    const next=section.nextElementSibling;
-    if(next&&next.scrollIntoView)setTimeout(()=>next.scrollIntoView({behavior:"smooth",block:"start"}),250);
+    let next=block?.nextElementSibling||null;
+    while(next&&(next.matches?.(".ad-placeholder,[hidden]")||getComputedStyle(next).display==="none")) next=next.nextElementSibling;
+    while(next&&next.tagName!=="SECTION") next=next.nextElementSibling;
+    if(next?.scrollIntoView)setTimeout(()=>next.scrollIntoView({behavior:"smooth",block:"start"}),250);
   }
 }));
 
