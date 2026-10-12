@@ -48,10 +48,7 @@ After service returns, check the recovery path before you need it again. Confirm
 
 Do not buy a backup tool just because an error occurred. Start with your recovery requirement, data scope, restore time, and existing platform options.
 
-**Optional resource:** [APPROVED BACKUP PARTNER LINK]  
-**Disclosure:** [AFFILIATE DISCLOSURE COPY]
-
-If a basic or built-in option is enough for your situation, use that. A paid service is not part of the fix for the original error.
+If a basic or built-in option is enough for your situation, use that. A paid service is not part of the fix for the original error. ErrorHarbor may add a relevant backup resource after it has verified fit, partner approval, and the referral terms.
 
 — ErrorHarbor
 
@@ -61,7 +58,7 @@ If a basic or built-in option is enough for your situation, use that. A paid ser
 
 Choose one observable signal tied to the incident: a failed health check, an expiring certificate, an unreachable endpoint, or a recurring application exception. Alert on that signal and decide who should respond before adding more dashboards.
 
-**Optional resource:** [APPROVED MONITORING PARTNER LINK]  
+**Optional resource:** [APPROVED BETTER STACK AFFILIATE LINK, if relevant to this reader]  
 **Disclosure:** [AFFILIATE DISCLOSURE COPY]
 
 If you do not need a paid service, a periodic manual check or an existing platform alert may be enough. The useful part is knowing what to check and what a real failure looks like.
@@ -82,7 +79,7 @@ Use this five-line runbook:
 
 This makes the next incident less dependent on guesswork. If a credential, certificate, database, or VM issue was part of your incident, review the relevant recovery and security controls before calling it finished.
 
-**Optional resources:** [ONLY RELEVANT, APPROVED LINKS]  
+If your recent issue involved SSH keys or developer credentials, you may find a credential tool useful. **Optional resource:** [APPROVED 1PASSWORD AFFILIATE LINK, only for this segment]  
 **Disclosure:** [AFFILIATE DISCLOSURE COPY]
 
 Reply with the general topic you want ErrorHarbor to cover next. Please do not include private credentials, tokens, or customer data.
