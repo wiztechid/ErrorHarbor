@@ -1,6 +1,6 @@
 # ErrorHarbor Email Sequence — Draft
 
-Status: Copy draft — do not schedule until the opt-in service, affiliate URLs, and sender identity are configured.  
+Status: Copy draft — Better Stack referral URL supplied by site owner; do not schedule until the opt-in service and sender identity are configured.  
 Audience: Readers who separately consent to practical ErrorHarbor email updates and confirm that consent.  
 From name: ErrorHarbor  
 From address: a verified `@errorharbor.com` sender (to be configured)
@@ -58,8 +58,9 @@ If a basic or built-in option is enough for your situation, use that. A paid ser
 
 Choose one observable signal tied to the incident: a failed health check, an expiring certificate, an unreachable endpoint, or a recurring application exception. Alert on that signal and decide who should respond before adding more dashboards.
 
-**Optional resource:** [APPROVED BETTER STACK AFFILIATE LINK, if relevant to this reader]  
-**Disclosure:** [AFFILIATE DISCLOSURE COPY]
+**Optional resource:** If you need ongoing availability checks or incident alerts, [evaluate Better Stack](https://betterstack.com/?ref=b-jgtv). Your existing platform’s alerts or periodic manual checks may be enough.
+
+**Affiliate disclosure:** This is ErrorHarbor’s Better Stack referral link. ErrorHarbor may earn a commission if you sign up through it, at no extra cost to you. This optional service helps monitor systems after a repair; it is not needed to fix the original error.
 
 If you do not need a paid service, a periodic manual check or an existing platform alert may be enough. The useful part is knowing what to check and what a real failure looks like.
 
@@ -79,8 +80,7 @@ Use this five-line runbook:
 
 This makes the next incident less dependent on guesswork. If a credential, certificate, database, or VM issue was part of your incident, review the relevant recovery and security controls before calling it finished.
 
-If your recent issue involved SSH keys or developer credentials, you may find a credential tool useful. **Optional resource:** [APPROVED 1PASSWORD AFFILIATE LINK, only for this segment]  
-**Disclosure:** [AFFILIATE DISCLOSURE COPY]
+If your recent issue involved SSH keys or developer credentials, review how keys are stored, scoped, and rotated. No affiliate link is included for this topic until a suitable partner URL is supplied and approved.
 
 Reply with the general topic you want ErrorHarbor to cover next. Please do not include private credentials, tokens, or customer data.
 
