@@ -1,6 +1,6 @@
 # ErrorHarbor Email Opt-in Funnel
 
-Status: Draft implementation plan — provider and affiliate IDs pending  
+Status: Draft implementation plan — Brevo selected; form and affiliate IDs pending  
 Updated: 2026-10-12
 
 ## Funnel
@@ -13,7 +13,7 @@ The article's promised troubleshooting answer stays complete and visible without
 
 **The First 10 Minutes After a Technical Error** is a short field guide for developers, IT teams, and self-hosters. It teaches readers to capture the exact signal, establish scope and environment, try one lower-risk check, verify the repair, and record a preventive follow-up.
 
-The ebook preview is in `output/pdf/ErrorHarbor_First_10_Minutes_Field_Guide_DRAFT.pdf`. The distribution edition is blocked until ErrorHarbor has approved affiliate URLs and an email provider configured for consent confirmation, delivery, automation, and unsubscribe handling.
+The ebook preview is in `output/pdf/ErrorHarbor_First_10_Minutes_Field_Guide_DRAFT.pdf`. The distribution edition is blocked until ErrorHarbor has approved affiliate URLs and the Brevo account has a configured form, sender, confirmation, delivery, automation, and unsubscribe handling.
 
 ## Consent and list rules
 
@@ -67,15 +67,28 @@ After the sequence, send occasional practical updates only to the active promoti
 - Link to a short ErrorHarbor resources page when an offer needs comparison or disclosure context; do not conceal or rewrite a partner URL in a way that violates program terms.
 - No offer appears in every email by default. No affiliate link ships without approval, working destination, disclosure, and a useful non-commercial alternative.
 
-## Suggested service requirements
+## Brevo setup (selected)
 
-Choose a provider that supports embedded forms, double opt-in, consent records, a lead-magnet automation, reliable unsubscribe suppression, export, and an affordable starter limit. Confirm that its current terms permit this editorial newsletter to include directly relevant affiliate links before signup or integration.
+Use a Brevo native embedded signup form with double opt-in. The form needs an email field plus a separate, unchecked consent field for ongoing ErrorHarbor troubleshooting tips and occasional relevant product recommendations. A reader who requests only the ebook gets its confirmation and delivery emails, but does not enter the promotional sequence.
+
+After the form exists, add its embed snippet to the ErrorHarbor landing page. Trigger the ebook delivery after confirmation. Trigger the promotional sequence only when the contact has both confirmed double opt-in and explicitly selected the ongoing-email checkbox. Keep the distinct consent value in a contact attribute/list so it can be filtered and audited.
+
+Brevo's current published Free plan includes up to 300 email sends per day and up to 2,000 unique contacts entering active automations. Use the initial limit to validate the funnel; re-check current plan terms before upgrading or increasing volume. Brevo's signup-form guidance supports embedded forms and double opt-in, and records the `DOUBLE_OPT-IN` contact attribute after confirmation.
+
+### Current affiliate candidates
+
+- **Better Stack** — evaluate only for post-fix uptime/incident monitoring needs. Its public affiliate program currently advertises 25% of referred net revenue for the first year; payment terms and spam restrictions must be checked in the partner dashboard before use.
+- **1Password** — evaluate only on SSH-key/credential pages and in the matching section of the guide. Its public affiliate page routes applications through Commission Junction; the program must approve ErrorHarbor before using a tracking link.
+
+These are candidates, not active recommendations or tracking links. They must not appear as affiliate links until the program accepts the account and provides a verified URL. A non-paid or existing-tool alternative must remain visible.
 
 No service credential, sender identity, form ID, or affiliate tracking URL is stored in the public repository. Use the provider's secure dashboard or protected deployment secrets.
 
 ## Launch gate
 
-- [ ] Email provider/account chosen; sender domain authenticated.
+- [x] Email platform selected: Brevo.
+- [ ] Brevo account and sender domain authenticated.
+- [ ] Brevo form ID/embed snippet and automation configured.
 - [ ] Double opt-in and separate unchecked marketing consent configured.
 - [ ] Privacy policy updated with the actual provider and retention/deletion details.
 - [ ] Affiliate programs approved; links tested; partner email-use terms checked.
