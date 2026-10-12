@@ -1,6 +1,6 @@
 # ErrorHarbor Email Opt-in Funnel
 
-Status: Draft implementation plan — Brevo selected; form and affiliate IDs pending  
+Status: Draft implementation plan — Brevo selected; Better Stack referral URL supplied; form setup pending  
 Updated: 2026-10-12
 
 ## Funnel
@@ -13,7 +13,7 @@ The article's promised troubleshooting answer stays complete and visible without
 
 **The First 10 Minutes After a Technical Error** is a short field guide for developers, IT teams, and self-hosters. It teaches readers to capture the exact signal, establish scope and environment, try one lower-risk check, verify the repair, and record a preventive follow-up.
 
-The ebook preview is in `output/pdf/ErrorHarbor_First_10_Minutes_Field_Guide_DRAFT.pdf`. The distribution edition is blocked until ErrorHarbor has approved affiliate URLs and the Brevo account has a configured form, sender, confirmation, delivery, automation, and unsubscribe handling.
+The ebook preview is in `output/pdf/ErrorHarbor_First_10_Minutes_Field_Guide_DRAFT.pdf`. The Better Stack referral URL supplied by the site owner is included only beside the optional post-fix monitoring recommendation and has a nearby disclosure. Subscriber distribution is blocked until the Brevo account has a configured form, sender, confirmation, delivery, automation, and unsubscribe handling.
 
 ## Consent and list rules
 
@@ -77,10 +77,10 @@ Brevo's current published Free plan includes up to 300 email sends per day and u
 
 ### Current affiliate candidates
 
-- **Better Stack** — evaluate only for post-fix uptime/incident monitoring needs. Its public affiliate program currently advertises 25% of referred net revenue for the first year; payment terms and spam restrictions must be checked in the partner dashboard before use.
+- **Better Stack** — referral URL supplied by the site owner: `https://betterstack.com/?ref=b-jgtv`. Use only for post-fix uptime/incident monitoring needs, with a nearby disclosure and a manual/existing-tool alternative. Its public affiliate program currently advertises 25% of referred net revenue for the first year; payment terms and email traffic rules should be checked in the partner dashboard.
 - **1Password** — evaluate only on SSH-key/credential pages and in the matching section of the guide. Its public affiliate page routes applications through Commission Junction; the program must approve ErrorHarbor before using a tracking link.
 
-These are candidates, not active recommendations or tracking links. They must not appear as affiliate links until the program accepts the account and provides a verified URL. A non-paid or existing-tool alternative must remain visible.
+The Better Stack URL is user-provided and may be used in this limited context. Validate the destination before public deployment. 1Password remains a candidate only; do not use an affiliate URL until one is supplied and approved. A non-paid or existing-tool alternative must remain visible.
 
 No service credential, sender identity, form ID, or affiliate tracking URL is stored in the public repository. Use the provider's secure dashboard or protected deployment secrets.
 
