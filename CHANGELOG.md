@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-13 — Outlook 0x800CCC0E VPN guide
+
+- Published `errors/windows-network/outlook/0x800ccc0e-vpn-connected/` with a controlled VPN-on/VPN-off comparison, Outlook account checks, documented TCP endpoint test, official Microsoft references, and explicit verification.
+- Added the guide to the Windows & Network hub, homepage Latest Guides, client-side search index, and sitemap.
+- Updated the search registry and publication status to 52 articles.
+- SEO Link Guard and live URL verification are required before calling this release complete.
+
+
 ## 2026-09-23 — Foundation Build
 
 - initialized ErrorHarbor repository

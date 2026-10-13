@@ -1,8 +1,17 @@
 # CURRENT — ErrorHarbor
 
-**Status:** Production live · 51-article corpus · controlled-growth AdSense recovery · lightweight CI baseline active  
+**Status:** Production live · 52-article corpus · controlled-growth AdSense recovery · lightweight CI baseline active  
 **Version:** Theme v2.1 · Master SOP v2.3 · Production  
 **Repository:** `wiztechid/ErrorHarbor`
+
+## Controlled-growth SEO publication #52 — 2026-10-13
+
+- Added the Outlook 0x800CCC0E + VPN diagnostic guide after the selected exact-error opportunity review.
+- No existing ErrorHarbor article targets the exact error/VPN intent.
+- Grounded the error, current Gmail/Yahoo known-issue status, Outlook setup guidance, and optional TCP diagnostic in current Microsoft sources.
+- Integrated the page with the Windows & Network hub, homepage latest 6, internal search, sitemap, article schema, related links, and this release log.
+- Article URL: `errors/windows-network/outlook/0x800ccc0e-vpn-connected/`
+- No images or affiliate placement; the guide is text-first and keeps the first diagnostic action unobstructed.
 
 ## Implemented
 
@@ -39,7 +48,7 @@
 
 ## Controlled-growth + UI regression baseline — 2026-10-12
 
-- Current search registry: **51 articles + 4 hubs**.
+- Current search registry: **52 articles + 4 hubs**.
 - Latest controlled-growth article: **npm EACCES Permission Denied**, published 2026-10-11 with actual publication date.
 - Navigation hardening completed: negative-feedback continuation now skips hidden placeholders; copy control has a real clipboard fallback.
 - **SEO Link Guard** remains the lightweight automatic gate.
