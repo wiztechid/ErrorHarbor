@@ -521,7 +521,7 @@ img.brand-mark{object-fit:contain!important;background:none!important}
 /* AdSense pre-approval: reserved inventory must not appear as visitor-facing content. */
 .ad-placeholder{display:none!important}
 
-/* Share controls wrap naturally on phones; no floating overlay. */
+/* Share controls; no floating overlay. */
 .social-share{padding:16px;margin:20px 0;border:1px solid var(--line);border-radius:16px;background:var(--soft)}
 .social-share.shell{margin:24px auto}
 .social-share>strong{display:block;margin-bottom:10px;font-size:14px}
@@ -541,4 +541,19 @@ img.brand-mark{object-fit:contain!important;background:none!important}
 .social-share-actions [data-network="facebook"] .share-icon{color:#a5caff}
 .social-share-actions [data-network="telegram"] .share-icon{color:#85e7ff}
 .social-share-actions button.copied{background:#176746;color:#fff}
-@media(max-width:650px){.social-share-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.social-share-actions a,.social-share-actions button{min-width:0;padding:10px 8px}}
+/* Single-row, high-contrast sharing; icon labels stay available to assistive technology. */
+.social-share{padding:12px;background:#0d1729;border-color:#6582a9}
+.social-share>strong{color:#fff}
+.social-share-actions{display:flex;flex-wrap:nowrap;gap:6px;overflow-x:auto;padding:3px 2px 7px;scrollbar-width:thin;scrollbar-color:#839bbb #0d1729}
+.social-share-actions a,.social-share-actions button{flex:0 0 auto;background:#f5f9ff;color:#10213b;border:1px solid #fff;white-space:nowrap;padding:8px 10px;min-height:44px}
+.social-share-actions a:hover,.social-share-actions button:hover{background:#d7f7ff;color:#10213b;border-color:#75e4ff}
+.social-share-actions .share-icon{background:#102b4b;color:#fff}
+.social-share-actions [data-network="whatsapp"] .share-icon{background:#096e42;color:#fff}
+.social-share-actions [data-network="facebook"] .share-icon{background:#1759bc;color:#fff}
+.social-share-actions [data-network="telegram"] .share-icon{background:#096282;color:#fff}
+@media(max-width:650px){
+.social-share{padding:10px}
+.social-share-actions{gap:5px}
+.social-share-actions a,.social-share-actions button{width:40px;padding:7px;min-height:44px}
+.social-share-actions a>span:not(.share-icon),.social-share-actions button>span:not(.share-icon){position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+}
