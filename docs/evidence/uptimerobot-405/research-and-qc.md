@@ -17,3 +17,5 @@ Local lab executed: Python 3.12.14 loopback server, curl HEAD 405 Allow GET; GET
 Reader-first QC: free answer and methods before affiliate; explicit ambiguity branches; no global protection bypass; negative control uses staging only; optional disclosed Better Stack recommendation with sponsored rel. Header search, Giscus and feedback preserve current template.
 
 Lightweight local publication validator: PASS, 53 articles. Responsive browser smoke initially blocked by missing bundled Chromium; do not claim browser QA or live publication until completed.
+
+Audit corrections (2026-10-14): replaced the scaled SVG with semantic responsive HTML cards (16px details; one column below 650px); separate copy controls for HEAD/GET on macOS/Linux and Windows; related IIS TLS guide replaces Outlook VPN; clarified that a curl 503 control does not validate a monitor's alert delivery. No real-monitor test was performed. Browser verification remains pending because Chromium is unavailable; static validation alone is not visual QA.
