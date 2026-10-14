@@ -529,3 +529,16 @@ img.brand-mark{object-fit:contain!important;background:none!important}
 .social-share-actions a,.social-share-actions button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 13px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);font-size:14px;line-height:1.4;cursor:pointer}
 .social-share-actions a:hover,.social-share-actions button:hover{border-color:var(--blue);color:var(--blue-dark)}
 .social-share>input{width:100%;min-width:0;margin-top:12px;padding:10px;border:1px solid var(--line);border-radius:8px}
+
+/* Futuristic share panel: accessible contrast, tactile controls, no overlay. */
+.social-share{background:linear-gradient(125deg,#101a31,#172847);color:#eef5ff;border:1px solid #405a80;box-shadow:0 8px 24px #13294b18;position:relative;overflow:hidden}
+.social-share:before{content:"";display:block;height:2px;background:linear-gradient(90deg,#66ecff,#9c86ff,#66ecff);position:absolute;top:0;left:0;right:0}
+.social-share>strong{color:#dbeaff;letter-spacing:.06em;font-size:13px;text-transform:uppercase}
+.social-share-actions a,.social-share-actions button{gap:8px;background:#203450;color:#f5f9ff;border-color:#496183;border-radius:12px;transition:background .15s,border-color .15s}
+.social-share-actions a:hover,.social-share-actions button:hover{background:#2b4265;color:#fff;border-color:#66ecff}
+.social-share-actions .share-icon{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:7px;background:#354c70;color:#98edff;font-weight:700;font-size:18px}
+.social-share-actions [data-network="whatsapp"] .share-icon{color:#92f6bc}
+.social-share-actions [data-network="facebook"] .share-icon{color:#a5caff}
+.social-share-actions [data-network="telegram"] .share-icon{color:#85e7ff}
+.social-share-actions button.copied{background:#176746;color:#fff}
+@media(max-width:650px){.social-share-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.social-share-actions a,.social-share-actions button{min-width:0;padding:10px 8px}}

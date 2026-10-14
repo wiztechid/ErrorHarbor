@@ -241,3 +241,7 @@
 ## 2026-10-14 — Social sharing controls
 
 Shared page controls: native device share where supported, WhatsApp, Facebook, X, Telegram and copy canonical link. Accessible labels, wrapping 44px controls and manual-copy fallback; no third-party SDK or automatic posting. JavaScript syntax and publication graph validation passed. Real-device share-sheet and browser visual QA remain unverified.
+
+## 2026-10-14 — Visible futuristic sharing panel
+
+Social links now render directly in page HTML; share controls remain visible without JavaScript. Dark panel with cyan/violet accents, network marks and mobile two-column controls. Versioned shared JS/CSS references across pages prevent stale bundles. Native share and copy-link progressively enhance the static links.

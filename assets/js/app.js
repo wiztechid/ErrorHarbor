@@ -9,21 +9,21 @@ let tt;function say(msg){toast.textContent=msg;toast.classList.add("show");clear
 
 // Lightweight share controls: canonical URL, no third-party SDK or automatic posting.
 const shareMain=document.querySelector('main');
-if(shareMain&&!document.querySelector('.social-share')){
+if(shareMain){
   const canonical=document.querySelector('link[rel="canonical"]');
   let shareURL;
   try{shareURL=new URL(canonical?.href||location.href);shareURL.hash='';shareURL.search=''}catch(_){shareURL=new URL(location.href);shareURL.hash='';shareURL.search=''}
   const url=shareURL.href,title=document.querySelector('h1')?.textContent.trim()||document.title;
-  const bar=document.createElement('section');bar.className='social-share';bar.setAttribute('aria-label','Share this page');
+  const bar=document.querySelector('.social-share')||document.createElement('section');bar.replaceChildren();bar.className='social-share';bar.setAttribute('aria-label','Share this page');
   const label=document.createElement('strong');label.textContent='Share this page';bar.appendChild(label);
   const actions=document.createElement('div');actions.className='social-share-actions';bar.appendChild(actions);
   if(typeof navigator.share==='function'){
-    const native=document.createElement('button');native.type='button';native.textContent='Share…';
+    const native=document.createElement('button');native.type='button';native.innerHTML='<span class="share-icon" aria-hidden="true">↗</span><span>Share…</span>';
     native.addEventListener('click',async()=>{try{await navigator.share({title,url})}catch(e){if(e.name!=='AbortError')say('Use a social button or Copy link instead')}});actions.appendChild(native);
   }
   const targets=[['WhatsApp','https://wa.me/?text='+encodeURIComponent(title+'\n'+url)],['Facebook','https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url)],['X','https://twitter.com/intent/tweet?text='+encodeURIComponent(title)+'&url='+encodeURIComponent(url)],['Telegram','https://t.me/share/url?url='+encodeURIComponent(url)+'&text='+encodeURIComponent(title)]];
-  for(const [name,href] of targets){const a=document.createElement('a');a.textContent=name;a.href=href;a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label','Share on '+name+' (opens a new tab)');actions.appendChild(a)}
-  const copy=document.createElement('button');copy.type='button';copy.textContent='Copy link';copy.dataset.copy=url;actions.appendChild(copy);
+  for(const [name,href] of targets){const a=document.createElement('a');a.innerHTML='<span class="share-icon" aria-hidden="true">'+({WhatsApp:'W',Facebook:'f',X:'X',Telegram:'↗'}[name])+'</span><span>'+name+'</span>';a.dataset.network=name.toLowerCase();a.href=href;a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label','Share on '+name+' (opens a new tab)');actions.appendChild(a)}
+  const copy=document.createElement('button');copy.type='button';copy.innerHTML='<span class="share-icon" aria-hidden="true">⧉</span><span>Copy link</span>';copy.dataset.copy=url;actions.appendChild(copy);
   const manual=document.createElement('input');manual.type='text';manual.value=url;manual.readOnly=true;manual.hidden=true;manual.setAttribute('aria-label','Page link to copy manually');bar.appendChild(manual);
   const article=shareMain.querySelector('article.article');
   if(article){const anchor=article.querySelector('.meta')||article.querySelector('.lede')||article.querySelector('h1');if(anchor)anchor.after(bar);else article.prepend(bar)}
@@ -31,7 +31,7 @@ if(shareMain&&!document.querySelector('.social-share')){
 }
 
 document.querySelectorAll("[data-copy]").forEach(btn=>btn.addEventListener("click",async()=>{
-  const original=btn.textContent, value=btn.dataset.copy||"";
+  const original=btn.innerHTML, value=btn.dataset.copy||"";
   let copied=false;
   try{await navigator.clipboard.writeText(value);copied=true}catch(e){
     const ta=document.createElement("textarea");
@@ -42,7 +42,7 @@ document.querySelectorAll("[data-copy]").forEach(btn=>btn.addEventListener("clic
   }
   if(copied){btn.textContent="✓ Copied";btn.classList.add("copied");say("Copied to clipboard")}
   else{const link=btn.closest(".social-share")?.querySelector("input");if(link){link.hidden=false;link.focus();link.select();say("Select and copy the link")}else say("Copy failed — select the command manually")}
-  setTimeout(()=>{btn.textContent=original;btn.classList.remove("copied")},1600);
+  setTimeout(()=>{btn.innerHTML=original;btn.classList.remove("copied")},1600);
 }));
 
 document.querySelectorAll("[data-example]").forEach(btn=>btn.addEventListener("click",()=>{
