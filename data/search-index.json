@@ -1062,5 +1062,23 @@
     "cluster": "outlook-vpn",
     "hub": "errors/windows-network/",
     "summary": "Compare webmail and Outlook with the VPN connected and disconnected, then verify the mail endpoint and account settings before changing anything."
+  },
+  {
+    "title": "UptimeRobot 405 Method Not Allowed: HEAD vs GET",
+    "url": "errors/windows-network/monitoring/uptimerobot-405-method-not-allowed/",
+    "product": "UptimeRobot / HTTP",
+    "type": "Monitoring error",
+    "keywords": [
+      "uptimerobot 405 method not allowed",
+      "uptime monitor returns 405 but website works",
+      "head 405 get 200",
+      "uptimerobot false downtime"
+    ],
+    "kind": "article",
+    "published": "2026-10-14",
+    "publish_order": 53,
+    "cluster": "network-monitoring",
+    "hub": "errors/windows-network/",
+    "summary": "Compare HEAD and GET on the same URL, fix the method mismatch and verify real failure detection."
   }
 ]
