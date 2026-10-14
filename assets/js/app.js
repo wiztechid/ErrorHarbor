@@ -7,6 +7,29 @@ document.querySelectorAll(".site-footer .footer-grid>div:first-child>p").forEach
 const toast=document.createElement("div");toast.className="toast";toast.setAttribute("role","status");toast.setAttribute("aria-live","polite");document.body.appendChild(toast);
 let tt;function say(msg){toast.textContent=msg;toast.classList.add("show");clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove("show"),1800)}
 
+// Lightweight share controls: canonical URL, no third-party SDK or automatic posting.
+const shareMain=document.querySelector('main');
+if(shareMain&&!document.querySelector('.social-share')){
+  const canonical=document.querySelector('link[rel="canonical"]');
+  let shareURL;
+  try{shareURL=new URL(canonical?.href||location.href);shareURL.hash='';shareURL.search=''}catch(_){shareURL=new URL(location.href);shareURL.hash='';shareURL.search=''}
+  const url=shareURL.href,title=document.querySelector('h1')?.textContent.trim()||document.title;
+  const bar=document.createElement('section');bar.className='social-share';bar.setAttribute('aria-label','Share this page');
+  const label=document.createElement('strong');label.textContent='Share this page';bar.appendChild(label);
+  const actions=document.createElement('div');actions.className='social-share-actions';bar.appendChild(actions);
+  if(typeof navigator.share==='function'){
+    const native=document.createElement('button');native.type='button';native.textContent='Share…';
+    native.addEventListener('click',async()=>{try{await navigator.share({title,url})}catch(e){if(e.name!=='AbortError')say('Use a social button or Copy link instead')}});actions.appendChild(native);
+  }
+  const targets=[['WhatsApp','https://wa.me/?text='+encodeURIComponent(title+'\n'+url)],['Facebook','https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url)],['X','https://twitter.com/intent/tweet?text='+encodeURIComponent(title)+'&url='+encodeURIComponent(url)],['Telegram','https://t.me/share/url?url='+encodeURIComponent(url)+'&text='+encodeURIComponent(title)]];
+  for(const [name,href] of targets){const a=document.createElement('a');a.textContent=name;a.href=href;a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label','Share on '+name+' (opens a new tab)');actions.appendChild(a)}
+  const copy=document.createElement('button');copy.type='button';copy.textContent='Copy link';copy.dataset.copy=url;actions.appendChild(copy);
+  const manual=document.createElement('input');manual.type='text';manual.value=url;manual.readOnly=true;manual.hidden=true;manual.setAttribute('aria-label','Page link to copy manually');bar.appendChild(manual);
+  const article=shareMain.querySelector('article.article');
+  if(article){const anchor=article.querySelector('.meta')||article.querySelector('.lede')||article.querySelector('h1');if(anchor)anchor.after(bar);else article.prepend(bar)}
+  else{bar.classList.add('shell');shareMain.appendChild(bar)}
+}
+
 document.querySelectorAll("[data-copy]").forEach(btn=>btn.addEventListener("click",async()=>{
   const original=btn.textContent, value=btn.dataset.copy||"";
   let copied=false;
@@ -18,7 +41,7 @@ document.querySelectorAll("[data-copy]").forEach(btn=>btn.addEventListener("clic
     ta.remove();
   }
   if(copied){btn.textContent="✓ Copied";btn.classList.add("copied");say("Copied to clipboard")}
-  else{say("Copy failed — select the command manually")}
+  else{const link=btn.closest(".social-share")?.querySelector("input");if(link){link.hidden=false;link.focus();link.select();say("Select and copy the link")}else say("Copy failed — select the command manually")}
   setTimeout(()=>{btn.textContent=original;btn.classList.remove("copied")},1600);
 }));
 

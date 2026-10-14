@@ -237,3 +237,7 @@
 - Added registry, hub, latest-six homepage/schema, sitemap and contextual sibling backlink atomically.
 - Optional disclosed Better Stack CTA follows complete diagnosis and verification; migration is not required.
 - Lightweight publication validator passed; live deployment and responsive browser QC pending. No heavy workflow dispatched.
+
+## 2026-10-14 — Social sharing controls
+
+Shared page controls: native device share where supported, WhatsApp, Facebook, X, Telegram and copy canonical link. Accessible labels, wrapping 44px controls and manual-copy fallback; no third-party SDK or automatic posting. JavaScript syntax and publication graph validation passed. Real-device share-sheet and browser visual QA remain unverified.

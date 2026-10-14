@@ -520,3 +520,12 @@ img.brand-mark{object-fit:contain!important;background:none!important}
 
 /* AdSense pre-approval: reserved inventory must not appear as visitor-facing content. */
 .ad-placeholder{display:none!important}
+
+/* Share controls wrap naturally on phones; no floating overlay. */
+.social-share{padding:16px;margin:20px 0;border:1px solid var(--line);border-radius:16px;background:var(--soft)}
+.social-share.shell{margin:24px auto}
+.social-share>strong{display:block;margin-bottom:10px;font-size:14px}
+.social-share-actions{display:flex;flex-wrap:wrap;gap:8px}
+.social-share-actions a,.social-share-actions button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 13px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);font-size:14px;line-height:1.4;cursor:pointer}
+.social-share-actions a:hover,.social-share-actions button:hover{border-color:var(--blue);color:var(--blue-dark)}
+.social-share>input{width:100%;min-width:0;margin-top:12px;padding:10px;border:1px solid var(--line);border-radius:8px}
