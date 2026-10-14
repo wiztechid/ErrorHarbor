@@ -245,3 +245,7 @@ Shared page controls: native device share where supported, WhatsApp, Facebook, X
 ## 2026-10-14 — Visible futuristic sharing panel
 
 Social links now render directly in page HTML; share controls remain visible without JavaScript. Dark panel with cyan/violet accents, network marks and mobile two-column controls. Versioned shared JS/CSS references across pages prevent stale bundles. Native share and copy-link progressively enhance the static links.
+
+## 2026-10-14 — Single-level share panel
+
+Place Share label and controls in one flex row, use white button surfaces with dark labels, and bump JS/CSS URLs to share4 across 62 pages to invalidate the previous cached design.

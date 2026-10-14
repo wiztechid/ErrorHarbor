@@ -15,7 +15,7 @@ if(shareMain){
   try{shareURL=new URL(canonical?.href||location.href);shareURL.hash='';shareURL.search=''}catch(_){shareURL=new URL(location.href);shareURL.hash='';shareURL.search=''}
   const url=shareURL.href,title=document.querySelector('h1')?.textContent.trim()||document.title;
   const bar=document.querySelector('.social-share')||document.createElement('section');bar.replaceChildren();bar.className='social-share';bar.setAttribute('aria-label','Share this page');
-  const label=document.createElement('strong');label.textContent='Share this page';bar.appendChild(label);
+  const label=document.createElement('strong');label.textContent='Share';bar.appendChild(label);
   const actions=document.createElement('div');actions.className='social-share-actions';bar.appendChild(actions);
   if(typeof navigator.share==='function'){
     const native=document.createElement('button');native.type='button';native.innerHTML='<span class="share-icon" aria-hidden="true">↗</span><span>Share…</span>';

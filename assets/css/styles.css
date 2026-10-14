@@ -521,39 +521,24 @@ img.brand-mark{object-fit:contain!important;background:none!important}
 /* AdSense pre-approval: reserved inventory must not appear as visitor-facing content. */
 .ad-placeholder{display:none!important}
 
-/* Share controls; no floating overlay. */
-.social-share{padding:16px;margin:20px 0;border:1px solid var(--line);border-radius:16px;background:var(--soft)}
+/* One-row sharing panel with explicit high-contrast surfaces. */
+.social-share{display:flex;align-items:center;gap:10px;padding:10px 12px;margin:20px 0;border:1px solid #577398;border-radius:14px;background:#091426;color:#fff;box-shadow:0 6px 20px #112b4820;min-width:0}
 .social-share.shell{margin:24px auto}
-.social-share>strong{display:block;margin-bottom:10px;font-size:14px}
-.social-share-actions{display:flex;flex-wrap:wrap;gap:8px}
-.social-share-actions a,.social-share-actions button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 13px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);font-size:14px;line-height:1.4;cursor:pointer}
-.social-share-actions a:hover,.social-share-actions button:hover{border-color:var(--blue);color:var(--blue-dark)}
-.social-share>input{width:100%;min-width:0;margin-top:12px;padding:10px;border:1px solid var(--line);border-radius:8px}
-
-/* Futuristic share panel: accessible contrast, tactile controls, no overlay. */
-.social-share{background:linear-gradient(125deg,#101a31,#172847);color:#eef5ff;border:1px solid #405a80;box-shadow:0 8px 24px #13294b18;position:relative;overflow:hidden}
-.social-share:before{content:"";display:block;height:2px;background:linear-gradient(90deg,#66ecff,#9c86ff,#66ecff);position:absolute;top:0;left:0;right:0}
-.social-share>strong{color:#dbeaff;letter-spacing:.06em;font-size:13px;text-transform:uppercase}
-.social-share-actions a,.social-share-actions button{gap:8px;background:#203450;color:#f5f9ff;border-color:#496183;border-radius:12px;transition:background .15s,border-color .15s}
-.social-share-actions a:hover,.social-share-actions button:hover{background:#2b4265;color:#fff;border-color:#66ecff}
-.social-share-actions .share-icon{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:7px;background:#354c70;color:#98edff;font-weight:700;font-size:18px}
-.social-share-actions [data-network="whatsapp"] .share-icon{color:#92f6bc}
-.social-share-actions [data-network="facebook"] .share-icon{color:#a5caff}
-.social-share-actions [data-network="telegram"] .share-icon{color:#85e7ff}
-.social-share-actions button.copied{background:#176746;color:#fff}
-/* Single-row, high-contrast sharing; icon labels stay available to assistive technology. */
-.social-share{padding:12px;background:#0d1729;border-color:#6582a9}
-.social-share>strong{color:#fff}
-.social-share-actions{display:flex;flex-wrap:nowrap;gap:6px;overflow-x:auto;padding:3px 2px 7px;scrollbar-width:thin;scrollbar-color:#839bbb #0d1729}
-.social-share-actions a,.social-share-actions button{flex:0 0 auto;background:#f5f9ff;color:#10213b;border:1px solid #fff;white-space:nowrap;padding:8px 10px;min-height:44px}
-.social-share-actions a:hover,.social-share-actions button:hover{background:#d7f7ff;color:#10213b;border-color:#75e4ff}
-.social-share-actions .share-icon{background:#102b4b;color:#fff}
-.social-share-actions [data-network="whatsapp"] .share-icon{background:#096e42;color:#fff}
-.social-share-actions [data-network="facebook"] .share-icon{background:#1759bc;color:#fff}
-.social-share-actions [data-network="telegram"] .share-icon{background:#096282;color:#fff}
+.social-share>strong{flex:0 0 auto;margin:0;color:#fff;font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+.social-share-actions{display:flex;align-items:center;flex:1;min-width:0;flex-wrap:nowrap;gap:6px;overflow-x:auto;padding:3px 2px;scrollbar-width:thin}
+.social-share .social-share-actions a,.social-share .social-share-actions button{display:inline-flex;align-items:center;justify-content:center;gap:6px;flex:0 0 auto;min-height:44px;padding:8px;border:1px solid #fff;border-radius:9px;background:#fff;color:#08182e;font-size:12px;line-height:1.3;font-weight:650;white-space:nowrap;cursor:pointer}
+.social-share .social-share-actions a:hover,.social-share .social-share-actions button:hover{background:#cef6ff;color:#08182e;border-color:#5fe2ff}
+.social-share .social-share-actions .share-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;background:#113c60;color:#fff;font-size:17px;font-weight:700;flex:none}
+.social-share .social-share-actions [data-network="whatsapp"] .share-icon{background:#086238}
+.social-share .social-share-actions [data-network="facebook"] .share-icon{background:#174eae}
+.social-share .social-share-actions [data-network="telegram"] .share-icon{background:#085b7c}
+.social-share .social-share-actions button.copied{background:#ccf7db;color:#0b3620}
+.social-share>input{min-width:0;width:100%;padding:8px}
+.social-share:has(>input:not([hidden])){flex-wrap:wrap}
 @media(max-width:650px){
-.social-share{padding:10px}
+.social-share{padding:8px;gap:6px}
+.social-share>strong{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
 .social-share-actions{gap:5px}
-.social-share-actions a,.social-share-actions button{width:40px;padding:7px;min-height:44px}
+.social-share .social-share-actions a,.social-share .social-share-actions button{width:40px;padding:7px}
 .social-share-actions a>span:not(.share-icon),.social-share-actions button>span:not(.share-icon){position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 }
