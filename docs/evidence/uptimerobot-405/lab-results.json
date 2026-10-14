@@ -1,0 +1,5 @@
+{
+  "head": "HTTP/1.1 405 Method Not Allowed\nServer: BaseHTTP/0.6 Python/3.12.14\nDate: Wed, 14 Oct 2026 01:00:17 GMT\nAllow: GET\nContent-Length: 0\n\n",
+  "get": "HTTP/1.1 200 OK\nServer: BaseHTTP/0.6 Python/3.12.14\nDate: Wed, 14 Oct 2026 01:00:17 GMT\nContent-Type: text/plain\nContent-Length: 13\n\n",
+  "negative_get": "HTTP/1.1 503 Service Unavailable\nServer: BaseHTTP/0.6 Python/3.12.14\nDate: Wed, 14 Oct 2026 01:00:17 GMT\nContent-Type: text/plain\nContent-Length: 13\n\n"
+}

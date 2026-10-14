@@ -228,3 +228,12 @@
 - formalized resource-efficient QC hierarchy: source/repo → live URL → connected browser → manual Playwright → agentic browser fallback
 - upgraded Website Governance SOP to v1.1 and ErrorHarbor Master SOP to v2.3
 
+
+
+## UptimeRobot 405 monitoring guide — 2026-10-14
+
+- Prepared method-specific 405 guide under Windows & Network, with recorded loopback HEAD 405 / GET 200 / failure-control GET 503.
+- Evidence scope: Python/curl fixture only; no claimed signed-in monitor or Cloudflare testing.
+- Added registry, hub, latest-six homepage/schema, sitemap and contextual sibling backlink atomically.
+- Optional disclosed Better Stack CTA follows complete diagnosis and verification; migration is not required.
+- Lightweight publication validator passed; live deployment and responsive browser QC pending. No heavy workflow dispatched.

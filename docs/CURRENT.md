@@ -384,3 +384,12 @@ Initial placement posture is conservative: clearly separated in-page inventory f
 - Added universal mass-scale/AI guard, trust/editorial integrity, monetization, AdSense readiness, affiliate, analytics, security, CURRENT/CHANGELOG, severity, freeze and corpus-QC contracts.
 - ErrorHarbor-specific publisher IDs, taxonomy, HPK scoring and troubleshooting anatomy remain governed by ErrorHarbor's local SOPs and are not universal defaults.
 - Future websites may adopt this file as the parent governance layer and add stricter site-specific overrides without silently weakening the baseline.
+
+
+## UptimeRobot 405 monitoring guide — 2026-10-14
+
+- Prepared method-specific 405 guide under Windows & Network, with recorded loopback HEAD 405 / GET 200 / failure-control GET 503.
+- Evidence scope: Python/curl fixture only; no claimed signed-in monitor or Cloudflare testing.
+- Added registry, hub, latest-six homepage/schema, sitemap and contextual sibling backlink atomically.
+- Optional disclosed Better Stack CTA follows complete diagnosis and verification; migration is not required.
+- Lightweight publication validator passed; live deployment and responsive browser QC pending. No heavy workflow dispatched.
