@@ -1,3 +1,9 @@
+## 2026-10-17 — Docker BuildKit missing COPY source guide
+
+- Added Docker BuildKit troubleshooting guide with build context, ignore rules, CI and multi-stage diagnostics.
+- Linked from homepage Latest 6, Developer Errors hub, npm sibling, search index and sitemap.
+- Publication remains gated by SEO Link Guard and live QA.
+
 # Changelog
 
 ## 2026-10-13 — Outlook 0x800CCC0E VPN guide
