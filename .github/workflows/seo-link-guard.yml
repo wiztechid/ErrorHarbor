@@ -1,14 +1,30 @@
 name: SEO Link Guard
 
+# WIZ GitHub Mode Hemat: validate once after a batch of edits.
+# Run manually on the feature branch before merging; main is checked after merge.
 on:
+  workflow_dispatch:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
+    paths:
+      - 'errors/**'
+      - 'data/**'
+      - 'index.html'
+      - 'sitemap.xml'
+      - 'scripts/validate-publish.mjs'
+      - '.github/workflows/seo-link-guard.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: seo-link-guard-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   validate-seo-graph:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
