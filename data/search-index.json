@@ -1080,5 +1080,23 @@
     "cluster": "network-monitoring",
     "hub": "errors/windows-network/",
     "summary": "Compare HEAD and GET on the same URL, fix the method mismatch and verify real failure detection."
+  },
+  {
+    "title": "Docker Failed to Compute Cache Key: Missing COPY Source",
+    "url": "errors/dev/docker/failed-to-compute-cache-key-not-found/",
+    "product": "Docker BuildKit",
+    "type": "Docker build error",
+    "keywords": [
+      "failed to compute cache key not found",
+      "failed to calculate checksum of ref not found",
+      "docker COPY file not found build context",
+      "docker buildkit .dockerignore COPY"
+    ],
+    "kind": "article",
+    "published": "2026-10-17",
+    "publish_order": 54,
+    "cluster": "docker-buildkit",
+    "hub": "errors/dev/",
+    "summary": "Trace a missing COPY source through build context, ignore rules, filename case, CI checkout and multi-stage output."
   }
 ]
