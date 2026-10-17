@@ -1,0 +1,48 @@
+name: npm FROZEN — All 54 Responsive QA
+# Final complete 108-view regression after secondary OpenSSL code wrapping fix.
+
+# Run only when this workflow is created/changed, or when manually requested.
+on:
+  push:
+    branches: [feat/npm-article-template-freeze-v1]
+    paths:
+      - '.github/workflows/npm-freeze-visual.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: npm-freeze-visual
+  cancel-in-progress: true
+
+jobs:
+  responsive-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static, generator, template, and SEO gates
+        run: |
+          node scripts/test-article-generator.mjs
+          node scripts/npm-freeze-gate.mjs
+          node scripts/validate-publish.mjs
+      - name: Chromium installation
+        run: |
+          npm install --no-save --no-package-lock playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Audit 54 articles at 390px and 1366px
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/npm-preview.log 2>&1 &
+          node .github/scripts/npm-freeze-browser-check.mjs
+      - name: Save screenshots and QA report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: errorharbor-npm-freeze-54x2
+          path: npm-freeze-proof/
+          if-no-files-found: warn
+          retention-days: 14

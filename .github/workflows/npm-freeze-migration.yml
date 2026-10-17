@@ -1,0 +1,54 @@
+name: npm Template Freeze — One-Time Migration
+
+# This push trigger only runs when this workflow file itself changes.
+# It commits to the feature branch only; never directly deploys to production.
+on:
+  push:
+    branches: [feat/npm-article-template-freeze-v1]
+    paths:
+      - '.github/workflows/npm-freeze-migration.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: npm-freeze-migration
+  cancel-in-progress: false
+
+jobs:
+  migrate-and-lock:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Preflight scripts
+        run: |
+          node --check scripts/migrate-npm-shell.mjs
+          node --check scripts/npm-freeze-gate.mjs
+          test "${GITHUB_REF_NAME}" = "feat/npm-article-template-freeze-v1"
+      - name: Migrate 54 article shells from npm reference
+        run: |
+          node scripts/migrate-npm-shell.mjs --write | tee /tmp/npm-freeze-migration.json
+          node scripts/migrate-npm-shell.mjs > /tmp/npm-freeze-idempotency.json
+          node -e 'const fs=require("fs");const x=JSON.parse(fs.readFileSync("/tmp/npm-freeze-idempotency.json"));if(x.changed!==0||x.registered!==54)process.exit(1)'
+      - name: Freeze baseline and validate every page
+        run: |
+          node scripts/npm-freeze-gate.mjs --lock
+          node scripts/preflight-article-freeze.mjs
+          node scripts/validate-publish.mjs
+      - name: Commit frozen layout and evidence to feature branch only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/migrate-npm-shell.mjs scripts/npm-freeze-gate.mjs templates/npm-shell.freeze.json errors/
+          git diff --cached --check
+          git diff --cached --quiet && exit 0
+          git commit -m "feat(freeze): normalize all 54 ErrorHarbor article shells to npm reference"
+          git push origin "HEAD:feat/npm-article-template-freeze-v1"
