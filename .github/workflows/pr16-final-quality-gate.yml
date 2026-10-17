@@ -1,6 +1,6 @@
 name: PR16 Final Quality Gate
 
-# One-shot push bootstrap only when this workflow file is first added/updated.
+# Final consolidated rerun after proven mobile code-overflow fix (2026-10-17).
 # Later code commits do not trigger this heavy gate; reruns are manual/on demand.
 on:
   push:
