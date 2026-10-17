@@ -1,8 +1,17 @@
 # CURRENT — ErrorHarbor
 
-**Status:** Production live · 52-article corpus · controlled-growth AdSense recovery · lightweight CI baseline active  
+**Status:** Production live · 54-article corpus · controlled-growth AdSense recovery · lightweight CI baseline active  
 **Version:** Theme v2.1 · Master SOP v2.3 · Production  
 **Repository:** `wiztechid/ErrorHarbor`
+
+## Current resume checkpoint — 2026-10-17 (documentation candidate, pending PR #16)
+
+- Canonical `main` inventory verified from `data/search-index.json`: **54 articles + 4 hubs**. The older 52-article and publication-#52 sections below are historical snapshots, not the latest count.
+- Live homepage, ads.txt and robots.txt were fetched: homepage serves the Docker, UptimeRobot, Outlook and other recent guides; `ads.txt` retains the verified publisher entry.
+- Active AdSense dashboard decision is **not independently re-checked in this audit**; preserve submission/review freeze. Do not equate a source/live crawl PASS with Google AdSense approval.
+- PR #16 remains **DRAFT**: six changed article files are footer-only versus `main`. Additional six legitimate relative footer-link paths initially triggered false-positive QC; validator URL normalization corrected in the same PR. See `docs/ARTICLE-PARITY-AUDIT-2026-10-17.md`.
+- No production publication, mass rewrite, artificial review dates, paid inference, or GitHub Actions heavy runs authorized. Finish local Node parity + generator tests, one consolidated final gate, responsive UI spot-check, and explicit publication approval before merging.
+
 
 ## Controlled-growth SEO publication #52 — 2026-10-13
 
