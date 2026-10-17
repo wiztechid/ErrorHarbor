@@ -3,6 +3,13 @@ on:
   workflow_dispatch:
   # Expensive Chromium is triggered automatically only when frozen design files
   # change in a PR; routine content-only article PRs use lightweight gates.
+  push:
+    branches: [feat/npm-master-template-freeze-v1]
+    paths:
+      - 'assets/css/styles.css'
+      - 'assets/js/app.js'
+      - 'scripts/npm-shell-lib.mjs'
+      - 'templates/npm-v1.freeze.json'
   pull_request:
     branches: [main]
     paths:
