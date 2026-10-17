@@ -66,8 +66,32 @@ try {
    assert.deepEqual(audit.missingTrust,[],route+' missing trust footer links');
    assert.deepEqual(audit.missingAnchors,[],route+' broken TOC');
    if(audit.documentWidth>audit.viewportWidth+3) {
+    const probes=await page.evaluate(()=>{
+     const tests=[
+      ['pre-hidden','.article pre{display:none!important}'],
+      ['pre-wrapped','.article pre,.article pre code{white-space:pre-wrap!important;overflow-wrap:anywhere!important}'],
+      ['article-clipped','.article{overflow-x:clip!important}'],
+      ['grid-clipped','.article-grid{overflow-x:clip!important}'],
+      ['header-hidden','.site-header{display:none!important}'],
+      ['footer-hidden','.site-footer{display:none!important}'],
+      ['share-hidden','.social-share{display:none!important}'],
+      ['toc-hidden','.sidebar{display:none!important}'],
+      ['content-hidden','.article section{display:none!important}'],
+      ['code-hidden','.article code{display:none!important}'],
+      ['article-hidden','.article{display:none!important}']
+     ];
+     const values=[];
+     for(const [name,css] of tests){
+      const el=document.createElement('style');el.textContent=css;document.head.append(el);
+      values.push({name,docWidth:document.documentElement.scrollWidth});
+      el.remove();
+     }
+     const pre=[...document.querySelectorAll('pre')].map(x=>{const b=x.getBoundingClientRect(),code=x.querySelector('code')?.getBoundingClientRect();return {left:b.left,right:b.right,width:b.width,client:x.clientWidth,scroll:x.scrollWidth,overflow:getComputedStyle(x).overflowX,codeRight:code?.right};});
+     return {values,pre};
+    });
+    console.log('MOBILE_OVERFLOW_PROBES '+route+' '+JSON.stringify(probes));
     await page.screenshot({path:'qc-pr16/'+viewport.name+'-overflow-debug.png',fullPage:true});
-    throw Error(route+' horizontal overflow: '+audit.documentWidth+'/'+audit.viewportWidth+' edge='+JSON.stringify(audit.edgeCandidates)+' candidates='+JSON.stringify(audit.overflowCandidates));
+    throw Error(route+' horizontal overflow: '+audit.documentWidth+'/'+audit.viewportWidth+' edge='+JSON.stringify(audit.edgeCandidates)+' candidates='+JSON.stringify(audit.overflowCandidates)+' probes='+JSON.stringify(probes.values));
    }
    assert.ok(audit.stylesheetCount>0,route+' CSS missing');
    if(route!=='/') {
