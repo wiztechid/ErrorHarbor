@@ -43,9 +43,13 @@ try {
  fs.writeFileSync(json,JSON.stringify(badRelated));
  const relatedFail=run([generator,json],1);
  if(!relatedFail.stderr.includes('Related links must be internal'))throw Error('External related URL accepted');
+ const relatedBackslash={...input,slug:'backslash-related',related:[{label:'External disguise',url:'/\\\\evil.example/path/'}]};
+ fs.writeFileSync(json,JSON.stringify(relatedBackslash));
+ const backslashFail=run([generator,json],1);
+ if(!backslashFail.stderr.includes('Related links must be internal'))throw Error('Backslash external related URL accepted');
  const badReview={...input,slug:'review-before-publish',reviewed:'2026-10-16',published:'2026-10-17'};
  fs.writeFileSync(json,JSON.stringify(badReview));
  const reviewFail=run([generator,json],1);
  if(!reviewFail.stderr.includes('Review date cannot precede'))throw Error('Review date before publication accepted');
- console.log('PASS: dry-run, generation, master shell, template validation, overwrite protection, broken-anchor rejection, invalid dates, review chronology and unsafe URL rejection');
+ console.log('PASS: dry-run, generation, master shell, template validation, overwrite protection, broken-anchor rejection, invalid dates, review chronology and unsafe URL rejection and backslash-origin escape rejection');
 } finally { fs.rmSync(tmp,{recursive:true,force:true}); }
