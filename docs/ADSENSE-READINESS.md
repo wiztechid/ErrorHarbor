@@ -32,6 +32,10 @@ The earlier AdSense dashboard inspection used the wrong Google account. Do not u
 - A source-level scan found 54 error-guide URLs (separate from category/library pages). All have external references; one guide was a clear length outlier and omitted relevant Docker BuildKit context branches. PR #24 added those diagnostics while preserving the frozen HTML structure. SEO/template check and Pages deployment passed, and production content was verified.
 - This one focused correction does not complete the corpus accuracy review or guarantee approval. Keep HOLD until all P0 items are evidenced and account/GSC checks are complete.
 
+### Search Console snapshot — 2026-10-17
+
+For verified property `sc-domain:errorharbor.com`, Page indexing shows 26 indexed and 41 not indexed: 4 excluded by `noindex`, 3 redirect URLs, 34 “Discovered – currently not indexed,” and 0 “Crawled – currently not indexed.” The Sitemaps report shows `https://errorharbor.com/sitemap.xml` status **Success**, last read 2026-10-16, with 61 discovered pages. These are separate report totals. The page examples and the four `noindex` targets have not yet been checked individually; retain the related P0 checks as open. Google defines discovered-not-indexed as found but not crawled yet, and sitemap submission is a hint rather than a guarantee of crawling/indexing.
+
 ## Content / scaled-content guard
 
 A shared visual/editorial framework is allowed; cloned reasoning is not. Every new article must prove a distinct intent and diagnostic moat, use problem-specific evidence/remediation/verification, and pass corpus cannibalization review. If the unique moat cannot be stated, HOLD/MERGE/SKIP.
