@@ -19,6 +19,11 @@
       "heading": "Verify environment",
       "body": "Inspect the version and input path.",
       "verify": "Inputs and version are correct."
+    },
+    {
+      "heading": "Confirm the narrowest safe correction",
+      "body": "After inspecting the environment, apply only the justified configuration or installation change.",
+      "verify": "Rerun the originally failing command in the same context."
     }
   ],
   "avoid": "Do not make destructive changes without backups.",
@@ -33,6 +38,10 @@
     {
       "label": "Developer errors",
       "url": "/errors/dev/"
+    },
+    {
+      "label": "Error Library",
+      "url": "/errors/"
     }
   ]
 }
