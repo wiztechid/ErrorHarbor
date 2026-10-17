@@ -1,0 +1,54 @@
+name: PR16 Final Quality Gate
+
+# One-shot push bootstrap only when this workflow file is first added/updated.
+# Later code commits do not trigger this heavy gate; reruns are manual/on demand.
+on:
+  push:
+    branches: [docs/wiz-github-mode-hemat-sop]
+    paths:
+      - '.github/workflows/pr16-final-quality-gate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: errorharbor-pr16-final-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  source-and-mobile-qc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JS syntax before costly browser installation
+        run: |
+          node --check scripts/audit-article-parity.mjs
+          node --check scripts/generate-article.mjs
+          node --check scripts/test-article-generator.mjs
+          node --check .github/scripts/pr16-final-ui-smoke.mjs
+      - name: Generator security and complete 54-article footer preflight
+        run: node scripts/preflight-article-freeze.mjs
+      - name: SEO and AdSense publication guard
+        run: node scripts/validate-publish.mjs
+      - name: Install browser regression dependency once
+        run: |
+          npm install --no-save --no-package-lock playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Render PR checkout and test desktop/mobile
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/pr16-preview.log 2>&1 &
+          echo $! > /tmp/pr16-preview.pid
+          node .github/scripts/pr16-final-ui-smoke.mjs
+      - name: Upload PR checkout screenshots and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: errorharbor-pr16-visual-quality-gate
+          path: qc-pr16/
+          if-no-files-found: warn
+          retention-days: 14
