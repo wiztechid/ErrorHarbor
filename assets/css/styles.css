@@ -588,3 +588,12 @@ img.brand-mark{object-fit:contain!important;background:none!important}
   .article .checks code{white-space:normal;overflow-wrap:anywhere;word-break:break-word}
   .article h2{overflow-wrap:anywhere;word-break:break-word}
 }
+
+
+/* npm-shell-v1 FROZEN: constrain responsive TOC sizing to the article viewport. */
+@media(max-width:920px){
+  .article-grid.shell{min-width:0;max-width:100%;overflow-x:clip}
+  .article-grid.shell>article.article{min-width:0;max-width:100%;overflow-x:clip}
+  .article>aside.sidebar,.article>aside.sidebar>.side-block,.article>aside.sidebar .toc{min-width:0;width:100%;max-width:100%}
+  .article>aside.sidebar .toc{overflow-x:auto;overscroll-behavior-x:contain}
+}
