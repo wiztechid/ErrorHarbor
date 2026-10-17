@@ -23,3 +23,12 @@
 
 ## Article completion gate
 Article is not publication-ready if footer links are missing, canonical is absent, TOC anchors are broken, a title/H1 is duplicated, share scripts are duplicated, or required troubleshooting sections are missing. Content quality, safety, references and actual test evidence remain separate editorial gates.
+
+## Generator v1 — create without changing existing articles
+- Copy `templates/article.example.json` to a new article input JSON and replace **all** example content with researched, verifiable information.
+- Preview target path without writing: `node scripts/generate-article.mjs templates/article.example.json`.
+- Generate the file: `node scripts/generate-article.mjs templates/article.example.json --write`.
+- Check the generated article locally: `node scripts/check-article-template.mjs errors/dev/example/example-error/index.html`.
+- The generator refuses to overwrite existing article paths. Generated files are drafts: editorial evidence, working commands, internal links, search index, sitemap, hub/latest-guide placement and production gates must still be completed separately.
+- Do not publish the example JSON as an actual article. Do not auto-update reviewed dates without substantive verification.
+- Legacy article migration: first inventory missing template components, then fix in small audited batches; avoid mass rewriting article content.
