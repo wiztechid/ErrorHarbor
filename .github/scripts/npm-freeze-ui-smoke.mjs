@@ -25,12 +25,14 @@ try{
      title:document.title,
      h1:document.querySelector('h1')?.textContent?.slice(0,100),
      footer:!!document.querySelector('footer.site-footer'),
-     sidebar:!!document.querySelector('.article-grid > aside.sidebar'),
+     sidebar:!!document.querySelector('aside.sidebar'),
      bodyStart:document.body.innerHTML.slice(0,320)
    }));
    if(!diagnostics.footer||!diagnostics.sidebar)throw Error('PR_CHECKOUT_CHROME_NOT_RENDERED '+path+' HTTP '+response.status()+' '+JSON.stringify(diagnostics));
+   // app.js deliberately moves the npm sidebar under <article> on mobile.
+   // The template source guard separately enforces its canonical static placement.
    const a=await page.evaluate((required)=>{
-    const sidebar=document.querySelector('.article-grid > aside.sidebar');
+    const sidebar=document.querySelector('aside.sidebar');
     const footer=document.querySelector('footer.site-footer');
     const paths=[...footer.querySelectorAll('a[href]')].map(x=>new URL(x.getAttribute('href'),document.baseURI).pathname);
     const toc=[...sidebar.querySelectorAll('.toc a[href^="#"]')];
