@@ -28,6 +28,13 @@ function sidebarSkeleton(s){
   .replace(/(<nav class="toc" aria-label="Article table of contents">)[\s\S]*?(<\/nav>)/i,'$1__TOC_LINKS__$2')
   .replace(/<div class="guide-details">[\s\S]*?<\/div>/i,'<div class="guide-details">__GUIDE_DETAILS__</div>');
 }
+function articleMarkupSkeleton(s){
+ const main=s.match(/<main\b[\s\S]*?<\/main>/i)?.[0];
+ if(!main)throw Error("Article main missing");
+ return main
+  .replace(/(\s+(?:href|src|aria-label|title|alt|content|datetime|id|data-copy|data-fix)=)(["'])([\s\S]*?)\2/gi,'$1$2{{DYNAMIC}}$2')
+  .replace(/>([^<]+)</g,'>{{TEXT}}<');
+}
 function homepageShell(s){
  const schemaTag=/<script type="application\/ld\+json">([\s\S]*?)<\/script>/i;
  const sm=schemaTag.exec(s);
@@ -69,7 +76,8 @@ function hashes(){
   header:hash(expectedHeader),footer:hash(expectedFooter),
   css:hash(read("assets/css/styles.css")),js:hash(read("assets/js/app.js")),
   homepageShell:hash(homepageShell(read("index.html"))),
-  hubs:Object.fromEntries(["errors/index.html","errors/dev/index.html","errors/virtualization/index.html","errors/windows-network/index.html","errors/hardware/index.html"].map(p=>[p,hash(hubShell(read(p)))]))
+  hubs:Object.fromEntries(["errors/index.html","errors/dev/index.html","errors/virtualization/index.html","errors/windows-network/index.html","errors/hardware/index.html"].map(p=>[p,hash(hubShell(read(p)))])),
+  articleMarkup:Object.fromEntries(JSON.parse(read("data/search-index.json")).filter(e=>e.kind==="article").map(item=>{const file=path.posix.join(item.url,"index.html");return [file,hash(articleMarkupSkeleton(read(file)))];}))
  };
 }
 if(process.argv.includes("--lock")){
@@ -84,6 +92,8 @@ const errors=[];
 for(const k of ["header","footer","css","js","homepageShell"])if(wanted[k]!==now[k])errors.push("FROZEN_DESIGN_DRIFT "+k);
 for(const [k,v] of Object.entries(wanted.hubs||{}))if(v!==now.hubs?.[k])errors.push("FROZEN_HUB_CHROME "+k);
 const registry=JSON.parse(read("data/search-index.json")).filter(e=>e.kind==="article");
+const bodyLocks=wanted.articleMarkup||{};
+const currentArticleMarkup={};
 const templateSignature=s=>({
  header:normalize(get(s,"header"),"https://errorharbor.com/"+s.match(/<link rel="canonical" href="([^"]+)"/)?.[1]?.replace("https://errorharbor.com/","")||""),
  footer:get(s,"footer"),sidebar:get(s,"aside")
@@ -92,6 +102,11 @@ for(const item of registry){
  const file=path.join(item.url,"index.html");
  if(!fs.existsSync(file)){errors.push("MISSING "+file);continue}
  const source=read(file),pageURL="https://errorharbor.com/"+item.url;
+ const relativeFile=path.posix.join(item.url,"index.html");
+ const bodyHash=hash(articleMarkupSkeleton(source));
+ currentArticleMarkup[relativeFile]=bodyHash;
+ if(!bodyLocks[relativeFile])errors.push("BODY_LOCK_MISSING "+relativeFile);
+ else if(bodyLocks[relativeFile]!==bodyHash)errors.push("ARTICLE_MARKUP_DRIFT "+relativeFile);
  const actualHeader=normalize(get(source,"header"),pageURL).replace(/header-search-npm/g,"header-search-article");
  const actualFooter=normalize(get(source,"footer"),pageURL);
  if(actualHeader!==expectedHeader)errors.push("HEADER "+file);
@@ -109,6 +124,19 @@ for(const item of registry){
  if((source.match(/<h1\b/gi)||[]).length!==1)errors.push("H1 "+file);
  if((source.match(/<section class="social-share"/g)||[]).length!==1)errors.push("SHARE "+file);
  if((source.match(/data-network="/g)||[]).length!==4)errors.push("SHARE_BUTTONS "+file);
+}
+const registeredFiles=new Set(registry.map(item=>path.posix.join(item.url,"index.html")));
+for(const file of Object.keys(bodyLocks))if(!registeredFiles.has(file))errors.push("BODY_LOCK_ORPHAN "+file);
+if(process.argv.includes("--register-new-articles")){
+ const blocking=errors.filter(e=>!e.startsWith("BODY_LOCK_MISSING "));
+ const missing=errors.filter(e=>e.startsWith("BODY_LOCK_MISSING ")).map(e=>e.slice("BODY_LOCK_MISSING ".length));
+ if(blocking.length)throw Error("Refusing to register article markup while existing freeze checks fail: "+blocking.slice(0,20).join(", "));
+ if(!missing.length)throw Error("No new registered article markup to lock");
+ for(const file of missing)bodyLocks[file]=currentArticleMarkup[file];
+ wanted.articleMarkup=bodyLocks;
+ fs.writeFileSync(manifestPath,JSON.stringify(wanted,null,2)+"\n");
+ errors.length=0;
+ console.log("REGISTERED "+missing.length+" new article markup lock(s)");
 }
 const result={status:errors.length?"BLOCKED":"PASS",articles:registry.length,errors:errors.slice(0,60)};
 console.log(JSON.stringify(result,null,2));

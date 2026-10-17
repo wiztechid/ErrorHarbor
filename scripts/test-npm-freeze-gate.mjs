@@ -14,8 +14,8 @@ try {
   const article="errors/dev/node-npm/err-ossl-evp-unsupported/index.html";
   const homepage="index.html";
   const hub="errors/dev/index.html";
-  const run=()=>{
-    const result=spawnSync(process.execPath,["scripts/npm-freeze-gate.mjs"],{cwd:copyRoot,encoding:"utf8"});
+  const run=(args=[])=>{
+    const result=spawnSync(process.execPath,["scripts/npm-freeze-gate.mjs",...args],{cwd:copyRoot,encoding:"utf8"});
     if(result.error)throw result.error;
     return {status:result.status,output:result.stdout+result.stderr};
   };
@@ -40,6 +40,9 @@ try {
   console.log("PASS baseline");
   check("share markup is frozen",article,'class="social-share"','class="social-share altered"',false);
   check("sidebar markup is frozen",article,'class="toc"','class="toc altered"',false);
+  check("article body markup is frozen",article,'<section id="quick-fix"','<div id="quick-fix"',false);
+  check("article body copy remains editable",article,"Then rerun the ","Then rerun the revised ",true);
+  check("article command content remains editable",article,'data-copy="node -p','data-copy="npm -v',true);
   check("homepage section chrome is frozen",homepage,'class="section latest-guides"','class="section latest-guides altered"',false);
   check("hub card structure is frozen",hub,'<span class="arrow">→</span>','<strong class="arrow">→</strong>',false);
   const section=fs.readFileSync(path.join(copyRoot,homepage),"utf8").match(/<section class="section latest-guides" id="latest-guides">[\s\S]*?<\/section>/)?.[0];
@@ -51,6 +54,26 @@ try {
   const cardTitle=card?.match(/<h3>([^<]+)<\/h3>/)?.[1];
   assert.ok(cardTitle,"hub card title must exist");
   check("hub article title remains editable",hub,cardTitle,cardTitle+" (test)",true);
+
+  const registryPath=path.join(copyRoot,"data/search-index.json");
+  const registry=JSON.parse(fs.readFileSync(registryPath,"utf8"));
+  const articleRecord=registry.find(item=>item.kind==="article");
+  assert.ok(articleRecord,"an article record must exist for registration test");
+  const newUrl="errors/dev/freeze-test/master-shell-probe/";
+  const newFile=path.join(copyRoot,newUrl,"index.html");
+  fs.mkdirSync(path.dirname(newFile),{recursive:true});
+  fs.copyFileSync(path.join(copyRoot,article),newFile);
+  registry.push({...articleRecord,url:newUrl});
+  fs.writeFileSync(registryPath,JSON.stringify(registry,null,2)+"\n");
+  const missingLock=run();
+  assert.notEqual(missingLock.status,0,"new articles must be locked before passing");
+  assert.match(missingLock.output,/BODY_LOCK_MISSING/);
+  const registration=run(["--register-new-articles"]);
+  assert.equal(registration.status,0,"new article registration must add a lock without refreshing existing locks:\n"+registration.output);
+  const manifest=JSON.parse(fs.readFileSync(path.join(copyRoot,"templates/npm-shell.freeze.json"),"utf8"));
+  assert.ok(manifest.articleMarkup[newUrl+"index.html"],"new article lock must be saved");
+  assert.equal(run().status,0,"registered article must pass the freeze gate");
+  console.log("PASS explicit new-article lock registration");
 } finally {
   fs.rmSync(tempRoot,{recursive:true,force:true});
 }

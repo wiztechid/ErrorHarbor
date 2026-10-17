@@ -13,10 +13,11 @@
 
 ## Enforcement
 - `scripts/migrate-npm-shell.mjs` normalizes the existing corpus and refuses to alter editorial body except static share bar. Dry run must report 0 changes after migration.
-- `scripts/npm-freeze-gate.mjs` compares `templates/npm-shell.freeze.json` against CSS, JS, homepage/hub chrome, reference header/footer, and checks all registered articles every run.
+- `scripts/npm-freeze-gate.mjs` compares `templates/npm-shell.freeze.json` against CSS, JS, homepage/hub chrome, reference header/footer, and a normalized `<main>` markup skeleton for every registered article. Text and content URL values are normalized, while tag hierarchy, classes and attribute presence are frozen.
 - `scripts/test-article-generator.mjs` verifies generator shell parity. New article generator reads npm header/footer from the reference instead of hardcoding alternative templates.
 - PR/main lightweight GitHub CI runs freeze, generator and SEO publication gates. Browser/Playwright deep checks only on demand after meaningful layout changes.
-- New article publishing can edit its own editorial markup, metadata, primary references, search registry, sitemap, latest-six data and hub `<main>` links; cannot change locked chrome. No silent SHA refresh permitted.
+- Article text, metadata and content URLs remain editable. The structural markup skeleton of every registered article is locked independently, so legacy pages may retain different body layouts without being forced into a mass rewrite.
+- For a new article, add its route to `data/search-index.json`, then run `node scripts/npm-freeze-gate.mjs --register-new-articles`. This appends fingerprints only for missing routes; it refuses to overwrite existing locks or proceed when another freeze check fails. Update sitemap, latest-six data and hub links as usual. No silent SHA refresh permitted.
 - Fail closed: any lock drift requires correction or a new explicit design-migration PR, never an automatic unlock.
 
 ## Rollout
