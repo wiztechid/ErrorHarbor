@@ -37,3 +37,5 @@ Changes to the npm master header, sidebar, footer, homepage/hub chrome or global
 In the isolated working checkout, 54 article sources passed the freeze gate, 7 hostile changes were rejected, and 108 Chromium render combinations (54 pages × 390px and 1366px) passed with the actual CSS and shared JavaScript injected into the rendered document. Those checks do **not** substitute for the subsequent GitHub-hosted HTTP/Chromium gate or live production verification.
 
 AdSense approval, tags and consent rollout are intentionally out of scope; no new ad script is activated by this freeze.
+## Mobile overflow correction — 2026-10-17
+The first hosted Chromium run found 7px of horizontal overflow on `err-ossl-evp-unsupported` at 390px. The responsive script moves the sidebar inside the article, while the existing mobile width guard only covered the sidebar as a direct grid child. The branch now applies the same width and TOC containment rules to both placements, and the CSS fingerprint in `templates/npm-v1.freeze.json` matches. The full hosted browser gate must pass on this revision before merge.
