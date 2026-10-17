@@ -581,9 +581,9 @@ img.brand-mark{object-fit:contain!important;background:none!important}
 
 /* npm-shell-v1 FROZEN mobile correctness: prevent long identifier text from sizing the page. */
 @media(max-width:650px){
-  .article-grid > aside.sidebar{min-width:0;max-width:100%}
-  .article-grid > aside.sidebar .toc{min-width:0;max-width:100%;grid-template-columns:minmax(0,1fr)}
-  .article-grid > aside.sidebar .toc a{min-width:0;max-width:100%;overflow-wrap:anywhere;white-space:normal}
+  .article-grid > aside.sidebar,.article > aside.sidebar{min-width:0;max-width:100%}
+  .article-grid > aside.sidebar .toc,.article > aside.sidebar .toc{min-width:0;max-width:100%;grid-template-columns:minmax(0,1fr)}
+  .article-grid > aside.sidebar .toc a,.article > aside.sidebar .toc a{min-width:0;max-width:100%;overflow-wrap:anywhere;white-space:normal}
   .article .checks,.article .checks span{min-width:0;max-width:100%;overflow-wrap:anywhere}
   .article .checks code{white-space:normal;overflow-wrap:anywhere;word-break:break-word}
   .article h2{overflow-wrap:anywhere;word-break:break-word}
