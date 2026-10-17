@@ -87,16 +87,18 @@ try {
   }
 
   // Internal visible navigation links on the article must resolve.
-  const internal = await page.locator("a[href]").evaluateAll((nodes, origin) => {
+  const currentPageUrl = page.url();
+  const internal = await page.locator("a[href]").evaluateAll((nodes, pageUrl) => {
+    const pageOrigin = new URL(pageUrl).origin;
     const urls = [];
     for (const a of nodes) {
       const raw = a.getAttribute("href");
       if (!raw || raw.startsWith("#") || raw.startsWith("mailto:") || raw.startsWith("javascript:")) continue;
-      const u = new URL(raw, origin);
-      if (u.origin === origin) urls.push(u.href.split("#")[0]);
+      const u = new URL(raw, pageUrl);
+      if (u.origin === pageOrigin) urls.push(u.href.split("#")[0]);
     }
     return [...new Set(urls)];
-  }, base);
+  }, currentPageUrl);
 
   for (const url of internal) {
     const response = await context.request.get(url, { failOnStatusCode: false, timeout: 15000 });
