@@ -24,6 +24,13 @@ try {
  if(!fs.existsSync(output))throw Error('No output created');
  const html=fs.readFileSync(output,'utf8');
  if(!html.includes('footer-grid')||!html.includes('article-header-actions'))throw Error('Canonical shell missing');
+ const npmHtml=fs.readFileSync(path.join(root,'errors/dev/node-npm/npm-command-not-found/index.html'),'utf8');
+ const npmBrand=npmHtml.match(/<header\b[\s\S]*?<\/header>/i)?.[0];
+ if(!npmBrand?.includes('header-search'))throw Error('Reference header missing');
+ if(!html.includes('class="header-search"')||!html.includes('class="sidebar"')||!html.includes('class="guide-details"'))throw Error('Frozen npm header/sidebar missing');
+ for(const network of ['whatsapp','facebook','x','telegram'])if(!html.includes('data-network="'+network+'"'))throw Error('Frozen share button missing: '+network);
+ for(const link of ['/about/','/editorial-methodology/','/contact/','/privacy/','/terms/','/disclaimer/','/affiliate-disclosure/'])if(!html.includes('href="'+link+'"'))throw Error('Frozen footer trust link missing: '+link);
+
  run([checker,target]);
  const duplicate=run([generator,json,'--write'],1);
  if(!duplicate.stderr.includes('Refusing to overwrite'))throw Error('Overwrite protection missing');
