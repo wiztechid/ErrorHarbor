@@ -560,3 +560,12 @@ img.brand-mark{object-fit:contain!important;background:none!important}
   overflow-wrap: anywhere;
   word-break: break-word;
 }
+
+
+/* PR16 unbroken exact-error titles: wrap long SSH identifiers only when phone width requires it. */
+@media (max-width: 650px) {
+  .article h1 {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
