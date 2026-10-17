@@ -16,23 +16,60 @@ const refHTML=read(ref);
 const refURL="https://errorharbor.com/"+ref.replace(/index\.html$/,"");
 const expectedHeader=normalize(get(refHTML,"header"),refURL).replace(/header-search-npm/g,"header-search-article");
 const expectedFooter=normalize(get(refHTML,"footer"),refURL);
+const expectedShare=shareSkeleton(refHTML);
+const expectedSidebar=sidebarSkeleton(refHTML);
+function shareSkeleton(s){
+ return (s.match(/<section class="social-share"[^>]*>[\\s\\S]*?<\\/section>/i)?.[0]||"")
+  .replace(/\\s+href=["'][^"']*["']/gi,' href="{{SHARE_URL}}"');
+}
+function sidebarSkeleton(s){
+ const aside=s.match(/<aside class="sidebar">[\\s\\S]*?<\\/aside>/i)?.[0]||"";
+ return aside
+  .replace(/(<nav class="toc" aria-label="Article table of contents">)[\\s\\S]*?(<\\/nav>)/i,'$1__TOC_LINKS__$2')
+  .replace(/<div class="guide-details">[\\s\\S]*?<\\/div>/i,'<div class="guide-details">__GUIDE_DETAILS__</div>');
+}
 function homepageShell(s){
- const itemList=/<script type="application\/ld\+json">[\s\S]*?<\/script>/i;
- let x=s.replace(itemList,"__HOME_SCHEMA_DATA__");
- const start=x.indexOf('id="latest-guides"');
- if(start>=0) {
-  const sectionStart=x.lastIndexOf("<section",start);
-  const sectionEnd=x.indexOf("</section>",start);
-  if(sectionStart>=0&&sectionEnd>=0)x=x.slice(0,sectionStart)+"__LATEST_ARTICLE_CONTENT__"+x.slice(sectionEnd+10);
- }
- return x;
+ const schemaTag=/<script type="application\\/ld\\+json">([\\s\\S]*?)<\\/script>/i;
+ const sm=schemaTag.exec(s);
+ if(!sm)throw Error("Homepage structured-data block missing");
+ const schema=JSON.parse(sm[1]);
+ const itemList=schema["@graph"]?.find(x=>x["@type"]==="ItemList");
+ if(!itemList||itemList.numberOfItems!==6||!Array.isArray(itemList.itemListElement)||itemList.itemListElement.length!==6)throw Error("Homepage latest schema must contain six entries");
+ itemList.itemListElement="__LATEST_ARTICLES__";
+ let x=s.replace(schemaTag,'<script type="application/ld+json">'+JSON.stringify(schema)+'</script>');
+ const sectionRe=/<section class="section latest-guides" id="latest-guides">[\\s\\S]*?<\\/section>/i;
+ const section=sectionRe.exec(x);
+ if(!section)throw Error("Homepage latest-guides section missing");
+ const cardRe=/<a class="latest-card"[^>]*>[\\s\\S]*?<\\/a>/gi;
+ const cards=[...section[0].matchAll(cardRe)];
+ if(cards.length!==6)throw Error("Homepage must contain six latest-card entries");
+ const normalizeCard=card=>{
+  if(!/<div class="latest-card-top"><span>[\\s\\S]*?<\\/span><span class="new-badge">New<\\/span><\\/div><h3>[\\s\\S]*?<\\/h3><p>[\\s\\S]*?<\\/p><span class="latest-cta">Open guide →<\\/span>/.test(card))throw Error("Homepage latest-card chrome changed");
+  return card.replace(/href="[^"]*"/,'href="{{ARTICLE_URL}}"')
+   .replace(/(<div class="latest-card-top"><span>)[\\s\\S]*?(<\\/span><span class="new-badge">)/,'$1{{CATEGORY}}$2')
+   .replace(/<h3>[\\s\\S]*?<\\/h3>/,'<h3>{{TITLE}}</h3>')
+   .replace(/<p>[\\s\\S]*?<\\/p>/,'<p>{{SUMMARY}}</p>');
+ };
+ const normalizedSection=section[0].replace(cardRe,card=>normalizeCard(card));
+ return x.replace(section[0],normalizedSection);
+}
+function hubShell(s){
+ const mainRe=/<main\\b[\\s\\S]*?<\\/main>/i;
+ const match=mainRe.exec(s);
+ if(!match)throw Error("Hub main missing");
+ let main=match[0]
+  .replace(/(<a\\b[^>]*class=["'][^"']*(?:hub-item|error-card|library-card)[^"']*["'][^>]*>[\\s\\S]*?<\\/a>)/gi,card=>card.replace(/href=(["'])[^"']*\\1/i,'href="{{ARTICLE_URL}}"'))
+  .replace(/>([^<]+)</g,'>{{TEXT}}<');
+ // Card count and card copy are data; keep one structural sample for each repeated run.
+ main=main.replace(/(<a\\b[^>]*class=["'][^"']*(?:hub-item|error-card|library-card)[^"']*["'][^>]*>[\\s\\S]*?<\\/a>)(?:\\s*\\1)+/gi,'$1');
+ return s.replace(match[0],main);
 }
 function hashes(){
  return {version:"npm-article-shell-v1.0.0",reference:ref,
   header:hash(expectedHeader),footer:hash(expectedFooter),
   css:hash(read("assets/css/styles.css")),js:hash(read("assets/js/app.js")),
   homepageShell:hash(homepageShell(read("index.html"))),
-  hubs:Object.fromEntries(["errors/index.html","errors/dev/index.html","errors/virtualization/index.html","errors/windows-network/index.html","errors/hardware/index.html"].map(p=>[p,hash(read(p).replace(/<main\b[\s\S]*?<\/main>/i,"__HUB_CONTENT__"))]))
+  hubs:Object.fromEntries(["errors/index.html","errors/dev/index.html","errors/virtualization/index.html","errors/windows-network/index.html","errors/hardware/index.html"].map(p=>[p,hash(hubShell(read(p)))]))
  };
 }
 if(process.argv.includes("--lock")){
@@ -59,6 +96,8 @@ for(const item of registry){
  const actualFooter=normalize(get(source,"footer"),pageURL);
  if(actualHeader!==expectedHeader)errors.push("HEADER "+file);
  if(actualFooter!==expectedFooter)errors.push("FOOTER "+file);
+ if(shareSkeleton(source)!==expectedShare)errors.push("SHARE_CHROME "+file);
+ if(sidebarSkeleton(source)!==expectedSidebar)errors.push("SIDEBAR_CHROME "+file);
  const aside=get(source,"aside");
  if(!aside.startsWith('<aside class="sidebar">')||!aside.includes('<nav class="toc"')||!aside.includes('class="guide-details"')||!aside.includes('class="side-block ad-placeholder"'))errors.push("SIDEBAR "+file);
  const links=[...aside.matchAll(/href=["']#([^"']+)["']/g)].map(x=>x[1]);
