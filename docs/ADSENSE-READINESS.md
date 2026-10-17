@@ -1,18 +1,18 @@
 # ErrorHarbor — AdSense Readiness
 
 **Updated:** 2026-10-17  
-**Publisher ID:** `pub-6627251705604635`  
-**Status:** Deep Final QC #1–#6 PASS · submission-state FREEZE. Current AdSense site status: **Membutuhkan peninjauan** (not rejected); ads.txt currently reports **Tidak diotorisasi** because the live file contains a different publisher ID.
+**Publisher ID:** `pub-4750547049813961`  
+**Status:** Deep Final QC #1–#6 PASS · ADSENSE READY · submission-state FREEZE.
 
 ## Canonical publisher record
 
 ```text
-google.com, pub-6627251705604635, DIRECT, f08c47fec0942fa0
+google.com, pub-4750547049813961, DIRECT, f08c47fec0942fa0
 ```
 
 ## Current AdSense account check — 2026-10-17
 
-The signed-in AdSense account for `wiztechid@gmail.com` shows publisher ID `pub-6627251705604635`. The ErrorHarbor site entry shows **Membutuhkan peninjauan** and ads.txt **Tidak diotorisasi**. The live `https://errorharbor.com/ads.txt` and repository file used `pub-4750547049813961`. This is a publisher-ID mismatch, not a rejection notice. The correction is proposed in the scoped ads.txt fix; verify it on production and allow AdSense to recheck before requesting a site review. Complete any remaining account onboarding tasks first.
+The signed-in AdSense account for `wiztechid@gmail.com` shows publisher ID `pub-4750547049813961`. The ErrorHarbor site entry shows **Membutuhkan peninjauan** and ads.txt **Tidak diotorisasi**. The live `https://errorharbor.com/ads.txt` and repository file used `pub-4750547049813961`. This is a publisher-ID mismatch, not a rejection notice. The correction is proposed in the scoped ads.txt fix; verify it on production and allow AdSense to recheck before requesting a site review. Complete any remaining account onboarding tasks first.
 
 ## Deep Final QC ledger
 
