@@ -31,6 +31,7 @@ jobs:
           node --check scripts/npm-freeze-gate.mjs
           node --check scripts/generate-article.mjs
           node scripts/test-article-generator.mjs
+          node scripts/test-npm-freeze-gate.mjs
       - name: Verify frozen layout across all registered articles
         run: node scripts/npm-freeze-gate.mjs
       - name: SEO and publication safety
