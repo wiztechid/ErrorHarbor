@@ -31,5 +31,13 @@ try {
  fs.writeFileSync(output,broken);
  const invalid=run([checker,target],1);
  if(!invalid.stderr.includes('broken anchor'))throw Error('Broken anchor not detected');
- console.log('PASS: dry-run, generation, master shell, template validation, overwrite protection, broken-anchor rejection');
+ const badDate={...input,reviewed:'2026-02-30',slug:'invalid-date'};
+ fs.writeFileSync(json,JSON.stringify(badDate));
+ const dateFail=run([generator,json],1);
+ if(!dateFail.stderr.includes('Invalid calendar date'))throw Error('Invalid calendar date accepted');
+ const unsafe={...input,slug:'unsafe-url',categoryUrl:'//evil.example/path/'};
+ fs.writeFileSync(json,JSON.stringify(unsafe));
+ const urlFail=run([generator,json],1);
+ if(!urlFail.stderr.includes('categoryUrl must be'))throw Error('Protocol-relative category URL accepted');
+ console.log('PASS: dry-run, generation, master shell, template validation, overwrite protection, broken-anchor rejection, invalid dates and unsafe URL rejection');
 } finally { fs.rmSync(tmp,{recursive:true,force:true}); }
