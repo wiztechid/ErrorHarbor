@@ -1,0 +1,38 @@
+{
+  "slug": "example-error",
+  "category": "dev",
+  "product": "example",
+  "categoryName": "Developer Errors",
+  "categoryUrl": "/errors/dev/",
+  "productName": "Example Tool",
+  "title": "Example Error: Safe Troubleshooting Guide",
+  "description": "Diagnose an example error with safe checks, verified fixes, and next steps.",
+  "published": "2026-10-17",
+  "reviewed": "2026-10-17",
+  "appliesTo": "Example Tool",
+  "risk": "Low for checks",
+  "quickAnswer": "Verify inputs and environment before making changes.",
+  "fingerprint": "Exact error message and failing command.",
+  "diagnosis": "Check paths, versions, permissions, and configuration.",
+  "fixes": [
+    {
+      "heading": "Verify environment",
+      "body": "Inspect the version and input path.",
+      "verify": "Inputs and version are correct."
+    }
+  ],
+  "avoid": "Do not make destructive changes without backups.",
+  "stillFailing": "Capture sanitized logs and versions.",
+  "references": [
+    {
+      "label": "Developer documentation",
+      "url": "https://docs.docker.com/"
+    }
+  ],
+  "related": [
+    {
+      "label": "Developer errors",
+      "url": "/errors/dev/"
+    }
+  ]
+}
