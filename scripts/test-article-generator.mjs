@@ -39,5 +39,13 @@ try {
  fs.writeFileSync(json,JSON.stringify(unsafe));
  const urlFail=run([generator,json],1);
  if(!urlFail.stderr.includes('categoryUrl must be'))throw Error('Protocol-relative category URL accepted');
- console.log('PASS: dry-run, generation, master shell, template validation, overwrite protection, broken-anchor rejection, invalid dates and unsafe URL rejection');
+ const badRelated={...input,slug:'bad-related',related:[{label:'External',url:'https://example.com/'}]};
+ fs.writeFileSync(json,JSON.stringify(badRelated));
+ const relatedFail=run([generator,json],1);
+ if(!relatedFail.stderr.includes('Related links must be internal'))throw Error('External related URL accepted');
+ const badReview={...input,slug:'review-before-publish',reviewed:'2026-10-16',published:'2026-10-17'};
+ fs.writeFileSync(json,JSON.stringify(badReview));
+ const reviewFail=run([generator,json],1);
+ if(!reviewFail.stderr.includes('Review date cannot precede'))throw Error('Review date before publication accepted');
+ console.log('PASS: dry-run, generation, master shell, template validation, overwrite protection, broken-anchor rejection, invalid dates, review chronology and unsafe URL rejection');
 } finally { fs.rmSync(tmp,{recursive:true,force:true}); }
