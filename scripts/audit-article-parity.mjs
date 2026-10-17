@@ -4,7 +4,7 @@ const root = path.resolve('errors');
 const registry = JSON.parse(fs.readFileSync('data/search-index.json','utf8'));
 const registered = new Set(registry.filter(x=>x.kind==='article').map(x=>path.normalize(path.join(x.url,'index.html'))));
 const files = [];
-function walk(dir) { if (!fs.existsSync(dir)) return; for (const e of fs.readdirSync(dir,{withFileTypes:true})) { const p=path.join(dir,e.name); if(e.isDirectory()) walk(p); else if(e.name==='index.html' && registered.has(path.normalize(p))) files.push(p); } }
+function walk(dir) { if (!fs.existsSync(dir)) return; for (const e of fs.readdirSync(dir,{withFileTypes:true})) { const p=path.join(dir,e.name); if(e.isDirectory()) walk(p); else if(e.name==='index.html' && registered.has(path.normalize(path.relative(process.cwd(),p)))) files.push(p); } }
 walk(root);
 const links=['/about/','/editorial-methodology/','/contact/','/privacy/','/terms/','/disclaimer/','/affiliate-disclosure/'];
 const issues=[];
