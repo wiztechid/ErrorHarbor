@@ -1,0 +1,52 @@
+name: One-Time npm Shell Migration (DEV Branch Only)
+on:
+  push:
+    branches: [feat/npm-master-template-freeze-v1]
+    paths: [.github/workflows/npm-freeze-migrate-once.yml]
+permissions:
+  contents: write
+concurrency:
+  group: npm-template-one-time-migration
+  cancel-in-progress: false
+jobs:
+  normalize-and-commit:
+    if: github.ref == 'refs/heads/feat/npm-master-template-freeze-v1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Safe dry run — exactly 53 changes from npm reference
+        run: |
+          node scripts/migrate-npm-shell.mjs --all >/tmp/npm-dry.json
+          node -e "const d=require('/tmp/npm-dry.json');if(d.checked!==54||d.changed!==53||d.unchanged!==1)throw Error('Unexpected migration scope: '+JSON.stringify(d))"
+      - name: Normalize article shells without touching article bodies or dates
+        run: node scripts/migrate-npm-shell.mjs --all --write
+      - name: Fail-closed source, generator, SEO and immutability regression
+        run: |
+          node --check scripts/npm-shell-lib.mjs
+          node --check scripts/template-freeze-gate.mjs
+          node --check scripts/generate-article.mjs
+          node scripts/template-freeze-gate.mjs
+          node scripts/test-template-freeze.mjs
+          node scripts/preflight-article-freeze.mjs
+          node scripts/validate-publish.mjs
+          node scripts/migrate-npm-shell.mjs --all >/tmp/npm-idempotence.json
+          node -e "const d=require('/tmp/npm-idempotence.json');if(d.changed!==0||d.checked!==54)throw Error('Not idempotent')"
+      - name: Remove one-time migration and source snapshot workflows
+        run: |
+          rm .github/workflows/npm-freeze-migrate-once.yml
+          rm .github/workflows/freeze-source-snapshot.yml
+      - name: Commit only tested files to feature branch
+        run: |
+          test "${GITHUB_REF_NAME}" = "feat/npm-master-template-freeze-v1"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add errors/ .github/workflows/npm-freeze-migrate-once.yml .github/workflows/freeze-source-snapshot.yml
+          git diff --cached --quiet && { echo "No changes to commit"; exit 1; }
+          git commit -m "feat(template): normalize 53 articles to npm shell with body-preservation QC PASS"
+          git push origin HEAD:refs/heads/feat/npm-master-template-freeze-v1
