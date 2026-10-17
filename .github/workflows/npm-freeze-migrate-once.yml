@@ -1,4 +1,5 @@
 name: One-Time npm Shell Migration (DEV Branch Only)
+# Repeat after corrected single-byte CSS alignment, no production mutation.
 on:
   push:
     branches: [feat/npm-master-template-freeze-v1]
