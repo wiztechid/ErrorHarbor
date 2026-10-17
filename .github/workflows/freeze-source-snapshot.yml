@@ -1,0 +1,19 @@
+name: One-time snapshot for npm template freeze QC
+on:
+  push:
+    branches: [feat/npm-master-template-freeze-v1]
+    paths: [.github/workflows/freeze-source-snapshot.yml]
+permissions:
+  contents: read
+jobs:
+  pack:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - run: tar --exclude='./.git' --exclude='./node_modules' -czf /tmp/errorharbor-freeze-source.tar.gz .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: npm-freeze-source-snapshot
+          path: /tmp/errorharbor-freeze-source.tar.gz
+          retention-days: 1
