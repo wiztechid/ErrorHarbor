@@ -30,7 +30,9 @@ The intended AdSense account (`pub-4750547049813961`) shows “Meet AdSense prog
 
 ### Search Console snapshot — 2026-10-17
 
-For verified property `sc-domain:errorharbor.com`, Page indexing shows 26 indexed and 41 not indexed: 4 excluded by `noindex`, 3 redirect URLs, 34 “Discovered – currently not indexed,” and 0 “Crawled – currently not indexed.” The Sitemaps report shows `https://errorharbor.com/sitemap.xml` status **Success**, last read 2026-10-16, with 61 discovered pages. These are separate report totals. The page examples and the four `noindex` targets have not yet been checked individually; retain the related P0 checks as open. Google defines discovered-not-indexed as found but not crawled yet, and sitemap submission is a hint rather than a guarantee of crawling/indexing.
+For verified property `sc-domain:errorharbor.com`, Page indexing shows 26 indexed and 41 not indexed: 4 excluded by `noindex`, 3 redirect URLs, 34 “Discovered – currently not indexed,” and 0 “Crawled – currently not indexed.” The Sitemaps report shows `https://errorharbor.com/sitemap.xml` status **Success**, last read 2026-10-16, with 61 discovered pages. The current repository sitemap has 63 URLs, so recheck after GSC refresh. These are separate report totals. The page examples and the four `noindex` targets have not yet been checked individually; retain the related P0 checks as open. Google defines discovered-not-indexed as found but not crawled yet, and sitemap submission is a hint rather than a guarantee of crawling/indexing.
+
+Repository follow-up on 2026-10-17: the current sitemap contains 63 URLs, while Search Console last read it on 2026-10-16 and reported 61 discovered pages; recheck after the next GSC refresh. Source inspection found six pages intentionally marked `noindex,follow` (Contact, Privacy, Terms, Disclaimer, Affiliate Disclosure, Corrections), all omitted from the sitemap. Search Console currently lists only four noindex URLs, so reconcile the report examples when accessible; do not remove noindex directives broadly just to increase counts.
 
 ## Release decision
 - **HOLD:** any P0 critical issue unresolved or missing evidence.
