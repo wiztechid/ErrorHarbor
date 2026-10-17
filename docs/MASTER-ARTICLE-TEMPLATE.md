@@ -1,6 +1,6 @@
-# ErrorHarbor Master Article Template — v1.0
+# ErrorHarbor Master Article Template — v1.1
 
-**Canonical design reference:** `errors/dev/docker/failed-to-compute-cache-key-not-found/index.html` (after the footer parity patch in this branch). Reuse its shell and CSS classes; do not recreate the header, footer, social controls, or navigation from scratch for each article.
+**Canonical design reference:** `errors/dev/node-npm/npm-command-not-found/index.html` — the approved npm article shell frozen as ErrorHarbor v1.0. The generator uses this page as its source for the shared article shell. Reuse its layout and CSS classes; do not recreate the header, footer, social controls, or navigation for each article.
 
 ## Locked article shell (must be present on every new article)
 1. HTML language, charset, viewport; unique descriptive `<title>`, meta description, canonical URL, Open Graph and Twitter metadata.
@@ -9,7 +9,7 @@
 4. Ordered fixes with runnable, scoped commands, warnings and verification outcomes; what not to do; still failing/evidence.
 5. Authoritative primary references, relevant internal links and optional community discussion.
 6. Accessible on-page TOC: every link points to a real section ID; include references/related/community when present.
-7. Existing social-share component and `/assets/js/app.js` integration; **do not build a second share widget**. Existing JS creates/replaces the share bar.
+7. Existing social-share component and `/assets/js/app.js` integration; **do not build a second share widget**. Keep the reference markup and the existing `/assets/js/app.js` behavior.
 8. **Full footer parity with homepage:** `site-footer`, `footer-grid`, brand, About, Editorial Methodology, Contact, Privacy, Terms, Disclaimer, Affiliate Disclosure, and `footer-bottom`.
 9. Keep responsive shell, code overflow handling, link semantics, and existing CSS classes. No global CSS edits for individual articles unless justified and regression-tested.
 
@@ -17,6 +17,8 @@
 - Draft the article body separately from the shell. Start from the approved master reference and change only article-specific content, metadata, internal links and section IDs.
 - Do not modify or delete the locked shell components for individual publication.
 - Run `node scripts/check-article-template.mjs errors/<category>/<product>/<slug>/index.html` as a **local/pre-commit check**. This script does not trigger GitHub Actions.
+- Run `node scripts/npm-freeze-gate.mjs` to check the frozen shared shell, CSS/JS fingerprints, homepage and hub chrome across the registered articles. The lightweight GitHub workflow runs this gate on pull requests and pushes to `main`.
+- `templates/npm-shell.freeze.json` is the lock manifest. Do not refresh its hashes as a routine publishing step; template changes require an explicit versioned migration.
 - Resolve every template error, then run article/SEO quality review. Batch corrections before a single final GitHub Actions validation according to `docs/WIZ-GITHUB-MODE-HEMAT-SOP.md`.
 - For legacy articles, migrate in audited batches rather than forcing a global rewrite during AdSense review.
 - Any intentional template version change requires a dedicated change record and a representative mobile/desktop regression check.
