@@ -1,9 +1,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {extractChrome,normalizeUrl,canonicalHeader,canonicalFooter,canonicalShare} from './npm-shell-lib.mjs';
 
 // Local pre-publication contract: node scripts/check-article-template.mjs path/to/index.html
 // No network, external packages, or GitHub Actions are needed.
 const files=process.argv.slice(2);
+const SOURCE=path.resolve(fileURLToPath(new URL('../',import.meta.url))); 
 if(!files.length){console.error('Usage: node scripts/check-article-template.mjs errors/.../index.html [...]');process.exit(2)}
 let errors=0;
 for(const file of files){
@@ -37,6 +40,18 @@ for(const file of files){
   }
   has(/class=["'][^"']*toc(?:\s|["'])/i,'on-page TOC');
   has(/class=["'][^"']*social-share/i,'social-share mount');
+  // New generated pages must match the approved npm command-not-found DOM chrome.
+  try{
+    const chrome=extractChrome(html);
+    const articleTitle=html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)?.[1]?.replace(/<[^>]+>/g,'').replaceAll('&amp;','&').replaceAll('&quot;','"');
+    const canonicalUrl=html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)/i)?.[1];
+    if(normalizeUrl(chrome.header).replaceAll('header-search-npm','header-search-article')!==canonicalHeader(SOURCE))fail.push('npm FROZEN header drift');
+    if(normalizeUrl(chrome.footer)!==canonicalFooter(SOURCE))fail.push('npm FROZEN footer drift');
+    if(chrome.share!==canonicalShare(articleTitle,canonicalUrl,SOURCE))fail.push('npm FROZEN social share drift');
+    if(!chrome.sidebar.includes('class="sidebar"') || (chrome.sidebar.match(/<div class="side-block(?:[" ])/g)||[]).length!==3)fail.push('npm FROZEN sidebar drift');
+    if(!chrome.sidebar.includes('class="guide-details"'))fail.push('npm FROZEN guide details absent');
+    if(!chrome.header.includes('class="header-search"'))fail.push('npm FROZEN header search absent');
+  }catch(e){fail.push('npm FROZEN chrome parse: '+e.message)}
   for(const id of ['fingerprint','quick-fix','diagnose','avoid','still','sources','related']) if(!html.includes('id="'+id+'"')&&!html.includes("id='"+id+"'"))fail.push('mandatory troubleshooting section #'+id);
   has(/id=["']fix-1["']/i,'at least one fix section');
   has(/\/assets\/js\/app\.js/i,'shared app script');
