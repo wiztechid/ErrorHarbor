@@ -24,6 +24,10 @@ Status: PRE-RESUBMISSION / evidence required. This checklist is an internal qual
 - [ ] Inspect representative excluded URLs and compare canonical, internal links and actual page quality.
 - [ ] Verify sitemap processing and indexation requests only after real corrections.
 
+## Google feedback / content audit record — 2026-10-17
+
+The intended AdSense account (`pub-4750547049813961`) shows “Meet AdSense program policies.” The Oct 7 email recommends focusing on content and gives insufficient content/content quality as common examples; it does not identify a specific failing URL or confirm the exact issue. A corpus-level source scan found 54 published error guides, each with at least one external reference. It identified one unusually short Docker BuildKit guide missing stdin-context, parent-path and named-context branches. Those paragraphs were added in PR #24 without changing the frozen article structure; the SEO/template workflow and Pages deployment passed, and the live article was checked. This is a focused correction, not completion of the per-page accuracy audit. Keep all remaining P0 checks open and do not treat approval as guaranteed.
+
 ## Release decision
 - **HOLD:** any P0 critical issue unresolved or missing evidence.
 - **READY FOR RESUBMISSION:** P0 items complete with evidence, key pages verified live, article sampling reviewed, and release checks GREEN. Approval remains Google's decision.
