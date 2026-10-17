@@ -550,3 +550,13 @@ img.brand-mark{object-fit:contain!important;background:none!important}
 @media (max-width: 920px) {
   .article-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+
+/* PR16 inline code overflow: long exact errors/paths must break inside mobile paragraphs without changing preformatted commands. */
+.article p code,
+.article li code,
+.article .inline-code {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
