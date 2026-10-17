@@ -1,6 +1,6 @@
 name: PR16 Final Quality Gate
 
-# Final combined regression: block code, inline code and unbroken mobile H1 fixes.
+# Final consolidated regression: PR16 mobile article+header overflow fixes.
 # Later code commits do not trigger this heavy gate; reruns are manual/on demand.
 on:
   push:
