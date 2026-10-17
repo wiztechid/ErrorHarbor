@@ -58,7 +58,18 @@ try{
    assert.deepEqual(a.missingToc,[],path+' toc targets');
    assert.deepEqual(a.missingTrust,[],path+' footer links');
    assert.ok(a.css>0,path+' CSS');
-   assert.ok(a.width<=a.viewport+3,path+' horizontal overflow '+a.width+'/'+a.viewport);
+   if(a.width>a.viewport+3){
+     const candidates=await page.evaluate(()=>{
+       const elements=[...document.querySelectorAll('*')].map(el=>{
+         const r=el.getBoundingClientRect(),style=getComputedStyle(el);
+         return {tag:el.tagName,cls:typeof el.className==='string'?el.className.slice(0,80):'',left:+r.left.toFixed(1),right:+r.right.toFixed(1),width:+r.width.toFixed(1),overflow:style.overflowX,parent:el.parentElement?.tagName+'.'+String(el.parentElement?.className||'').slice(0,45)};
+       });
+       return {nearEdge:elements.filter(x=>x.right>innerWidth+3&&x.right<innerWidth+70).slice(0,35),large:elements.filter(x=>x.right>innerWidth+70).slice(0,15)};
+     });
+     console.error('MOBILE_OVERFLOW_EVIDENCE '+path+' '+JSON.stringify(candidates));
+     await page.screenshot({path:'qc-npm-freeze/'+viewport.name+'-overflow-diagnostic.png',fullPage:true});
+     throw Error(path+' horizontal overflow '+a.width+'/'+a.viewport);
+   }
    assert.equal(a.canonical,'https://errorharbor.com/'+item.url,path+' canonical');
    const slug=item.url.split('/').filter(Boolean).at(-1);
    if(shots.has(slug))await page.screenshot({path:'qc-npm-freeze/'+viewport.name+'-'+slug+'.png',fullPage:true});
