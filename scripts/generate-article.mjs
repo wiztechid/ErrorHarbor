@@ -15,6 +15,8 @@ if (!Array.isArray(d.fixes) || !d.fixes.length || !Array.isArray(d.references) |
 for (const fix of d.fixes) if (!fix.heading?.trim() || !fix.body?.trim() || !fix.verify?.trim()) throw Error('Each fix needs heading, body and verification');
 for (const link of [...d.references,...d.related]) if (!link.label?.trim() || !link.url?.trim()) throw Error('Each link needs label and URL');
 if (d.references.some(x => !x.url.startsWith('https://'))) throw Error('Authoritative references must use HTTPS');
+if (d.related.some(x => !x.url.startsWith('/') || x.url.startsWith('//'))) throw Error('Related links must be internal site-relative paths');
+if (d.references.some(x => { try { const u=new URL(x.url); return u.protocol!=='https:' || !u.hostname; } catch { return true; } })) throw Error('Invalid reference URL');
 if (!/^\/(?!\/)[a-z0-9\/-]+\/$/.test(d.categoryUrl)) throw Error('categoryUrl must be a safe site-relative directory');
 const esc = x => String(x).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 const url = 'https://errorharbor.com/errors/'+d.category+'/'+d.product+'/'+d.slug+'/';
