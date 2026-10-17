@@ -578,3 +578,13 @@ img.brand-mark{object-fit:contain!important;background:none!important}
   .site-header .article-header-actions .header-search { flex: 1 1 auto; width: 100%; min-width: 0; max-width: 100%; }
   .site-header .article-header-actions .header-search input { width: 0; min-width: 0; flex: 1 1 0; }
 }
+
+/* npm-shell-v1 FROZEN mobile correctness: prevent long identifier text from sizing the page. */
+@media(max-width:650px){
+  .article-grid > aside.sidebar{min-width:0;max-width:100%}
+  .article-grid > aside.sidebar .toc{min-width:0;max-width:100%;grid-template-columns:minmax(0,1fr)}
+  .article-grid > aside.sidebar .toc a{min-width:0;max-width:100%;overflow-wrap:anywhere;white-space:normal}
+  .article .checks,.article .checks span{min-width:0;max-width:100%;overflow-wrap:anywhere}
+  .article .checks code{white-space:normal;overflow-wrap:anywhere;word-break:break-word}
+  .article h2{overflow-wrap:anywhere;word-break:break-word}
+}
