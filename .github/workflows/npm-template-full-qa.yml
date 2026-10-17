@@ -1,0 +1,43 @@
+name: npm FROZEN Template Final Browser Gate
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: npm-freeze-final-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  final-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Node syntax and full site freeze SEO gates
+        run: |
+          node --check scripts/npm-shell-lib.mjs
+          node --check scripts/migrate-npm-shell.mjs
+          node --check scripts/generate-article.mjs
+          node --check .github/scripts/npm-freeze-ui-smoke.mjs
+          node scripts/test-template-freeze.mjs
+          node scripts/preflight-article-freeze.mjs
+          node scripts/template-freeze-gate.mjs
+          node scripts/validate-publish.mjs
+      - name: Install Chromium once
+        run: |
+          npm install --no-save --no-package-lock playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Serve branch checkout and test all 54 articles mobile and desktop
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/npm-server.log 2>&1 &
+          node .github/scripts/npm-freeze-ui-smoke.mjs
+      - name: Store responsive screenshots and 108-check report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: npm-freeze-layout-evidence
+          path: qc-npm-freeze/
+          if-no-files-found: warn
+          retention-days: 14
