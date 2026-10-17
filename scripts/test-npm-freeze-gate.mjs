@@ -35,7 +35,8 @@ try {
     console.log(`PASS ${name}`);
   };
 
-  assert.equal(run().status,0,"unmodified repository must pass the freeze gate");
+  const baseline=run();
+  assert.equal(baseline.status,0,"unmodified repository must pass the freeze gate:\n"+baseline.output);
   console.log("PASS baseline");
   check("share markup is frozen",article,'class="social-share"','class="social-share altered"',false);
   check("sidebar markup is frozen",article,'class="toc"','class="toc altered"',false);
