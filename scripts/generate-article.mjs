@@ -13,10 +13,10 @@ if (!Array.isArray(d.fixes) || !d.fixes.length || !Array.isArray(d.references) |
 for (const fix of d.fixes) if (!fix.heading?.trim() || !fix.body?.trim() || !fix.verify?.trim()) throw Error('Each fix needs heading, body and verification');
 for (const link of [...d.references,...d.related]) if (!link.label?.trim() || !link.url?.trim()) throw Error('Each link needs label and URL');
 if (d.references.some(x => !x.url.startsWith('https://'))) throw Error('Authoritative references must use HTTPS');
-if (!d.categoryUrl.startsWith('/')) throw Error('categoryUrl must be a site-relative path');
+if (!/^\\/(?!\\/)[a-z0-9\\/-]+\\/$/.test(d.categoryUrl)) throw Error('categoryUrl must be a safe site-relative directory');
 const esc = x => String(x).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 const url = 'https://errorharbor.com/errors/'+d.category+'/'+d.product+'/'+d.slug+'/';
-const safeUrl = x => { const u = new URL(x, 'https://errorharbor.com'); if (!['https:','http:'].includes(u.protocol)) throw Error('Unsafe URL'); return esc(x); };
+const safeUrl = x => { if (typeof x!=='string' || /[\\x00-\\x1f]/.test(x)) throw Error('Invalid URL'); const u = new URL(x, 'https://errorharbor.com'); if (!['https:','http:'].includes(u.protocol)) throw Error('Unsafe URL'); return esc(x); };
 const list = arr => arr.map(x=>'<li><a href="'+safeUrl(x.url)+'">'+esc(x.label)+'</a></li>').join('');
 const sections = [
  ['fingerprint','Confirm the error fingerprint','<p>'+esc(d.fingerprint)+'</p>'],
