@@ -20,6 +20,15 @@ try{
    const response=await page.goto(base+path,{waitUntil:'domcontentloaded',timeout:20000});
    assert.equal(response?.status(),200,path+' response');
    await page.locator('h1').first().waitFor({state:'visible'});
+   const diagnostics=await page.evaluate(()=>({
+     url:location.href,
+     title:document.title,
+     h1:document.querySelector('h1')?.textContent?.slice(0,100),
+     footer:!!document.querySelector('footer.site-footer'),
+     sidebar:!!document.querySelector('.article-grid > aside.sidebar'),
+     bodyStart:document.body.innerHTML.slice(0,320)
+   }));
+   if(!diagnostics.footer||!diagnostics.sidebar)throw Error('PR_CHECKOUT_CHROME_NOT_RENDERED '+path+' HTTP '+response.status()+' '+JSON.stringify(diagnostics));
    const a=await page.evaluate((required)=>{
     const sidebar=document.querySelector('.article-grid > aside.sidebar');
     const footer=document.querySelector('footer.site-footer');
