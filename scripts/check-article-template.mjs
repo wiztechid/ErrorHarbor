@@ -27,7 +27,6 @@ for(const file of files){
   has(/<script[^>]+type=["']application\/ld\+json/i,'structured data');
   has(/class=["'][^"']*breadcrumb/i,'breadcrumb');
   has(/class=["'][^"']*article-grid/i,'article layout grid');
-  has(/class=["'][^"']*toc-card/i,'TOC card');
   has(/<footer[^>]+class=["'][^"']*site-footer/i,'site footer');
   has(/class=["'][^"']*footer-grid/i,'full footer grid');
   has(/class=["'][^"']*brand-mark/i,'brand icon');
