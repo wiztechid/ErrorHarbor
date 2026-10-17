@@ -18,6 +18,7 @@ for(const file of files){
   has(/<meta[^>]+name=["']description["']/i,'meta description');
   has(/<link[^>]+rel=["']canonical["']/i,'canonical');
   has(/<meta[^>]+property=["']og:/i,'Open Graph metadata');
+  has(/<meta[^>]+name=["']twitter:card["']/i,'Twitter card');
   has(/<h1\b/i,'H1');
   if((html.match(/<h1\b/gi)||[]).length!==1)fail.push('exactly one H1');
   has(/<header\b/i,'site header');
@@ -36,6 +37,8 @@ for(const file of files){
   }
   has(/class=["'][^"']*toc(?:\s|["'])/i,'on-page TOC');
   has(/class=["'][^"']*social-share/i,'social-share mount');
+  for(const id of ['fingerprint','quick-fix','diagnose','avoid','still','sources','related']) if(!html.includes('id="'+id+'"')&&!html.includes("id='"+id+"'"))fail.push('mandatory troubleshooting section #'+id);
+  has(/id=["']fix-1["']/i,'at least one fix section');
   has(/\/assets\/js\/app\.js/i,'shared app script');
   if((html.match(/<script[^>]+src=["'][^"']*\/assets\/js\/app\.js/gi)||[]).length!==1)fail.push('exactly one shared app script');
   const ids=new Set([...html.matchAll(/\bid=["']([^"']+)["']/g)].map(m=>m[1]));
