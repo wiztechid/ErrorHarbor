@@ -14,7 +14,7 @@ for(const file of files) {
  // Resolve relative links against their real nested article URL before parity checks.
  const pagePath='/' + path.relative(process.cwd(),file).split(path.sep).join('/').replace(/index\.html$/,'');
  const pageUrl=new URL(pagePath,'https://errorharbor.com/');
- const linkedPaths=new Set([...footer.matchAll(/<a\\b[^>]*\\bhref\\s*=\\s*(["'])(.*?)\\1/gi)].flatMap((m)=>{
+ const linkedPaths=new Set([...footer.matchAll(/<a\b[^>]*\bhref\s*=\s*(["'])(.*?)\1/gi)].flatMap((m)=>{
   try {
    const target=new URL(m[2],pageUrl);
    return target.origin===pageUrl.origin?[target.pathname]:[];
