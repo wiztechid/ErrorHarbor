@@ -588,3 +588,9 @@ img.brand-mark{object-fit:contain!important;background:none!important}
   .article .checks code{white-space:normal;overflow-wrap:anywhere;word-break:break-word}
   .article h2{overflow-wrap:anywhere;word-break:break-word}
 }
+
+/* npm-shell-v1: mobile fallback for unusually long inline technical identifiers. */
+@media(max-width:650px){
+  .article :is(h1,h2,h3,p,li,a,span,strong,b){overflow-wrap:anywhere;word-break:normal}
+  .article .code,.article .code code{min-width:0;max-width:100%;overflow-wrap:anywhere;word-break:break-word}
+}
