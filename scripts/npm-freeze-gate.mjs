@@ -20,7 +20,7 @@ const expectedShare=shareSkeleton(refHTML);
 const expectedSidebar=sidebarSkeleton(refHTML);
 function shareSkeleton(s){
  return (s.match(/<section class="social-share"[^>]*>[\s\S]*?<\/section>/i)?.[0]||"")
-  .replace(/\s+href=["'][^"']*["']/gi,' href="{{SHARE_URL}}"');
+  .replace(/(\s+href=)(["'])([\s\S]*?)\2/gi,'$1$2{{SHARE_URL}}$2');
 }
 function sidebarSkeleton(s){
  const aside=s.match(/<aside class="sidebar">[\s\S]*?<\/aside>/i)?.[0]||"";
