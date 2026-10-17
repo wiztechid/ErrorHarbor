@@ -1,0 +1,29 @@
+{
+  "version": "npm-shell-v1.0.0",
+  "date": "2026-10-17",
+  "reference": "errors/dev/node-npm/npm-command-not-found/index.html",
+  "scope": "All published article chrome; homepage/site CSS/JS locked. Content/SEO fields remain author-owned.",
+  "homepageShellSha256": "3d56e09d864dee7ebbe0ec982f1124d2b42bd352540e7d29b8a7f2e754995e56",
+  "hubChromeHashes": {
+    "errors/index.html": "ac74e19b8be55ef2f249a7bb075a8b80af5d1ac5af008cdabea134243bf4f234",
+    "errors/dev/ssh-sftp/index.html": "1f1a2c018c87761dce1e17d6281f97fb60f2bc8e60d771a58a802bbe48b255ec",
+    "errors/dev/index.html": "16b07706db4ebfced793ab6bc97a713b6429eb4fac9cdbd212e7acf97f9e38eb",
+    "errors/virtualization/index.html": "f38b2ed942676799ae598066d0d808eb26f24f3befcbe48c04dd943388a9dda5",
+    "errors/windows-network/index.html": "115773991c77cd6e7c2ba23456965fa64c315f9fac3381f0d4a0a19a9b3dbb80",
+    "errors/hardware/index.html": "9c4dab1dac9e3afdece11e53b275c712c0b161a64e133360fa52fdc97d592466"
+  },
+  "immutableFiles": {
+    "assets/css/styles.css": "4665be07ebcd26acb6b00d12233158bddd012784af4df298445dffa2519f605e",
+    "assets/js/app.js": "654b8f614f6277dfd307380ee98c8b4a6f5849c2f88791a3c34d20282492c8ba"
+  },
+  "referenceSignature": {
+    "template": "npm-command-not-found",
+    "version": "1.0.0",
+    "reference": "errors/dev/node-npm/npm-command-not-found/index.html",
+    "header": "2e0f248ed4f495a27f0a6f7041232c05edfcf4d6029bec511eda29c1298e2c4a",
+    "footer": "3608218ae74c547147370c2bba57c116a827dd8d80333ec9c29204d4a4201ad1",
+    "shareSkeleton": "d08bc8b0506fe5e8055e9bc4cda934928d878291ddd2a2cf0dd80c47dce587a4",
+    "asideClass": "sidebar"
+  },
+  "changePolicy": "Explicit separately approved theme-migration PR with desktop/mobile regression and new lock version only."
+}
