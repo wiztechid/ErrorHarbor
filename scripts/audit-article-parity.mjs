@@ -1,8 +1,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 const root = path.resolve('errors');
+const registry = JSON.parse(fs.readFileSync('data/search-index.json','utf8'));
+const registered = new Set(registry.filter(x=>x.kind==='article').map(x=>path.normalize(path.join(x.url,'index.html'))));
 const files = [];
-function walk(dir) { if (!fs.existsSync(dir)) return; for (const e of fs.readdirSync(dir,{withFileTypes:true})) { const p=path.join(dir,e.name); if(e.isDirectory()) walk(p); else if(e.name==='index.html') files.push(p); } }
+function walk(dir) { if (!fs.existsSync(dir)) return; for (const e of fs.readdirSync(dir,{withFileTypes:true})) { const p=path.join(dir,e.name); if(e.isDirectory()) walk(p); else if(e.name==='index.html' && registered.has(path.normalize(p))) files.push(p); } }
 walk(root);
 const links=['/about/','/editorial-methodology/','/contact/','/privacy/','/terms/','/disclaimer/','/affiliate-disclosure/'];
 const issues=[];
@@ -18,5 +20,6 @@ for(const file of files) {
  if(!/<link[^>]+rel=["']canonical["']/.test(html)) flags.push('canonical');
  if(flags.length) issues.push({file:file.replaceAll(path.sep,'/'),flags});
 }
-console.log(JSON.stringify({articles:files.length,articlesWithIssues:issues.length,issues},null,2));
+console.log(JSON.stringify({registeredArticles:registered.size,scannedArticles:files.length,missingFiles:registered.size-files.length,articlesWithIssues:issues.length,issues},null,2));
+if(files.length!==registered.size) { console.error('Article inventory incomplete'); process.exitCode=1; }
 if(process.argv.includes('--strict')&&issues.length) process.exit(1);
