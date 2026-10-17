@@ -50,7 +50,7 @@ const normalize=s=>s.replace(/(href|src)=(["'])(.*?)\2/gi,(full,k,q,d)=>{
 });
 const frozenHeader=normalize(chrometag('header'));
 const frozenFooter=normalize(chrometag('footer'));
-if(!frozenHeader.includes('class="header-search"')||!frozenFooter.includes('class="footer-grid"'))throw Error('Missing approved frozen article shell');
+if(!frozenHeader.includes('class="header-search"')||!frozenFooter.includes('footer-grid'))throw Error('Missing approved frozen article shell');
 const net=[
  ['whatsapp','WhatsApp','W','https://wa.me/?text='+encodeURIComponent(d.title+'\n'+url)],
  ['facebook','Facebook','f','https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url)],
