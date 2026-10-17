@@ -1,20 +1,29 @@
-name: SEO Link Guard
+name: SEO Link Guard + npm Layout Freeze
 
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
-
+permissions:
+  contents: read
+concurrency:
+  group: errorharbor-light-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  validate-seo-graph:
+  validate-seo-graph-and-template:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Set up Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: '22'
+      - name: Validate frozen npm template across all indexed articles
+        run: node scripts/template-freeze-gate.mjs
       - name: Validate publication graph
         run: node scripts/validate-publish.mjs
+      - name: Test generator and hostile layout mutations
+        run: |
+          node scripts/test-article-generator.mjs
+          node scripts/test-template-freeze.mjs
