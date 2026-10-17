@@ -49,14 +49,18 @@ try {
      documentWidth:document.documentElement.scrollWidth,
      viewportWidth:window.innerWidth,
      stylesheetCount:document.styleSheets.length,
-     canonical:document.querySelector('link[rel="canonical"]')?.href||null
+     canonical:document.querySelector('link[rel="canonical"]')?.href||null,
+     overflowCandidates:[...document.body.querySelectorAll('*')].map(el=>{
+      const rect=el.getBoundingClientRect();
+      return {element:el.tagName.toLowerCase(),className:typeof el.className==='string'?el.className.slice(0,70):'',right:Math.round(rect.right),width:Math.round(rect.width)};
+     }).filter(x=>x.right>window.innerWidth+5).sort((a,b)=>b.right-a.right).slice(0,8)
     };
    },{trust});
    assert.equal(audit.h1,1,route+' must have one H1');
    assert.ok(audit.footerPresent&&!audit.footerHidden,route+' footer missing/hidden');
    assert.deepEqual(audit.missingTrust,[],route+' missing trust footer links');
    assert.deepEqual(audit.missingAnchors,[],route+' broken TOC');
-   assert.ok(audit.documentWidth<=audit.viewportWidth+3,route+' horizontal overflow: '+audit.documentWidth+'/'+audit.viewportWidth);
+   assert.ok(audit.documentWidth<=audit.viewportWidth+3,route+' horizontal overflow: '+audit.documentWidth+'/'+audit.viewportWidth+' offenders='+JSON.stringify(audit.overflowCandidates));
    assert.ok(audit.stylesheetCount>0,route+' CSS missing');
    if(route!=='/') {
     assert.ok(audit.tocCount>0,route+' article has no TOC');
