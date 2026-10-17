@@ -1,6 +1,6 @@
 name: PR16 Final Quality Gate
 
-# Diagnostic probe run: pinpoint 5px mobile overflow before final release gate.
+# Final combined regression after targeted mobile block+inline code containment fixes.
 # Later code commits do not trigger this heavy gate; reruns are manual/on demand.
 on:
   push:
