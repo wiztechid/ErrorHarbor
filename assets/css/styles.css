@@ -597,3 +597,5 @@ img.brand-mark{object-fit:contain!important;background:none!important}
   .article>aside.sidebar,.article>aside.sidebar>.side-block,.article>aside.sidebar .toc{min-width:0;width:100%;max-width:100%}
   .article>aside.sidebar .toc{overflow-x:auto;overscroll-behavior-x:contain}
 }
+
+/* qc: final full-browser gate trigger */
