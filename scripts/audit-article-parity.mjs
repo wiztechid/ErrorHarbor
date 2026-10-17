@@ -11,7 +11,16 @@ const issues=[];
 for(const file of files) {
  const html=fs.readFileSync(file,'utf8');
  const footer=html.match(/<footer\b[\s\S]*?<\/footer>/i)?.[0]||'';
- const missing=links.filter(x=>!footer.includes('href="'+x+'"')&&!footer.includes("href='"+x+"'"));
+ // Resolve relative links against their real nested article URL before parity checks.
+ const pagePath='/' + path.relative(process.cwd(),file).split(path.sep).join('/').replace(/index\.html$/,'');
+ const pageUrl=new URL(pagePath,'https://errorharbor.com/');
+ const linkedPaths=new Set([...footer.matchAll(/<a\\b[^>]*\\bhref\\s*=\\s*(["'])(.*?)\\1/gi)].flatMap((m)=>{
+  try {
+   const target=new URL(m[2],pageUrl);
+   return target.origin===pageUrl.origin?[target.pathname]:[];
+  } catch { return []; }
+ }));
+ const missing=links.filter(x=>!linkedPaths.has(x));
  const flags=[];
  if(!footer.includes('footer-grid')) flags.push('footer grid');
  if(missing.length) flags.push('footer links: '+missing.join(', '));
