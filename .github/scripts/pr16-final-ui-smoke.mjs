@@ -50,6 +50,11 @@ try {
      viewportWidth:window.innerWidth,
      stylesheetCount:document.styleSheets.length,
      canonical:document.querySelector('link[rel="canonical"]')?.href||null,
+     edgeCandidates:[...document.body.querySelectorAll('*')].map(el=>{
+      const rect=el.getBoundingClientRect(),style=getComputedStyle(el);
+      const parent=el.parentElement;
+      return {element:el.tagName.toLowerCase(),className:typeof el.className==='string'?el.className.slice(0,70):'',left:Math.round(rect.left*10)/10,right:Math.round(rect.right*10)/10,width:Math.round(rect.width*10)/10,overflowX:style.overflowX,whiteSpace:style.whiteSpace,parent:parent?.tagName.toLowerCase()+'.'+String(parent?.className||'').slice(0,50)};
+     }).filter(x=>x.right>window.innerWidth+0.5&&x.right<window.innerWidth+50).sort((a,b)=>b.right-a.right).slice(0,16),
      overflowCandidates:[...document.body.querySelectorAll('*')].map(el=>{
       const rect=el.getBoundingClientRect();
       return {element:el.tagName.toLowerCase(),className:typeof el.className==='string'?el.className.slice(0,70):'',right:Math.round(rect.right),width:Math.round(rect.width)};
@@ -60,7 +65,10 @@ try {
    assert.ok(audit.footerPresent&&!audit.footerHidden,route+' footer missing/hidden');
    assert.deepEqual(audit.missingTrust,[],route+' missing trust footer links');
    assert.deepEqual(audit.missingAnchors,[],route+' broken TOC');
-   assert.ok(audit.documentWidth<=audit.viewportWidth+3,route+' horizontal overflow: '+audit.documentWidth+'/'+audit.viewportWidth+' offenders='+JSON.stringify(audit.overflowCandidates));
+   if(audit.documentWidth>audit.viewportWidth+3) {
+    await page.screenshot({path:'qc-pr16/'+viewport.name+'-overflow-debug.png',fullPage:true});
+    throw Error(route+' horizontal overflow: '+audit.documentWidth+'/'+audit.viewportWidth+' edge='+JSON.stringify(audit.edgeCandidates)+' candidates='+JSON.stringify(audit.overflowCandidates));
+   }
    assert.ok(audit.stylesheetCount>0,route+' CSS missing');
    if(route!=='/') {
     assert.ok(audit.tocCount>0,route+' article has no TOC');
