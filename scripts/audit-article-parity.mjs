@@ -1,0 +1,22 @@
+import fs from 'node:fs';
+import path from 'node:path';
+const root = path.resolve('errors');
+const files = [];
+function walk(dir) { if (!fs.existsSync(dir)) return; for (const e of fs.readdirSync(dir,{withFileTypes:true})) { const p=path.join(dir,e.name); if(e.isDirectory()) walk(p); else if(e.name==='index.html') files.push(p); } }
+walk(root);
+const links=['/about/','/editorial-methodology/','/contact/','/privacy/','/terms/','/disclaimer/','/affiliate-disclosure/'];
+const issues=[];
+for(const file of files) {
+ const html=fs.readFileSync(file,'utf8');
+ const footer=html.match(/<footer\b[\s\S]*?<\/footer>/i)?.[0]||'';
+ const missing=links.filter(x=>!footer.includes('href="'+x+'"')&&!footer.includes("href='"+x+"'"));
+ const flags=[];
+ if(!footer.includes('footer-grid')) flags.push('footer grid');
+ if(missing.length) flags.push('footer links: '+missing.join(', '));
+ if(!/class=["'][^"']*social-share/.test(html)) flags.push('share');
+ if(!/class=["'][^"']*toc(?:\s|["'])/.test(html)) flags.push('TOC');
+ if(!/<link[^>]+rel=["']canonical["']/.test(html)) flags.push('canonical');
+ if(flags.length) issues.push({file:file.replaceAll(path.sep,'/'),flags});
+}
+console.log(JSON.stringify({articles:files.length,articlesWithIssues:issues.length,issues},null,2));
+if(process.argv.includes('--strict')&&issues.length) process.exit(1);
