@@ -1,5 +1,5 @@
 name: npm FROZEN — All 54 Responsive QA
-# Final validation after targeted mobile identifier wrapping and lock refresh.
+# Final complete 108-view regression after secondary OpenSSL code wrapping fix.
 
 # Run only when this workflow is created/changed, or when manually requested.
 on:
