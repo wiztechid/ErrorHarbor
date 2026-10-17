@@ -1,6 +1,6 @@
 name: PR16 Final Quality Gate
 
-# Final consolidated rerun after proven mobile code-overflow fix (2026-10-17).
+# Diagnostic rerun: isolate remaining 5px mobile overflow before final release gate.
 # Later code commits do not trigger this heavy gate; reruns are manual/on demand.
 on:
   push:
