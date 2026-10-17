@@ -1,4 +1,4 @@
-# ErrorHarbor Master Article Template — v1.1
+# ErrorHarbor Master Article Template — v1.2
 
 **Canonical design reference:** `errors/dev/node-npm/npm-command-not-found/index.html` — the approved npm article shell frozen as ErrorHarbor v1.0. The generator uses this page as its source for the shared article shell. Reuse its layout and CSS classes; do not recreate the header, footer, social controls, or navigation for each article.
 
@@ -14,10 +14,11 @@
 9. Keep responsive shell, code overflow handling, link semantics, and existing CSS classes. No global CSS edits for individual articles unless justified and regression-tested.
 
 ## Publishing contract
-- Draft the article body separately from the shell. Start from the approved master reference and change only article-specific content, metadata, internal links and section IDs.
+- Draft the article body separately from the shell. Start from the approved master reference and change article-specific text, metadata, URLs and section IDs while keeping the locked tag/class structure intact.
 - Do not modify or delete the locked shell components for individual publication.
 - Run `node scripts/check-article-template.mjs errors/<category>/<product>/<slug>/index.html` as a **local/pre-commit check**. This script does not trigger GitHub Actions.
-- Run `node scripts/npm-freeze-gate.mjs` to check the frozen shared shell, CSS/JS fingerprints, homepage and hub chrome across the registered articles. The lightweight GitHub workflow runs this gate on pull requests and pushes to `main`.
+- Run `node scripts/npm-freeze-gate.mjs` to check the frozen shared shell, each registered article’s `<main>` markup skeleton, CSS/JS fingerprints, homepage and hub chrome. Text and content URLs are normalized; tag hierarchy, classes and attribute presence remain locked. The lightweight GitHub workflow runs this gate on pull requests and pushes to `main`.
+- After adding a new article to `data/search-index.json`, run `node scripts/npm-freeze-gate.mjs --register-new-articles`. This adds locks only for new registered articles and refuses to refresh an existing article lock or proceed when other freeze checks fail.
 - `templates/npm-shell.freeze.json` is the lock manifest. Do not refresh its hashes as a routine publishing step; template changes require an explicit versioned migration.
 - Resolve every template error, then run article/SEO quality review. Batch corrections before a single final GitHub Actions validation according to `docs/WIZ-GITHUB-MODE-HEMAT-SOP.md`.
 - For legacy articles, migrate in audited batches rather than forcing a global rewrite during AdSense review.
@@ -33,4 +34,4 @@ Article is not publication-ready if footer links are missing, canonical is absen
 - Check the generated article locally: `node scripts/check-article-template.mjs errors/dev/example/example-error/index.html`.
 - The generator refuses to overwrite existing article paths. Generated files are drafts: editorial evidence, working commands, internal links, search index, sitemap, hub/latest-guide placement and production gates must still be completed separately.
 - Do not publish the example JSON as an actual article. Do not auto-update reviewed dates without substantive verification.
-- Legacy article migration: first inventory missing template components, then fix in small audited batches; avoid mass rewriting article content.
+- Check newly generated drafts locally, then register their main-markup lock after the route is added to the search index. Legacy article migration: first inventory missing template components, then fix in small audited batches; avoid mass rewriting article content.
