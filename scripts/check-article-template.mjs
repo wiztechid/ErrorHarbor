@@ -23,6 +23,7 @@ for(const file of files){
   has(/<header\b/i,'site header');
   has(/<footer[^>]+class=["'][^"']*site-footer/i,'site footer');
   has(/class=["'][^"']*footer-grid/i,'full footer grid');
+  has(/class=["'][^"']*brand-mark/i,'brand icon');
   has(/class=["'][^"']*footer-bottom/i,'footer copyright');
   for(const url of ['/about/','/editorial-methodology/','/contact/','/privacy/','/terms/','/disclaimer/','/affiliate-disclosure/']){
     if(!html.includes('href="'+url+'"')&&!html.includes("href='"+url+"'"))fail.push('footer/trust link '+url);
