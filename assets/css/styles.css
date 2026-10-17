@@ -579,7 +579,6 @@ img.brand-mark{object-fit:contain!important;background:none!important}
   .site-header .article-header-actions .header-search input { width: 0; min-width: 0; flex: 1 1 0; }
 }
 
-
 /* npm-shell-v1 FROZEN mobile correctness: prevent long identifier text from sizing the page. */
 @media(max-width:650px){
   .article-grid > aside.sidebar{min-width:0;max-width:100%}
