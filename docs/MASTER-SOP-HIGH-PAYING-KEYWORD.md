@@ -1,9 +1,9 @@
 # MASTER SOP — HIGH PAYING KEYWORD
 ## ErrorHarbor SEO, Reader-First UX, Internal-Link Graph & Monetization Framework
 
-**Version:** 2.3  
+**Version:** 2.4  
 **Status:** ACTIVE  
-**Effective:** 2026-10-12
+**Effective:** 2026-10-29
 
 > **North Star:** ErrorHarbor should be the fastest, clearest and most trustworthy place to diagnose a technical error. Every new page must improve both the reader's troubleshooting path and the site's topical-link graph.
 
@@ -567,7 +567,7 @@ Batch publishing is allowed only when every page independently passes opportunit
 
 ---
 
-## 18. Deep AdSense Readiness Gate — v1
+## 18. Deep AdSense Readiness Gate — v2
 
 AdSense readiness is a **corpus-level quality gate**, not a request to add ads early.
 
@@ -589,6 +589,36 @@ Hard rules:
 - compare against the existing corpus for intent overlap/cannibalization;
 - no filler, fake metrics, placeholder/unfinished content or mass keyword substitution;
 - if the unique diagnostic moat cannot be stated, HOLD/MERGE/SKIP.
+
+### Gate B.1 — Response to a “Low value content” decision
+
+When AdSense reports **Low value content** or says the site is not ready because of content, treat it as a site-level review outcome. Record the exact status, review date and any accompanying message. The notice does not identify a particular failing URL or establish that images, word count, traffic or one technical setting caused the decision. Do not claim a guaranteed approval path.
+
+Review the complete public site, not only the homepage. Inventory every indexable guide, hub and other substantive landing page in a review ledger with: URL; intended reader problem; unique diagnostic contribution; supporting evidence and source links; verification quality; whether core content is crawl-visible; overlap/thinness concerns; and disposition (**KEEP**, **FIX**, **MERGE**, **NOINDEX** or **RETIRE**) with a short reason.
+
+For each guide, verify that:
+- the page solves its exact error or symptom and states its environment/version scope;
+- its diagnostic path adds a specific, defensible contribution beyond generic advice or a wording variation of another page;
+- material steps have relevant, working authoritative references, with documented facts separated from inference and any actual testing stated honestly;
+- each meaningful fix explains how to verify the result and what evidence to collect if it fails;
+- no unfinished, empty or placeholder sections remain, including reference headings with no references;
+- the main explanatory content is available to readers and crawlers without requiring a search submission, feedback click or other interaction to reveal it;
+- internal links lead to useful related guides and do not create thin doorway pages.
+
+Use the ledger to prioritize genuine weaknesses: incomplete or low-specificity guides, unsupported claims, overlapping pages, dead/empty sections, and content whose useful answer is hidden behind client-side interaction. Correct, consolidate or retire pages only when the evidence supports that action; do not inflate the corpus with bulk rewrites or extra URLs.
+
+### Images and other supporting material
+
+Images are optional support, not an approval quota. Add a visual only when it communicates original, problem-specific evidence or makes a step easier to follow—for example, a safely redacted screenshot of the relevant error/menu, a tested command result, or an original diagnostic diagram. Give it a clear caption and useful alt text, and confirm the site has rights to publish it. Do not add stock images, decorative screenshots or copied visuals merely to increase image count. Never expose credentials, tokens, personal data or private system details in screenshots.
+
+### Post-review correction and re-review
+
+After the audit, document the affected URLs and the concrete changes made; run the normal article, crawl-graph and live-page QC on those pages. Recheck the AdSense Sites status and confirm the full AdSense readiness gates pass before requesting another review. `ads.txt: Authorized` confirms the publisher record was found; it does not establish that the content-quality review passed. Approval remains Google's decision.
+
+Reference the current AdSense guidance and the official approval overview video:
+- https://support.google.com/adsense/answer/7299563
+- https://support.google.com/adsense/answer/12176698
+- https://youtu.be/lZUG0XGlZZY
 
 ### Gate C — Crawl graph / technical integrity
 Maintain:
