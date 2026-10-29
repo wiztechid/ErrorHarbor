@@ -72,7 +72,7 @@ function hubShell(s){
  return s.replace(match[0],main);
 }
 function hashes(){
- return {version:"npm-article-shell-v1.2.0",reference:ref,
+ return {version:"npm-article-shell-v1.3.0",reference:ref,
   header:hash(expectedHeader),footer:hash(expectedFooter),
   css:hash(read("assets/css/styles.css")),js:hash(read("assets/js/app.js")),
   homepageShell:hash(homepageShell(read("index.html"))),
@@ -108,6 +108,20 @@ if(process.argv.includes("--migrate-a11y-v1.2.0")){
  wanted.articleMarkup=now.articleMarkup;
  fs.writeFileSync(manifestPath,JSON.stringify(wanted,null,2)+"\n");
  console.log("MIGRATED accessibility structure lock to v1.2.0");
+}
+if(process.argv.includes("--migrate-a11y-v1.3.0")){
+ if(wanted.version!=="npm-article-shell-v1.2.0")throw Error("Accessibility migration requires the v1.2.0 freeze");
+ for(const key of ["header","footer","css","js","homepageShell"])if(wanted[key]!==now[key])throw Error("Refusing migration with unrelated frozen drift: "+key);
+ for(const [file,hashValue] of Object.entries(wanted.hubs||{}))if(hashValue!==now.hubs?.[file])throw Error("Refusing migration with unrelated frozen drift: "+file);
+ const articles=JSON.parse(read("data/search-index.json")).filter(item=>item.kind==="article");
+ for(const item of articles){
+  const file=path.posix.join(item.url,"index.html"),source=read(file);
+  if(!source.includes("<h2>On this page</h2>")||source.includes("<h3>On this page</h3>"))throw Error("Sidebar heading migration incomplete: "+file);
+ }
+ wanted.version="npm-article-shell-v1.3.0";
+ wanted.articleMarkup=now.articleMarkup;
+ fs.writeFileSync(manifestPath,JSON.stringify(wanted,null,2)+"\n");
+ console.log("MIGRATED sidebar heading structure lock to v1.3.0");
 }
 const errors=[];
 for(const k of ["header","footer","css","js","homepageShell"])if(wanted[k]!==now[k])errors.push("FROZEN_DESIGN_DRIFT "+k);

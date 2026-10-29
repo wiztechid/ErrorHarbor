@@ -1,9 +1,9 @@
-# ErrorHarbor Master Article Template — v1.3
+# ErrorHarbor Master Article Template — v1.4
 
-**Canonical design reference:** `errors/dev/node-npm/npm-command-not-found/index.html` — the approved npm article shell currently frozen as ErrorHarbor v1.2.0. The generator uses this page as its source for the shared article shell. Reuse its layout and CSS classes; do not recreate the header, footer, social controls, or navigation for each article.
+**Canonical design reference:** `errors/dev/node-npm/npm-command-not-found/index.html` — the approved npm article shell currently frozen as ErrorHarbor v1.3.0. The generator uses this page as its source for the shared article shell. Reuse its layout and CSS classes; do not recreate the header, footer, social controls, or navigation for each article.
 
 ## Accessible heading order
-- Keep the article title as the only H1. Use H2 for article sections and the sidebar “Guide details” title; use H3 only for subsections beneath an H2. Do not start the sidebar with an H3 before the article’s first H2.
+- Keep the article title as the only H1. Use H2 for article sections and both sidebar titles (“On this page” and “Guide details”); use H3 only for subsections beneath an H2.
 
 ## Locked article shell (must be present on every new article)
 1. HTML language, charset, viewport; unique descriptive `<title>`, meta description, canonical URL, Open Graph and Twitter metadata.

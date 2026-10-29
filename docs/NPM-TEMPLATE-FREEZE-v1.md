@@ -32,3 +32,8 @@
 ## Versioned accessibility migration — 2026-10-29 (v1.2.0)
 
 Lighthouse mobile reports identified a skipped heading level on the representative npm guide. The shared “Guide details” sidebar title was H3 before the first article H2 on all 54 guides. It now uses H2 across the corpus and in the generator; the template freeze version and structural hashes were intentionally migrated. The same batch darkened the homepage featured-guide kicker, summary and arrow text to address the reported contrast failures, and cache-busted the stylesheet to `20261029-a11y2`. The heading and contrast adjustments improve navigation/readability; neither is evidence of AdSense approval.
+
+
+## Follow-up heading migration — 2026-10-29 (v1.3.0)
+
+The fresh live Lighthouse report still flagged the sidebar “On this page” H3. Both sidebar group titles now use H2 across the 54 published pages and generator; article section headings remain H2, and H3 stays reserved for actual nested subsections. The frozen article structure was migrated from v1.2.0 to v1.3.0.
