@@ -19,6 +19,7 @@
 - One stale npm CLI v8 reference was corrected to npm's current version-neutral Folders documentation in PR #38.
 - The AdSense dashboard screenshot supplied on 2026-10-29 shows **Needs attention — Low value content**; it does not name a failing URL. This audit and its corrections do not guarantee approval. Keep resubmission on HOLD until the remaining live, Search Console, responsive, trust/legal, and account checks are complete.
 - The article scan found no images. This is recorded, not treated as a defect. Generic images do not replace original diagnostics or evidence.
+- The initial date-parity check compared the page header, Article `dateModified`, and sitemap `lastmod`; a later live QA also found a duplicate date in the article sidebar’s Guide Details. Three pages had stale sidebar dates (two npm guides and one MySQL guide). A correction is proposed in PR for this audit; after deployment, recheck that both visible dates match `dateModified`.
 
 ## Per-article ledger
 

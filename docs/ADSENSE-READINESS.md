@@ -2,7 +2,7 @@
 
 **Updated:** 2026-10-29  
 **Publisher ID:** `pub-4750547049813961`  
-**Status:** PRE-RESUBMISSION HOLD. The 54-article content audit is complete at repository/source-review level. The 2026-10-29 dashboard screenshot still shows “Needs attention — Low value content”; production, Search Console, responsive, trust/legal and account checks remain open.
+**Status:** PRE-RESUBMISSION HOLD. The 54-article content audit is complete at repository/source-review level. Live review on 2026-10-29 confirmed robots.txt allows crawling, sitemap.xml serves the 63-URL repository sitemap, ads.txt matches the authorized publisher record, and the linked About/methodology/contact/legal pages load with expected headings. Six intentional noindex pages are absent from the sitemap. The 2026-10-29 dashboard screenshot still shows “Needs attention — Low value content”; Search Console examples, mobile/responsive QA, full link/indexation reconciliation and account checks remain open.
 
 ## Canonical publisher record
 
@@ -27,7 +27,7 @@ The owner-provided AdSense Sites screenshot dated Oct 29, 2026 shows **Approval 
 | #3 | Crawl Graph / Navigation / Dead Ends | PASS | sitemap repaired/guarded; four pillar hubs searchable; crawl graph protected |
 | #4 | Ad Placement / UX / Accidental Clicks | PRE-MONETIZATION PASS | staged slots hidden; interactive zones protected; production placement is a separate release |
 | #5 | Privacy / Consent Message / Implementation | PASS | privacy/consent-message wording hardened; ads.txt/publisher ID guarded; production tags blocked before intentional activation |
-| #6 | Final Submission Readiness | HOLD | PR #24 targeted content update passed SEO/template QC and Pages deployment; account remains unapproved; Search Console, complete responsive/legal/link checks remain open |
+| #6 | Final Submission Readiness | HOLD | Live trust/legal routes, robots.txt, sitemap.xml (63 URLs) and ads.txt were rechecked on 2026-10-29; three stale sidebar review dates are corrected in the current PR; Search Console examples, responsive QA, full link/indexation reconciliation and account checks remain open |
 
 ## Google review and focused content audit — 2026-10-17
 

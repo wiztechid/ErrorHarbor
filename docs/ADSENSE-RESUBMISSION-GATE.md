@@ -6,8 +6,8 @@ Status: PRE-RESUBMISSION / evidence required. This checklist is an internal qual
 - [x] Repository has `robots.txt` allowing crawl and advertising `ads.txt` with publisher declaration (checked 2026-10-17).
 - [x] Repository has `sitemap.xml` and a publication validation script.
 - [x] Homepage footer links to About, Editorial Methodology, Contact, Privacy, Terms, Disclaimer and Affiliate Disclosure (checked 2026-10-17).
-- [ ] Verify all those links return HTTP 200 in production and their content accurately describes current site behavior.
-- [ ] Review Privacy / Contact / Terms / Disclaimer `noindex,follow` decisions. Noindex alone is not an AdSense rejection reason; only change based on clear indexation and transparency goals.
+- [x] Reopened About, Editorial Methodology, Contact, Privacy, Terms, Disclaimer, Affiliate Disclosure and Corrections on production on 2026-10-29; each rendered its expected page heading. Reviewed current About/methodology/contact/legal copy for editorial accountability, corrections and commercial disclosures. (Readiness is limited to visible content; legal-owner signoff is not represented.)
+- [x] Rechecked robots metadata on 2026-10-29: Contact, Privacy, Terms, Disclaimer, Affiliate Disclosure and Corrections intentionally use `noindex,follow` and are absent from sitemap.xml; About and Editorial Methodology remain public/indexable. Retain this deliberate split. (The old GSC report listed only four noindex examples; exact GSC examples remain unresolved.)
 - [ ] Verify responsive layout and accessibility on mobile/desktop across homepage, hub, article, trust and legal templates.
 - [ ] Verify no broken links, incorrect canonical, accidental noindex, duplicate titles, orphan articles or sitemap/index mismatches in the final publication batch.
 - [ ] Verify no obstructive ads, misleading CTAs, nonfunctional widgets or placeholder content.
@@ -18,6 +18,11 @@ Status: PRE-RESUBMISSION / evidence required. This checklist is an internal qual
 - [x] Reviewed thinness, intent overlap, source support, unsupported-test wording and diagnostic value across all 54 guides; corrected the stale npm v8 reference in PR #38. No remaining corpus-level blocker was identified in this pass.
 - [ ] Ensure byline/editorial accountability, corrections channel and original problem-solving value.
 - [ ] Confirm monetization/affiliate disclosures match actual behavior; no unsupported statements about Google approval.
+
+
+### Live trust and crawl checks — 2026-10-29
+
+Production `robots.txt` returns `User-agent: *`, `Allow: /`, and the sitemap URL. Production `sitemap.xml` renders a 63-URL set matching the current repository sitemap, and production `ads.txt` returns the authorized publisher record `google.com, pub-4750547049813961, DIRECT, f08c47fec0942fa0`. The six internal trust/correction routes with `noindex,follow` are intentionally excluded; About and Editorial Methodology are indexable. Live review found three stale duplicate sidebar “Last reviewed” dates and proposes aligning them with the already current header / Article `dateModified` values. Production must be rechecked after deployment.
 
 ## P1 — Search Console evidence
 - [ ] Record indexed / crawled-not-indexed / discovered-not-indexed counts from GSC (no invented numbers).
