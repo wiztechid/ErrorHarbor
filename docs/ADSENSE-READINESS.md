@@ -1,8 +1,8 @@
 # ErrorHarbor — AdSense Readiness
 
-**Updated:** 2026-10-17  
+**Updated:** 2026-10-29  
 **Publisher ID:** `pub-4750547049813961`  
-**Status:** PRE-RESUBMISSION HOLD. Source-level QC is useful but does not replace the unfinished live, Search Console and editorial checks in `ADSENSE-RESUBMISSION-GATE.md`.
+**Status:** PRE-RESUBMISSION HOLD. The 54-article content audit is complete at repository/source-review level. The 2026-10-29 dashboard screenshot still shows “Needs attention — Low value content”; production, Search Console, responsive, trust/legal and account checks remain open.
 
 ## Canonical publisher record
 
@@ -14,12 +14,16 @@ google.com, pub-4750547049813961, DIRECT, f08c47fec0942fa0
 
 The earlier AdSense dashboard inspection used the wrong Google account. Do not use that account's publisher ID or site status as ErrorHarbor evidence. The canonical publisher ID remains `pub-4750547049813961`, as confirmed by the site owner. The intended account was checked on 2026-10-17: it shows “Your account wasn't approved” / “Meet AdSense program policies.” The Oct 7 email says to focus on content and mentions insufficient content or content quality as common issues, but it does not identify a particular URL or confirm which issue applies. Keep resubmission on hold until the remaining evidence and checks are complete.
 
+## Dashboard status — 2026-10-29
+
+The owner-provided AdSense Sites screenshot dated Oct 29, 2026 shows **Approval status: Needs attention**, **Status details: Low value content**, and **ads.txt status: Authorized** for errorharbor.com. This confirms the label shown by the dashboard; it does not identify a failing URL or the specific content signals behind the decision.
+
 ## Deep Final QC ledger
 
 | Gate | Scope | Status | Durable result |
 |---|---|---|---|
 | #1 | Publisher Identity & Trust | PASS | Trust/legal layer; AI-assisted workflow disclosure; advertising-choice disclosure |
-| #2 | Content Value / Low-Value / Scaled Content | PARTIAL | 54 published error guides inventoried at corpus level; the shortest guide had identifiable missing BuildKit branches and was improved in PR #24; full per-page evidence/accuracy review remains open |
+| #2 | Content Value / Low-Value / Scaled Content | AUDIT COMPLETE; GOOGLE STATUS STILL FLAGGED | 54 per-URL content ledger completed; 161 unique external references opened; 54 production pages returned HTTP 200; targeted corrections merged in PRs #24, #31–#38. Google’s “Low value content” status remains unresolved and is not an approval signal |
 | #3 | Crawl Graph / Navigation / Dead Ends | PASS | sitemap repaired/guarded; four pillar hubs searchable; crawl graph protected |
 | #4 | Ad Placement / UX / Accidental Clicks | PRE-MONETIZATION PASS | staged slots hidden; interactive zones protected; production placement is a separate release |
 | #5 | Privacy / Consent Message / Implementation | PASS | privacy/consent-message wording hardened; ads.txt/publisher ID guarded; production tags blocked before intentional activation |
@@ -28,9 +32,13 @@ The earlier AdSense dashboard inspection used the wrong Google account. Do not u
 ## Google review and focused content audit — 2026-10-17
 
 - Intended publisher record remains `pub-4750547049813961`; production `ads.txt` was verified against it.
-- Google’s message is broad: it recommends focusing on content and lists insufficient content/content quality as common examples. It does not name a failing page or establish the precise cause. See the open checks in the resubmission gate; do not represent this as a confirmed low-value-content finding.
+- The Oct 7 email was broad, but the Oct 29 Sites screenshot now explicitly labels the site “Low value content.” The dashboard does not name a failing URL or establish the exact page-level cause; preserve the P0 hold and record the result accurately.
 - A source-level scan found 54 error-guide URLs (separate from category/library pages). All have external references; one guide was a clear length outlier and omitted relevant Docker BuildKit context branches. PR #24 added those diagnostics while preserving the frozen HTML structure. SEO/template check and Pages deployment passed, and production content was verified.
-- This one focused correction does not complete the corpus accuracy review or guarantee approval. Keep HOLD until all P0 items are evidenced and account/GSC checks are complete.
+- The Oct 17 Docker correction was only one targeted change at that time. The full 54-article audit was completed on Oct 29; see the linked ledger below. The audit does not guarantee approval. Keep HOLD until all remaining P0 and account/GSC checks are evidenced.
+
+### Full 54-article audit — 2026-10-29
+
+The per-URL ledger is [ARTICLE-CONTENT-AUDIT-2026-10-29.md](ARTICLE-CONTENT-AUDIT-2026-10-29.md). It records each guide’s unique diagnostic contribution, references, review date, disposition and testing boundary. The audit confirmed canonical/review-date/sitemap parity on all 54 pages, 2–6 external sources and at least two related internal links per page, and HTTP 200 on every production article URL. Six pages now include bounded first-party reproductions; the UptimeRobot page contains the earlier recorded lab. Platform-specific cases were not represented as personally tested outside their required environments.
 
 ### Search Console snapshot — 2026-10-17
 
