@@ -22,7 +22,7 @@ Status: PRE-RESUBMISSION / evidence required. This checklist is an internal qual
 
 ### Live trust and crawl checks — 2026-10-29
 
-Production `robots.txt` returns `User-agent: *`, `Allow: /`, and the sitemap URL. Production `sitemap.xml` renders a 63-URL set matching the current repository sitemap, and production `ads.txt` returns the authorized publisher record `google.com, pub-4750547049813961, DIRECT, f08c47fec0942fa0`. The six internal trust/correction routes with `noindex,follow` are intentionally excluded; About and Editorial Methodology are indexable. Live review found three stale duplicate sidebar “Last reviewed” dates and proposes aligning them with the already current header / Article `dateModified` values. Production must be rechecked after deployment.
+Production `robots.txt` returns `User-agent: *`, `Allow: /`, and the sitemap URL. Production `sitemap.xml` renders a 63-URL set matching the current repository sitemap, and production `ads.txt` returns the authorized publisher record `google.com, pub-4750547049813961, DIRECT, f08c47fec0942fa0`. The six internal trust/correction routes with `noindex,follow` are intentionally excluded; About and Editorial Methodology are indexable. Live review found three stale duplicate sidebar “Last reviewed” dates. PR #40 aligned them with the existing header / Article `dateModified`; all three pages were rechecked live after deployment on 2026-10-29 and matched.
 
 ## P1 — Search Console evidence
 - [ ] Record indexed / crawled-not-indexed / discovered-not-indexed counts from GSC (no invented numbers).
