@@ -1,11 +1,11 @@
 {
-  "version": "npm-article-shell-v1.0.0",
+  "version": "npm-article-shell-v1.1.0",
   "reference": "errors/dev/node-npm/npm-command-not-found/index.html",
   "header": "2e0f248ed4f495a27f0a6f7041232c05edfcf4d6029bec511eda29c1298e2c4a",
-  "footer": "3608218ae74c547147370c2bba57c116a827dd8d80333ec9c29204d4a4201ad1",
-  "css": "894ab6d7d2a52bacf1ef79e46766518d4769141922973d2dfac44205377a10d5",
+  "footer": "b5b695a6f14d56caf0c38e8b35990a3e0dc784776787f934d56934025ed096da",
+  "css": "aa84f5ea7b9549027292b3c357599730aef15d6512758539119e919d70185126",
   "js": "654b8f614f6277dfd307380ee98c8b4a6f5849c2f88791a3c34d20282492c8ba",
-  "homepageShell": "fd61312d4c358216e2eb2f942e950c2a94d0a5cc65bebea1092d802e5d9686af",
+  "homepageShell": "1276181b02fc945a5e72b29e25966e49f2ed0913a57a6e6fa7a37ee51de6b9b4",
   "hubs": {
     "errors/index.html": "8e09683b2d5185177d094ddda664183d84e09f845980c7364419cf78ca0f1a0c",
     "errors/dev/index.html": "567cb2592a8c4e39ca2b25dc4cbe0d12dd53a76e5307ecd86bf1a47cc27ea42c",
