@@ -2,13 +2,26 @@
 
 **Updated:** 2026-10-29  
 **Publisher ID:** `pub-4750547049813961`  
-**Status:** PRE-RESUBMISSION HOLD. The 54-article content audit is complete at repository/source-review level. Live review on 2026-10-29 confirmed robots.txt allows crawling, sitemap.xml serves the 63-URL repository sitemap, ads.txt matches the authorized publisher record, and the linked About/methodology/contact/legal pages load with expected headings. Six intentional noindex pages are absent from the sitemap. The 2026-10-29 dashboard screenshot still shows “Needs attention — Low value content”; Search Console was reopened on 2026-10-29 and the current counts/examples are recorded below. The dashboard still shows “Needs attention — Low value content.” Full responsive QA remains open; the 37 discovered-but-not-indexed URLs have not been crawled, and no AdSense approval is implied. Fresh mobile PageSpeed reports after PRs #43–#44 score the homepage 100/100/100/100 and the representative npm guide 89/100/100/100 (Performance/Accessibility/Best Practices/SEO). Contrast and heading findings are gone. Field data is unavailable; the guide lab run reports CLS 0.226, so review remains open.
+**Status:** PRE-RESUBMISSION HOLD. The 54-article content audit is complete at repository/source-review level. Live review on 2026-10-29 confirmed robots.txt allows crawling, sitemap.xml serves the 63-URL repository sitemap, ads.txt matches the authorized publisher record, and the linked About/methodology/contact/legal pages load with expected headings. Six intentional noindex pages are absent from the sitemap. The 2026-10-29 dashboard screenshot still shows “Needs attention — Low value content”; Search Console was reopened on 2026-10-29 and the current counts/examples are recorded below. The dashboard still shows “Needs attention — Low value content.” Full responsive QA remains open; the 37 discovered-but-not-indexed URLs have not been crawled, and no AdSense approval is implied. Fresh mobile PageSpeed reports after PRs #43–#44 score the homepage, Error Library hub, About, and Editorial Methodology 100/100/100/100; the representative npm guide scores 89/100/100/100 (Performance/Accessibility/Best Practices/SEO). The Contact page scores 100/100/100/66 because its deliberate `noindex` directive is flagged by Lighthouse SEO. Contrast and heading findings are gone across these samples. Field data is unavailable; the guide lab run reports CLS 0.226, and the five-page sample is not a full responsive sweep.
 
 ### Postdeployment mobile PageSpeed evidence — 2026-10-29
 
 - Homepage report: https://pagespeed.web.dev/analysis/https-errorharbor-com/ghrwtoetu0?form_factor=mobile — 100/100/100/100. No contrast or heading-order finding.
 - Representative npm guide report: https://pagespeed.web.dev/analysis/https-errorharbor-com-errors-dev-node-npm-npm-command-not-found/scvw8rdq0g?form_factor=mobile — 89/100/100/100; Accessibility 100, SEO 100, no heading-order or contrast finding. One simulated run reports CLS 0.226; PSI shows no real-user field data.
 - Both PRs passed the repository CI gate and deployed. This is representative Lighthouse evidence, not a full responsive review or an AdSense approval signal.
+
+### Representative mobile PageSpeed sweep — 2026-10-29
+
+All reports use Lighthouse Mobile emulation; PSI shows no real-user field data.
+
+- Homepage — 100/100/100/100; no contrast finding: https://pagespeed.web.dev/analysis/https-errorharbor-com/ghrwtoetu0?form_factor=mobile
+- Error Library hub — 100/100/100/100: https://pagespeed.web.dev/analysis/https-errorharbor-com-errors/dqousm97vu?form_factor=mobile
+- About — 100/100/100/100: https://pagespeed.web.dev/analysis/https-errorharbor-com-about/dl1w0eb6c7?form_factor=mobile
+- Editorial Methodology — 100/100/100/100: https://pagespeed.web.dev/analysis/https-errorharbor-com-editorial-methodology/hzi53zj12m?form_factor=mobile
+- Contact — 100/100/100/66. Its SEO score flags the intentional `noindex`; accessibility is 100: https://pagespeed.web.dev/analysis/https-errorharbor-com-contact/e2f90gdvup?form_factor=mobile
+- npm guide — 89/100/100/100; no contrast/heading finding, one lab run reports CLS 0.226: https://pagespeed.web.dev/analysis/https-errorharbor-com-errors-dev-node-npm-npm-command-not-found/scvw8rdq0g?form_factor=mobile
+
+Scores are Performance/Accessibility/Best Practices/SEO. This representative check does not replace desktop and full-template mobile QA.
 
 ### Live Search Console snapshot — 2026-10-29
 
