@@ -27,7 +27,7 @@ The owner-provided AdSense Sites screenshot dated Oct 29, 2026 shows **Approval 
 | #3 | Crawl Graph / Navigation / Dead Ends | PASS | sitemap repaired/guarded; four pillar hubs searchable; crawl graph protected |
 | #4 | Ad Placement / UX / Accidental Clicks | PRE-MONETIZATION PASS | staged slots hidden; interactive zones protected; production placement is a separate release |
 | #5 | Privacy / Consent Message / Implementation | PASS | privacy/consent-message wording hardened; ads.txt/publisher ID guarded; production tags blocked before intentional activation |
-| #6 | Final Submission Readiness | HOLD | Live trust/legal routes, robots.txt, sitemap.xml (63 URLs) and ads.txt were rechecked on 2026-10-29; three stale sidebar review dates are corrected in the current PR; Search Console examples, responsive QA, full link/indexation reconciliation and account checks remain open |
+| #6 | Final Submission Readiness | HOLD | Live trust/legal routes, robots.txt, sitemap.xml (63 URLs) and ads.txt were rechecked on 2026-10-29; three sidebar date mismatches were corrected by PR #40 and spot-checked live after deployment; Search Console examples, responsive QA, full link/indexation reconciliation and account checks remain open |
 
 ## Google review and focused content audit — 2026-10-17
 
