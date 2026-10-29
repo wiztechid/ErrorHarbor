@@ -14,7 +14,6 @@
 
 ## Corpus findings
 
-- Article text ranges from approximately 982 to 2,331 words; length alone was not used as a quality verdict.
 - Closely related pages route by different mechanisms: JavaScript identifier vs call target vs undefined receiver; npm PATH vs EACCES vs ERESOLVE vs OpenSSL; and SFTP chroot vs subsystem vs generic EOF.
 - The mechanical crawl found no canonical, review-date, sitemap, source-count, Quick Check, verification, or related-link gaps.
 - One stale npm CLI v8 reference was corrected to npm's current version-neutral Folders documentation in PR #38.
