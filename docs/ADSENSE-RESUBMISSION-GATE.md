@@ -13,9 +13,9 @@ Status: PRE-RESUBMISSION / evidence required. This checklist is an internal qual
 - [ ] Verify no obstructive ads, misleading CTAs, nonfunctional widgets or placeholder content.
 
 ## P0 — Editorial usefulness and policy
-- [ ] Inventory every published article with URL, target error, distinct intent, reviewed date, testable fix, evidence and outbound sources.
-- [ ] Check troubleshooting commands for safety, reversibility, environment differences and explicit verification after each fix.
-- [ ] Flag thin/duplicative articles, inaccurate instructions, generic AI filler, unsupported claims, broken commands and content that adds no value beyond vendor documentation.
+- [x] Inventory every published article with URL, target error, distinct intent, reviewed date, testable fix, evidence and outbound sources; completed in [ARTICLE-CONTENT-AUDIT-2026-10-29.md](ARTICLE-CONTENT-AUDIT-2026-10-29.md).
+- [x] Checked troubleshooting command guidance for safety, reversibility, environment differences and verification; platform-specific execution limits are recorded in the audit ledger.
+- [x] Reviewed thinness, intent overlap, source support, unsupported-test wording and diagnostic value across all 54 guides; corrected the stale npm v8 reference in PR #38. No remaining corpus-level blocker was identified in this pass.
 - [ ] Ensure byline/editorial accountability, corrections channel and original problem-solving value.
 - [ ] Confirm monetization/affiliate disclosures match actual behavior; no unsupported statements about Google approval.
 
@@ -24,9 +24,15 @@ Status: PRE-RESUBMISSION / evidence required. This checklist is an internal qual
 - [ ] Inspect representative excluded URLs and compare canonical, internal links and actual page quality.
 - [ ] Verify sitemap processing and indexation requests only after real corrections.
 
-## Google feedback / content audit record — 2026-10-17
+## Google feedback record — 2026-10-17 (historical)
 
-The intended AdSense account (`pub-4750547049813961`) shows “Meet AdSense program policies.” The Oct 7 email recommends focusing on content and gives insufficient content/content quality as common examples; it does not identify a specific failing URL or confirm the exact issue. A corpus-level source scan found 54 published error guides, each with at least one external reference. It identified one unusually short Docker BuildKit guide missing stdin-context, parent-path and named-context branches. Those paragraphs were added in PR #24 without changing the frozen article structure; the SEO/template workflow and Pages deployment passed, and the live article was checked. This is a focused correction, not completion of the per-page accuracy audit. Keep all remaining P0 checks open and do not treat approval as guaranteed.
+On Oct 17, the intended AdSense account (`pub-4750547049813961`) showed “Meet AdSense program policies.” The Oct 7 email recommended focusing on content and listed insufficient content/content quality as common examples. The Oct 29 dashboard screenshot later supplied by the owner explicitly shows “Needs attention — Low value content”; see the current status below. PR #24 corrected missing Docker BuildKit context branches. The Oct 17 audit note is historical and does not describe completion of the later per-page review.
+
+### Current AdSense dashboard and completed article audit — 2026-10-29
+
+The owner-provided Sites screenshot shows **Needs attention — Low value content** and **ads.txt Authorized**. The label is confirmed; the screenshot does not identify specific failing URLs or the exact reason behind the site-level decision.
+
+The full per-URL review is recorded in [ARTICLE-CONTENT-AUDIT-2026-10-29.md](ARTICLE-CONTENT-AUDIT-2026-10-29.md). It covers all 54 published troubleshooting articles, confirms all 54 production URLs return HTTP 200 and align across canonical, visible review date, Article dateModified and sitemap lastmod, and records 161 unique reference URLs opened. Six guides now contain bounded first-party reproductions; the UptimeRobot guide has a separate recorded lab. Platform-specific fixes are labeled as source-reviewed, not personally tested in this runtime. The content audit is complete; the remaining technical/trust, responsive and Search Console checks below remain open.
 
 ### Search Console snapshot — 2026-10-17
 
