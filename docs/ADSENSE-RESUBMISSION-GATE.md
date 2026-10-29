@@ -8,7 +8,7 @@ Status: PRE-RESUBMISSION / evidence required. This checklist is an internal qual
 - [x] Homepage footer links to About, Editorial Methodology, Contact, Privacy, Terms, Disclaimer and Affiliate Disclosure (checked 2026-10-17).
 - [x] Reopened About, Editorial Methodology, Contact, Privacy, Terms, Disclaimer, Affiliate Disclosure and Corrections on production on 2026-10-29; each rendered its expected page heading. Reviewed current About/methodology/contact/legal copy for editorial accountability, corrections and commercial disclosures. (Readiness is limited to visible content; legal-owner signoff is not represented.)
 - [x] Rechecked robots metadata on 2026-10-29: Contact, Privacy, Terms, Disclaimer, Affiliate Disclosure and Corrections intentionally use `noindex,follow` and are absent from sitemap.xml; About and Editorial Methodology remain public/indexable. Retain this deliberate split. (The old GSC report listed only four noindex examples; exact GSC examples remain unresolved.)
-- [ ] Verify responsive layout and accessibility on mobile/desktop across homepage, hub, article, trust and legal templates. Representative PageSpeed mobile reports (29 Oct 2026, before the current heading/contrast follow-up) scored homepage 100/96/100/100 and npm guide 100/98/100/100 (Performance/Accessibility/Best Practices/SEO); real-user field data was unavailable. Reports identified low contrast on the homepage and a skipped heading on guides. The current PR fixes these source issues; repeat the reports after deployment, then complete the broader template sweep.
+- [ ] Verify responsive layout and accessibility on mobile/desktop across homepage, hub, article, trust and legal templates. Representative postdeployment mobile PageSpeed reports (29 Oct 2026): homepage 100/100/100/100 and npm guide 89/100/100/100 (Performance/Accessibility/Best Practices/SEO). Contrast and heading-order findings are gone; field data is unavailable. The npm lab run reports CLS 0.226, so a broader template/responsive sweep remains open. Reports: https://pagespeed.web.dev/analysis/https-errorharbor-com/ghrwtoetu0?form_factor=mobile and https://pagespeed.web.dev/analysis/https-errorharbor-com-errors-dev-node-npm-npm-command-not-found/scvw8rdq0g?form_factor=mobile.
 - [ ] Verify no broken links, incorrect canonical, accidental noindex, duplicate titles, orphan articles or sitemap/index mismatches in the final publication batch.
 - [ ] Verify no obstructive ads, misleading CTAs, nonfunctional widgets or placeholder content.
 
@@ -49,3 +49,8 @@ Repository inspection on 2026-10-17 found six pages carrying `noindex,follow` (C
 - **READY FOR RESUBMISSION:** P0 items complete with evidence, key pages verified live, article sampling reviewed, and release checks GREEN. Approval remains Google's decision.
 - Do not change production or trigger expensive GitHub Actions until corrections are collected in a single batch.
 - Record evidence links, issue owner, fixes, PR SHA, final validation run and production checks before changing this status.
+
+
+### Postdeployment accessibility correction — 2026-10-29
+
+PR #43 improved featured-guide text contrast and updated all 54 guide sidebars so “Guide details” uses H2. The first live recheck identified “On this page” as another skipped H3; PR #44 changed both sidebar titles to H2 across all 54 guides and the generator. CI passed for both PRs, deployments completed, and fresh mobile PSI showed no contrast or heading-order failures on the homepage or representative npm guide. Full responsive/accessibility coverage remains open.

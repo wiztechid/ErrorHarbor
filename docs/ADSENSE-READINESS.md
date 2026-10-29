@@ -2,7 +2,13 @@
 
 **Updated:** 2026-10-29  
 **Publisher ID:** `pub-4750547049813961`  
-**Status:** PRE-RESUBMISSION HOLD. The 54-article content audit is complete at repository/source-review level. Live review on 2026-10-29 confirmed robots.txt allows crawling, sitemap.xml serves the 63-URL repository sitemap, ads.txt matches the authorized publisher record, and the linked About/methodology/contact/legal pages load with expected headings. Six intentional noindex pages are absent from the sitemap. The 2026-10-29 dashboard screenshot still shows “Needs attention — Low value content”; Search Console examples, mobile/responsive QA, full link/indexation reconciliation and account checks remain open. Lighthouse sample reports before the latest source fixes scored homepage 100/96/100/100 and npm guide 100/98/100/100 (Performance/Accessibility/Best Practices/SEO), with no real-user field data; the residual contrast and heading findings are being corrected and require a fresh postdeployment check.
+**Status:** PRE-RESUBMISSION HOLD. The 54-article content audit is complete at repository/source-review level. Live review on 2026-10-29 confirmed robots.txt allows crawling, sitemap.xml serves the 63-URL repository sitemap, ads.txt matches the authorized publisher record, and the linked About/methodology/contact/legal pages load with expected headings. Six intentional noindex pages are absent from the sitemap. The 2026-10-29 dashboard screenshot still shows “Needs attention — Low value content”; Search Console examples, mobile/responsive QA, full link/indexation reconciliation and account checks remain open. Fresh mobile PageSpeed reports after PRs #43–#44 (29 Oct 2026) score the homepage 100/100/100/100 and the representative npm guide 89/100/100/100 (Performance/Accessibility/Best Practices/SEO). The prior homepage contrast and guide heading findings are gone. Field data is unavailable; the guide lab run reports CLS 0.226, so the performance score is a lab observation and remains part of the broader responsive review.
+
+### Postdeployment mobile PageSpeed evidence — 2026-10-29
+
+- Homepage report: https://pagespeed.web.dev/analysis/https-errorharbor-com/ghrwtoetu0?form_factor=mobile — 100/100/100/100. No contrast or heading-order finding.
+- Representative npm guide report: https://pagespeed.web.dev/analysis/https-errorharbor-com-errors-dev-node-npm-npm-command-not-found/scvw8rdq0g?form_factor=mobile — 89/100/100/100; Accessibility 100, SEO 100, no heading-order or contrast finding. One simulated run reports CLS 0.226; PSI shows no real-user field data.
+- Both PRs passed the repository CI gate and deployed. This is representative Lighthouse evidence, not a full responsive review or an AdSense approval signal.
 
 ## Canonical publisher record
 
