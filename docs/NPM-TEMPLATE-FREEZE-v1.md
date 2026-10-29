@@ -1,4 +1,4 @@
-# ErrorHarbor — npm Article Template FROZEN v1.0
+# ErrorHarbor — npm Article Template FROZEN v1.2.0
 
 **Authoritative visual reference:** https://errorharbor.com/errors/dev/node-npm/npm-command-not-found/
 
@@ -27,3 +27,8 @@
 4. Record the release SHA and enable routine content-only publishing.
 
 **Important:** a code freeze is not a guarantee of Google AdSense approval, search indexing, or editorial quality; those remain independent gates.
+
+
+## Versioned accessibility migration — 2026-10-29 (v1.2.0)
+
+Lighthouse mobile reports identified a skipped heading level on the representative npm guide. The shared “Guide details” sidebar title was H3 before the first article H2 on all 54 guides. It now uses H2 across the corpus and in the generator; the template freeze version and structural hashes were intentionally migrated. The same batch darkened the homepage featured-guide kicker, summary and arrow text to address the reported contrast failures, and cache-busted the stylesheet to `20261029-a11y2`. The heading and contrast adjustments improve navigation/readability; neither is evidence of AdSense approval.

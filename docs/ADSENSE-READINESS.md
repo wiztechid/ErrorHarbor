@@ -2,7 +2,7 @@
 
 **Updated:** 2026-10-29  
 **Publisher ID:** `pub-4750547049813961`  
-**Status:** PRE-RESUBMISSION HOLD. The 54-article content audit is complete at repository/source-review level. Live review on 2026-10-29 confirmed robots.txt allows crawling, sitemap.xml serves the 63-URL repository sitemap, ads.txt matches the authorized publisher record, and the linked About/methodology/contact/legal pages load with expected headings. Six intentional noindex pages are absent from the sitemap. The 2026-10-29 dashboard screenshot still shows “Needs attention — Low value content”; Search Console examples, mobile/responsive QA, full link/indexation reconciliation and account checks remain open.
+**Status:** PRE-RESUBMISSION HOLD. The 54-article content audit is complete at repository/source-review level. Live review on 2026-10-29 confirmed robots.txt allows crawling, sitemap.xml serves the 63-URL repository sitemap, ads.txt matches the authorized publisher record, and the linked About/methodology/contact/legal pages load with expected headings. Six intentional noindex pages are absent from the sitemap. The 2026-10-29 dashboard screenshot still shows “Needs attention — Low value content”; Search Console examples, mobile/responsive QA, full link/indexation reconciliation and account checks remain open. Lighthouse sample reports before the latest source fixes scored homepage 100/96/100/100 and npm guide 100/98/100/100 (Performance/Accessibility/Best Practices/SEO), with no real-user field data; the residual contrast and heading findings are being corrected and require a fresh postdeployment check.
 
 ## Canonical publisher record
 

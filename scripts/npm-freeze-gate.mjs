@@ -72,7 +72,7 @@ function hubShell(s){
  return s.replace(match[0],main);
 }
 function hashes(){
- return {version:"npm-article-shell-v1.0.0",reference:ref,
+ return {version:"npm-article-shell-v1.2.0",reference:ref,
   header:hash(expectedHeader),footer:hash(expectedFooter),
   css:hash(read("assets/css/styles.css")),js:hash(read("assets/js/app.js")),
   homepageShell:hash(homepageShell(read("index.html"))),
@@ -88,6 +88,27 @@ if(process.argv.includes("--lock")){
 }
 const wanted=JSON.parse(read(manifestPath));
 const now=hashes();
+if(process.argv.includes("--migrate-a11y-v1.2.0")){
+ if(wanted.version!=="npm-article-shell-v1.1.0")throw Error("Accessibility migration requires the v1.1.0 freeze");
+ const unchanged=["header","footer","js"];
+ for(const key of unchanged)if(wanted[key]!==now[key])throw Error("Refusing migration with unrelated frozen drift: "+key);
+ for(const [file,hashValue] of Object.entries(wanted.hubs||{})){
+  const normalized=hash(hubShell(read(file).replace(/styles\.css\?v=20261029-a11y2/g,"styles.css?v=20261029-a11y1")));
+  if(hashValue!==normalized)throw Error("Refusing migration with unrelated frozen drift: "+file);
+ }
+ const articles=JSON.parse(read("data/search-index.json")).filter(item=>item.kind==="article");
+ for(const item of articles){
+  const file=path.posix.join(item.url,"index.html"),source=read(file);
+  if(!source.includes("<h2>Guide details</h2>")||source.includes("<h3>Guide details</h3>"))throw Error("Article heading migration incomplete: "+file);
+ }
+ wanted.version="npm-article-shell-v1.2.0";
+ wanted.css=now.css;
+ wanted.hubs=now.hubs;
+ wanted.homepageShell=now.homepageShell;
+ wanted.articleMarkup=now.articleMarkup;
+ fs.writeFileSync(manifestPath,JSON.stringify(wanted,null,2)+"\n");
+ console.log("MIGRATED accessibility structure lock to v1.2.0");
+}
 const errors=[];
 for(const k of ["header","footer","css","js","homepageShell"])if(wanted[k]!==now[k])errors.push("FROZEN_DESIGN_DRIFT "+k);
 for(const [k,v] of Object.entries(wanted.hubs||{}))if(v!==now.hubs?.[k])errors.push("FROZEN_HUB_CHROME "+k);
