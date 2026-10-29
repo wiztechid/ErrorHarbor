@@ -25,9 +25,9 @@ Status: PRE-RESUBMISSION / evidence required. This checklist is an internal qual
 Production `robots.txt` returns `User-agent: *`, `Allow: /`, and the sitemap URL. Production `sitemap.xml` renders a 63-URL set matching the current repository sitemap, and production `ads.txt` returns the authorized publisher record `google.com, pub-4750547049813961, DIRECT, f08c47fec0942fa0`. The six internal trust/correction routes with `noindex,follow` are intentionally excluded; About and Editorial Methodology are indexable. Live review found three stale duplicate sidebar “Last reviewed” dates. PR #40 aligned them with the existing header / Article `dateModified`; all three pages were rechecked live after deployment on 2026-10-29 and matched.
 
 ## P1 — Search Console evidence
-- [ ] Record indexed / crawled-not-indexed / discovered-not-indexed counts from GSC (no invented numbers).
-- [ ] Inspect representative excluded URLs and compare canonical, internal links and actual page quality.
-- [ ] Verify sitemap processing and indexation requests only after real corrections.
+- [x] Record current GSC counts on 2026-10-29: 26 indexed; 37 discovered-not-indexed; 4 noindex; 3 redirects; 0 crawled-not-indexed. The sitemap report is Success, last read Oct 27, 63 URLs discovered.
+- [x] Inspect representative exclusions: all four reported noindex URLs are intentionally excluded; three redirects are HTTP/www host variants. A discovered AAPT2 article has no prior crawl in indexed data, but live URL test is available/indexable with valid Breadcrumb. Full example-list reconciliation remains open.
+- [ ] Recheck processing after Google recrawls changed pages. No manual request-indexing actions were submitted during this audit.
 
 ## Google feedback record — 2026-10-17 (historical)
 
@@ -54,3 +54,8 @@ Repository inspection on 2026-10-17 found six pages carrying `noindex,follow` (C
 ### Postdeployment accessibility correction — 2026-10-29
 
 PR #43 improved featured-guide text contrast and updated all 54 guide sidebars so “Guide details” uses H2. The first live recheck identified “On this page” as another skipped H3; PR #44 changed both sidebar titles to H2 across all 54 guides and the generator. CI passed for both PRs, deployments completed, and fresh mobile PSI showed no contrast or heading-order failures on the homepage or representative npm guide. Full responsive/accessibility coverage remains open.
+
+
+### Live Search Console and final status — 2026-10-29
+
+The current snapshot is documented in [ADSENSE-READINESS.md](ADSENSE-READINESS.md). Manual Actions and Security Issues show no detected issues. The sitemap is successfully processed, but all 37 example URLs (35 article routes and two hubs) remain discovered-not-indexed with last crawl `T/A`; a representative live test is crawlable/indexable while its indexed-state record is still unknown. Treat this as an open Google processing/content-discovery follow-up, not the stated cause of “Low value content.” Resubmission remains **HOLD** pending full responsive QA, follow-up crawl/index evidence and completion of the remaining account-level checks.
