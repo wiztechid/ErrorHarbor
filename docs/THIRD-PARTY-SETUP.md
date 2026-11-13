@@ -48,6 +48,8 @@ Current pre-approval state:
 - production AdSense tags are intentionally not active
 - staged `.ad-placeholder` inventory is hidden and must not be treated as production placement
 
+Adsterra is a separate, owner-selected network. Its native and responsive banner units are loaded only on troubleshooting articles after the reader selects “Allow ads.” The article templates do not load Popunder, Smartlink, Social Bar or adult ads. The 728×90 unit is held back because the current article layout has no appropriate placement wide enough for it.
+
 Production rules:
 
 - no ad before the first useful answer/check
@@ -62,6 +64,8 @@ Production rules:
 For Google advertising to relevant users in the EEA, UK and Switzerland, configure the consent message through Google AdSense Privacy & messaging. Use the user-choice options available for the applicable region and advertising configuration before dependent advertising/storage technologies activate. ErrorHarbor does not need a separately installed third-party CMP for the planned setup unless a later production requirement changes that decision.
 
 Do not hard-code a fake consent banner. Required consent choices must be presented before advertising/storage technologies that depend on those choices are activated.
+
+The Adsterra choice is handled separately from Google AdSense: its scripts stay blocked until the reader chooses “Allow ads,” and readers can reopen the choice from Privacy. Google tags remain inactive unless the separate Google consent configuration is completed.
 
 Activation sequence:
 
